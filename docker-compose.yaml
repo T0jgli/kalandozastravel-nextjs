@@ -1,0 +1,9 @@
+version: "3.3"
+
+services:
+    kalandozastravel:
+        image: kalandozastravel
+        container_name: kalandozastravel
+        build: .
+        ports:
+            - 8082:8082

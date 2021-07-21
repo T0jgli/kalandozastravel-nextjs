@@ -1,0 +1,99 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+        sans-serif !important;
+    background-color: #eef5f5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.handwriting {
+    font-family: Caveat, cursive !important;
+}
+
+svg[viewBox="0 0 38 38"] {
+    margin: auto;
+}
+
+.ril__navButtons:focus {
+    outline: none !important;
+}
+
+.filterlink::after {
+    display: block;
+    content: "";
+    border-bottom: solid 3px rgb(180, 83, 9);
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+.filterlink.active::after {
+    transform: scaleX(1);
+}
+
+.checkbox:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M5.707 7.293a1 1 0 0 0-1.414 1.414l2 2a1 1 0 0 0 1.414 0l4-4a1 1 0 0 0-1.414-1.414L7 8.586 5.707 7.293z'/%3e%3c/svg%3e");
+    border-color: transparent;
+    background-color: currentColor;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Toastify__toast {
+    font-weight: 600 !important;
+    border-radius: 1rem !important;
+}
+
+.Toastify__close-button {
+    padding: 6px 2px !important;
+}
+
+.Toastify__close-button:focus {
+    outline: none !important;
+}
+
+.Toastify__close-button:hover {
+    opacity: 0.8;
+}
+
+button.image-gallery-icon:hover {
+    color: rgb(180, 83, 9) !important;
+}
+
+#name,
+#address,
+#postalCode,
+#city,
+#phone,
+#email,
+#matesNames,
+#people,
+#needseat,
+#desc,
+#newsletter,
+#feedback,
+#payment,
+#accept {
+    scroll-margin-top: 10rem;
+}
+
+input[type="month"]:before {
+    content: attr(placeholder) !important;
+    color: #aaa;
+    margin-right: 0.5em;
+}
+input[type="month"]:focus:before,
+input[type="month"]:valid:before {
+    content: "";
+}
+
+@media (min-width: 640px) {
+    #table {
+        display: inline-table !important;
+    }
+}

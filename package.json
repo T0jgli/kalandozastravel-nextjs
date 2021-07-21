@@ -1,0 +1,35 @@
+{
+    "name": "frontend",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "build-analyze": "cross-env ANALYZE=true next build",
+        "start": "next start -p 8082"
+    },
+    "dependencies": {
+        "@next/bundle-analyzer": "^11.0.1",
+        "express-validator": "^6.12.0",
+        "firebase": "^8.7.1",
+        "framer-motion": "^4.1.17",
+        "html-react-parser": "^1.2.7",
+        "next": "^11.0.1",
+        "nodemailer": "^6.6.3",
+        "react": "17.0.2",
+        "react-awesome-reveal": "^3.8.1",
+        "react-dom": "17.0.2",
+        "react-icons": "^4.2.0",
+        "react-image-gallery": "^1.2.4",
+        "react-image-lightbox": "^5.1.4",
+        "react-loader-spinner": "^4.0.0",
+        "react-toastify": "^7.0.4"
+    },
+    "devDependencies": {
+        "@tailwindcss/typography": "^0.4.1",
+        "autoprefixer": "^10.3.1",
+        "cross-env": "^7.0.3",
+        "postcss": "^8.3.5",
+        "tailwindcss": "^2.2.4"
+    }
+}
