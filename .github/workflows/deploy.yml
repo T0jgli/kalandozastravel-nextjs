@@ -17,6 +17,6 @@ jobs:
           
           script: |
             cd /home/tojgli
-            cd kalandozastravel
+            cd kalandozas
             git pull
             sudo docker-compose up --build -d
