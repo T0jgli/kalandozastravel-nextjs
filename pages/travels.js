@@ -95,7 +95,7 @@ export default function Travels({ travels }) {
 }
 
 export async function getServerSideProps(context) {
-    context.res.setHeader("Cache-Control", "public, s-maxage=30, stale-while-revalidate=120");
+    context.res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
 
     const allTravels = await fetch(`http://${context.req.headers.host}/api/getalltravels`, {
         headers: { Accept: "application/json", "User-Agent": "*" },
