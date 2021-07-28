@@ -3,6 +3,7 @@ import Head from "next/head";
 import OneTravelBody from "../../components/OneTravelComponents/OneTravelBody";
 import { pageVariants } from "../../components/GlobalComponents/Transitions";
 import { motion } from "framer-motion";
+import getonetravel from "../../lib/helpers/databaseFetching/getonetravel";
 
 const OneTravel = ({ travel, error }) => {
     if (error) {
@@ -44,14 +45,10 @@ const OneTravel = ({ travel, error }) => {
 
 export default OneTravel;
 
-export async function getServerSideProps({ query, req, res }) {
+export async function getServerSideProps({ query, res }) {
     res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
 
-    const travel = await fetch(`http://${req.headers.host}/api/travels/${query.id}`, {
-        headers: { Accept: "application/json", "User-Agent": "*" },
-    });
-
-    const parsedTravel = await travel.json();
+    const parsedTravel = await getonetravel(query.id);
 
     return {
         props: { travel: parsedTravel.travel || null, error: parsedTravel.error || null },

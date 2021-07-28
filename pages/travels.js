@@ -6,6 +6,7 @@ import { cardAnimation, pageVariants } from "../components/GlobalComponents/Tran
 import Topbg from "../components/GlobalComponents/Topbg";
 import { useRouter } from "next/router";
 import SearchFilter from "../components/GlobalComponents/SearchFilter";
+import getalltravels from "../lib/helpers/databaseFetching/getalltravels";
 
 export default function Travels({ travels }) {
     const [travelsState, settravelsState] = useState(travels);
@@ -94,15 +95,10 @@ export default function Travels({ travels }) {
     );
 }
 
-export async function getServerSideProps(context) {
-    context.res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
+export async function getServerSideProps({ res }) {
+    res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
 
-    const allTravels = await fetch(`http://${context.req.headers.host}/api/getalltravels`, {
-        headers: { Accept: "application/json", "User-Agent": "*" },
-    });
-
-    const parsedTravels = await allTravels.json();
-
+    const parsedTravels = await getalltravels();
     return {
         props: {
             travels: parsedTravels.travels || null,

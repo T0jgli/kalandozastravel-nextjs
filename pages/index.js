@@ -5,6 +5,7 @@ import HomeBody from "../components/HomeComponents/HomeBody";
 import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import BottomLinks from "../components/GlobalComponents/BottomLinks";
 import CustomCarousel from "../components/HomeComponents/CustomCarousel";
+import gethomedata from "../lib/helpers/databaseFetching/gethomedata";
 
 export default function Home({ faqs, travels }) {
     return (
@@ -22,19 +23,15 @@ export default function Home({ faqs, travels }) {
     );
 }
 
-export async function getServerSideProps(context) {
-    context.res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
+export async function getServerSideProps({ res }) {
+    res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
 
-    const allTravels = await fetch(`http://${context.req.headers.host}/api/gethomedata`, {
-        headers: { Accept: "application/json", "User-Agent": "*" },
-    });
-
-    const parsedTravels = await allTravels.json();
+    const allTravels = await gethomedata();
 
     return {
         props: {
-            faqs: parsedTravels.faqs || null,
-            travels: parsedTravels.travels || null,
+            faqs: allTravels.faqs || null,
+            travels: allTravels.travels || null,
         },
     };
 }
