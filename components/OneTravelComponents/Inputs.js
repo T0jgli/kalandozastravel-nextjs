@@ -122,6 +122,14 @@ const Inputs = ({ travel }) => {
         );
     }
 
+    if (travel.type2 === "Jelentkezés lezárult") {
+        return (
+            <div className="text-center my-8">
+                <p className="text-xl text-gray-700">Sajnos az utazásra már nem lehet jegyet foglalni!</p>
+            </div>
+        );
+    }
+
     return (
         <div className="flex flex-col max-w-7xl mb-10 mx-auto">
             <form className="shadow-md bg-white rounded-2xl px-8 pt-6 pb-8 mb-4" onSubmit={formSubmit}>
