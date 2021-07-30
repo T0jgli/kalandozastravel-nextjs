@@ -13,9 +13,9 @@ const Faqs = ({ questionsAnswers }) => {
                     ))}
                 </div>
             </div>
-            {/* <div className="hidden grid-cols-2 md:grid-cols-3 2xl:grid-cols-5 grid-rows-3 overflow-hidden">
-                {galleryJSON.map((gallery) => (
-                    <div className="relative overflow-hidden w-full h-72">
+            <div className="hidden grid-cols-2 md:grid-cols-3 2xl:grid-cols-5 grid-rows-3 overflow-hidden">
+                {galleryJSON.map((gallery, i) => (
+                    <div className="relative overflow-hidden w-full h-72" key={i}>
                         <img
                             src={gallery?.original}
                             alt=""
@@ -23,7 +23,7 @@ const Faqs = ({ questionsAnswers }) => {
                         />
                     </div>
                 ))}
-            </div> */}
+            </div>
         </>
     );
 };

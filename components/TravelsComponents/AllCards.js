@@ -23,10 +23,16 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                 {isSale && (
                     <span className="absolute bottom-0 p-2 right-0 font-semibold bg-red-600 text-white rounded-tl-xl rounded-bl-xl">Akció</span>
                 )}
-                {type2 && (
-                    <span className="absolute text-sm top-0 p-2 left-0 font-semibold uppercase bg-gray-700 text-white bg-opacity-80 rounded-tr-xl rounded-br-xl">
-                        {type2}
+                {places === 0 ? (
+                    <span className="absolute text-sm top-0 p-2 left-0 font-semibold uppercase bg-red-900 text-white bg-opacity-80 rounded-tr-xl rounded-br-xl">
+                        Megtelt
                     </span>
+                ) : (
+                    type2 && (
+                        <span className="absolute text-sm top-0 p-2 left-0 font-semibold uppercase bg-gray-700 text-white bg-opacity-80 rounded-tr-xl rounded-br-xl">
+                            {type2}
+                        </span>
+                    )
                 )}
             </div>
 

@@ -5,7 +5,7 @@ import HomeBody from "../components/HomeComponents/HomeBody";
 import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import BottomLinks from "../components/GlobalComponents/BottomLinks";
 import CustomCarousel from "../components/HomeComponents/CustomCarousel";
-import gethomedata from "../lib/helpers/databaseFetching/gethomedata";
+import { getHomeData } from "../lib/helpers/getDatas";
 
 export default function Home({ faqs, travels }) {
     return (
@@ -26,7 +26,7 @@ export default function Home({ faqs, travels }) {
 export async function getServerSideProps({ res }) {
     res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
 
-    const allTravels = await gethomedata();
+    const allTravels = await getHomeData();
 
     return {
         props: {
