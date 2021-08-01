@@ -35,6 +35,7 @@ class MyDocument extends Document {
                 <meta property="og:description" content="Kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
                 <meta property="og:site_name" content="Kalandozás Utazási iroda" />
                 <meta property="og:title" content="Kalandozás Utazási iroda" />
+                <meta property="og:type" content="website" />
                 <meta property="og:locale" content="hu_HU" />
                 <meta property="og:image" content="https://kalandozas.hu/img/conti_logo.png" />
                 <meta name="twitter:card" content="summary" />

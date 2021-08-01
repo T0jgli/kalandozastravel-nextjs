@@ -1,8 +1,9 @@
 import React from "react";
+import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="pt-10">
+        <footer className="pt-10 relative">
             <div className="w-full my-4 h-60">
                 <iframe
                     title="Google Maps Iframe"
@@ -30,6 +31,17 @@ const Footer = () => {
                         Adatvédelmi tájékoztató
                     </a>
                 </div>
+            </div>
+            <div className="absolute bottom-5 left-5 text-gray-700 duration-300 hover:opacity-80">
+                <a
+                    href="https://github.com/T0jgli/kalandozastravel-nextjs"
+                    aria-label="Github"
+                    title="Github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <FaGithub fontSize="1.75rem" />
+                </a>
             </div>
         </footer>
     );

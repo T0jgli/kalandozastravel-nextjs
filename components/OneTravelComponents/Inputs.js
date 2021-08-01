@@ -131,7 +131,7 @@ const Inputs = ({ travel }) => {
     }
 
     return (
-        <div className="flex flex-col max-w-7xl mb-10 mx-auto">
+        <div className="flex flex-col max-w-7xl mb-10 mx-auto" id="ticket">
             <form className="shadow-md bg-white rounded-2xl px-8 pt-6 pb-8 mb-4" onSubmit={formSubmit}>
                 <div className="mb-10 flex-col md:flex-row flex w-full justify-center items-center">
                     <div className="w-full mb-5 md:mb-0 md:mr-10 relative">
