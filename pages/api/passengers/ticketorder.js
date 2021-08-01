@@ -77,11 +77,12 @@ export default async (req, res) => {
                     from: `"Jegyfoglalás – ${name}" "Kovalik.adam.86@unibge.hu"`,
                     to: process.env.NODE_ENV == "production" ? "ertekesites@kalandozas.axelero.net" : "tojgli12@gmail.com",
                     subject: `Online utazásfoglalás - weboldalról`,
+                    replyTo: email,
                     html: ` <html><body>
                     <h2>Online utazásfoglalás a kalandozas.hu-n keresztül</h2>
                     <p>Utazás megnevezése: ${travel.title}</p>
                     <p>Utazás időpontja: ${travel.startingDate} - ${travel.endingDate}</p>
-                    <p>Utazás ára: ${travel.price} Ft</p>
+                    <p>Utazás ára: ${travel.price} Ft</p> 
                     <hr width="50%" style="margin-left: 0">
                     <p>Megrendelő neve: ${name}</p>
                     <p>Lakcím: ${city}, ${postalCode} ${address}</p>

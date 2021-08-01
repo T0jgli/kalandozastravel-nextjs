@@ -24,7 +24,7 @@ export default function Home({ faqs, travels }) {
 }
 
 export async function getServerSideProps({ res }) {
-    res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
+    res.setHeader("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=59");
 
     const allTravels = await getHomeData();
 

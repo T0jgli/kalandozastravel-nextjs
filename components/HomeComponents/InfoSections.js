@@ -38,12 +38,12 @@ const InfoSections = () => {
                         <h2 className="text-xl font-medium mb-10 tracking-wide">
                             Csapatunk több mint 20 éves tapasztalattal, családias hangulattal várja Önöket.
                         </h2>
-                        <h3 className="text-gray-500">
+                        <p className="text-gray-500">
                             Bízunk benne, hogy a nehéz gazdasági helyzet ellenére mindenki megtalálja programjaink között az igényének, pénztárcájának
                             megfelelő kirándulást, nyaralást, rendezvényt. Honlapunkon láthatja, hogy palettánkat bővítettük, színesítettük, de
                             ragaszkodván a tradíciókhoz, továbbra is indítjuk a már megszokott városlátogatásokat, körutazásokat, tengerparti
                             üdüléseket, nyaralásokat.
-                        </h3>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -51,12 +51,12 @@ const InfoSections = () => {
                 <div className="flex flex-wrap max-w-7xl items-center mx-auto flex-1 justify-center">
                     <div className="max-w-xl">
                         <h2 className="text-xl font-medium mb-10 tracking-wide">Autóbuszok bérbeadásával is foglalkozunk</h2>
-                        <h3 className="text-gray-500">
+                        <p className="text-gray-500">
                             Cégünk autóbuszok bérbeadásával is foglalkozik, melynek feltételeiről az autóbuszbérlés menüpontban tájékozódhatnak Bízunk
                             benne, hogy törzsutasaink mellett nagyon sok új utastársat köszönthetünk idén is útjaink során. Reméljük, hogy minden
                             kedves utasunk kellemes, új élményekkel tér haza a kiválasztott útról és nyugodt szívvel ajánlja barátainak, ismerőseinek
                             irodánkat.
-                        </h3>
+                        </p>
                     </div>
                     <img
                         src="/img/svgs/travel2.svg"

@@ -46,7 +46,7 @@ const OneTravel = ({ travel, error }) => {
 export default OneTravel;
 
 export async function getServerSideProps({ query, res }) {
-    res.setHeader("Cache-Control", "public, s-maxage=60, stale-while-revalidate=240");
+    res.setHeader("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=59");
 
     const parsedTravel = await getOneTravel(query.id);
 

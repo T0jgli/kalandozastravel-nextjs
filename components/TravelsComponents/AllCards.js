@@ -39,7 +39,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
             <div className="p-4 lg:p-3 w-full">
                 <Link href={`/travel/${id}`} passHref>
                     <a className="hover:text-yellow-700 text-center block font-semibold break-words duration-300">
-                        <h2>{title}</h2>
+                        <p>{title}</p>
                     </a>
                 </Link>
 

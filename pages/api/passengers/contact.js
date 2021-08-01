@@ -26,6 +26,7 @@ export default async (req, res) => {
                     from: `"Kapcsolat – ${name}" "Kovalik.adam.86@unibge.hu"`,
                     to: process.env.NODE_ENV == "production" ? "ertekesites@kalandozas.axelero.net" : "tojgli12@gmail.com",
                     subject: `Kapcsolat - weboldalról`,
+                    replyTo: email,
                     html: ` <html><body>
                     <h2>Kapcsolat űrlap a kalandozas.hu-n keresztül</h2>
                     <hr width="50%" style="margin-left: 0">
