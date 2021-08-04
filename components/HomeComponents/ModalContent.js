@@ -22,6 +22,7 @@ const ModalContent = ({ travels }) => {
                         <tr
                             className="border-b-2 flex flex-col flex-no wrap sm:table-row duration-300 border-gray-200 hover:bg-gray-200 cursor-pointer rounded-xl"
                             onClick={() => router.push(`/travel/${travel.id}`)}
+                            key={i}
                         >
                             <td className="text-center md:text-left mx-auto">
                                 <img
