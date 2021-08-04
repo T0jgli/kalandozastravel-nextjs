@@ -557,7 +557,7 @@ const Inputs = ({ travel }) => {
                         {loading ? <Loading /> : "Küldés"}
                     </button>
                 </div>
-                <div className="mt-12 w-3/4 mx-auto" role="alert">
+                <div className="mt-12 md:w-3/4 mx-auto" role="alert">
                     <div class="bg-red-500 flex items-center justify-between text-white font-bold rounded-t-lg px-4 py-2">
                         <p className="text-lg">FIGYELEM</p>
                         <HiOutlineExclamation fontSize="2rem" />
