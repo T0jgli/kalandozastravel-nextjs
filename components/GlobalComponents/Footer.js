@@ -3,7 +3,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="pt-10 relative">
+        <footer className="pt-10 pb-10 md:pb-0 relative">
             <div className="w-full my-4 h-60">
                 <iframe
                     title="Google Maps Iframe"

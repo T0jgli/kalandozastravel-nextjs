@@ -76,7 +76,7 @@ const Cards = ({ travels }) => {
                         }
                     >
                         <img
-                            src={"https://jooinn.com/images/aircraft-flying-13.jpg"}
+                            src={"/img/levego.jpg"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-left"
                             alt="Levegőben háttér"
                         />

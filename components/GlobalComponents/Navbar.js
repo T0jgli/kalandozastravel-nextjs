@@ -175,7 +175,7 @@ const Navbar = () => {
                             aria-label="Facebook oldal"
                             title="Facebook"
                         >
-                            <FaFacebook fontSize="1.75rem" />
+                            <img src="/img/svgs/fb.svg" width="30px" alt="Facebook ikon" />
                         </a>
                         <a
                             target="_blank"
@@ -185,7 +185,7 @@ const Navbar = () => {
                             aria-label="Instagram oldal"
                             title="Instagram"
                         >
-                            <FaInstagram fontSize="1.75rem" />
+                            <img src="/img/svgs/insta.svg" width="30px" alt="Instagram ikon" />
                         </a>
                         <a
                             target="_blank"
@@ -195,7 +195,7 @@ const Navbar = () => {
                             aria-label="Youtube csatorna"
                             title="Youtube"
                         >
-                            <FaYoutube fontSize="1.75rem" />
+                            <img src="/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
                         </a>
                     </div>
                 </div>

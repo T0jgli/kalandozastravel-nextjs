@@ -23,7 +23,7 @@ export default async (req, res) => {
 
             try {
                 const mail = {
-                    from: `"Kapcsolat – ${name}" "Kovalik.adam.86@unibge.hu"`,
+                    from: `"Kapcsolat – ${name}" "kalandozas@kvlk.hu"`,
                     to: process.env.NODE_ENV == "production" ? "ertekesites@kalandozas.axelero.net" : "tojgli12@gmail.com",
                     subject: `Kapcsolat - weboldalról`,
                     replyTo: email,
