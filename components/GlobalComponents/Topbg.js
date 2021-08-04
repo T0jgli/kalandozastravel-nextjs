@@ -14,6 +14,7 @@ const Topbg = () => {
                 />
             </div>
             <BottomLinks />
+            <h1 className="text-center hidden text-2xl md:text-3xl font-medium my-8">Neoline-Kalandozás Utazási Iroda</h1>
         </>
     );
 };
