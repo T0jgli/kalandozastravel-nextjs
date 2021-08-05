@@ -7,4 +7,7 @@ module.exports = withBundleAnalyzer({
         domains: ["firebasestorage.googleapis.com"],
     },
     poweredByHeader: false,
+    experimental: {
+        scrollRestoration: true,
+    },
 });

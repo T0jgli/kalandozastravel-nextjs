@@ -6,11 +6,14 @@ import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import BottomLinks from "../components/GlobalComponents/BottomLinks";
 import CustomCarousel from "../components/HomeComponents/CustomCarousel";
 import { getHomeData } from "../lib/helpers/getDatas";
+import TemporaryAlert from "../components/HomeComponents/TemporaryAlert";
 
 export default function Home({ faqs, travels }) {
     return (
         <>
             <motion.section initial="initial" animate="animate" variants={pageVariants}>
+                <TemporaryAlert />
+
                 <Head>
                     <title>Főoldal - Kalandozás Utazási iroda</title>
                 </Head>
