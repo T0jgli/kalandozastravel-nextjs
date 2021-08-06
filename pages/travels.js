@@ -61,7 +61,7 @@ export default function Travels({ travels }) {
                         Törlés
                     </button>
                 )}
-                <h1 className="text-2xl py-5 text-gray-800">{travelsState.length} utazás található</h1>
+                <h2 className="text-2xl py-5 text-gray-800">{travelsState.length} utazás található</h2>
             </div>
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
