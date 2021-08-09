@@ -24,7 +24,7 @@ export default async (req, res) => {
             try {
                 const mail = {
                     from: `"Kapcsolat – ${name}" "kovalikadam00@gmail.com"`,
-                    to: process.env.NODE_ENV == "production" ? "ertekesites@kalandozas.axelero.net" : "tojgli12@gmail.com",
+                    to: process.env.NODE_ENV == "production" ? "ertekesites@kalandozas.axelero.net" : "Kovalik.adam.86@unibge.hu",
                     subject: `Kapcsolat - weboldalról`,
                     replyTo: email,
                     html: ` <html><body>
