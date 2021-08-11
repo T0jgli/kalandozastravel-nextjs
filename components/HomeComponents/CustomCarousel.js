@@ -6,7 +6,7 @@ import Modal from "./Modal";
 
 const CustomCarousel = ({ travels }) => {
     const [active, setActive] = useState(1);
-    const [isMobile] = useScreenWidth(1280);
+    const [isMobile] = useScreenWidth(1279);
     const [modalOpen, setModalOpen] = useState({
         open: false,
     });
