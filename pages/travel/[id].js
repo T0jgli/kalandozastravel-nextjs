@@ -4,7 +4,6 @@ import OneTravelBody from "../../components/OneTravelComponents/OneTravelBody";
 import { pageVariants } from "../../components/GlobalComponents/Transitions";
 import { motion } from "framer-motion";
 import { getOneTravel } from "../../lib/helpers/getDatas";
-import TemporaryAlert from "../../components/HomeComponents/TemporaryAlert";
 
 const OneTravel = ({ travel, error }) => {
     if (error) {
@@ -20,8 +19,6 @@ const OneTravel = ({ travel, error }) => {
             <Head>
                 <title>Kalandozás - {travel?.title}</title>
             </Head>
-            <TemporaryAlert />
-
             {travel.pictures?.length > 0 && (
                 <>
                     <div className="relative shadow-xl w-full overflow-hidden" style={{ height: "340px" }}>

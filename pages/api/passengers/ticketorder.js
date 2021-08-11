@@ -32,7 +32,7 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
 
     if (people > travel.freePlaces) {
         return res.status(409).json({
-            error: "Nincs ennyi szabad hely az utazáson",
+            error: `Sajnos nincs ennyi szabad hely az utazáson! (${people})`,
         });
     }
 

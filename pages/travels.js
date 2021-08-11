@@ -7,7 +7,6 @@ import Topbg from "../components/GlobalComponents/Topbg";
 import { useRouter } from "next/router";
 import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import { getAllTravels } from "../lib/helpers/getDatas";
-import TemporaryAlert from "../components/HomeComponents/TemporaryAlert";
 
 export default function Travels({ travels }) {
     const [travelsState, settravelsState] = useState(travels);
@@ -40,8 +39,6 @@ export default function Travels({ travels }) {
 
     return (
         <motion.section initial="initial" animate="animate" variants={pageVariants}>
-            <TemporaryAlert />
-
             <Head>
                 <title>Utazásaink - Kalandozás Utazási iroda</title>
             </Head>

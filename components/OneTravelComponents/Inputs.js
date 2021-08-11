@@ -133,6 +133,16 @@ const Inputs = ({ travel }) => {
 
     return (
         <div className="flex flex-col max-w-7xl mb-10 mx-auto" id="ticket">
+            <div className="mb-6 md:w-3/4 mx-auto" role="alert">
+                <div className="bg-red-500 flex items-center justify-between text-white font-bold rounded-t-lg px-4 py-2">
+                    <p className="text-lg">FIGYELEM</p>
+                    <HiOutlineExclamation fontSize="2rem" />
+                </div>
+                <div className="border border-t-0 border-red-400 text-center rounded-b-lg bg-red-100 px-4 py-3 text-red-700">
+                    <p>Egyes email kiszolgálók a spam mappába tehetik a válaszemaileket!</p>
+                </div>
+            </div>
+
             <form className="shadow-md bg-white rounded-2xl px-8 pt-6 pb-8 mb-4" onSubmit={formSubmit}>
                 <div className="mb-10 flex-col md:flex-row flex w-full justify-center items-center">
                     <div className="w-full mb-5 md:mb-0 md:mr-10 relative">
@@ -556,15 +566,6 @@ const Inputs = ({ travel }) => {
                     >
                         {loading ? <Loading /> : "Küldés"}
                     </button>
-                </div>
-                <div className="mt-12 md:w-3/4 mx-auto" role="alert">
-                    <div className="bg-red-500 flex items-center justify-between text-white font-bold rounded-t-lg px-4 py-2">
-                        <p className="text-lg">FIGYELEM</p>
-                        <HiOutlineExclamation fontSize="2rem" />
-                    </div>
-                    <div className="border border-t-0 border-red-400 text-center rounded-b-lg bg-red-100 px-4 py-3 text-red-700">
-                        <p>Egyes email kiszolgálók a spam mappába tehetik a válaszemaileket!</p>
-                    </div>
                 </div>
             </form>
         </div>
