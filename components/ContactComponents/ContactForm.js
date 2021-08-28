@@ -82,16 +82,6 @@ const ContactForm = () => {
 
     return (
         <div className="mx-auto w-full md:w-6/12">
-            <div className="mb-6 mx-auto" role="alert">
-                <div className="bg-red-500 flex items-center justify-between text-white font-bold rounded-t-lg px-4 py-2">
-                    <p className="text-lg">FIGYELEM</p>
-                    <HiOutlineExclamation fontSize="2rem" />
-                </div>
-                <div className="border border-t-0 border-red-400 text-center rounded-b-lg bg-red-100 px-4 py-3 text-red-700">
-                    <p>Egyes email kiszolgálók a spam mappába tehetik a válaszemaileket!</p>
-                </div>
-            </div>
-
             <form onSubmit={formSubmit} className="rounded-3xl px-8 pt-6 pb-8 mb-4 shadow-md bg-white">
                 <p className="text-2xl font-semibold text-gray-800 text-center my-10">Üzenet küldése</p>
 

@@ -74,8 +74,8 @@ export default async (req, res) => {
 
             try {
                 const mail = {
-                    from: `"Jegyfoglalás – ${name}" "kovalikadam00@gmail.com"`,
-                    to: process.env.NODE_ENV == "production" ? "ertekesites@kalandozas.axelero.net" : "tojgli12@gmail.com",
+                    from: `"Jegyfoglalás – ${name}" "admin@contibus.hu"`,
+                    to: process.env.NODE_ENV == "production" ? "ertekesites@kalandozas.hu" : "admin@kalandozas.hu",
                     subject: `Online utazásfoglalás - weboldalról`,
                     replyTo: email,
                     html: ` <html><body>
