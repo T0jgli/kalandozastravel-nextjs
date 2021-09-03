@@ -12,12 +12,10 @@ const CustomCarousel = ({ travels }) => {
     });
 
     useEffect(() => {
-        const timeoutSlide = () => {
+        const interval = setInterval(() => {
             setActive((prev) => (prev === 18 ? 1 : prev + 1));
-        };
-
-        setInterval(timeoutSlide, 5000);
-        return clearInterval(timeoutSlide);
+        }, 5000);
+        return clearInterval(interval);
     }, []);
 
     return (

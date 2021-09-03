@@ -6,11 +6,11 @@ import useScreenWidth from "../../lib/hooks/useScreenWidth";
 
 const Navbar = () => {
     const [open, setisOpen] = useState(false);
-    const [isMobile] = useScreenWidth(1024);
+    const [isMobile] = useScreenWidth(1023);
     const router = useRouter();
 
     useEffect(() => {
-        if (window.innerWidth < 992) {
+        if (window.innerWidth < 1023) {
             setisOpen(false);
         }
     }, [router.pathname]);
@@ -165,10 +165,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                         </ul>
-                        <div
-                            className="flex gap-7 border-t-2 border-black border-opacity-10 
-            pt-16 items-center justify-center h-10 md:h-20 m-0 duration-300 transform"
-                        >
+                        <div className="flex gap-7 border-t-2 border-black border-opacity-10 pt-16 items-center justify-center h-10 md:h-20 m-0 duration-300 transform">
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
