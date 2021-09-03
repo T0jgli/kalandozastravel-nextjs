@@ -3,18 +3,15 @@ import { useRouter } from "next/router";
 import { HiOutlineCalendar, HiOutlineUserGroup } from "react-icons/hi";
 import Link from "next/link";
 
-const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endingDate, places, id, isSale, type2 }) => {
+const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endingDate, places, id, isSale, type2, customUrl }) => {
     const router = useRouter();
+    const url = customUrl || `/travel/${id}`;
     return (
         <article
             className="flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden"
             style={{ minHeight: "440px" }}
         >
-            <div
-                className="relative w-100 overflow-hidden cursor-pointer"
-                onClick={() => router.push(`/travel/${id}`)}
-                style={{ paddingTop: "calc(52.356%)" }}
-            >
+            <div className="relative w-100 overflow-hidden cursor-pointer" onClick={() => router.push(url)} style={{ paddingTop: "calc(52.356%)" }}>
                 <img
                     src={backgroundImage}
                     alt={`Utazás kép ${title}`}
@@ -37,7 +34,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
             </div>
 
             <div className="p-4 lg:p-3 w-full">
-                <Link href={`/travel/${id}`} passHref>
+                <Link href={url} passHref>
                     <a className="hover:text-yellow-700 text-center block font-semibold break-words duration-300">
                         <p>{title}</p>
                     </a>

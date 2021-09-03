@@ -85,6 +85,7 @@ export default function Travels({ travels }) {
                                     places={travel.freePlaces}
                                     price={travel.price}
                                     type2={travel.type2}
+                                    customUrl={travel.customUrl}
                                 />
                             </motion.div>
                         ))}

@@ -21,7 +21,7 @@ const ModalContent = ({ travels }) => {
                     {travels?.map((travel, i) => (
                         <tr
                             className="border-b-2 flex flex-col flex-no wrap sm:table-row duration-300 border-gray-200 hover:bg-gray-200 cursor-pointer rounded-xl"
-                            onClick={() => router.push(`/travel/${travel.id}`)}
+                            onClick={() => router.push(travel.customUrl || `/travel/${travel.id}`)}
                             key={i}
                         >
                             <td className="text-center md:text-left mx-auto">
@@ -54,7 +54,7 @@ const ModalContent = ({ travels }) => {
                             <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700">
                                 <button
                                     className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
-                                    onClick={() => router.push(`/travel/${travel.id}#ticket`)}
+                                    onClick={() => router.push(travel.customUrl || `/travel/${travel.id}#ticket`)}
                                 >
                                     <HiOutlineShoppingCart fontSize="1.5rem" />
                                 </button>
