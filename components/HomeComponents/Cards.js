@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
+import CurrentOffers from "./currentOffers";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
 
@@ -22,6 +23,8 @@ const Cards = ({ travels }) => {
             <div className="mx-auto mt-20 text-center font-light">
                 <h3 className="text-2xl font-medium mb-10 tracking-wide">Aktuális ajánlataink</h3>
             </div>
+
+            <CurrentOffers />
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
                     <AnimatePresence>

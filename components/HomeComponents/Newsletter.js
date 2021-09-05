@@ -24,7 +24,7 @@ const Newsletter = () => {
     };
 
     return (
-        <div className="py-12 mt-20 w-full mx-auto bg-white">
+        <div className="py-12 w-full mx-auto bg-white">
             <div className="max-w-7xl mx-auto items-center justify-center flex flex-col gap-10 lg:flex-row lg:gap-20">
                 <div className="flex items-center gap-8 text-gray-700 opacity-85">
                     <HiOutlineNewspaper fontSize="3rem" className="" />

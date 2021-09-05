@@ -7,9 +7,17 @@ const BottomLinks = () => {
     return (
         <div className="h-auto w-full bg-white shadow" style={{ minHeight: "4rem" }}>
             <div
-                className="flex flex-wrap gap-8 justify-center items-center h-auto max-w-7xl mx-auto uppercase font-medium py-5 md:py-0"
+                className="flex flex-wrap gap-8 justify-center items-center h-auto mx-auto uppercase font-medium py-5 md:py-0"
                 style={{ minHeight: "4rem" }}
             >
+                <a
+                    className={`${
+                        router.query.type === "1naposutazas" ? "active text-yellow-700" : ""
+                    } hover:text-yellow-700 filterlink duration-300 h-full cursor-pointer`}
+                >
+                    Bus Jet Business Class
+                </a>
+
                 <Link passHref href="/travels?type=1naposutazas">
                     <a
                         className={`${

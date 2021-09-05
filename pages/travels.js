@@ -7,6 +7,7 @@ import Topbg from "../components/GlobalComponents/Topbg";
 import { useRouter } from "next/router";
 import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import { getAllTravels } from "../lib/helpers/getDatas";
+import Infos from "../components/HomeComponents/Infos";
 
 export default function Travels({ travels }) {
     const [travelsState, settravelsState] = useState(travels);
@@ -92,6 +93,7 @@ export default function Travels({ travels }) {
                     </AnimatePresence>
                 </div>
             </div>
+            <Infos />
         </motion.section>
     );
 }
