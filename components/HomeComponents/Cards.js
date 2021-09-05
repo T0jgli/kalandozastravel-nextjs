@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
-import CurrentOffers from "./currentOffers";
+import CurrentOffers from "./CurrentOffers";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
 
