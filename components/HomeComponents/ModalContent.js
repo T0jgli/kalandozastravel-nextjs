@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import React from "react";
 import { HiOutlineShoppingCart, HiOutlineCalendar } from "react-icons/hi";
+import Link from "next/link";
 
 const ModalContent = ({ travels }) => {
     const router = useRouter();
@@ -20,8 +21,7 @@ const ModalContent = ({ travels }) => {
                 <tbody className="text-gray-600 text-sm w-full font-light rounded-xl">
                     {travels?.map((travel, i) => (
                         <tr
-                            className="border-b-2 flex flex-col flex-no wrap sm:table-row duration-300 border-gray-200 hover:bg-gray-200 cursor-pointer rounded-xl"
-                            onClick={() => router.push(travel.customUrl || `/travel/${travel.id}`)}
+                            className="border-b-2 flex flex-col flex-no wrap sm:table-row duration-300 border-gray-200 hover:bg-gray-200 rounded-xl"
                             key={i}
                         >
                             <td className="text-center md:text-left mx-auto">
@@ -44,14 +44,18 @@ const ModalContent = ({ travels }) => {
                                             day: "numeric",
                                         })}
                             </td>
-                            <td className="py-3 px-6 text-left font-medium max-w-xs" style={{ wordWrap: "break-word" }}>
-                                {travel.title}
+                            <td className="py-3 px-6 text-left font-medium max-w-xs cursor-pointer" style={{ wordWrap: "break-word" }}>
+                                <Link passHref href={travel.customUrl || `/travel/${travel.id}`}>
+                                    <a className="hover:text-yellow-700 break-words duration-300">
+                                        <p>{travel.title}</p>
+                                    </a>
+                                </Link>
                             </td>
                             <td className="py-3 px-6 text-center md:text-right whitespace-nowrap">
                                 <span className="md:hidden">Szabad helyek: </span>
                                 {travel.freePlaces}
                             </td>
-                            <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700">
+                            <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">
                                 <button
                                     className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
                                     onClick={() => router.push(travel.customUrl || `/travel/${travel.id}#ticket`)}
