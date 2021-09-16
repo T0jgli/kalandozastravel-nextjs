@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
@@ -9,6 +9,9 @@ import Modal from "./Modal";
 
 const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
+    const [activeYear, setActiveYear] = useState(new Date().getFullYear());
+    const [travelsState, settravelsState] = useState(travels);
+
     const [isMobile] = useScreenWidth(1280);
     const [modalOpen, setModalOpen] = useState({
         open: false,
@@ -25,10 +28,34 @@ const Cards = ({ travels }) => {
             </div>
 
             <CurrentOffers />
+            <div className="flex justify-center my-8 pt-4 mx-auto">
+                <button
+                    className={`${
+                        activeYear === 2021 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
+                    } hover:bg-gray-400 font-bold py-2 px-4 rounded-l-md duration-300`}
+                    onClick={() => {
+                        setActiveYear(2021);
+                        settravelsState(travels.filter((travel) => travel.startingDate.startsWith("2021")));
+                    }}
+                >
+                    2021
+                </button>
+                <button
+                    className={`${
+                        activeYear === 2022 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
+                    } hover:bg-gray-400  font-bold py-2 px-4 rounded-r-md duration-300`}
+                    onClick={() => {
+                        setActiveYear(2022);
+                        settravelsState(travels.filter((travel) => travel.startingDate.startsWith("2022")));
+                    }}
+                >
+                    2022
+                </button>
+            </div>
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
                     <AnimatePresence>
-                        {travels.map((travel) => (
+                        {travelsState.map((travel) => (
                             <motion.div
                                 id="card"
                                 className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
