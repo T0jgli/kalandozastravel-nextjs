@@ -47,6 +47,9 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                             <div className="flex-col text-sm pl-5">
                                 <p>Időpont</p>
                                 <p className="opacity-70">
+                                    {new Date(startingDate).getFullYear() !== new Date().getFullYear() && (
+                                        <span>{new Date(startingDate).getFullYear()} </span>
+                                    )}
                                     {new Date(startingDate).toLocaleDateString("hu-HU", {
                                         month: "short",
                                         day: "numeric",

@@ -35,29 +35,6 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         onClick={() =>
                             setModalOpen({
                                 open: true,
-                                title: "Vízen",
-                                travels: travels.filter((travel) => travel.type?.includes("vizen")),
-                            })
-                        }
-                    >
-                        <img
-                            src={"/img/hajo.jpg"}
-                            className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
-                            alt="Vízen háttér"
-                        />
-                        <h2
-                            className="bottom-2 absolute text-white text-2xl left-1/2"
-                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
-                        >
-                            Vízen
-                        </h2>
-                    </figure>
-                    <figure
-                        className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "250px", height: "250px", maxWidth: "calc(100vw - 50px)" }}
-                        onClick={() =>
-                            setModalOpen({
-                                open: true,
                                 title: "Levegőben",
                                 travels: travels.filter((travel) => travel.type?.includes("levegoben")),
                             })
@@ -73,6 +50,31 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
                         >
                             Levegőben
+                        </h2>
+                    </figure>
+                    <figure
+                        className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
+                        style={{ width: "250px", height: "250px", maxWidth: "calc(100vw - 50px)" }}
+                        onClick={() =>
+                            setModalOpen({
+                                open: true,
+                                title: "2022-es utazásaink",
+                                travels: travels.filter((travel) => travel?.startingDate?.startsWith("2022")),
+                            })
+                        }
+                    >
+                        <img
+                            src={
+                                "https://previews.123rf.com/images/mariusz_prusaczyk/mariusz_prusaczyk1704/mariusz_prusaczyk170400301/75727162-3d-new-year-2022-on-white-background.jpg"
+                            }
+                            className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
+                            alt="Vízen háttér"
+                        />
+                        <h2
+                            className="bottom-2 absolute text-white text-2xl left-1/2"
+                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
+                        >
+                            2022
                         </h2>
                     </figure>
                     <figure
