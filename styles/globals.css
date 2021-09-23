@@ -97,3 +97,10 @@ input[type="month"]:valid:before {
         display: inline-table !important;
     }
 }
+
+/* Dealing with single orphan */
+
+figure h2 {
+    background: rgb(33, 33, 33);
+    background: linear-gradient(0deg, rgba(33, 33, 33, 1) 0%, rgba(33, 33, 33, 0) 100%);
+}

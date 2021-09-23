@@ -4,7 +4,7 @@ import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
 
-const CustomCarousel = ({ travels }) => {
+const CustomCarousel = ({ travels, hotels }) => {
     const [active, setActive] = useState(1);
     const [isMobile] = useScreenWidth(1279);
     const [modalOpen, setModalOpen] = useState({
@@ -37,7 +37,7 @@ const CustomCarousel = ({ travels }) => {
                         <HiCheck className="pr-2" fontSize="2rem" /> Kultúrát és élményt adunk <HiCheck className="pl-2" fontSize="2rem" />
                     </h2>
 
-                    {!isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} carousel />}
+                    {!isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} carousel hotels={hotels} />}
                 </div>
                 <div className="absolute h-full z-10 right-0 top-0 bg-black bg-opacity-5 duration-300 hover:bg-opacity-10 w-12 xl:w-36 2xl:w-64">
                     <div

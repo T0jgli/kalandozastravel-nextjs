@@ -1,13 +1,13 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
-import CurrentOffers from "./CurrentOffers";
+// import CurrentOffers from "./CurrentOffers";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
 
-const Cards = ({ travels }) => {
+const Cards = ({ travels, hotels }) => {
     const travelsdiv = useRef(null);
     const [activeYear, setActiveYear] = useState(new Date().getFullYear());
     const [travelsState, settravelsState] = useState(travels);
@@ -21,13 +21,9 @@ const Cards = ({ travels }) => {
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
 
-            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} />}
+            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} hotels={hotels} />}
 
-            <div className="mx-auto mt-20 text-center font-light">
-                <h3 className="text-2xl font-medium mb-10 tracking-wide">Aktuális ajánlataink</h3>
-            </div>
-
-            <CurrentOffers />
+            {/* <CurrentOffers /> */}
             <div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
                     className={`${

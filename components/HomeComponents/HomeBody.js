@@ -7,10 +7,10 @@ import Newsletter from "./Newsletter";
 import Cards from "./Cards";
 const Gallery = dynamic(() => import("../GlobalComponents/Gallery"));
 
-const HomeBody = ({ questionsAnswers, travels }) => {
+const HomeBody = ({ questionsAnswers, travels, hotels }) => {
     return (
         <>
-            <Cards travels={travels} />
+            <Cards travels={travels} hotels={hotels} />
             <Newsletter />
             <Gallery />
             <Streak />

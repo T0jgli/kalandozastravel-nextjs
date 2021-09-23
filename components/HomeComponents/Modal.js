@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import { HiOutlineX } from "react-icons/hi";
 import ModalContent from "./ModalContent";
+import ModalContentforHotels from "./ModalContentforHotels";
 
 const Modal = ({ modalOpen, setModalOpen }) => {
     const modalRef = useRef(null);
@@ -34,7 +35,7 @@ const Modal = ({ modalOpen, setModalOpen }) => {
                     <HiOutlineX className="cursor-pointer text-2xl" onClick={closeModal} />
                 </div>
                 <div className="my-32 md:mx-5 h-auto">
-                    <ModalContent travels={modalOpen?.travels} />
+                    {modalOpen?.hotels ? <ModalContentforHotels hotels={modalOpen?.hotels} /> : <ModalContent travels={modalOpen?.travels} />}
                 </div>
                 <div className="absolute shadow-sm flex z-50 justify-end mx-auto w-full items-center rounded-2xl bg-gray-200 bottom-0 left-0 p-5 h-20 ">
                     <button

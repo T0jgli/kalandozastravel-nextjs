@@ -1,13 +1,13 @@
 import React from "react";
 
-const MainCards = ({ travels, setModalOpen, carousel }) => {
+const MainCards = ({ travels, hotels, setModalOpen, carousel }) => {
     return (
         <>
             <div className={`${carousel ? "hidden xl:block" : "block xl:hidden"}`}>
-                <div className="grid xl:grid-cols-5 gap-8 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 max-w-7xl h-full mx-auto mt-20 mb-16 px-3 2xl:px-0">
+                <div className="grid xl:grid-cols-5 gap-6 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 max-w-7xl mx-auto my-6 px-3 2xl:px-0">
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "250px", height: "250px", maxWidth: "calc(100vw - 50px)" }}
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -22,8 +22,8 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             alt="Földön háttér"
                         />
                         <h2
-                            className="bottom-2 absolute text-white text-2xl left-1/2"
-                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
+                            className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2"
+                            style={{ textShadow: "2px 2px #000" }}
                             alt="Földön háttér"
                         >
                             Földön
@@ -31,7 +31,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     </figure>
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "250px", height: "250px", maxWidth: "calc(100vw - 50px)" }}
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -45,16 +45,13 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-left"
                             alt="Levegőben háttér"
                         />
-                        <h2
-                            className="bottom-2 absolute text-white text-2xl left-1/2"
-                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
-                        >
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             Levegőben
                         </h2>
                     </figure>
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "250px", height: "250px", maxWidth: "calc(100vw - 50px)" }}
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -70,16 +67,13 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Vízen háttér"
                         />
-                        <h2
-                            className="bottom-2 absolute text-white text-2xl left-1/2"
-                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
-                        >
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             2022
                         </h2>
                     </figure>
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "250px", height: "250px", maxWidth: "calc(100vw - 50px)" }}
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -93,17 +87,14 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             className="w-full h-full object-cover duration-300 hover:scale-110 brightness-95 filter transform object-center"
                             alt="Belföld háttér"
                         />
-                        <h2
-                            className="w-full text-center bottom-2 absolute text-white text-2xl left-1/2"
-                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
-                        >
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             Belföldi utazásaink
                         </h2>
                     </figure>
 
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "250px", height: "250px", maxWidth: "calc(100vw - 50px)" }}
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -117,11 +108,48 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />
-                        <h2
-                            className="w-full text-center bottom-2 absolute text-white text-2xl left-1/2"
-                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
-                        >
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             Külföldi utazásaink
+                        </h2>
+                    </figure>
+                </div>
+                <div className="flex flex-wrap w-full justify-center max-w-7xl mx-auto gap-6">
+                    <a href="https://hunisphere-zrt.com/busjetbusinessclass/" target="_blank" rel="noopener noreferrer">
+                        <figure
+                            className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
+                            style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
+                        >
+                            <img
+                                src={"/img/berlin.jpeg"}
+                                className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
+                                alt="Külföld háttér"
+                            />
+                            <h2
+                                className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2"
+                                style={{ textShadow: "2px 2px #000" }}
+                            >
+                                Bus Jet Business Class
+                            </h2>
+                        </figure>
+                    </a>
+                    <figure
+                        className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
+                        onClick={() =>
+                            setModalOpen({
+                                open: true,
+                                title: "Berlini szállodák",
+                                hotels,
+                            })
+                        }
+                    >
+                        <img
+                            src={"/img/berlin.jpg"}
+                            className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
+                            alt="Külföld háttér"
+                        />
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
+                            Berlini szállodák
                         </h2>
                     </figure>
                 </div>
