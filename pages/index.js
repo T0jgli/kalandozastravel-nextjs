@@ -7,17 +7,17 @@ import BottomLinks from "../components/GlobalComponents/BottomLinks";
 import CustomCarousel from "../components/HomeComponents/CustomCarousel";
 import { getHomeData } from "../lib/helpers/getDatas";
 
-export default function Home({ faqs, travels, hotels }) {
+export default function Home({ faqs, travels }) {
     return (
         <>
             <motion.section initial="initial" animate="animate" variants={pageVariants}>
                 <Head>
                     <title>Főoldal - Kalandozás Utazási iroda</title>
                 </Head>
-                <CustomCarousel travels={travels} hotels={hotels} />
+                <CustomCarousel travels={travels} />
                 <BottomLinks />
                 <SearchFilter />
-                <HomeBody questionsAnswers={faqs} travels={travels} hotels={hotels} />
+                <HomeBody questionsAnswers={faqs} travels={travels} />
             </motion.section>
         </>
     );
@@ -32,7 +32,6 @@ export async function getServerSideProps({ res }) {
         props: {
             faqs: allTravels.faqs || null,
             travels: allTravels.travels || null,
-            hotels: allTravels.hotels || null,
         },
     };
 }

@@ -3,11 +3,11 @@ import React, { useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
-// import CurrentOffers from "./CurrentOffers";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
+import ModalMuseums from "./ModalHotels";
 
-const Cards = ({ travels, hotels }) => {
+const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
     const [activeYear, setActiveYear] = useState(new Date().getFullYear());
     const [travelsState, settravelsState] = useState(travels);
@@ -17,13 +17,17 @@ const Cards = ({ travels, hotels }) => {
         open: false,
     });
 
+    const [hotelsModal, setHotelsModal] = useState({
+        open: false,
+    });
+
     return (
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+            <ModalMuseums hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} />
 
-            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} hotels={hotels} />}
+            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} setHotelsModal={setHotelsModal} />}
 
-            {/* <CurrentOffers /> */}
             <div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
                     className={`${

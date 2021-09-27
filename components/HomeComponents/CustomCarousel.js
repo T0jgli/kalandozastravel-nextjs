@@ -3,11 +3,16 @@ import { HiCheck, HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
+import ModalMuseums from "./ModalHotels";
 
-const CustomCarousel = ({ travels, hotels }) => {
+const CustomCarousel = ({ travels }) => {
     const [active, setActive] = useState(1);
     const [isMobile] = useScreenWidth(1279);
     const [modalOpen, setModalOpen] = useState({
+        open: false,
+    });
+
+    const [hotelsModal, setHotelsModal] = useState({
         open: false,
     });
 
@@ -22,6 +27,7 @@ const CustomCarousel = ({ travels, hotels }) => {
     return (
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+            <ModalMuseums hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} />
 
             <div
                 className={`bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0`}
@@ -37,7 +43,7 @@ const CustomCarousel = ({ travels, hotels }) => {
                         <HiCheck className="pr-2" fontSize="2rem" /> Kultúrát és élményt adunk <HiCheck className="pl-2" fontSize="2rem" />
                     </h2>
 
-                    {!isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} carousel hotels={hotels} />}
+                    {!isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} carousel setHotelsModal={setHotelsModal} />}
                 </div>
                 <div className="absolute h-full z-10 right-0 top-0 bg-black bg-opacity-5 duration-300 hover:bg-opacity-10 w-12 xl:w-36 2xl:w-64">
                     <div

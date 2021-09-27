@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainCards = ({ travels, hotels, setModalOpen, carousel }) => {
+const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal }) => {
     return (
         <>
             <div className={`${carousel ? "hidden xl:block" : "block xl:hidden"}`}>
@@ -120,7 +120,7 @@ const MainCards = ({ travels, hotels, setModalOpen, carousel }) => {
                             style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         >
                             <img
-                                src={"/img/berlin.jpeg"}
+                                src={"/img/berlin/busz.jpeg"}
                                 className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                                 alt="Külföld háttér"
                             />
@@ -135,16 +135,14 @@ const MainCards = ({ travels, hotels, setModalOpen, carousel }) => {
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
-                        onClick={() =>
-                            setModalOpen({
+                        onClick={() => {
+                            setHotelsModal({
                                 open: true,
-                                title: "Berlini szállodák",
-                                hotels,
-                            })
-                        }
+                            });
+                        }}
                     >
                         <img
-                            src={"/img/berlin.jpg"}
+                            src={"/img/berlin/berlin.jpg"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />
