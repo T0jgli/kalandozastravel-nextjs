@@ -5,6 +5,7 @@ import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
+import ModalHatartalanul from "./ModalHatartalanul";
 import ModalMuseums from "./ModalHotels";
 
 const Cards = ({ travels }) => {
@@ -21,12 +22,24 @@ const Cards = ({ travels }) => {
         open: false,
     });
 
+    const [hatartalanulModals, sethatartalanulModals] = useState({
+        open: false,
+    });
+
     return (
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             <ModalMuseums hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} />
+            <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
 
-            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} setHotelsModal={setHotelsModal} />}
+            {isMobile && (
+                <MainCards
+                    travels={travels}
+                    setModalOpen={setModalOpen}
+                    setHotelsModal={setHotelsModal}
+                    sethatartalanulModals={sethatartalanulModals}
+                />
+            )}
 
             <div className="flex justify-center my-8 pt-4 mx-auto">
                 <button

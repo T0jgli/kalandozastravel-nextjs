@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal }) => {
+const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatartalanulModals }) => {
     return (
         <>
             <div className={`${carousel ? "hidden xl:block" : "block xl:hidden"}`}>
@@ -29,6 +29,31 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal }) => {
                             Földön
                         </h2>
                     </figure>
+                    <figure
+                        className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
+                        onClick={() =>
+                            setModalOpen({
+                                open: true,
+                                title: "Vízen",
+                                travels: travels.filter((travel) => travel.type?.includes("vizen")),
+                            })
+                        }
+                    >
+                        <img
+                            src={"/img/hajo.jpg"}
+                            className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
+                            alt="Vízen háttér"
+                        />
+                        <h2
+                            className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2"
+                            style={{ textShadow: "2px 2px #000" }}
+                            alt="Vízen háttér"
+                        >
+                            Vízen
+                        </h2>
+                    </figure>
+
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
@@ -112,11 +137,9 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal }) => {
                             Külföldi utazásaink
                         </h2>
                     </figure>
-                </div>
-                <div className="flex flex-wrap w-full justify-center max-w-7xl mx-auto gap-6">
                     <a href="https://hunisphere-zrt.com/busjetbusinessclass/" target="_blank" rel="noopener noreferrer">
                         <figure
-                            className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
+                            className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
                             style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         >
                             <img
@@ -133,7 +156,7 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal }) => {
                         </figure>
                     </a>
                     <figure
-                        className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
+                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         onClick={() => {
                             setHotelsModal({
@@ -148,6 +171,38 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal }) => {
                         />
                         <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             Berlini szállodák
+                        </h2>
+                    </figure>
+                    <figure
+                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
+                    >
+                        <img
+                            src={"https://utazaskatalogus.hu/wp-content/uploads/2019/08/milano-latnivalok.jpg"}
+                            className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
+                            alt="Külföld háttér"
+                        />
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
+                            Milánó
+                        </h2>
+                    </figure>
+
+                    <figure
+                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
+                        onClick={() => {
+                            sethatartalanulModals({
+                                open: true,
+                            });
+                        }}
+                    >
+                        <img
+                            src={"/img/hatartalanul.jpg"}
+                            className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
+                            alt="Külföld háttér"
+                        />
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
+                            Határtalanul
                         </h2>
                     </figure>
                 </div>
