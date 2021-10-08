@@ -4,9 +4,15 @@ import { HiOutlineX } from "react-icons/hi";
 const ModalHotels = ({ hotelsModal, setHotelsModal }) => {
     const modalRef = useRef(null);
     const modalRef2 = useRef(null);
+    const modalRef3 = useRef(null);
 
     function handleClickOutside(event) {
-        if (modalRef.current && !modalRef?.current?.contains(event.target) && !modalRef2?.current?.contains(event.target)) {
+        if (
+            modalRef.current &&
+            !modalRef?.current?.contains(event.target) &&
+            !modalRef2?.current?.contains(event.target) &&
+            !modalRef3.current?.contains(event.target)
+        ) {
             closeModal();
         }
     }
@@ -29,10 +35,70 @@ const ModalHotels = ({ hotelsModal, setHotelsModal }) => {
                 }`}
             >
                 <div className="absolute overflow-hidden shadow-sm flex z-50 justify-between mx-auto w-full items-center rounded-2xl bg-white top-0 left-0 p-5 h-20 ">
-                    <p className="text-xl font-medium text-gray-700">Berlini szállodák</p>
+                    <p className="text-xl font-medium text-gray-700">Európai szállások</p>
                     <HiOutlineX className="cursor-pointer text-2xl" onClick={closeModal} />
                 </div>
-                <div className="my-28 md:mx-5 flex flex-wrap justify-between gap-8">
+                <div className="flex-1 bg-white rounded-2xl mt-24 p-8" ref={modalRef3} style={{ wordBreak: "break-word" }}>
+                    <div className="text-center pb-6">
+                        <p className="pb-3">
+                            Berlin, a német főváros rendkívül sokszínű látnivalóival, gazdag kulturális életével, valamint élénk és egyben laza
+                            életstílusával várja az oda látogatókat A történelmi építmények és kortárs építészet, valamint a tradíció és modernség
+                            közötti ellentét az, ami megkülönbözteti ezt a várost. A berlini nevezetességek egy teljes nemzet történelmét mesélik el a
+                            Brandenburgi Kaputól egészen a Szövetségi Kancellári Hivatalig.
+                        </p>
+                        <p className="pb-3">
+                            A német fővárosban található az összes nagy kormányzati épület, köztük a történelmi Reichstag, mint a német parlament
+                            székháza. Berlin a művészetek, a művészek és a múzeumok városa. Több mint 170 múzeum - köztük a világhírű Múzeum sziget -
+                            mutatják be a világ kincseit. Jeles zenekarok - mint a nemzetközi hírnévnek örvendő Berlini Filharmonikusok - és a három
+                            nagy operaház szenzációs opera és balett előadásaikkal teszik Berlint a klasszikus stílus világ minden tájáról érkező
+                            szerelmeseinek Eldorádójává. A számos színház, varieté, revüszínház és rengeteg kabaré gondoskodik a minden ízlést
+                            kielégítő szórakoztatásról. Számtalan vásárlási lehetőséget kínál a híres Kurfürstendamm, az elegáns Friedrichstraße és az
+                            eredeti butikok a Hackesche Höfe körül. Folyamatos változás jellemzi az élénk, energiától túlfűtött metropoliszt.
+                        </p>
+                    </div>
+                    <hr />
+                    <p className="text-gray-600 pt-6 font-medium">Látnivalók Berlinben:</p>
+                    <ul className="mt-6 list-disc">
+                        <li>
+                            Unter den Linden - Az Unter den Linden (A hársak alatt) Berlin egyik leghíresebb utcája. A hársfákkal szegélyezett út
+                            korábban a fejedelmi család kastélyát kötötte össze a vadászterülettel.
+                        </li>
+                        <li>
+                            Reichstag - A Berlin központjában található Reichstag a német múlt, jelen és jövő szimbóluma. A több mint 200 éves épület
+                            1990 óta újra a törvényhozás székhelye.
+                        </li>
+                        <li>
+                            Brandenburger Tor - Németországban nem sokan gondolnak építésztörténeti jelentőségére, hisz a nép kettészakadásának és
+                            újraegyesítésének szimbólumaként hatalmas érzelmi jelentőséggel bír.
+                        </li>
+                        <li>
+                            Fernsehturm - A 365 méter magas berlini torony és az üveggömbje a belváros szinte minden kerületéből jól látható. A
+                            berlini Tévétorony egyik szenzációja a körbeforgó kávézó. Egy teljes fordulat kb. fél óráig tart, így madártávlatból
+                            szemlélhetjük a várost kávénkat szürcsölgetve. Jó időben akár 40 kilométerre is elláthatunk.
+                        </li>
+                        <li>
+                            Gendarmenmarkt - A Gendarmenmarkt-ot a XIII. és a XIX. századi épületeivel a város legszebb, leghangulatosabb terének
+                            mondják.
+                        </li>
+                        <li>
+                            Marienkirche - A Mária templomot kora gótikus csarnoka és pazar díszítése az egyik legérdekesebb templommá teszi
+                            Berlinben.
+                        </li>
+                        <li>
+                            Museuminsel - A hosszú Museuminsel, amely a Spree mellékfolyói között húzódik, Berlin történelmének bölcsője. Berlin 5
+                            múzeuma a világ minden tájáról vonzza a látogatókat.
+                        </li>
+                        <li>
+                            Schloss Charlottenburg - A Charlottenburgi Kastély Berlin legnagyobb, épen maradt kastélya a barokk építészet egyik
+                            legszebb példája. A kastély Kincs- és Ezüsttára megyés kincseket rejt.
+                        </li>
+                        <li>
+                            Siegessäule - A győzelmi oszlop Berlin egyik legjelentősebb jelképe. Az oszlopot J. Heinrich Strack készíttette a porosz
+                            hadsereg Dánia felett aratott 1864-es győzelmének emlékére.
+                        </li>
+                    </ul>
+                </div>
+                <div className="mt-12 md:mx-5 flex flex-wrap justify-between gap-8">
                     <div ref={modalRef} className="mx-auto lg:mx-0">
                         <div className="relative w-96 h-80 overflow-hidden rounded-t-2xl">
                             <img
