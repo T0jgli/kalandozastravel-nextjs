@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatartalanulModals, setBusjetModal }) => {
+const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatartalanulModals, setBusjetModal, setComingSoonModal }) => {
     return (
         <>
             <div className={`${carousel ? "hidden xl:block" : "block xl:hidden"}`}>
@@ -159,6 +159,11 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
+                        onClick={() => {
+                            setComingSoonModal({
+                                open: true,
+                            });
+                        }}
                     >
                         <img
                             src={"/img/comingsoon.png"}

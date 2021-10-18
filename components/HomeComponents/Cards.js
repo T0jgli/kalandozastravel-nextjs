@@ -6,6 +6,7 @@ import AllCards from "../TravelsComponents/AllCards";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
 import ModalBusJet from "./ModalBusJet";
+import Modalcomingsoon from "./Modalcomingsoon";
 import ModalHatartalanul from "./ModalHatartalanul";
 import ModalHotels from "./ModalHotels";
 
@@ -31,12 +32,17 @@ const Cards = ({ travels }) => {
         open: false,
     });
 
+    const [comingSoonModal, setComingSoonModal] = useState({
+        open: false,
+    });
+
     return (
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} />
             <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
             <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} />
+            <Modalcomingsoon setComingSoonModal={setComingSoonModal} comingSoonModal={comingSoonModal} />
 
             {isMobile && (
                 <MainCards
@@ -45,6 +51,7 @@ const Cards = ({ travels }) => {
                     setHotelsModal={setHotelsModal}
                     sethatartalanulModals={sethatartalanulModals}
                     setBusjetModal={setBusjetModal}
+                    setComingSoonModal={setComingSoonModal}
                 />
             )}
 
