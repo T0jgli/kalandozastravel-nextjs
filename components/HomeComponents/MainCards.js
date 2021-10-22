@@ -166,7 +166,7 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                         }}
                     >
                         <img
-                            src={"/img/comingsoon.png"}
+                            src={"/img/comingsoon.jpg"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />
