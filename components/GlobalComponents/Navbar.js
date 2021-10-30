@@ -25,6 +25,16 @@ const Navbar = () => {
                 />
                 <div className="hidden xl:flex gap-7 items-center justify-center h-10 md:h-20 top-5 md:top-0 m-0 absolute right-0 duration-300 pr-10 transform">
                     <a
+                        href="https://eub.hu?pcode=32225"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="duration-300 hover:opacity-80"
+                        aria-label="EUB utasbiztosítás"
+                    >
+                        <img src="/img/eublogo.png" width="120px" alt="EUB utasbiztosítás" title="EUB biztosításkötés" />{" "}
+                    </a>
+
+                    <a
                         target="_blank"
                         rel="noopener noreferrer"
                         href="https://www.facebook.com/Neoline-Kalandoz%C3%A1s-Utaz%C3%A1si-Iroda-184037444980315"
@@ -165,7 +175,7 @@ const Navbar = () => {
                                 </a>
                             </li>
                         </ul>
-                        <div className="flex gap-7 border-t-2 border-black border-opacity-10 pt-16 items-center justify-center h-10 md:h-20 m-0 duration-300 transform">
+                        <div className="flex flex-wrap gap-7 border-t-2 border-black border-opacity-10 pt-16 items-center justify-center h-10 md:h-20 m-0 duration-300 transform">
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -195,6 +205,15 @@ const Navbar = () => {
                                 title="Youtube"
                             >
                                 <img src="/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
+                            </a>
+                            <a
+                                href="https://eub.hu?pcode=32225"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="duration-300 hover:opacity-80"
+                                aria-label="EUB utasbiztosítás"
+                            >
+                                <img src="/img/eublogo.png" width="120px" alt="EUB utasbiztosítás" title="EUB biztosításkötés" />{" "}
                             </a>
                         </div>
                     </div>
