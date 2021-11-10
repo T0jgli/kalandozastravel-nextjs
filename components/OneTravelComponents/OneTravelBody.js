@@ -74,7 +74,7 @@ const OneTravelBody = ({ travel }) => {
                     <HiOutlineTicket fontSize="2.5rem" className="inline text-yellow-700" />
                 </p>
                 {travel.freePlaces !== 0 && new Date() < new Date(travel.startingDate) && (
-                    <p className="text-lg text-center mb-10 text-gray-700">
+                    <p className="text-lg text-center mb-10 text-gray-700 hidden">
                         Még <span className="font-semibold">{travel.freePlaces}</span> hely foglalható!
                     </p>
                 )}

@@ -9,7 +9,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
     return (
         <article
             className="flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden"
-            style={{ minHeight: "440px" }}
+            style={{ minHeight: "400px" }}
         >
             <div className="relative w-100 overflow-hidden cursor-pointer" onClick={() => router.push(url)} style={{ paddingTop: "calc(52.356%)" }}>
                 <img
@@ -63,7 +63,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-center">
+                        <div className="flex items-center hidden">
                             <HiOutlineUserGroup fontSize="1.5rem" className="text-yellow-700" />
                             <div className="flex-col text-sm pl-5">
                                 <p>Szabad helyek</p>
