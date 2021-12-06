@@ -14,7 +14,6 @@ const ModalContent = ({ travels }) => {
                         <th></th>
                         <th className="px-6 py-3 text-left">Dátum</th>
                         <th className="px-6 py-3 text-left">Cím</th>
-                        <th className="px-6 py-3 text-right">Szabad helyek</th>
                         <th className="px-3 py-3 text-right">Jegyfoglalás</th>
                     </tr>
                 </thead>
@@ -50,10 +49,6 @@ const ModalContent = ({ travels }) => {
                                         <p>{travel.title}</p>
                                     </a>
                                 </Link>
-                            </td>
-                            <td className="py-3 px-6 text-center md:text-right whitespace-nowrap">
-                                <span className="md:hidden">Szabad helyek: </span>
-                                {travel.freePlaces}
                             </td>
                             <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">
                                 <button
