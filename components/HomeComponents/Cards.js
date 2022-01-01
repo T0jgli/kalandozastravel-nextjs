@@ -55,7 +55,7 @@ const Cards = ({ travels }) => {
                 />
             )}
 
-            <div className="flex justify-center my-8 pt-4 mx-auto">
+            {/* <div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
                     className={`${
                         activeYear === 2021 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
@@ -78,7 +78,7 @@ const Cards = ({ travels }) => {
                 >
                     2022
                 </button>
-            </div>
+            </div> */}
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
                     <AnimatePresence>
