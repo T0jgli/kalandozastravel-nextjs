@@ -196,15 +196,6 @@ const Navbar = () => {
                             >
                                 <img src="/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
                             </a>
-                            <a
-                                href="https://eub.hu?pcode=32225"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="duration-300 hover:opacity-80"
-                                aria-label="EUB utasbiztosítás"
-                            >
-                                <img src="/img/eublogo.png" width="120px" alt="EUB utasbiztosítás" title="EUB biztosításkötés" />{" "}
-                            </a>
                         </div>
                     </div>
                 </aside>

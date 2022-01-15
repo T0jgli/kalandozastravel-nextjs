@@ -32,17 +32,6 @@ const Footer = () => {
                     </a>
                 </div>
             </div>
-            <div className="absolute bottom-5 left-5 text-gray-700 duration-300 hover:opacity-80">
-                <a
-                    href="https://github.com/T0jgli/kalandozastravel-nextjs"
-                    aria-label="Github"
-                    title="Github"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    <FaGithub fontSize="1.75rem" />
-                </a>
-            </div>
         </footer>
     );
 };
