@@ -69,7 +69,7 @@ const SearchFilter = ({ topbg }) => {
                         value={state.country}
                     >
                         <option default value={""}></option>
-                        {countries.countries?.map((country) => (
+                        {Object.keys(countries?.countries)?.map((country) => (
                             <option value={country} key={country}>
                                 {country}
                             </option>

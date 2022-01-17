@@ -3,6 +3,7 @@ import { HiOutlineTicket } from "react-icons/hi";
 import parse from "html-react-parser";
 import { useState } from "react";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
+import countries from "../../lib/countries.json";
 
 const Fslightboxes = dynamic(() => import("../GlobalComponents/FSLightbox"));
 const Inputs = dynamic(() => import("./Inputs"));
@@ -17,6 +18,15 @@ const OneTravelBody = ({ travel }) => {
         <>
             <div className="max-w-7xl mt-32 pt-40 mx-auto prose px-3 2xl:px-0">
                 {parse(travel.desc || "")}
+                <span className={`fi fi-${countries.countries[travel.country]} w-28 h-28`} />
+                {travel.country && (
+                    <img
+                        src={`/img/svgs/countries/${countries.countries[travel.country]}.svg`}
+                        alt="Countries icon"
+                        title={travel.country}
+                        className="h-24 mx-auto hover:opacity-90 duration-300 shadow-md"
+                    />
+                )}
                 {travel?.pictures?.length > 0 && (
                     <div className={`my-16 pb-16 grid grid-flow-col gap-3`}>
                         {travel.pictures?.slice(1).map((pict, index) => (
@@ -26,14 +36,13 @@ const OneTravelBody = ({ travel }) => {
                                 }}
                                 key={pict.title}
                                 alt={"Utazás kép " + (Number(index) + 1)}
-                                className="w-full h-full rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90"
+                                className="w-full h-full rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
                                 src={pict.src}
                             />
                         ))}
                     </div>
                 )}
             </div>
-
             <div className="px-3 2xl:px-0">
                 <div className="flex flex-wrap justify-center my-12 pb-10 gap-5">
                     <div className="inline-block">

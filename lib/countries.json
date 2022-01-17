@@ -1,24 +1,24 @@
 {
-    "countries": [
-        "Albánia",
-        "Ausztria",
-        "Csehország",
-        "Ciprus",
-        "Egyesült Arab Emirátusok",
-        "Franciaország",
-        "Görögország",
-        "Horvátország",
-        "Lengyelország",
-        "Magyarország",
-        "Málta",
-        "Németország",
-        "Olaszország",
-        "Románia",
-        "Spanyolország",
-        "Svájc",
-        "Szerbia",
-        "Szlovákia",
-        "Szlovénia",
-        "Törökország"
-    ]
+    "countries": {
+        "Albánia": "al",
+        "Ausztria": "at",
+        "Csehország": "cz",
+        "Ciprus": "cy",
+        "Egyesült Arab Emirátusok": "ae",
+        "Franciaország": "fr",
+        "Görögország": "gr",
+        "Horvátország": "hr",
+        "Lengyelország": "pl",
+        "Magyarország": "hu",
+        "Málta": "mt",
+        "Németország": "de",
+        "Olaszország": "it",
+        "Románia": "ro",
+        "Spanyolország": "es",
+        "Svájc": "ch",
+        "Szerbia": "rs",
+        "Szlovákia": "sk",
+        "Szlovénia": "si",
+        "Törökország": "tr"
+    }
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { HiOutlineCalendar, HiOutlineUserGroup } from "react-icons/hi";
+import { HiOutlineCalendar, HiOutlineUserGroup, HiOutlineTag } from "react-icons/hi";
 import Link from "next/link";
 
-const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endingDate, places, id, isSale, type2, customUrl }) => {
+const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endingDate, places, id, isSale, type2, customUrl, country }) => {
     const router = useRouter();
     const url = customUrl || `/travel/${id}`;
     return (
@@ -33,9 +33,12 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                 )}
             </div>
 
-            <div className="p-4 lg:p-3 w-full">
+            <div className="p-4 lg:p-3 w-full flex flex-col">
                 <Link href={url} passHref>
-                    <a className="hover:text-yellow-700 text-center block font-semibold break-words duration-300">
+                    <a
+                        className="hover:text-yellow-700 text-center block font-semibold break-words duration-300 h-full"
+                        style={{ minHeight: "48px" }}
+                    >
                         <p>{title}</p>
                     </a>
                 </Link>
@@ -63,6 +66,13 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                                 </p>
                             </div>
                         </div>
+                        <div className="flex items-center s">
+                            <HiOutlineTag fontSize="1.5rem" className="text-yellow-700" />
+                            <div className="flex-col text-sm pl-5">
+                                <p className="opacity-80">{country}</p>
+                            </div>
+                        </div>
+
                         <div className="flex items-center hidden">
                             <HiOutlineUserGroup fontSize="1.5rem" className="text-yellow-700" />
                             <div className="flex-col text-sm pl-5">
@@ -72,7 +82,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                         </div>
                     </div>
                 </div>
-                <p className="text-2xl mt-4 text-center font-semibold text-gray-600 hover:opacity-80 duration-300">
+                <p className="text-2xl mt-4 text-center font-semibold text-gray-600 hover:opacity-80 duration-300 flex-none">
                     {price.toLocaleString("hu-HU")} Ft
                 </p>
                 {/* <button
