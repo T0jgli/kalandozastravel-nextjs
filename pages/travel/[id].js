@@ -31,7 +31,7 @@ const OneTravel = ({ travel, error }) => {
                         className="px-4 absolute duration-300 hover:opacity-90 top-52 left-2/4 max-w-xl w-full"
                         style={{ transform: "translateX(-50%)" }}
                     >
-                        <img src={travel.pictures[0].src} alt="" className="mx-auto shadow-xl max-h-96 rounded-2xl" />
+                        <img src={travel.pictures[0].src} alt={`Utazás kép fő`} className="mx-auto shadow-xl max-h-96 rounded-2xl" />
                     </div>
                 </>
             )}

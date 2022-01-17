@@ -22,7 +22,7 @@ const OneTravelBody = ({ travel }) => {
                 {travel.country && (
                     <img
                         src={`/img/svgs/countries/${countries.countries[travel.country]}.svg`}
-                        alt="Countries icon"
+                        alt={`${countries.countries[travel.country]} ikon`}
                         title={travel.country}
                         className="h-24 mx-auto hover:opacity-90 duration-300 shadow-md"
                     />
@@ -35,7 +35,7 @@ const OneTravelBody = ({ travel }) => {
                                     setimgtoggler({ toggler: !imgtoggler.toggler, slide: index + 1 });
                                 }}
                                 key={pict.title}
-                                alt={"Utazás kép " + (Number(index) + 1)}
+                                alt={`${travel.title} ${Number(index) + 1}`}
                                 className="w-full h-full rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
                                 src={pict.src}
                             />

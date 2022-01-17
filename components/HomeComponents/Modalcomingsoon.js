@@ -42,7 +42,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Parndorf</h3>
+                                <p className="text-center text-xl my-3">Parndorf</p>
                             </div>
                         </div>
                         <div>
@@ -54,7 +54,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Bécs</h3>
+                                <p className="text-center text-xl my-3">Bécs</p>
                             </div>
                         </div>
                         <div>
@@ -66,7 +66,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Tátra</h3>
+                                <p className="text-center text-xl my-3">Tátra</p>
                             </div>
                         </div>
                         <div>
@@ -78,7 +78,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Velence</h3>
+                                <p className="text-center text-xl my-3">Velence</p>
                             </div>
                         </div>
                         <div>
@@ -90,7 +90,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Jesolo</h3>
+                                <p className="text-center text-xl my-3">Jesolo</p>
                             </div>
                         </div>
                         <div>
@@ -102,7 +102,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Johannesbach</h3>
+                                <p className="text-center text-xl my-3">Johannesbach</p>
                             </div>
                         </div>
                         <div>
@@ -114,7 +114,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Prága</h3>
+                                <p className="text-center text-xl my-3">Prága</p>
                             </div>
                         </div>
                         <div>
@@ -126,7 +126,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Pozsony</h3>
+                                <p className="text-center text-xl my-3">Pozsony</p>
                             </div>
                         </div>
                         <div>
@@ -138,7 +138,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Caorle</h3>
+                                <p className="text-center text-xl my-3">Caorle</p>
                             </div>
                         </div>
                         <div>
@@ -150,7 +150,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Plitvice</h3>
+                                <p className="text-center text-xl my-3">Plitvice</p>
                             </div>
                         </div>
                         <div>
@@ -162,7 +162,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Donovaly</h3>
+                                <p className="text-center text-xl my-3">Donovaly</p>
                             </div>
                         </div>
                         <div>
@@ -174,7 +174,7 @@ const Modalcomingsoon = ({ comingSoonModal, setComingSoonModal }) => {
                                 />
                             </div>
                             <div className="bg-white h-auto w-80 rounded-b-2xl flex flex-col items-center justify-center">
-                                <h3 className="text-center text-xl my-3">Hallstatt</h3>
+                                <p className="text-center text-xl my-3">Hallstatt</p>
                             </div>
                         </div>
                     </div>
