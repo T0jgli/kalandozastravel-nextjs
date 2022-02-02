@@ -24,6 +24,8 @@ const Navbar = () => {
                     className={`inline lg:hidden xl:inline h-10 md:h-20 top-5 md:top-0 m-0 absolute left-0 pr-10 duration-300`}
                 />
                 <div className="hidden xl:flex gap-7 items-center justify-center h-10 md:h-20 top-5 md:top-0 m-0 absolute right-0 duration-300 pr-10 transform">
+                    <img src="/img/wish.png" width="120px" alt="EUB utasbiztosítás" title="Wish átvevőpont" className="block" />
+
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -166,6 +168,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                         <div className="flex flex-wrap gap-7 border-t-2 border-black border-opacity-10 pt-16 items-center justify-center h-10 md:h-20 m-0 duration-300 transform">
+                            <img src="/img/wish.png" width="120px" alt="EUB utasbiztosítás" title="Wish" className="block" />
                             <a
                                 target="_blank"
                                 rel="noopener noreferrer"
