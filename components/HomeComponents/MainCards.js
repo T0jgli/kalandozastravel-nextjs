@@ -152,7 +152,7 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                             alt="Külföld háttér"
                         />
                         <h2 className="bottom-0 absolute text-white text-xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
-                            Bus Jet Business Class
+                            Autóbuszjegyek
                         </h2>
                     </figure>
 

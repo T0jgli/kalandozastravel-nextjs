@@ -29,7 +29,7 @@ class MyDocument extends Document {
                 <meta name="robots" content="index, follow" />
                 <meta
                     name="keywords"
-                    content="iskolai osztálykirándulások, szakmai utak, kirándulás, nyaralás, sítúra, tanulmányút, körutazás, tengerparti üdülés, nyaralás, budapesti városnézés, Csoportos körutazások, Akciós utazások, városlátogatások, szervezett buszos kirándulások, adventi utazások, repülős utak, 1 napos utazás, Utazás, Buszos körutazások előfoglalási akció, Városlátogatások, Üdülések, Repülős utak, csoportos Városlátogatás, tengerparti nyaralás"
+                    content="iskolai osztálykirándulások, szakmai utak, kirándulás, nyaralás, sítúra, tanulmányút, körutazás, tengerparti üdülés, nyaralás, budapesti városnézés, Csoportos körutazások, Akciós utazások, városlátogatások, szervezett buszos kirándulások, adventi utazások, repülős utak, 1 napos utazás, Utazás, Buszos körutazások előfoglalási akció, Városlátogatások, Üdülések, Repülős utak, csoportos Városlátogatás, tengerparti nyaralás, teherszállítás"
                 />
                 <meta name="content-language" content="hu" />
                 <meta property="og:description" content="Kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />

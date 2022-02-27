@@ -9,6 +9,8 @@ import ModalBusJet from "./ModalBusJet";
 import Modalcomingsoon from "./Modalcomingsoon";
 import ModalHatartalanul from "./ModalHatartalanul";
 import ModalHotels from "./ModalHotels";
+import Link from "next/link";
+import ModalCourier from "./ModalCourier";
 
 const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
@@ -36,6 +38,10 @@ const Cards = ({ travels }) => {
         open: false,
     });
 
+    const [courierModal, setcourierModal] = useState({
+        open: false,
+    });
+
     return (
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
@@ -43,6 +49,7 @@ const Cards = ({ travels }) => {
             <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
             <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} />
             <Modalcomingsoon setComingSoonModal={setComingSoonModal} comingSoonModal={comingSoonModal} />
+            <ModalCourier setmodalCourier={setcourierModal} modalCourier={courierModal} />
 
             {isMobile && (
                 <MainCards
@@ -113,9 +120,8 @@ const Cards = ({ travels }) => {
                 </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 pb-20 pt-10 max-w-5xl mx-auto"></div>
-            {/* <div className="flex justify-center gap-10 items-center">
-                <figure
+            <div className="flex justify-center gap-10 my-20 items-center">
+                {/* <figure
                     className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
                     style={{ width: "170px", height: "170px", maxWidth: "calc(100vw - 50px)" }}
                 >
@@ -154,9 +160,25 @@ const Cards = ({ travels }) => {
                             </h2>
                         </a>
                     </Link>
+                </figure> */}
+                <figure
+                    className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
+                    style={{ width: "170px", height: "170px", maxWidth: "calc(100vw - 50px)" }}
+                >
+                    <div className="absolute w-full h-full top-0" onClick={() => setcourierModal({ open: true })}>
+                        <img
+                            src={"/img/csomagpont.png"}
+                            className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"
+                        />
+                        <h2
+                            className="w-full text-center bottom-0 pb-2 absolute text-white text-lg left-1/2"
+                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
+                        >
+                            Csomagpontok
+                        </h2>
+                    </div>
                 </figure>
             </div>
- */}
         </>
     );
 };
