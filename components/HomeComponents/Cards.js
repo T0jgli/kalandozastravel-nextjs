@@ -6,7 +6,6 @@ import AllCards from "../TravelsComponents/AllCards";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
 import ModalBusJet from "./ModalBusJet";
-import Modalcomingsoon from "./Modalcomingsoon";
 import ModalHatartalanul from "./ModalHatartalanul";
 import ModalHotels from "./ModalHotels";
 import Link from "next/link";
@@ -14,7 +13,6 @@ import ModalCourier from "./ModalCourier";
 
 const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
-    const [activeYear, setActiveYear] = useState(new Date().getFullYear());
     const [travelsState, settravelsState] = useState(travels);
 
     const [isMobile] = useScreenWidth(1280);
@@ -34,10 +32,6 @@ const Cards = ({ travels }) => {
         open: false,
     });
 
-    const [comingSoonModal, setComingSoonModal] = useState({
-        open: false,
-    });
-
     const [courierModal, setcourierModal] = useState({
         open: false,
     });
@@ -48,7 +42,6 @@ const Cards = ({ travels }) => {
             <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} />
             <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
             <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} />
-            <Modalcomingsoon setComingSoonModal={setComingSoonModal} comingSoonModal={comingSoonModal} />
             <ModalCourier setmodalCourier={setcourierModal} modalCourier={courierModal} />
 
             {isMobile && (
@@ -58,34 +51,9 @@ const Cards = ({ travels }) => {
                     setHotelsModal={setHotelsModal}
                     sethatartalanulModals={sethatartalanulModals}
                     setBusjetModal={setBusjetModal}
-                    setComingSoonModal={setComingSoonModal}
                 />
             )}
 
-            {/* <div className="flex justify-center my-8 pt-4 mx-auto">
-                <button
-                    className={`${
-                        activeYear === 2021 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
-                    } hover:bg-gray-400 font-bold py-2 px-4 rounded-l-md duration-300`}
-                    onClick={() => {
-                        setActiveYear(2021);
-                        settravelsState(travels.filter((travel) => travel.startingDate.startsWith("2021")));
-                    }}
-                >
-                    2021
-                </button>
-                <button
-                    className={`${
-                        activeYear === 2022 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
-                    } hover:bg-gray-400  font-bold py-2 px-4 rounded-r-md duration-300`}
-                    onClick={() => {
-                        setActiveYear(2022);
-                        settravelsState(travels.filter((travel) => travel.startingDate.startsWith("2022")));
-                    }}
-                >
-                    2022
-                </button>
-            </div> */}
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
                     <AnimatePresence>

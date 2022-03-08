@@ -4,7 +4,6 @@ import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
 import ModalBusJet from "./ModalBusJet";
-import Modalcomingsoon from "./Modalcomingsoon";
 import ModalHatartalanul from "./ModalHatartalanul";
 import ModalHotels from "./ModalHotels";
 
@@ -27,10 +26,6 @@ const CustomCarousel = ({ travels }) => {
         open: false,
     });
 
-    const [comingSoonModal, setComingSoonModal] = useState({
-        open: false,
-    });
-
     useEffect(() => {
         const interval = setInterval(() => {
             setActive((prev) => (prev === 18 ? 1 : prev + 1));
@@ -45,8 +40,6 @@ const CustomCarousel = ({ travels }) => {
             <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} />
             <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
             <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} />
-            <Modalcomingsoon setComingSoonModal={setComingSoonModal} comingSoonModal={comingSoonModal} />
-
             <div
                 className={`bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0`}
                 style={{
@@ -69,7 +62,6 @@ const CustomCarousel = ({ travels }) => {
                             setHotelsModal={setHotelsModal}
                             sethatartalanulModals={sethatartalanulModals}
                             setBusjetModal={setBusjetModal}
-                            setComingSoonModal={setComingSoonModal}
                         />
                     )}
                 </div>

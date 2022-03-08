@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatartalanulModals, setBusjetModal, setComingSoonModal }) => {
+const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatartalanulModals, setBusjetModal }) => {
     return (
         <>
             <div className={`${carousel ? "hidden xl:block" : "block xl:hidden"}`}>
@@ -136,6 +136,10 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                             Földön
                         </h2>
                     </figure>
+                    <figure
+                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
+                    ></figure>
 
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
@@ -153,25 +157,6 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                         />
                         <h2 className="bottom-0 absolute text-white text-xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             Autóbuszjegyek
-                        </h2>
-                    </figure>
-
-                    <figure
-                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
-                        onClick={() => {
-                            setComingSoonModal({
-                                open: true,
-                            });
-                        }}
-                    >
-                        <img
-                            src={"/img/comingsoon.jpg"}
-                            className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
-                            alt="Külföld háttér"
-                        />
-                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
-                            Coming soon
                         </h2>
                     </figure>
 
@@ -212,6 +197,10 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                             Határtalanul
                         </h2>
                     </figure>
+                    <figure
+                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
+                    ></figure>
                 </div>
             </div>
         </>
