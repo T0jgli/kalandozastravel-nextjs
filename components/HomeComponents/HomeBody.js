@@ -10,8 +10,8 @@ const Gallery = dynamic(() => import("../GlobalComponents/Gallery"));
 const HomeBody = ({ questionsAnswers, travels }) => {
     return (
         <>
-            <Cards travels={travels} />
             <Newsletter />
+            <Cards travels={travels} />
             <Gallery />
             <Streak />
             <InfoSections />

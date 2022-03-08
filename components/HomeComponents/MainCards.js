@@ -45,7 +45,7 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                             Belföldi utazásaink
                         </h2>
                     </figure>
-                    <figure
+                    {/* <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
                         onClick={() =>
@@ -66,7 +66,7 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                         <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             2022
                         </h2>
-                    </figure>
+                    </figure> */}
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)" }}
