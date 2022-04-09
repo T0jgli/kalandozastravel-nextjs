@@ -538,9 +538,7 @@ const Inputs = ({ travel }) => {
                     </div>
                 </div>
                 <div className="mt-10 flex w-full flex-col border-gray-100 pt-8 border-t-2 justify-center items-center">
-                    <p className="text-sm mb-7">
-                        A visszaigazolásokat 24 órán belül a megadott emailcímre küldjük el (hétvégén a következő munkanap).
-                    </p>
+                    <p className="text-sm mb-7">A visszaigazolásokat 1 munkanapon belül a megadott email címre küldjük el.</p>
                     <p className="text-2xl my-4 text-center font-semibold text-gray-600 hover:opacity-80 duration-300">
                         Utazás ára <br className="md:hidden" /> (felárak nélkül):
                     </p>
