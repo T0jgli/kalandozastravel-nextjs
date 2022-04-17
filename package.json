@@ -25,7 +25,7 @@
         "react-icons": "^4.3.1",
         "react-image-gallery": "^1.2.7",
         "react-image-lightbox": "^5.1.4",
-        "react-loader-spinner": "^4.0.0",
+        "react-loader-spinner": "^5.1.4",
         "react-toastify": "^7.0.4",
         "tailwindcss": "^3.0.23"
     },
