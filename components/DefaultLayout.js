@@ -24,7 +24,7 @@ const DefaultLayout = ({ children }) => {
         <>
             <Navbar />
             {children}
-            <ToastContainer autoClose={5000} position="bottom-center" />
+            <ToastContainer autoClose={5000} position="bottom-center" theme="colored" />
             <FullscreenLoading />
             <Cookie />
             <ScrollTopButton />
