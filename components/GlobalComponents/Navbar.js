@@ -105,7 +105,7 @@ const Navbar = () => {
                 )}
                 <div
                     onClick={() => setisOpen((b) => !b)}
-                    className="lg:hidden absolute bottom-5 translate-y-2/4 right-10 cursor-pointer duration-300 hover:text-gray-700"
+                    className="lg:hidden absolute bottom-5 right-10 cursor-pointer duration-300 hover:text-gray-700"
                 >
                     <HiMenu fontSize="2rem" className="h-10" />
                 </div>

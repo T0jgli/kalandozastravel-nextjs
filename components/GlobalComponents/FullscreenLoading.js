@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
-import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-const Loader = dynamic(() => import("react-loader-spinner"));
+import { ThreeDots } from "react-loader-spinner";
 import { loadingAnimation } from "./Transitions";
 
 const FullscreenLoading = () => {
@@ -31,7 +30,7 @@ const FullscreenLoading = () => {
                 variants={loadingAnimation}
                 className={`flex bg-black bg-opacity-60 justify-center fixed left-0 top-0 w-full h-full items-center`}
             >
-                <Loader type="ThreeDots" color="whitesmoke" width={100} />
+                <ThreeDots type="ThreeDots" color="whitesmoke" width={100} />
             </motion.div>
         );
 
