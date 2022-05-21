@@ -55,6 +55,15 @@ const BottomLinks = () => {
                         Városlátogatások
                     </a>
                 </Link>
+                <Link passHref href="/travels?type=partnerek">
+                    <a
+                        className={`${
+                            router.query.type === "partnerek" ? "active text-yellow-700" : ""
+                        } hover:text-yellow-700 filterlink duration-300 h-full`}
+                    >
+                        Partneri utazások
+                    </a>
+                </Link>
             </div>
         </div>
     );
