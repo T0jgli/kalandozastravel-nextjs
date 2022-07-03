@@ -440,8 +440,8 @@ const Inputs = ({ travel }) => {
                         <option value={"Készpénz"}>Készpénz</option>
                         <option value={"Bankkártya"}>Bankkártya</option>
                         <option value={"Átutalás"}>Átutalás</option>
-                        <option value={"Szép kártya"}>Szép kártya</option>
                         <option value={"Utalvány"}>Utalvány</option>
+                        {travel?.country == "Magyarország" && <option value={"Szép kártya"}>Szép kártya</option>}
                     </select>
                     {errors?.length > 0 && isWrongField(errors, "payment") && (
                         <span className="absolute bottom-0 right-0 flex items-center font-medium tracking-wide text-red-500 text-xs mt-1">
