@@ -30,7 +30,7 @@
         "tailwindcss": "^3.1.1"
     },
     "devDependencies": {
-        "babel-jest": "^27.5.1",
+        "babel-jest": "^28.1.2",
         "cross-env": "^7.0.3",
         "jest": "^27.5.1"
     }
