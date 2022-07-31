@@ -11,7 +11,7 @@
     },
     "dependencies": {
         "@next/bundle-analyzer": "^12.2.3",
-        "@tailwindcss/typography": "^0.5.2",
+        "@tailwindcss/typography": "^0.5.4",
         "autoprefixer": "^10.4.7",
         "express-validator": "^6.14.1",
         "firebase": "^8.8.0",
