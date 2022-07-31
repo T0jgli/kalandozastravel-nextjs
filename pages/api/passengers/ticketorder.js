@@ -3,7 +3,7 @@ import logger from "../../../lib/helpers/Logger";
 import { initMiddleware, validateMiddleware } from "../../../lib/helpers/middlewares";
 import { check, validationResult } from "express-validator";
 import db from "../../../lib/firebase";
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 
 const validateBody = initMiddleware(
     validateMiddleware(
