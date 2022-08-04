@@ -4,6 +4,7 @@ import parse from "html-react-parser";
 import { useState } from "react";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import countries from "../../lib/countries.json";
+import Link from "next/link";
 
 const Fslightboxes = dynamic(() => import("../GlobalComponents/FSLightbox"));
 const Inputs = dynamic(() => import("./Inputs"));
@@ -19,6 +20,7 @@ const OneTravelBody = ({ travel }) => {
             <div className="max-w-7xl mt-32 pt-40 mx-auto prose px-3 2xl:px-0">
                 {parse(travel.desc || "")}
                 <span className={`fi fi-${countries.countries[travel.country]} w-28 h-28`} />
+
                 {travel.country && (
                     <img
                         src={`/img/svgs/countries/${countries.countries[travel.country]}.svg`}
@@ -27,6 +29,14 @@ const OneTravelBody = ({ travel }) => {
                         className="h-24 mx-auto hover:opacity-90 duration-300 shadow-md"
                     />
                 )}
+                <div className="w-full flex flex-center justify-center text-center flex-wrap mt-8">
+                    {travel?.freePlaces === 0 && (
+                        <span className="bg-red-600 uppercase px-4 py-2 rounded-full border border-gray-300 text-white font-semibold text-sm flex align-center w-max">
+                            Megtelt
+                        </span>
+                    )}
+                </div>
+
                 {travel?.pictures?.length > 0 && (
                     <div className={`my-16 pb-16 grid grid-flow-col gap-3`}>
                         {travel.pictures?.slice(1).map((pict, index) => (
@@ -42,6 +52,26 @@ const OneTravelBody = ({ travel }) => {
                         ))}
                     </div>
                 )}
+                <div className="w-full flex flex-center justify-center text-center gap-8 flex-wrap">
+                    {travel?.isSale && (
+                        <span className="uppercase px-4 py-2 rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max">
+                            Akció
+                        </span>
+                    )}
+                    {travel?.type?.length > 0 &&
+                        travel?.type?.map((t) => (
+                            <Link href={`/travels?type=${t}`}>
+                                <span className="uppercase active:bg-gray-300 transition duration-300 ease hover:bg-gray-200 cursor-pointer px-4 py-2 rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max">
+                                    {t}
+                                </span>
+                            </Link>
+                        ))}
+                    {travel?.type2 && (
+                        <span className="uppercase px-4 py-2 rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max">
+                            {travel?.type2}
+                        </span>
+                    )}
+                </div>
             </div>
             <div className="px-3 2xl:px-0">
                 <div className="flex flex-wrap justify-center my-12 pb-10 gap-5">

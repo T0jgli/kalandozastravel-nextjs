@@ -87,7 +87,6 @@ export default function Travels({ travels }) {
                                     price={travel.price}
                                     type2={travel.type2}
                                     customUrl={travel.customUrl}
-                                    country={travel.country}
                                 />
                             </motion.div>
                         ))}
