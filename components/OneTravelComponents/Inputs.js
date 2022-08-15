@@ -151,7 +151,7 @@ const Inputs = ({ travel }) => {
                             name="name"
                             id="name"
                             value={state.name}
-                            label="Név *"
+                            label="Teljes név *"
                             errors={errors}
                             isWrongField={isWrongField}
                             getErrorMessage={getErrorMessage}
@@ -437,7 +437,7 @@ const Inputs = ({ travel }) => {
                         <option default value={0}>
                             Kérjük válasszon...
                         </option>
-                        <option value={"Készpénz"}>Készpénz</option>
+                        <option value={"Készpénz"}>Irodánkban (készpénz vagy bankkártya)</option>
                         <option value={"Bankkártya"}>Bankkártya</option>
                         <option value={"Átutalás"}>Átutalás</option>
                         <option value={"Utalvány"}>Utalvány</option>
