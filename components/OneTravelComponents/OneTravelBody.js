@@ -60,7 +60,7 @@ const OneTravelBody = ({ travel }) => {
                     )}
                     {travel?.type?.length > 0 &&
                         travel?.type?.map((t) => (
-                            <Link href={`/travels?type=${t}`}>
+                            <Link href={`/travels?type=${t}`} key={`${t} ${travel?.id}`}>
                                 <span className="uppercase active:bg-gray-300 transition duration-300 ease hover:bg-gray-200 cursor-pointer px-4 py-2 rounded-full border border-gray-300 text-gray-500 font-semibold text-sm flex align-center w-max">
                                     {t}
                                 </span>

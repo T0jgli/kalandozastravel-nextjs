@@ -17,6 +17,7 @@ const initialInputValue = {
     matesNames: "",
     people: 1,
     needseat: false,
+    needinsurance: false,
     seatNumber: "",
     feedback: 0,
     desc: "",
@@ -24,6 +25,7 @@ const initialInputValue = {
     accept: false,
     feedback: 0,
     payment: 0,
+    birthdates: "",
 };
 
 const getErrorMessage = (array, field) => {
@@ -302,6 +304,7 @@ const Inputs = ({ travel }) => {
                             } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                             onChange={onInputChange}
                             type="number"
+                            min={1}
                             onFocus={(e) => {
                                 if (errors?.length > 0) {
                                     setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
@@ -317,6 +320,61 @@ const Inputs = ({ travel }) => {
                         />
                     </div>
                 </div>
+                {travel.country !== "Magyarország" && (
+                    <div className="my-10 flex w-full flex-col border-gray-100 pt-4 justify-center items-center">
+                        <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="needinsurance">
+                            <input
+                                className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                                onChange={() => {
+                                    setState({ ...state, needinsurance: true });
+                                }}
+                                type="radio"
+                                name="needinsurance"
+                                id="needinsurance"
+                                checked={state.needinsurance}
+                            />
+                            <span className="ml-2"> IGEN kérek biztosítást</span>
+                        </label>
+                        <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="notneedinsurance">
+                            <input
+                                className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                                onChange={() => {
+                                    setState({ ...state, needinsurance: false });
+                                }}
+                                type="radio"
+                                name="needinsurance"
+                                id="notneedinsurance"
+                                checked={!state.needinsurance}
+                            />
+                            <span className="ml-2"> NEM kérek biztosítást</span>
+                        </label>
+                        {state.needinsurance && (
+                            <div className="mx-auto w-4/6 relative">
+                                <CustomInputField
+                                    className={`${
+                                        errors?.length > 0 && isWrongField(errors, "birthdates") ? "border-red-500" : ""
+                                    } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                    onChange={onInputChange}
+                                    type="text"
+                                    onFocus={(e) => {
+                                        if (errors?.length > 0) {
+                                            setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
+                                        }
+                                    }}
+                                    required
+                                    name="birthdates"
+                                    id="birthdates"
+                                    value={state.birthdates}
+                                    label="Utasok születési dátuma"
+                                    errors={errors}
+                                    isWrongField={isWrongField}
+                                    getErrorMessage={getErrorMessage}
+                                />
+                            </div>
+                        )}
+                    </div>
+                )}
+
                 <div className="my-10 flex w-full flex-col border-gray-100 pt-8 border-t-2 justify-center items-center">
                     <p className="mb-8 text-sm text-center">
                         Felár megfizetés vállalása mellett lehetőség nyílik, hogy a kiválaszthassa melyik ülőhelyen szeretnének utazni <br />

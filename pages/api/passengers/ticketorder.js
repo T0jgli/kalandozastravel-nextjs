@@ -20,19 +20,26 @@ const validateBody = initMiddleware(
             check("desc", "Hibás érték").trim().isLength({ max: 1000 }).escape(),
             check("feedback", "Kérjük válasszon").not().equals("0"),
             check("payment", "Kérjük válasszon").not().equals("0"),
+            check("birthdates", "Hibás érték").trim().isLength({ max: 255 }).escape(),
         ],
         validationResult
     )
 );
 
 const existingEmailOrName = initMiddleware(async (req, res, next) => {
-    const { travel, phone, email, people } = req.body;
+    const { travel, phone, email, people, needinsurance, birthdates } = req.body;
     let phoneError = false;
     let emailError = false;
 
     if (people > travel.freePlaces) {
         return res.status(409).json({
             error: `Sajnos nincs ennyi szabad hely az utazáson! (${people})`,
+        });
+    }
+
+    if (needinsurance && !birthdates) {
+        return res.status(409).json({
+            error: `Kérjük töltse ki a születési dátumok mezőt!`,
         });
     }
 
@@ -69,8 +76,24 @@ export default async (req, res) => {
             await validateBody(req, res);
             await existingEmailOrName(req, res);
 
-            const { name, email, address, city, postalCode, phone, matesNames, people, needseat, seatNumber, desc, travel, feedback, payment } =
-                req.body;
+            const {
+                name,
+                email,
+                address,
+                city,
+                postalCode,
+                phone,
+                matesNames,
+                people,
+                needseat,
+                seatNumber,
+                desc,
+                travel,
+                feedback,
+                payment,
+                needinsurance,
+                birthdates,
+            } = req.body;
 
             try {
                 const mail = {
@@ -80,22 +103,25 @@ export default async (req, res) => {
                     replyTo: email,
                     html: ` <html><body>
                     <h2>Online utazásfoglalás a kalandozas.hu-n keresztül</h2>
-                    <p>Utazás megnevezése: ${travel.title}</p>
-                    <p>Utazás időpontja: ${travel.startingDate} - ${travel.endingDate}</p>
-                    <p>Utazás ára: ${travel.price} Ft</p> 
-                    <hr width="50%" style="margin-left: 0">
-                    <p>Megrendelő neve: ${name}</p>
-                    <p>Lakcím: ${city}, ${postalCode} ${address}</p>
-                    <p>Email cím: ${email}</p>
-                    <p>Telefonszám: ${phone}</p>
-                    <p>Utasszám: ${people}</p>
-                    ${matesNames?.length > 0 ? `<p>Utasok neve: ${matesNames}</p>` : ""}
-                    <p>Helyjegy: ${needseat == true ? `foglalva - ${seatNumber}` : "nem kér"}</p>
-                    <p>Fizetési mód: ${payment}</p>
                     <br/>
-                    <p>Megjegyzés: ${desc}</p><p></p>
-                    <p>Honnan hallott irodánkról?: ${feedback}</p>
-                    <p>Hírlevél: ${req.body.newsletter ? "kér" : "nem kér"}</p>
+                    <br/>
+                    <p><span style='color: gray'>Utazás megnevezése:</span> ${travel.title}</p>
+                    <p><span style='color: gray'>Utazás időpontja:</span> ${travel.startingDate} - ${travel.endingDate}</p>
+                    <p><span style='color: gray'>Utazás ára:</span> ${travel.price} Ft</p> 
+                    <hr width="50%" style="margin-left: 0">
+                    <p><span style='color: gray'>Megrendelő neve:</span> ${name}</p>
+                    <p><span style='color: gray'>Lakcím:</span> ${city}, ${postalCode} ${address}</p>
+                    <p><span style='color: gray'>Email cím:</span> ${email}</p>
+                    <p><span style='color: gray'>Telefonszám:</span> ${phone}</p>
+                    <p><span style='color: gray'>Utasszám:</span> ${people}</p>
+                    ${matesNames?.length > 0 ? `<p><span style='color: gray'>Utasok neve:</span> ${matesNames}</p>` : ""}
+                    ${needinsurance == true ? `<p><span style='color: gray'>Biztosítás:</span> kér - (születési dátumok: ${birthdates})</p>` : ""}
+                    <p><span style='color: gray'>Helyjegy:</span> ${needseat == true ? `foglalva - ${seatNumber}` : "nem kér"}</p>
+                    <p><span style='color: gray'>Fizetési mód:</span> ${payment}</p>
+                    <br/>
+                    <p><span style='color: gray'>Megjegyzés:</span> ${desc}</p>
+                    <p><span style='color: gray'>Honnan hallott irodánkról?:</span> ${feedback}</p>
+                    <p><span style='color: gray'>Hírlevél:</span> ${req.body.newsletter ? "kér" : "nem kér"}</p>
 
                     </body>
                     </html> `,
