@@ -153,7 +153,7 @@ const Inputs = ({ travel }) => {
                             name="name"
                             id="name"
                             value={state.name}
-                            label="Teljes név *"
+                            label="Teljes hivatalos név *"
                             errors={errors}
                             isWrongField={isWrongField}
                             getErrorMessage={getErrorMessage}
@@ -365,7 +365,7 @@ const Inputs = ({ travel }) => {
                                     name="birthdates"
                                     id="birthdates"
                                     value={state.birthdates}
-                                    label="Utasok születési dátuma"
+                                    label="Születési dátumok utasonként"
                                     errors={errors}
                                     isWrongField={isWrongField}
                                     getErrorMessage={getErrorMessage}
