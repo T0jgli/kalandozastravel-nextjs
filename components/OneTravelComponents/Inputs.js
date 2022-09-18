@@ -25,7 +25,7 @@ const initialInputValue = {
     accept: false,
     feedback: 0,
     payment: 0,
-    birthdates: "",
+    insurances: {},
 };
 
 const getErrorMessage = (array, field) => {
@@ -349,28 +349,74 @@ const Inputs = ({ travel }) => {
                             <span className="ml-2"> NEM kérek biztosítást</span>
                         </label>
                         {state.needinsurance && (
-                            <div className="mx-auto w-4/6 relative">
-                                <CustomInputField
-                                    className={`${
-                                        errors?.length > 0 && isWrongField(errors, "birthdates") ? "border-red-500" : ""
-                                    } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
-                                    onChange={onInputChange}
-                                    type="text"
-                                    onFocus={(e) => {
-                                        if (errors?.length > 0) {
-                                            setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
-                                        }
-                                    }}
-                                    required
-                                    name="birthdates"
-                                    id="birthdates"
-                                    value={state.birthdates}
-                                    label="Születési dátumok utasonként"
-                                    errors={errors}
-                                    isWrongField={isWrongField}
-                                    getErrorMessage={getErrorMessage}
-                                />
-                            </div>
+                            <>
+                                {Array.from(Array(Number(state.people)).keys()).map((_, i) => {
+                                    return (
+                                        <div className="mb-10 flex flex-col md:flex-row gap-8 w-4/6 justify-center items-center">
+                                            <div className="w-full mb-5 md:mb-0 mr-0 relative">
+                                                <CustomInputField
+                                                    className={`${
+                                                        errors?.length > 0 && isWrongField(errors, `insurancename${i}`) ? "border-red-500" : ""
+                                                    } w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                                    onChange={(e) => {
+                                                        setState({
+                                                            ...state,
+                                                            insurances: {
+                                                                ...state.insurances,
+                                                                [e.target.name]: e.target.value,
+                                                            },
+                                                        });
+                                                    }}
+                                                    type="text"
+                                                    onFocus={(e) => {
+                                                        if (errors?.length > 0) {
+                                                            setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
+                                                        }
+                                                    }}
+                                                    required
+                                                    name={`insurancename${i}`}
+                                                    id={`insurancename${i}`}
+                                                    value={state.insurances[`insurancename${i}`] || ""}
+                                                    label={`${i + 1}. utas neve`}
+                                                    errors={errors}
+                                                    isWrongField={isWrongField}
+                                                    getErrorMessage={getErrorMessage}
+                                                />
+                                            </div>
+                                            <div className="w-full mb-5 md:mb-0 mr-0 relative">
+                                                <CustomInputField
+                                                    className={`${
+                                                        errors?.length > 0 && isWrongField(errors, `insurancebirthdate${i}`) ? "border-red-500" : ""
+                                                    } w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                                    onChange={(e) => {
+                                                        setState({
+                                                            ...state,
+                                                            insurances: {
+                                                                ...state.insurances,
+                                                                [e.target.name]: e.target.value,
+                                                            },
+                                                        });
+                                                    }}
+                                                    type="text"
+                                                    onFocus={(e) => {
+                                                        if (errors?.length > 0) {
+                                                            setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
+                                                        }
+                                                    }}
+                                                    required
+                                                    name={`insurancebirthdate${i}`}
+                                                    id={`insurancebirthdate${i}`}
+                                                    value={state.insurances[`insurancebirthdate${i}`] || ""}
+                                                    label={`${i + 1}. utas születési dátuma`}
+                                                    errors={errors}
+                                                    isWrongField={isWrongField}
+                                                    getErrorMessage={getErrorMessage}
+                                                />
+                                            </div>
+                                        </div>
+                                    );
+                                })}
+                            </>
                         )}
                     </div>
                 )}

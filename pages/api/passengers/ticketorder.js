@@ -20,26 +20,19 @@ const validateBody = initMiddleware(
             check("desc", "Hibás érték").trim().isLength({ max: 1000 }).escape(),
             check("feedback", "Kérjük válasszon").not().equals("0"),
             check("payment", "Kérjük válasszon").not().equals("0"),
-            check("birthdates", "Hibás érték").trim().isLength({ max: 255 }).escape(),
         ],
         validationResult
     )
 );
 
 const existingEmailOrName = initMiddleware(async (req, res, next) => {
-    const { travel, phone, email, people, needinsurance, birthdates } = req.body;
+    const { travel, phone, email, people } = req.body;
     let phoneError = false;
     let emailError = false;
 
     if (people > travel.freePlaces) {
         return res.status(409).json({
             error: `Sajnos csak ${travel.freePlaces} szabad hely van az utazáson!`,
-        });
-    }
-
-    if (needinsurance && !birthdates) {
-        return res.status(409).json({
-            error: `Kérjük töltse ki a születési dátumok mezőt!`,
         });
     }
 
@@ -92,8 +85,22 @@ export default async (req, res) => {
                 feedback,
                 payment,
                 needinsurance,
-                birthdates,
+                insurances,
             } = req.body;
+
+            let insuranceBody = "";
+
+            if (needinsurance == true) {
+                insuranceBody += `<p><span style='color: gray'>Biztosítás:</span> kér`;
+                for (let i = 0; i < people; i++) {
+                    let tmpObj = {
+                        name: insurances[`insurancename${i}`],
+                        birthdate: insurances[`insurancebirthdate${i}`],
+                    };
+                    insuranceBody += `<br/><span>${i + 1}. utas neve: ${tmpObj?.["name"]} | születési dátuma: ${tmpObj?.["birthdate"]}</span>`;
+                }
+                insuranceBody += "</p>";
+            }
 
             try {
                 const mail = {
@@ -115,7 +122,7 @@ export default async (req, res) => {
                     <p><span style='color: gray'>Telefonszám:</span> ${phone}</p>
                     <p><span style='color: gray'>Utasszám:</span> ${people}</p>
                     ${matesNames?.length > 0 ? `<p><span style='color: gray'>Utasok neve:</span> ${matesNames}</p>` : ""}
-                    ${needinsurance == true ? `<p><span style='color: gray'>Biztosítás:</span> kér - (születési dátumok: ${birthdates})</p>` : ""}
+                    ${insuranceBody ? insuranceBody : ""}
                     <p><span style='color: gray'>Helyjegy:</span> ${needseat == true ? `foglalva - ${seatNumber}` : "nem kér"}</p>
                     <p><span style='color: gray'>Fizetési mód:</span> ${payment}</p>
                     <br/>
