@@ -14,6 +14,7 @@ import ModalCourier from "./ModalCourier";
 const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
     const [travelsState, settravelsState] = useState(travels);
+    const [activeYear, setActiveYear] = useState(new Date().getFullYear());
 
     const [isMobile] = useScreenWidth(1280);
     const [modalOpen, setModalOpen] = useState({
@@ -53,6 +54,31 @@ const Cards = ({ travels }) => {
                     setBusjetModal={setBusjetModal}
                 />
             )}
+
+            {/* <div className="flex justify-center my-8 pt-4 mx-auto">
+                <button
+                    className={`${
+                        activeYear === 2022 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
+                    } hover:bg-gray-400 font-bold py-2 px-4 rounded-l-md duration-300`}
+                    onClick={() => {
+                        setActiveYear(2022);
+                        settravelsState(travels.filter((travel) => travel.startingDate.startsWith("2022")));
+                    }}
+                >
+                    2022
+                </button>
+                <button
+                    className={`${
+                        activeYear === 2023 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
+                    } hover:bg-gray-400  font-bold py-2 px-4 rounded-r-md duration-300`}
+                    onClick={() => {
+                        setActiveYear(2023);
+                        settravelsState(travels.filter((travel) => travel.startingDate.startsWith("2023")));
+                    }}
+                >
+                    2023
+                </button>
+            </div> */}
 
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
