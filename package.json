@@ -12,7 +12,7 @@
     "dependencies": {
         "@next/bundle-analyzer": "^12.3.0",
         "@tailwindcss/typography": "^0.5.7",
-        "autoprefixer": "^10.4.11",
+        "autoprefixer": "^10.4.12",
         "express-validator": "^6.14.2",
         "firebase": "^9.10.0",
         "framer-motion": "^6.5.1",
