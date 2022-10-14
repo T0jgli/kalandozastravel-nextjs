@@ -12,7 +12,7 @@ COPY package.json ./
 
 COPY package-lock.json ./
 
-RUN npm install --production
+RUN npm install --production --force
 
 # add app
 COPY . ./

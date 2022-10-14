@@ -42,7 +42,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
                                     className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
                                 />
                             </a>
-                            <a href="https://gls-group.eu/HU/hu/home" target="_blank" rel="noopener noreferrer" className="my-6">
+                            <a href="https://wish.com" target="_blank" rel="noopener noreferrer" className="my-6">
                                 <img src="/img/wish.png" alt="" className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90" />
                             </a>
 
