@@ -13,8 +13,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
             style={{ minHeight: "400px" }}
         >
             <div className="relative w-100 overflow-hidden cursor-pointer" onClick={() => router.push(url)} style={{ paddingTop: "calc(52.356%)" }}>
-                <Image
-                    layout="fill"
+                <img
                     src={backgroundImage}
                     alt={`Utazás kép ${title}`}
                     className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
