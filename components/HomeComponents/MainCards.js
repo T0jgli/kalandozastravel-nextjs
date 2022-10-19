@@ -57,9 +57,7 @@ const MainCards = ({ travels, setModalOpen, carousel, setHotelsModal, sethatarta
                         }
                     >
                         <img
-                            src={
-                                "https://previews.123rf.com/images/mariusz_prusaczyk/mariusz_prusaczyk1704/mariusz_prusaczyk170400301/75727162-3d-new-year-2022-on-white-background.jpg"
-                            }
+                            src={"/img/2023.png"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Vízen háttér"
                         />
