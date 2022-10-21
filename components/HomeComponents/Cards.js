@@ -5,9 +5,9 @@ import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
-import ModalBusJet from "./ModalBusJet";
+// import ModalBusJet from "./ModalBusJet";
 import ModalHatartalanul from "./ModalHatartalanul";
-import ModalHotels from "./ModalHotels";
+// import ModalHotels from "./ModalHotels";
 import Link from "next/link";
 import ModalCourier from "./ModalCourier";
 
@@ -44,9 +44,9 @@ const Cards = ({ travels }) => {
     return (
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-            <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} />
+            {/* <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} /> */}
             <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
-            <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} />
+            {/* <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} /> */}
             <ModalCourier setmodalCourier={setcourierModal} modalCourier={courierModal} />
 
             {isMobile && (

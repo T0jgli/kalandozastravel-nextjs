@@ -3,9 +3,9 @@ import { HiCheck, HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import MainCards from "./MainCards";
 import Modal from "./Modal";
-import ModalBusJet from "./ModalBusJet";
+// import ModalBusJet from "./ModalBusJet";
 import ModalHatartalanul from "./ModalHatartalanul";
-import ModalHotels from "./ModalHotels";
+// import ModalHotels from "./ModalHotels";
 
 const CustomCarousel = ({ travels }) => {
     const [active, setActive] = useState(1);
@@ -37,9 +37,9 @@ const CustomCarousel = ({ travels }) => {
     return (
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
-            <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} />
+            {/* <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} /> */}
             <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
-            <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} />
+            {/* <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} /> */}
             <div
                 className={`bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0`}
                 style={{

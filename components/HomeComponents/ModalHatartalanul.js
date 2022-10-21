@@ -35,15 +35,15 @@ const ModalHatartalanul = ({ hatartalanulModals, sethatartalanulModals }) => {
                     <div className="mx-auto lg:mx-0 w-full break-words" style={{ wordBreak: "break-word" }}>
                         <div ref={modalRef} className="bg-white p-8 rounded-2xl flex  flex-col flex-wrap">
                             <h2 className="text-center text-lg pb-8">
-                                Megjelent a Határtalanul 2021-es pályázati kiírása, mely a jelenlegi hetedikes osztályok, valamint középiskolás
+                                Megjelent a Határtalanul 2022-es pályázati kiírása, mely a jelenlegi hetedikes osztályok, valamint középiskolás
                                 csoportok kárpát-medencei utazását támogatja.
                             </h2>
                             <p className="py-2">
-                                A pályázatok benyújtásának határideje <span className="font-semibold">2021. október 29.</span>
+                                A pályázatok benyújtásának határideje <span className="font-semibold">2022. október 29.</span>
                             </p>
                             <p className="py-2">Kik pályázhatnak: hetedikesek és középiskolások.</p>
                             <p className="py-2">
-                                Az utazások <span className="font-semibold">2021. szeptember 1. és 2022. augusztus 31.</span> között valósulhatnak
+                                Az utazások <span className="font-semibold">2021. szeptember 1. és 2023. augusztus 31.</span> között valósulhatnak
                                 meg.
                                 <br />
                                 <small>Segítünk kiválasztani a legmegfelelőbb időpontokat.</small>
