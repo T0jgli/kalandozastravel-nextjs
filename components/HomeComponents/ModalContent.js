@@ -44,10 +44,8 @@ const ModalContent = ({ travels }) => {
                                         })}
                             </td>
                             <td className="py-3 px-6 text-left font-medium max-w-xs cursor-pointer" style={{ wordWrap: "break-word" }}>
-                                <Link passHref href={travel.customUrl || `/travel/${travel.id}`}>
-                                    <a className="hover:text-yellow-700 break-words duration-300">
-                                        <p>{travel.title}</p>
-                                    </a>
+                                <Link href={travel.customUrl || `/travel/${travel.id}`} className="hover:text-yellow-700 break-words duration-300">
+                                    <p>{travel.title}</p>
                                 </Link>
                             </td>
                             <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">

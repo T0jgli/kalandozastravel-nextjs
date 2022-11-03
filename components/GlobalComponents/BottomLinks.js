@@ -19,50 +19,45 @@ const BottomLinks = () => {
                     Bus Jet Business Class
                 </a>
 
-                <Link passHref href="/travels?type=1naposutazas">
-                    <a
-                        className={`${
-                            router.query.type === "1naposutazas" ? "active text-yellow-700" : ""
-                        } hover:text-yellow-700 filterlink duration-300 h-full`}
-                    >
-                        1 napos utazások
-                    </a>
+                <Link
+                    className={`${
+                        router.query.type === "1naposutazas" ? "active text-yellow-700" : ""
+                    } hover:text-yellow-700 filterlink duration-300 h-full`}
+                    href="/travels?type=1naposutazas"
+                >
+                    1 napos utazások
                 </Link>
-                <Link passHref href="/travels?type=korutazas">
-                    <a
-                        className={`${
-                            router.query.type === "korutazas" ? "active text-yellow-700" : ""
-                        } hover:text-yellow-700 filterlink duration-300 h-full`}
-                    >
-                        Körutazások
-                    </a>
+                <Link
+                    className={`${
+                        router.query.type === "korutazas" ? "active text-yellow-700" : ""
+                    } hover:text-yellow-700 filterlink duration-300 h-full`}
+                    href="/travels?type=korutazas"
+                >
+                    Körutazások
                 </Link>
-                <Link passHref href="/travels?type=nonstop">
-                    <a
-                        className={`${
-                            router.query.type === "nonstop" ? "active text-yellow-700" : ""
-                        } hover:text-yellow-700 filterlink duration-300 h-full`}
-                    >
-                        Non-Stop utazások
-                    </a>
+                <Link
+                    className={`${
+                        router.query.type === "nonstop" ? "active text-yellow-700" : ""
+                    } hover:text-yellow-700 filterlink duration-300 h-full`}
+                    href="/travels?type=nonstop"
+                >
+                    Non-Stop utazások
                 </Link>
-                <Link passHref href="/travels?type=varoslatogatas">
-                    <a
-                        className={`${
-                            router.query.type === "varoslatogatas" ? "active text-yellow-700" : ""
-                        } hover:text-yellow-700 filterlink duration-300 h-full`}
-                    >
-                        Városlátogatások
-                    </a>
+                <Link
+                    className={`${
+                        router.query.type === "varoslatogatas" ? "active text-yellow-700" : ""
+                    } hover:text-yellow-700 filterlink duration-300 h-full`}
+                    href="/travels?type=varoslatogatas"
+                >
+                    Városlátogatások
                 </Link>
-                <Link passHref href="/travels?type=partnerek">
-                    <a
-                        className={`${
-                            router.query.type === "partnerek" ? "active text-yellow-700" : ""
-                        } hover:text-yellow-700 filterlink duration-300 h-full`}
-                    >
-                        Partneri utazások
-                    </a>
+                <Link
+                    className={`${
+                        router.query.type === "partnerek" ? "active text-yellow-700" : ""
+                    } hover:text-yellow-700 filterlink duration-300 h-full`}
+                    href="/travels?type=partnerek"
+                >
+                    Partneri utazások
                 </Link>
             </div>
         </div>

@@ -120,8 +120,7 @@ const Cards = ({ travels }) => {
                     className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
                     style={{ width: "170px", height: "170px", maxWidth: "calc(100vw - 50px)" }}
                 >
-                    <Link href={`/travels?offer=abroad`} className="absolute w-full h-full top-0" passHref>
-                        <a className="w-full h-full">
+                    <Link href={`/travels?offer=abroad`} className="absolute w-full h-full top-0">
                             <img
                                 src={"https://backend.aleph.hu/travelmax/public_html/images/tdm/menup/IMG_8972.jpg"}
                                 className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"
@@ -132,7 +131,6 @@ const Cards = ({ travels }) => {
                             >
                                 1 napos utazások
                             </h2>
-                        </a>
                     </Link>
                 </figure>
                 <figure
@@ -140,7 +138,6 @@ const Cards = ({ travels }) => {
                     style={{ width: "170px", height: "170px", maxWidth: "calc(100vw - 50px)" }}
                 >
                     <Link href={`/travels?offer=abroad`} className="absolute w-full h-full top-0" passHref>
-                        <a className="w-full h-full">
                             <img
                                 src={
                                     "https://backend.aleph.hu/travelmax/public_html/images/korutazasokcom/menup/tobbnapos%20kirandulsa%20busszal.jpg"
@@ -153,7 +150,6 @@ const Cards = ({ travels }) => {
                             >
                                 Több napos utazások
                             </h2>
-                        </a>
                     </Link>
                 </figure> */}
                 <figure

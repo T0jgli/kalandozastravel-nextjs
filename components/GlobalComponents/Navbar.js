@@ -58,37 +58,34 @@ const Navbar = () => {
                 {!isMobile && (
                     <ul className="max-w-7xl mx-auto items-center justify-center lg:flex h-full hidden list-none">
                         <li className="flex items-center justify-center">
-                            <Link href="/" passHref>
-                                <a
-                                    className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
-                                        router.pathname === "/" || "" ? "active text-yellow-700" : ""
-                                    }`}
-                                >
-                                    Főoldal
-                                </a>
+                            <Link
+                                className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
+                                    router.pathname === "/" || "" ? "active text-yellow-700" : ""
+                                }`}
+                                href="/"
+                            >
+                                Főoldal
                             </Link>
                         </li>
                         <li className="flex items-center justify-center">
-                            <Link href="/travels" passHref>
-                                <a
-                                    className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
-                                        router.pathname === "/travels" ? "active text-yellow-700" : ""
-                                    }`}
-                                >
-                                    Utazásaink
-                                </a>
+                            <Link
+                                className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
+                                    router.pathname === "/travels" ? "active text-yellow-700" : ""
+                                }`}
+                                href="/travels"
+                            >
+                                Utazásaink
                             </Link>
                         </li>
 
                         <li className="flex items-center justify-center">
-                            <Link href="/contact" passHref>
-                                <a
-                                    className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
-                                        router.pathname === "/contact" ? "active text-yellow-700" : ""
-                                    }`}
-                                >
-                                    Kapcsolat
-                                </a>
+                            <Link
+                                className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
+                                    router.pathname === "/contact" ? "active text-yellow-700" : ""
+                                }`}
+                                href="/contact"
+                            >
+                                Kapcsolat
                             </Link>
                         </li>
                         <li className="flex items-center justify-center">
@@ -122,36 +119,33 @@ const Navbar = () => {
                     <div>
                         <ul className="list-none p-0 m-0 grid grid-cols-1 grid-rows-3 uppercase">
                             <li className="h-20">
-                                <Link href="/" passHref>
-                                    <a
-                                        className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
-                                            router.pathname === "/" || "" ? "text-yellow-700" : "text-black"
-                                        }`}
-                                    >
-                                        Főoldal
-                                    </a>
+                                <Link
+                                    className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
+                                        router.pathname === "/" || "" ? "text-yellow-700" : "text-black"
+                                    }`}
+                                    href="/"
+                                >
+                                    Főoldal
                                 </Link>
                             </li>
                             <li className="h-20">
-                                <Link href="/travels" passHref>
-                                    <a
-                                        className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
-                                            router.pathname === "/travels" ? "text-yellow-700" : "text-black"
-                                        }`}
-                                    >
-                                        Utazásaink
-                                    </a>
+                                <Link
+                                    className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
+                                        router.pathname === "/travels" ? "text-yellow-700" : "text-black"
+                                    }`}
+                                    href="/travels"
+                                >
+                                    Utazásaink
                                 </Link>
                             </li>
                             <li className="h-20">
-                                <Link href="/contact" passHref>
-                                    <a
-                                        className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
-                                            router.pathname === "/contact" ? "text-yellow-700" : "text-black"
-                                        }`}
-                                    >
-                                        Kapcsolat
-                                    </a>
+                                <Link
+                                    className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
+                                        router.pathname === "/contact" ? "text-yellow-700" : "text-black"
+                                    }`}
+                                    href="/contact"
+                                >
+                                    Kapcsolat
                                 </Link>
                             </li>
                             <li className="h-20">

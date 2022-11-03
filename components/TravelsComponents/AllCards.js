@@ -35,13 +35,12 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
             </div>
 
             <div className="p-4 lg:p-3 w-full flex flex-col">
-                <Link href={url} passHref>
-                    <a
-                        className="hover:text-yellow-700 text-center block font-semibold break-words duration-300 h-full"
-                        style={{ minHeight: "48px" }}
-                    >
-                        <p>{title}</p>
-                    </a>
+                <Link
+                    className="hover:text-yellow-700 text-center block font-semibold break-words duration-300 h-full"
+                    href={url}
+                    style={{ minHeight: "48px" }}
+                >
+                    <p>{title}</p>
                 </Link>
 
                 <div className="mx-2 mt-4 py-4 border-t-2 border-b-2 duration-300 hover:opacity-90 border-gray-100">
