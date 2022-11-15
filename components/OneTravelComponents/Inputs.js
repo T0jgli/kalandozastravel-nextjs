@@ -321,12 +321,19 @@ const Inputs = ({ travel }) => {
                     </div>
                 </div>
                 {travel.country !== "Magyarország" && (
-                    <div className="my-10 flex w-full flex-col border-gray-100 pt-4 justify-center items-center">
+                    <div
+                        className="my-10 flex w-full flex-col border-gray-100 pt-4 justify-center items-center"
+                        id="insurancebox"
+                        style={{ scrollMarginTop: "80px" }}
+                    >
                         <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="needinsurance">
                             <input
                                 className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
                                 onChange={() => {
                                     setState({ ...state, needinsurance: true });
+                                    document.querySelector(`#insurancebox`).scrollIntoView({
+                                        behavior: "smooth",
+                                    });
                                 }}
                                 type="radio"
                                 name="needinsurance"
@@ -352,7 +359,7 @@ const Inputs = ({ travel }) => {
                             <>
                                 {Array.from(Array(Number(state.people)).keys()).map((_, i) => {
                                     return (
-                                        <div className="mb-10 flex flex-col md:flex-row gap-8 w-4/6 justify-center items-center">
+                                        <div className="my-10 flex flex-col md:flex-row gap-8 w-4/6 justify-center items-center">
                                             <div className="w-full mb-5 md:mb-0 mr-0 relative">
                                                 <CustomInputField
                                                     className={`${
@@ -412,6 +419,9 @@ const Inputs = ({ travel }) => {
                                                     isWrongField={isWrongField}
                                                     getErrorMessage={getErrorMessage}
                                                 />
+                                                <div className="absolute -bottom-7 text-center pt-2">
+                                                    <label className="text-gray-700 text-xs">(év, hónap, nap)</label>
+                                                </div>
                                             </div>
                                         </div>
                                     );
@@ -421,7 +431,11 @@ const Inputs = ({ travel }) => {
                     </div>
                 )}
 
-                <div className="my-10 flex w-full flex-col border-gray-100 pt-8 border-t-2 justify-center items-center">
+                <div
+                    className="my-10 flex w-full flex-col border-gray-100 pt-8 border-t-2 justify-center items-center"
+                    id="seatbox"
+                    style={{ scrollMarginTop: "80px" }}
+                >
                     <p className="mb-8 text-sm text-center">
                         Felár megfizetés vállalása mellett lehetőség nyílik, hogy a kiválaszthassa melyik ülőhelyen szeretnének utazni <br />
                         (Az együtt utazókat és egy felszállási helyen felszállókat természetesen egymás melletti vagy mögötti ülőhelyekre ültetjük.)
@@ -431,6 +445,9 @@ const Inputs = ({ travel }) => {
                             className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
                             onChange={() => {
                                 setState({ ...state, needseat: true });
+                                document.querySelector(`#seatbox`).scrollIntoView({
+                                    behavior: "smooth",
+                                });
                             }}
                             type="radio"
                             name="needseat"
@@ -479,8 +496,30 @@ const Inputs = ({ travel }) => {
                                 <label className="text-gray-700 text-xs">
                                     (mindkét busz esetén válassza ki az ülőhelyet) Fix-ülőhely igény (csak felár ellenében kérhető, 1 napos utazás
                                     esetén 2.000 Ft/fő, 2-3 napos utazások esetén 2.500 Ft/fő, 4 vagy annál többnapos utazás esetén 5.000 Ft/fő)
-                                    Kérjük vesszővel elválasztva sorolja fel mely ülőhelyeken szeretnének utazni :
+                                    Kérjük vesszővel elválasztva sorolja fel mely ülőhelyeken szeretnének utazni
                                 </label>
+                            </div>
+                            <div className="text-center pt-2">
+                                <label className="text-gray-700 text-xs">(nagyítható)</label>
+                            </div>
+
+                            <div className="flex flex-row gap-5 flex-center justify-center mt-5">
+                                <a href="/img/busz_50fos.png" className="w-28" target="_blank" rel="noopener norefereer">
+                                    <img
+                                        className="w-28 rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
+                                        src="/img/busz_50fos.png"
+                                        alt="50 fős busz alaprajz"
+                                        title="50 fős busz alaprajz"
+                                    />
+                                </a>
+                                <a href="/img/busz_emeletes.png" className="w-28" target="_blank" rel="noopener norefereer">
+                                    <img
+                                        className="w-28 rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
+                                        src="/img/busz_emeletes.png"
+                                        alt="Emeletes busz alaprajz"
+                                        title="Emeletes busz alaprajz"
+                                    />
+                                </a>
                             </div>
                         </div>
                     )}
@@ -542,7 +581,6 @@ const Inputs = ({ travel }) => {
                             Kérjük válasszon...
                         </option>
                         <option value={"Készpénz"}>Irodánkban (készpénz vagy bankkártya)</option>
-                        <option value={"Bankkártya"}>Bankkártya</option>
                         <option value={"Átutalás"}>Átutalás</option>
                         <option value={"Utalvány"}>Utalvány</option>
                         {travel?.country == "Magyarország" && <option value={"Szép kártya"}>Szép kártya</option>}

@@ -18,7 +18,7 @@ const ScrollTopButton = () => {
 
     return (
         <>
-            <AnimatePresence exitBeforeEnter>
+            <AnimatePresence mode="wait">
                 {show && (
                     <motion.div
                         initial="initial"
