@@ -15,7 +15,7 @@
         "autoprefixer": "^10.4.13",
         "express-validator": "^6.14.2",
         "firebase": "^9.14.0",
-        "framer-motion": "^7.6.7",
+        "framer-motion": "^7.6.12",
         "html-react-parser": "^3.0.4",
         "next": "^13.0.3",
         "nodemailer": "^6.8.0",
