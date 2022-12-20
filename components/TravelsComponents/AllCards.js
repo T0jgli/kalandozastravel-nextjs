@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { HiOutlineCalendar, HiOutlineUserGroup, HiOutlineTag } from "react-icons/hi";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endingDate, places, id, isSale, type2, customUrl, country }) => {
     const router = useRouter();
-    const url = customUrl || `/travel/${id}`;
+    const [url, setUrl] = useState(customUrl || `/travel/${id}`);
     return (
         <article
             className="flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden"
@@ -73,7 +73,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                             </div>
                         </div>
 
-                        <div className="flex items-center hidden">
+                        <div className="items-center hidden">
                             <HiOutlineUserGroup fontSize="1.5rem" className="text-yellow-700" />
                             <div className="flex-col text-sm pl-5">
                                 <p>Szabad helyek</p>
