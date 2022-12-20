@@ -23,6 +23,7 @@ jobs:
                   push: true
                   tags: kalandozas/web:latest
     deploy:
+        needs: build
         runs-on: ubuntu-latest
         steps:
             - name: Deploy app
@@ -36,6 +37,4 @@ jobs:
                       cd /home/ubuntu
                       cd kalandozas
                       git pull
-                      echo ${{ secrets.DOCKERHUB_TOKEN }} | sudo docker --username ${{ secrets.DOCKERHUB_USERNAME }} --config ~/.kalandozas login --password-stdin
-                      sudo docker --config ~/.kalandozas pull kalandozas/web
-                      sudo docker compose up -d
+                      sudo docker --config ~/.kalandozas compose up -d
