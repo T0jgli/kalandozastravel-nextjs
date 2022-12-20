@@ -2,9 +2,9 @@ version: "3.3"
 
 services:
     kalandozastravel:
-        image: kalandozastravel
+        image: kalandozas/web
         container_name: kalandozastravel
-        build: .
+        #build: .
         restart: always
         ports:
             - 8082:8082
