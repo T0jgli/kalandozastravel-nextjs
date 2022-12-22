@@ -97,13 +97,12 @@ export default function Travels({ travels }) {
     );
 }
 
-export async function getServerSideProps({ res }) {
-    res.setHeader("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=59");
-
+export async function getStaticProps() {
     const parsedTravels = await getAllTravels();
     return {
         props: {
             travels: parsedTravels.travels || null,
         },
+        revalidate: 60,
     };
 }
