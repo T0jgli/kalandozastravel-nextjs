@@ -17,12 +17,6 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                 onClick={() => router.push(`/travel/${id}`)}
                 style={{ paddingTop: "calc(52.356%)" }}
             >
-                {/* <Image
-                    fill={true}
-                    src={backgroundImage}
-                    alt={`Utazás kép ${title}`}
-                    className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
-                /> */}
                 <img
                     src={backgroundImage}
                     alt={`Utazás kép ${title}`}
@@ -50,7 +44,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                     href={`/travel/${id}`}
                     style={{ minHeight: "48px" }}
                 >
-                    <p>{title}</p>
+                    {title}
                 </Link>
 
                 <div className="mx-2 mt-4 py-4 border-t-2 border-b-2 duration-300 hover:opacity-90 border-gray-100">

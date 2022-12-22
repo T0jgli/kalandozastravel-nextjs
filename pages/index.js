@@ -23,7 +23,9 @@ export default function Home({ faqs, travels }) {
     );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps({ res }) {
+    res.setHeader("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=59");
+
     const allTravels = await getHomeData();
 
     return {
@@ -31,6 +33,5 @@ export async function getStaticProps() {
             faqs: allTravels.faqs || null,
             travels: allTravels.travels || null,
         },
-        revalidate: 60,
     };
 }
