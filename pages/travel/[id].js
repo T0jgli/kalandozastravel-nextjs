@@ -3,7 +3,7 @@ import Head from "next/head";
 import OneTravelBody from "../../components/OneTravelComponents/OneTravelBody";
 import { pageVariants } from "../../components/GlobalComponents/Transitions";
 import { motion } from "framer-motion";
-import { getOneTravel } from "../../lib/helpers/getDatas";
+import { getIDs, getOneTravel } from "../../lib/helpers/getDatas";
 
 const OneTravel = ({ travel, error }) => {
     if (error) {
@@ -17,7 +17,7 @@ const OneTravel = ({ travel, error }) => {
     return (
         <>
             <Head>
-                <title>Kalandozás - {travel?.title}</title>
+                <title>Kalandozás - {travel.title}</title>
             </Head>
             {travel.pictures?.length > 0 && (
                 <>
@@ -45,12 +45,19 @@ const OneTravel = ({ travel, error }) => {
 
 export default OneTravel;
 
-export async function getServerSideProps({ query, res }) {
-    res.setHeader("Cache-Control", "public, max-age=300, s-maxage=600, stale-while-revalidate=59");
-
-    const parsedTravel = await getOneTravel(query.id);
+export async function getStaticProps(context) {
+    const parsedTravel = await getOneTravel(context.params.id);
 
     return {
         props: { travel: parsedTravel.travel || null, error: parsedTravel.error || null },
+        revalidate: 60,
+    };
+}
+
+export async function getStaticPaths() {
+    const ids = await getIDs();
+    return {
+        paths: ids,
+        fallback: false, // can also be true or 'blocking'
     };
 }
