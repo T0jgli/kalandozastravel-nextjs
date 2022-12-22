@@ -25,13 +25,15 @@ const ScrollTopButton = () => {
                         exit="exit"
                         animate="animate"
                         variants={cardAnimation}
-                        onClick={() =>
-                            window.scrollTo({
-                                top: 0,
-                                left: 0,
-                                behavior: "smooth",
-                            })
-                        }
+                        onClick={() => {
+                            if (typeof window !== "undefined") {
+                                window.scrollTo({
+                                    top: 0,
+                                    left: 0,
+                                    behavior: "smooth",
+                                });
+                            }
+                        }}
                         className="fixed rounded-lg text-black cursor-pointer z-20 bottom-5 right-5 duration-300 bg-transparent"
                     >
                         <HiChevronUp fontSize="2rem" />
