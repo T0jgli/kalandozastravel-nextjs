@@ -41,7 +41,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
             <div className="p-4 lg:p-3 w-full flex flex-col">
                 <Link
                     className="hover:text-yellow-700 text-center block font-semibold break-words duration-300 h-full"
-                    href={url}
+                    href={`/travel/${id}`}
                     style={{ minHeight: "48px" }}
                 >
                     {title}
