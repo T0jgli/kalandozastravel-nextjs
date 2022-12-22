@@ -6,13 +6,17 @@ import Image from "next/image";
 
 const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endingDate, places, id, isSale, type2, customUrl, country }) => {
     const router = useRouter();
-    const [url, setUrl] = useState(customUrl || `/travel/${id}`);
+    //const [url, setUrl] = useState(customUrl || `/travel/${id}`);
     return (
         <article
             className="flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden"
             style={{ minHeight: "400px" }}
         >
-            <div className="relative w-100 overflow-hidden cursor-pointer" onClick={() => router.push(url)} style={{ paddingTop: "calc(52.356%)" }}>
+            <div
+                className="relative w-100 overflow-hidden cursor-pointer"
+                onClick={() => router.push(`/travel/${id}`)}
+                style={{ paddingTop: "calc(52.356%)" }}
+            >
                 <img
                     src={backgroundImage}
                     alt={`Utazás kép ${title}`}
