@@ -8,7 +8,7 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 
 ENV TZ=Europe/Budapest
-
+ENV NODE_ENV=development
 # install app dependencies
 COPY package.json ./
 
