@@ -5,3 +5,4 @@ Dockerfile
 Dockerfile.prod
 .next
 .git
+.env
