@@ -103,6 +103,6 @@ export async function getStaticProps() {
         props: {
             travels: parsedTravels.travels || null,
         },
-        revalidate: 60,
+        revalidate: 120,
     };
 }
