@@ -17,7 +17,7 @@ context("Home Components e2e testing", function () {
         it("should have working arrows", () => {
             const arrows = ["arrowleft", "arrowright"];
             cy.get("#carousel")
-                .find(`${arrows[Math.floor(Math.random() * arrows.length + 0)]}`)
+                .find(`#${arrows[Math.floor(Math.random() * arrows.length + 0)]}`)
                 .click();
         });
     });
