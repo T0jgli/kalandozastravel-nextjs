@@ -16,7 +16,8 @@ jobs:
                   browser: chrome
                   start: npm run dev
                   wait-on: "http://localhost:3000"
-              env: NEXT_PUBLIC_GOOGLE_MAPSKEY=${{ secrets.NEXT_PUBLIC_GOOGLE_MAPSKEY }}
+              env: 
+                  NEXT_PUBLIC_GOOGLE_MAPSKEY=${{ secrets.NEXT_PUBLIC_GOOGLE_MAPSKEY }}
                   NEXT_PUBLIC_EMAIL_USER=${{ secrets.NEXT_PUBLIC_EMAIL_USER }}
                   NEXT_PUBLIC_EMAIL_PASS=${{ secrets.NEXT_PUBLIC_EMAIL_PASS }}
                   NEXT_BASEURL=${{ secrets.NEXT_BASEURL }}
