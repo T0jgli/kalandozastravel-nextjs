@@ -14,10 +14,12 @@ const OneTravel = ({ travel, error }) => {
         );
     }
 
+    const title = `Kalandozás - ${travel.title}`;
+
     return (
         <>
             <Head>
-                <title>Kalandozás - {travel.title}</title>
+                <title>{title}</title>
             </Head>
             {travel.pictures?.length > 0 && (
                 <>
