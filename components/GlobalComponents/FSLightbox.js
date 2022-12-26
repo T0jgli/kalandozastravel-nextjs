@@ -27,6 +27,7 @@ const Fslightbox = ({ imgtoggler, setimgtoggler, data, gallery }) => {
                         })
                     }
                     imageCaption={imgtoggler.slide + 1 + "/" + data.length}
+                    wrapperClassName="imgwrapper"
                 />
             )}
         </>

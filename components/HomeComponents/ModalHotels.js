@@ -36,7 +36,7 @@ const ModalHotels = ({ hotelsModal, setHotelsModal }) => {
             >
                 <div className="absolute overflow-hidden shadow-sm flex z-50 justify-between mx-auto w-full items-center rounded-2xl bg-white top-0 left-0 p-5 h-20 ">
                     <p className="text-xl font-medium text-gray-700">Európai szállások</p>
-                    <HiOutlineX className="cursor-pointer text-2xl" onClick={closeModal} />
+                    <HiOutlineX className="modalcloseicon cursor-pointer text-2xl" onClick={closeModal} />
                 </div>
                 <div className="flex-1 bg-white rounded-2xl mt-24 p-8" ref={modalRef3} style={{ wordBreak: "break-word" }}>
                     <div className="text-center pb-6">

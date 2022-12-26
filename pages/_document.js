@@ -8,18 +8,22 @@ class MyDocument extends Document {
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
                 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet" />
 
-                <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_GAID}`} />
-                <script
-                    dangerouslySetInnerHTML={{
-                        __html: `window.dataLayer = window.dataLayer || [];
-                                function gtag(){dataLayer.push(arguments);}
-                                gtag('js', new Date());
-                                gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_GAID}', {
-                                    page_path: window.location.pathname,
-                                });
-                                `,
-                    }}
-                />
+                {process.env.NODE_ENV === "production" && (
+                    <>
+                        <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_GAID}`} />
+                        <script
+                            dangerouslySetInnerHTML={{
+                                __html: `window.dataLayer = window.dataLayer || [];
+                            function gtag(){dataLayer.push(arguments);}
+                            gtag('js', new Date());
+                            gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_GAID}', {
+                                page_path: window.location.pathname,
+                            });
+                            `,
+                            }}
+                        />
+                    </>
+                )}
                 <link rel="icon" type="image/png" href="/img/conti_logo.png" />
                 <link rel="apple-touch-icon" href="/favicon.ico" />
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />

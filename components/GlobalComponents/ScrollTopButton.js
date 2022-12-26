@@ -34,6 +34,7 @@ const ScrollTopButton = () => {
                                 });
                             }
                         }}
+                        id="scrolltopbutton"
                         className="fixed rounded-lg text-black cursor-pointer z-20 bottom-5 right-5 duration-300 bg-transparent"
                     >
                         <HiChevronUp fontSize="2rem" />

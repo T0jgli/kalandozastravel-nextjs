@@ -103,6 +103,7 @@ const Navbar = () => {
                 <div
                     onClick={() => setisOpen((b) => !b)}
                     className="lg:hidden absolute bottom-5 right-10 cursor-pointer duration-300 hover:text-gray-700"
+                    id="mobileicon"
                 >
                     <HiMenu fontSize="2rem" className="h-10" />
                 </div>
@@ -113,7 +114,11 @@ const Navbar = () => {
                         open ? "opacity-100 right-0" : "opacity-0 -right-full"
                     }`}
                 >
-                    <div onClick={() => setisOpen((b) => !b)} className="absolute top-5 right-6 cursor-pointer duration-300 hover:text-yellow-700">
+                    <div
+                        onClick={() => setisOpen((b) => !b)}
+                        className="absolute top-5 right-6 cursor-pointer duration-300 hover:text-yellow-700"
+                        id="mobileicon_mobile"
+                    >
                         <HiOutlineX fontSize="2rem" className="h-10" />
                     </div>
                     <div>

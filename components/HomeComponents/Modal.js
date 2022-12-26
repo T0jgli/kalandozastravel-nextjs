@@ -19,7 +19,7 @@ const Modal = ({ modalOpen, setModalOpen }) => {
         <div
             className={`${
                 modalOpen.open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-            } fixed overflow-y-auto overflow-x-hidden flex flex-wrap justify-center my-0 mx-auto top-0 left-0 w-full h-screen z-40 bg-black bg-opacity-70 duration-500 ease-in-out`}
+            } fixed overflow-y-auto overflow-x-hidden flex flex-wrap justify-center my-0 mx-auto top-0 left-0 w-full h-screen z-40 bg-black bg-opacity-70 duration-500 ease-in-out modal`}
             onClick={handleClickOutside}
             role="dialog"
         >
@@ -31,7 +31,7 @@ const Modal = ({ modalOpen, setModalOpen }) => {
             >
                 <div className="absolute overflow-hidden shadow-sm flex z-50 justify-between mx-auto w-full items-center rounded-2xl bg-gray-200 top-0 left-0 p-5 h-20 ">
                     <p className="text-xl font-medium text-gray-700">{modalOpen.title}</p>
-                    <HiOutlineX className="cursor-pointer text-2xl" onClick={closeModal} />
+                    <HiOutlineX className="cursor-pointer text-2xl modalcloseicon" onClick={closeModal} />
                 </div>
                 <div className="my-32 md:mx-5 h-auto">
                     <ModalContent travels={modalOpen?.travels} />

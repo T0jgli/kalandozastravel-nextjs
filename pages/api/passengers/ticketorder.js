@@ -152,36 +152,38 @@ export default async (req, res) => {
                     error: error,
                 });
             } finally {
-                await db.collection("travels").doc(travel.id).collection("passengers").add({
-                    name,
-                    email,
-                    address,
-                    city,
-                    postalCode,
-                    phone,
-                    matesNames,
-                    people,
-                    needseat,
-                    seatNumber,
-                    feedback,
-                    payment,
-                    desc,
-                    timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                });
-
-                db.collection("travels")
-                    .doc(travel.id)
-                    .update({
-                        freePlaces: firebase.firestore.FieldValue.increment(-people),
-                    });
-
-                if (req.body.newsletter) {
-                    await db.collection("newsletter").add({
+                if (process.env.NODE_ENV == "production") {
+                    await db.collection("travels").doc(travel.id).collection("passengers").add({
                         name,
                         email,
+                        address,
+                        city,
+                        postalCode,
                         phone,
+                        matesNames,
+                        people,
+                        needseat,
+                        seatNumber,
+                        feedback,
+                        payment,
+                        desc,
                         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     });
+
+                    db.collection("travels")
+                        .doc(travel.id)
+                        .update({
+                            freePlaces: firebase.firestore.FieldValue.increment(-people),
+                        });
+
+                    if (req.body.newsletter) {
+                        await db.collection("newsletter").add({
+                            name,
+                            email,
+                            phone,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                        });
+                    }
                 }
             }
 

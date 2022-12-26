@@ -7,7 +7,7 @@ const Faqs = ({ questionsAnswers }) => {
         <>
             <h2 className="text-2xl text-gray-800 font-semibold my-10 text-center">Gyakran Ismételt Kérdések</h2>
             <div className="max-w-7xl mb-10 mx-auto flex justify-center">
-                <div className="flex flex-wrap items-start px-10 2xl:px-0 my-10 w-full">
+                <div className="flex flex-wrap items-start px-10 2xl:px-0 my-10 w-full" id="faqsdiv">
                     {questionsAnswers?.map(({ question, answer, id }) => (
                         <Faq key={id} question={question} answer={answer} />
                     ))}

@@ -6,3 +6,4 @@ Dockerfile.prod
 .next
 .git
 .env
+cypress

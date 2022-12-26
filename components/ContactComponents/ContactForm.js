@@ -57,7 +57,10 @@ const ContactForm = () => {
 
             if (responseData.status === "success") {
                 setState(initialInputValue);
-                event("kapcsolat", "userInput", "kapcsolat", "sikeres");
+                event("kapcsolat", {
+                    success: true,
+                    event_name: "kapcsolat",
+                });
                 toast.success("Sikeresen elküldve. Munkatársunk hamarosan felveszi Önnel a kapcsolatot!");
                 return;
             }
@@ -82,7 +85,7 @@ const ContactForm = () => {
 
     return (
         <div className="mx-auto w-full md:w-6/12">
-            <form onSubmit={formSubmit} className="rounded-3xl px-8 pt-6 pb-8 mb-4 shadow-md bg-white">
+            <form onSubmit={formSubmit} className="rounded-3xl px-8 pt-6 pb-8 mb-4 shadow-md bg-white" id="contactform">
                 <p className="text-2xl font-semibold text-gray-800 text-center my-10">Üzenet küldése</p>
 
                 <div className="mb-10 flex-col flex w-full justify-center items-center">

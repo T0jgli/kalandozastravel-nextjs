@@ -47,6 +47,7 @@ const CustomCarousel = ({ travels }) => {
                     height: "calc(100vh - 144px)",
                     minHeight: "430px",
                 }}
+                id="carousel"
             >
                 <div className="absolute overflow-hidden gap-3 mb-32 text-white flex-col flex justify-center items-center top-0 left-0 w-full h-full z-10 bg-black bg-opacity-50">
                     <h1 className="text-center text-3xl md:text-4xl font-semibold mb-8">Neoline-Kalandozás Utazási Iroda</h1>
@@ -69,6 +70,7 @@ const CustomCarousel = ({ travels }) => {
                     <div
                         className="flex w-full h-full items-center justify-center text-3xl text-gray-100 cursor-pointer"
                         onClick={() => setActive(active === 18 ? 1 : active + 1)}
+                        id="arrowright"
                     >
                         <HiChevronRight />
                     </div>
@@ -77,6 +79,7 @@ const CustomCarousel = ({ travels }) => {
                     <div
                         className="flex w-full h-full items-center justify-center text-3xl text-gray-100 cursor-pointer"
                         onClick={() => setActive(active === 1 ? 18 : active - 1)}
+                        id="arrowleft"
                     >
                         <HiChevronLeft />
                     </div>

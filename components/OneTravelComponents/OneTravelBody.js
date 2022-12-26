@@ -27,6 +27,7 @@ const OneTravelBody = ({ travel }) => {
                         alt={`${countries.countries[travel.country]} ikon`}
                         title={travel.country}
                         className="h-24 mx-auto hover:opacity-90 duration-300 shadow-md"
+                        id="countryimage"
                     />
                 )}
                 <div className="w-full flex flex-center justify-center text-center flex-wrap mt-8">
@@ -38,7 +39,7 @@ const OneTravelBody = ({ travel }) => {
                 </div>
 
                 {travel?.pictures?.length > 0 && (
-                    <div className={`my-16 pb-16 grid grid-flow-col gap-3`}>
+                    <div className={`my-16 pb-16 grid grid-flow-col gap-3`} id="travelimages">
                         {travel.pictures?.slice(1).map((pict, index) => (
                             <img
                                 onClick={() => {

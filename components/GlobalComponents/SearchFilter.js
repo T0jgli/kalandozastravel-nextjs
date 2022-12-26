@@ -25,7 +25,11 @@ const SearchFilter = ({ topbg }) => {
     };
 
     return (
-        <form className={`flex md:flex-row flex-col max-w-7xl px-3 2xl:px-0 justify-center items-center gap-4 my-16 mx-auto`} onSubmit={formSubmit}>
+        <form
+            className={`flex md:flex-row flex-col max-w-7xl px-3 2xl:px-0 justify-center items-center gap-4 my-16 mx-auto`}
+            id="searchfilter"
+            onSubmit={formSubmit}
+        >
             <div className="w-full mb-10 md:mb-0">
                 <div className="relative inline-block w-full text-gray-700">
                     <label className={`absolute -top-7 ${!topbg ? "text-gray-700" : "text-white"} text-sm font-semibold mb-2`} htmlFor="title">

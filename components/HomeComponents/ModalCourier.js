@@ -18,7 +18,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
         <div
             className={`${
                 modalCourier?.open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-            } fixed overflow-y-auto overflow-x-hidden flex flex-wrap justify-center my-0 mx-auto top-0 left-0 w-full h-screen z-40 bg-black bg-opacity-80 duration-500 ease-in-out`}
+            } modal fixed overflow-y-auto overflow-x-hidden flex flex-wrap justify-center my-0 mx-auto top-0 left-0 w-full h-screen z-40 bg-black bg-opacity-80 duration-500 ease-in-out`}
             onClick={handleClickOutside}
             role="dialog"
         >
@@ -29,7 +29,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
             >
                 <div className="absolute overflow-hidden shadow-sm flex z-50 justify-between mx-auto w-full items-center rounded-2xl bg-white top-0 left-0 p-5 h-20 ">
                     <p className="text-xl font-medium text-gray-700">Csomagpontjaink</p>
-                    <HiOutlineX className="cursor-pointer text-2xl" onClick={closeModal} />
+                    <HiOutlineX className="modalcloseicon cursor-pointer text-2xl" onClick={closeModal} />
                 </div>
                 <div className="my-28 md:mx-5 flex flex-wrap justify-between gap-8">
                     <div className="mx-auto lg:mx-0 w-full break-words" style={{ wordBreak: "break-word" }}>
@@ -38,18 +38,22 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
                             <a href="https://gls-group.eu/HU/hu/home" target="_blank" rel="noopener noreferrer" className="my-6">
                                 <img
                                     src="/img/glscsomagpont.png"
-                                    alt=""
+                                    alt="GLS csomagpont"
                                     className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
                                 />
                             </a>
                             <a href="https://wish.com" target="_blank" rel="noopener noreferrer" className="my-6">
-                                <img src="/img/wish.png" alt="" className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90" />
+                                <img
+                                    src="/img/wish.png"
+                                    alt="Wish csomagpont"
+                                    className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
+                                />
                             </a>
 
                             <a href="https://www.dpd.com/hu/hu/" target="_blank" rel="noopener noreferrer" className="my-6">
                                 <img
                                     src="/img/dpd-csomagpont.png"
-                                    alt=""
+                                    alt="DPD csomagpont"
                                     className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
                                 />
                             </a>

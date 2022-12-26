@@ -16,6 +16,7 @@ const Cookie = () => {
             className={`${
                 show ? "opacity-1 bottom-0" : "-bottom-full opacity-0"
             } fixed left-0 w-full z-40 shadow-sm bg-opacity-80 bg-black text-white ease-in-out duration-500`}
+            id="cookiealert"
         >
             <div className="max-width-7xl flex flex-col md:flex-row justify-center items-center text-center p-2">
                 <p className="mt-2 md:mt-0">
@@ -38,6 +39,7 @@ const Cookie = () => {
                     }}
                     className="leading-6 duration-300 hover:bg-yellow-700 hover:text-white focus:outline-none mt-4 md:mt-0 md:ml-5 text-yellow-700 
                     font-semibold text-sm uppercase border-yellow-700 border-2 rounded-full py-2 px-5"
+                    id="acceptcookies"
                 >
                     Rendben
                 </button>
