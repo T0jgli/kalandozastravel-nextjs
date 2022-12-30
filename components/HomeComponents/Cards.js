@@ -14,7 +14,7 @@ import ModalCourier from "./ModalCourier";
 const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
     const [travelsState, settravelsState] = useState(travels);
-    const [activeYear, setActiveYear] = useState(new Date().getFullYear());
+    // const [activeYear, setActiveYear] = useState(new Date().getFullYear());
 
     const [isMobile] = useScreenWidth(1280);
     const [modalOpen, setModalOpen] = useState({
@@ -37,9 +37,9 @@ const Cards = ({ travels }) => {
         open: false,
     });
 
-    useEffect(() => {
-        settravelsState(travels.filter((travel) => travel.startingDate.startsWith(activeYear)));
-    }, [activeYear]);
+    // useEffect(() => {
+    //     settravelsState(travels.filter((travel) => travel.startingDate.startsWith(activeYear)));
+    // }, [activeYear]);
 
     return (
         <>
@@ -59,7 +59,7 @@ const Cards = ({ travels }) => {
                 />
             )}
 
-            <div className="flex justify-center my-8 pt-4 mx-auto">
+            {/* <div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
                     className={`${
                         activeYear === 2022 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
@@ -80,7 +80,7 @@ const Cards = ({ travels }) => {
                 >
                     2023
                 </button>
-            </div>
+            </div> */}
 
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>

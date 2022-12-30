@@ -4,6 +4,7 @@ import { initMiddleware, validateMiddleware } from "../../../lib/helpers/middlew
 import { check, validationResult } from "express-validator";
 import db from "../../../lib/firebase";
 import firebase from "firebase/compat/app";
+import applyRateLimit from "../../../lib/helpers/ratelimit";
 
 const validateBody = initMiddleware(
     validateMiddleware(
@@ -66,6 +67,7 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
 export default async (req, res) => {
     switch (req.method) {
         case "POST":
+            await applyRateLimit(req, res);
             await validateBody(req, res);
             await existingEmailOrName(req, res);
 

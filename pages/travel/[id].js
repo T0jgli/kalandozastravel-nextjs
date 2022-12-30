@@ -63,7 +63,7 @@ export async function getStaticProps(context) {
 
     return {
         props: { travel: parsedTravel.travel || null, error: parsedTravel.error || null },
-        revalidate: 120,
+        revalidate: 150,
     };
 }
 

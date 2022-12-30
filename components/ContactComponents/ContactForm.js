@@ -38,6 +38,7 @@ const ContactForm = () => {
 
     const formSubmit = async (e) => {
         e.preventDefault();
+        let responseData = {};
 
         if (!state.name || !state.email || !state.message) return toast.error("Kérjük, az összes mezőt töltse ki");
 
@@ -48,12 +49,15 @@ const ContactForm = () => {
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json, text/plain, */*",
-                    "User-Agent": "*",
                 },
                 body: JSON.stringify(state),
             });
 
-            const responseData = await response.json();
+            try {
+                responseData = await response.json();
+            } catch (error) {
+                return toast.error(response?.statusText);
+            }
 
             if (responseData.status === "success") {
                 setState(initialInputValue);

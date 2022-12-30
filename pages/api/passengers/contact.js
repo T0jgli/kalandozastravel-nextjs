@@ -2,6 +2,7 @@ import { transporter } from "../../../lib/helpers/emailHelper";
 import logger from "../../../lib/helpers/Logger";
 import { initMiddleware, validateMiddleware } from "../../../lib/helpers/middlewares";
 import { check, validationResult } from "express-validator";
+import applyRateLimit from "../../../lib/helpers/ratelimit";
 
 const validateBody = initMiddleware(
     validateMiddleware(
@@ -17,6 +18,7 @@ const validateBody = initMiddleware(
 export default async (req, res) => {
     switch (req.method) {
         case "POST":
+            await applyRateLimit(req, res);
             await validateBody(req, res);
 
             const { name, email, message } = req.body;

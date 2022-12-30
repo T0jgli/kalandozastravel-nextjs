@@ -54,6 +54,7 @@ const Inputs = ({ travel }) => {
 
     const formSubmit = async (e) => {
         e.preventDefault();
+        let responseData;
         try {
             setloading(true);
 
@@ -62,7 +63,6 @@ const Inputs = ({ travel }) => {
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json, text/plain, */*",
-                    "User-Agent": "*",
                 },
                 body: JSON.stringify({
                     ...state,
@@ -77,7 +77,11 @@ const Inputs = ({ travel }) => {
                 }),
             });
 
-            const responseData = await response.json();
+            try {
+                responseData = await response.json();
+            } catch (error) {
+                return toast.error(response?.statusText);
+            }
 
             if (responseData.status === "success") {
                 setState(initialInputValue);
