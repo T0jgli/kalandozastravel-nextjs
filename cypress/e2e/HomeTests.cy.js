@@ -30,7 +30,7 @@ context("Home Components e2e testing", function () {
                     for (let i = 0; i < $value.length; i++) {
                         cy.get("figure").filter(":visible").eq(i).scrollIntoView().click();
                         cy.get(".modal").should("be.visible");
-                        cy.get(".modalcloseicon").filter(":visible").click();
+                        cy.get(".modalcloseicon").filter(":visible").scrollIntoView().click();
 
                         cy.get(".modal").should("not.be.visible");
                     }
