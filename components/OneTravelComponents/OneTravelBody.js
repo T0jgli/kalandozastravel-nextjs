@@ -18,14 +18,14 @@ const OneTravelBody = ({ travel }) => {
     return (
         <>
             <div className="max-w-7xl mt-32 pt-40 mx-auto prose px-3 2xl:px-0">
-                {parse(travel.desc || "")}
-                <span className={`fi fi-${countries.countries[travel.country]} w-28 h-28`} />
+                {parse(travel?.desc || "")}
+                <span className={`fi fi-${countries.countries[travel?.country]} w-28 h-28`} />
 
-                {travel.country && (
+                {travel?.country && (
                     <img
-                        src={`/img/svgs/countries/${countries.countries[travel.country]}.svg`}
-                        alt={`${countries.countries[travel.country]} ikon`}
-                        title={travel.country}
+                        src={`/img/svgs/countries/${countries.countries[travel?.country]}.svg`}
+                        alt={`${countries.countries[travel?.country]} ikon`}
+                        title={travel?.country}
                         className="h-24 mx-auto hover:opacity-90 duration-300 shadow-md"
                         id="countryimage"
                     />
@@ -40,13 +40,13 @@ const OneTravelBody = ({ travel }) => {
 
                 {travel?.pictures?.length > 0 && (
                     <div className={`my-16 pb-16 grid grid-flow-col gap-3`} id="travelimages">
-                        {travel.pictures?.slice(1).map((pict, index) => (
+                        {travel?.pictures?.slice(1).map((pict, index) => (
                             <img
                                 onClick={() => {
                                     setimgtoggler({ toggler: !imgtoggler.toggler, slide: index + 1 });
                                 }}
-                                key={pict.title}
-                                alt={`${travel.title} ${Number(index) + 1}`}
+                                key={pict?.title}
+                                alt={`${travel?.title} ${Number(index) + 1}`}
                                 className="w-full h-full rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
                                 src={pict.src}
                             />
@@ -82,7 +82,7 @@ const OneTravelBody = ({ travel }) => {
                         <div
                             onClick={() => {
                                 window.open(
-                                    `https://www.facebook.com/sharer/sharer.php?u=${`https://kalandozas.hu/travel/${travel.id}`}`,
+                                    `https://www.facebook.com/sharer/sharer.php?u=${`https://kalandozas.hu/travel/${travel?.id}`}`,
                                     "facebook-share-dialog",
                                     "width=800,height=600"
                                 );
@@ -98,7 +98,7 @@ const OneTravelBody = ({ travel }) => {
                         <div
                             onClick={() => {
                                 window.open(
-                                    `https://twitter.com/intent/tweet?url=${`https://kalandozas.hu/travel/${travel.id}`}`,
+                                    `https://twitter.com/intent/tweet?url=${`https://kalandozas.hu/travel/${travel?.id}`}`,
                                     "twitter-share-dialog",
                                     "width=800,height=600"
                                 );
@@ -115,15 +115,15 @@ const OneTravelBody = ({ travel }) => {
                     <HiOutlineTicket fontSize="2.5rem" className="inline text-yellow-700" /> Jegyfoglalás{" "}
                     <HiOutlineTicket fontSize="2.5rem" className="inline text-yellow-700" />
                 </p>
-                {travel.freePlaces !== 0 && new Date() < new Date(travel.startingDate) && (
+                {travel?.freePlaces !== 0 && new Date() < new Date(travel?.startingDate) && (
                     <p className="text-lg text-center mb-10 text-gray-700 hidden">
-                        Még <span className="font-semibold">{travel.freePlaces}</span> hely foglalható!
+                        Még <span className="font-semibold">{travel?.freePlaces}</span> hely foglalható!
                     </p>
                 )}
 
                 <Inputs travel={travel} />
             </div>
-            <Fslightboxes setimgtoggler={setimgtoggler} imgtoggler={imgtoggler} data={travel.pictures} />
+            <Fslightboxes setimgtoggler={setimgtoggler} imgtoggler={imgtoggler} data={travel?.pictures} />
         </>
     );
 };

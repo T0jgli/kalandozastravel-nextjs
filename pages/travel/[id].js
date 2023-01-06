@@ -14,14 +14,14 @@ const OneTravel = ({ travel, error }) => {
         );
     }
 
-    const title = `Kalandozás - ${travel.title}`;
+    const title = `Kalandozás - ${travel?.title}`;
 
     return (
         <>
             <Head>
                 <title>{title}</title>
             </Head>
-            {travel.pictures?.length > 0 && (
+            {travel?.pictures?.length > 0 && (
                 <>
                     <motion.div
                         initial="initial"
@@ -44,7 +44,7 @@ const OneTravel = ({ travel, error }) => {
                         className="px-4 absolute duration-300 hover:opacity-90 top-52 left-2/4 max-w-xl w-full"
                         style={{ transform: "translateX(-50%)" }}
                     >
-                        <img src={travel.pictures[0].src} alt={`Utazás kép fő`} className="mx-auto shadow-xl max-h-96 rounded-2xl" id="topimage" />
+                        <img src={travel?.pictures[0].src} alt={`Utazás kép fő`} className="mx-auto shadow-xl max-h-96 rounded-2xl" id="topimage" />
                     </motion.div>
                 </>
             )}
