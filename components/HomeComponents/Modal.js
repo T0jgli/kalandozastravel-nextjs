@@ -24,7 +24,7 @@ const Modal = ({ modalOpen, setModalOpen }) => {
             role="dialog"
         >
             <div
-                className={`relative overflow-hidden block max-w-6xl h-auto w-full mx-2 md:mx-auto my-10 z-50 rounded-2xl bg-gray-100 shadow-xl transform duration-500 ease-out ${
+                className={`relative overflow-hidden block max-w-6xl h-auto w-full mx-2 md:mx-auto my-24 z-50 rounded-2xl bg-gray-100 shadow-xl transform duration-500 ease-out ${
                     modalOpen.open ? "opacity-100 top-0 " : "opacity-0 -top-96"
                 }`}
                 ref={modalRef}
