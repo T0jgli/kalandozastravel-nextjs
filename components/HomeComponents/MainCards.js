@@ -51,26 +51,6 @@ const MainCards = ({ travels, setModalOpen, carousel, sethatartalanulModals }) =
                         onClick={() =>
                             setModalOpen({
                                 open: true,
-                                title: "2023-as utazásaink",
-                                travels: travels.filter((travel) => travel?.startingDate?.startsWith("2023")),
-                            })
-                        }
-                    >
-                        <img
-                            src={"/img/2023.png"}
-                            className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
-                            alt="Vízen háttér"
-                        />
-                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
-                            2023
-                        </h2>
-                    </figure>
-                    <figure
-                        className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
-                        onClick={() =>
-                            setModalOpen({
-                                open: true,
                                 title: "Levegőben",
                                 travels: travels.filter((travel) => travel.type?.includes("levegoben")),
                             })
@@ -110,11 +90,6 @@ const MainCards = ({ travels, setModalOpen, carousel, sethatartalanulModals }) =
                         </h2>
                     </figure>
                     <figure
-                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
-                    ></figure>
-
-                    <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
@@ -139,10 +114,10 @@ const MainCards = ({ travels, setModalOpen, carousel, sethatartalanulModals }) =
                         </h2>
                     </figure>
 
-                    <figure
+                    {/* <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
-                    ></figure>
+                    ></figure> */}
 
                     {/* <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
@@ -182,28 +157,10 @@ const MainCards = ({ travels, setModalOpen, carousel, sethatartalanulModals }) =
                         </h2>
                     </figure> */}
 
-                    <figure
-                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
-                        onClick={() => {
-                            sethatartalanulModals({
-                                open: true,
-                            });
-                        }}
-                    >
-                        <img
-                            src={"/img/hatartalanul.jpg"}
-                            className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
-                            alt="Külföld háttér"
-                        />
-                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
-                            Határtalanul
-                        </h2>
-                    </figure>
-                    <figure
+                    {/* <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
-                    ></figure>
+                    ></figure> */}
                 </div>
             </div>
         </>

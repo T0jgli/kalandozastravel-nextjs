@@ -8,7 +8,7 @@ import ModalHatartalanul from "./ModalHatartalanul";
 // import ModalHotels from "./ModalHotels";
 
 const CustomCarousel = ({ travels }) => {
-    const [active, setActive] = useState(1);
+    const [active, setActive] = useState(74);
     const [isMobile] = useScreenWidth(1279);
     const [modalOpen, setModalOpen] = useState({
         open: false,
@@ -28,7 +28,7 @@ const CustomCarousel = ({ travels }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setActive((prev) => (prev === 18 ? 1 : prev + 1));
+            setActive((prev) => (prev === 81 ? 1 : prev + 1));
         }, 5000);
 
         return () => clearInterval(interval);
@@ -43,7 +43,7 @@ const CustomCarousel = ({ travels }) => {
             <div
                 className={`bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0`}
                 style={{
-                    backgroundImage: `url('/img/carousel/${active}.jpg')`,
+                    backgroundImage: `url('/img/newpictures/${active}.jpg')`,
                     height: "calc(100vh - 144px)",
                     minHeight: "430px",
                 }}

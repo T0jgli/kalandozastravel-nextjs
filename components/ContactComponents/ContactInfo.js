@@ -31,7 +31,7 @@ const ContactInfo = () => {
                             kalandozas@t-online.hu
                         </a>
                     </div>
-                    <div className="pb-10 flex flex-col">
+                    <div className="pb-5 flex flex-col">
                         <span className="text-gray-500 font-semibold pb-2">Iroda:</span>
                         <a
                             href="https://www.google.com/maps?ll=47.495689,19.062411&z=15&t=m&hl=hu-HU&gl=US&mapclient=embed&q=S%C3%ADp+u.+4+Budapest+1075"
@@ -39,6 +39,10 @@ const ContactInfo = () => {
                         >
                             1075 Budapest, Síp utca 4.
                         </a>
+                    </div>
+                    <div className="pb-10">
+                        <span className="text-gray-500 font-semibold pb-2">Nyitvatartás:</span>
+                        <span className="font-medium"> H-P 9-17 óráig</span>
                     </div>
                 </div>
             </div>
