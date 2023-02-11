@@ -64,6 +64,23 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
     next();
 });
 
+const sendUserMail = (name, email, title) => {
+    const mail = {
+        from: `"kalandozas.hu" "noreply@contibus.hu"`,
+        to: email,
+        subject: `Kalandozás - ${title}`,
+        html: ` <html><body>
+        <p>Kedves ${name},</p>
+        <h4>Köszönjük foglalását! Hamarosan válasz e-mailban felvesszük Önnel a kapcsolatot!</h4>
+        <br/>
+        <br/>
+        <small><span style='color: gray'>Ez egy automatikusan generált email. Kérjük ne válaszoljon rá.</span></small>
+        </body>
+        </html> `,
+    };
+    return transporter.sendMail(mail);
+};
+
 export default async (req, res) => {
     switch (req.method) {
         case "POST":
@@ -143,6 +160,7 @@ export default async (req, res) => {
                     }
                 });
                 await transporter.sendMail(mail);
+                await sendUserMail(name, email, travel.title);
                 logger("email", "elküldve (jegyfoglalás)");
                 res.status(200).json({
                     status: "success",
