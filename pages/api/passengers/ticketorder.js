@@ -68,6 +68,7 @@ const sendUserMail = (name, email, title) => {
     const mail = {
         from: `"kalandozas.hu" "noreply@contibus.hu"`,
         to: email,
+        replyTo: "kalandozas@t-online.hu",
         subject: `Kalandozás - ${title}`,
         html: ` <html><body>
         <p>Kedves ${name},</p>
