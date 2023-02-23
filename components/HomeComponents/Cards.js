@@ -85,7 +85,7 @@ const Cards = ({ travels }) => {
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
                     <AnimatePresence>
-                        {travelsState.map((travel) => (
+                        {travelsState?.map((travel) => (
                             <motion.div
                                 id="card"
                                 className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"

@@ -28,8 +28,8 @@ export async function getStaticProps() {
 
     return {
         props: {
-            faqs: allTravels.faqs || null,
-            travels: allTravels.travels || null,
+            faqs: allTravels?.faqs || null,
+            travels: allTravels?.travels || null,
         },
         revalidate: 150,
     };
