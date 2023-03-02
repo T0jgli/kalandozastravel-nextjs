@@ -1,10 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import { useRouter } from "next/router";
 import { HiOutlineCalendar, HiOutlineUserGroup, HiOutlineTag } from "react-icons/hi";
 import Link from "next/link";
-import Image from "next/image";
 
-const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endingDate, places, id, isSale, type2, customUrl, country }) => {
+const AllCard = ({
+    backgroundImage,
+    title,
+    timestamp,
+    price,
+    startingDate,
+    endingDate,
+    places,
+    id,
+    isSale,
+    type2,
+    customUrl,
+    country,
+    thumbnailPicture,
+}) => {
     const router = useRouter();
     //const [url, setUrl] = useState(customUrl || `/travel/${id}`);
     return (
@@ -24,7 +37,7 @@ const AllCard = ({ backgroundImage, title, timestamp, price, startingDate, endin
                     className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
                 /> */}
                 <img
-                    src={backgroundImage}
+                    src={thumbnailPicture || backgroundImage}
                     alt={`Utazás kép ${title}`}
                     className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
                 />

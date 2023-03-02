@@ -1,6 +1,6 @@
 import React from "react";
 
-const MainCards = ({ travels, setModalOpen, carousel, sethatartalanulModals }) => {
+const MainCards = ({ travels, setModalOpen, carousel }) => {
     return (
         <>
             <div className={`${carousel ? "hidden xl:block" : "block xl:hidden"}`}>

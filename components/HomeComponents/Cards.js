@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
@@ -8,7 +8,6 @@ import Modal from "./Modal";
 // import ModalBusJet from "./ModalBusJet";
 import ModalHatartalanul from "./ModalHatartalanul";
 // import ModalHotels from "./ModalHotels";
-import Link from "next/link";
 import ModalCourier from "./ModalCourier";
 
 const Cards = ({ travels }) => {
@@ -21,15 +20,7 @@ const Cards = ({ travels }) => {
         open: false,
     });
 
-    const [hotelsModal, setHotelsModal] = useState({
-        open: false,
-    });
-
     const [hatartalanulModals, sethatartalanulModals] = useState({
-        open: false,
-    });
-
-    const [busjetModal, setBusjetModal] = useState({
         open: false,
     });
 
@@ -49,15 +40,7 @@ const Cards = ({ travels }) => {
             {/* <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} /> */}
             <ModalCourier setmodalCourier={setcourierModal} modalCourier={courierModal} />
 
-            {isMobile && (
-                <MainCards
-                    travels={travels}
-                    setModalOpen={setModalOpen}
-                    setHotelsModal={setHotelsModal}
-                    sethatartalanulModals={sethatartalanulModals}
-                    setBusjetModal={setBusjetModal}
-                />
-            )}
+            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} sethatartalanulModals={sethatartalanulModals} />}
 
             {/* <div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
@@ -97,6 +80,7 @@ const Cards = ({ travels }) => {
                             >
                                 <AllCards
                                     id={travel.id}
+                                    thumbnailPicture={travel.thumbnailPictures?.[0]?.src}
                                     backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
                                     title={travel.title}
                                     isSale={travel.isSale}
