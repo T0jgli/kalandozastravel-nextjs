@@ -38,7 +38,7 @@ const OneTravelBody = ({ travel }) => {
                     )}
                 </div>
 
-                {travel?.pictures?.length > 0 && (
+                {travel?.thumbnailPictures?.length > 0 && (
                     <div className={`my-16 pb-16 grid grid-flow-col gap-3`} id="travelimages">
                         {travel?.thumbnailPictures?.slice(1).map((pict, index) => (
                             <img
