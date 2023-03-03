@@ -40,7 +40,7 @@ const OneTravelBody = ({ travel }) => {
 
                 {travel?.pictures?.length > 0 && (
                     <div className={`my-16 pb-16 grid grid-flow-col gap-3`} id="travelimages">
-                        {travel?.pictures?.slice(1).map((pict, index) => (
+                        {travel?.thumbnailPictures?.slice(1).map((pict, index) => (
                             <img
                                 onClick={() => {
                                     setimgtoggler({ toggler: !imgtoggler.toggler, slide: index + 1 });
@@ -123,7 +123,7 @@ const OneTravelBody = ({ travel }) => {
 
                 <Inputs travel={travel} />
             </div>
-            <Fslightboxes setimgtoggler={setimgtoggler} imgtoggler={imgtoggler} data={travel?.pictures} />
+            <Fslightboxes setimgtoggler={setimgtoggler} imgtoggler={imgtoggler} data={travel?.thumbnailPictures} />
         </>
     );
 };
