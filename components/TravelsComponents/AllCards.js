@@ -19,7 +19,16 @@ const AllCard = ({
     thumbnailPicture,
 }) => {
     const router = useRouter();
-    //const [url, setUrl] = useState(customUrl || `/travel/${id}`);
+    const usedImage = thumbnailPicture || backgroundImage;
+    const url =
+        "https://firebasestorage.googleapis.com/v0/b/" +
+            "kalandozastravel.appspot.com" +
+            "/o/" +
+            encodeURIComponent(`travels/${id}/pictures/thumbnails/0_500x500`) +
+            "?alt=media&token=" +
+            usedImage.split("&token=")[1] ||
+        thumbnailPicture ||
+        backgroundImage;
     return (
         <article
             className="flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden"
@@ -30,14 +39,8 @@ const AllCard = ({
                 onClick={() => router.push(`/travel/${id}`)}
                 style={{ paddingTop: "calc(52.356%)" }}
             >
-                {/* <Image
-                    fill={true}
-                    src={backgroundImage}
-                    alt={`Utazás kép ${title}`}
-                    className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
-                /> */}
                 <img
-                    src={thumbnailPicture || backgroundImage}
+                    src={url}
                     alt={`Utazás kép ${title}`}
                     className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
                 />
