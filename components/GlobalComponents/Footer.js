@@ -9,7 +9,7 @@ const Footer = () => {
                     className="m-0 w-full h-full shadow-lg"
                     src={
                         "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJcZcmwULcQUcRbO4wF14ieDg&key=" +
-                        "AIzaSyAxz-bKPvunFWDKyfhGGOB0qZNjtHm4exA"
+                        process.env.NEXT_PUBLIC_GOOGLE_MAPSKEY
                     }
                     frameBorder="0"
                 />
