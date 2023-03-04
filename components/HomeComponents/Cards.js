@@ -80,7 +80,7 @@ const Cards = ({ travels }) => {
                             >
                                 <AllCards
                                     id={travel.id}
-                                    thumbnailPicture={travel.thumbnailPictures?.[0]?.src}
+                                    thumbnail={travel.thumbnail}
                                     backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
                                     title={travel.title}
                                     isSale={travel.isSale}

@@ -38,17 +38,17 @@ const OneTravelBody = ({ travel }) => {
                     )}
                 </div>
 
-                {travel?.thumbnailPictures?.length > 0 && (
+                {travel?.thumbnails?.length > 0 && (
                     <div className={`my-16 pb-16 grid grid-flow-col gap-3`} id="travelimages">
-                        {travel?.thumbnailPictures?.slice(1).map((pict, index) => (
+                        {travel?.thumbnails?.slice(1).map((pict, index) => (
                             <img
                                 onClick={() => {
                                     setimgtoggler({ toggler: !imgtoggler.toggler, slide: index + 1 });
                                 }}
-                                key={pict?.title}
+                                key={travel.name + " Kép" + index}
                                 alt={`${travel?.title} ${Number(index) + 1}`}
                                 className="w-full h-full rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
-                                src={pict.src}
+                                src={pict}
                             />
                         ))}
                     </div>
@@ -123,7 +123,7 @@ const OneTravelBody = ({ travel }) => {
 
                 <Inputs travel={travel} />
             </div>
-            <Fslightboxes setimgtoggler={setimgtoggler} imgtoggler={imgtoggler} data={travel?.thumbnailPictures} />
+            <Fslightboxes setimgtoggler={setimgtoggler} imgtoggler={imgtoggler} data={travel?.thumbnails} />
         </>
     );
 };

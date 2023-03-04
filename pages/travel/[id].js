@@ -32,7 +32,7 @@ const OneTravel = ({ travel, error }) => {
                     >
                         <div
                             className="absolute inset-0 w-full h-full bg-cover bg-center transform scale-125 bg-no-repeat"
-                            style={{ backgroundImage: `url(${travel?.thumbnailPictures[0].src || travel.pictures[0].src})`, filter: "blur(55px)" }}
+                            style={{ backgroundImage: `url(${travel?.thumbnails[0] || travel.pictures[0].src})`, filter: "blur(55px)" }}
                             id="blurimage"
                         />
                     </motion.div>
@@ -45,7 +45,7 @@ const OneTravel = ({ travel, error }) => {
                         style={{ transform: "translateX(-50%)" }}
                     >
                         <img
-                            src={travel?.thumbnailPictures[0].src || travel.pictures[0].src}
+                            src={travel?.thumbnails[0] || travel.pictures[0].src}
                             alt={`Utazás kép fő`}
                             className="mx-auto shadow-xl max-h-96 rounded-2xl"
                             id="topimage"

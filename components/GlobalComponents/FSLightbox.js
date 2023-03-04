@@ -5,9 +5,9 @@ const Fslightbox = ({ imgtoggler, setimgtoggler, data, gallery }) => {
         <>
             {imgtoggler.toggler && (
                 <Lightbox
-                    mainSrc={data[imgtoggler.slide].src}
-                    nextSrc={data[(imgtoggler.slide + 1) % data.length].src}
-                    prevSrc={data[(imgtoggler.slide + data.length - 1) % data.length].src}
+                    mainSrc={data[imgtoggler.slide]}
+                    nextSrc={data[(imgtoggler.slide + 1) % data.length]}
+                    prevSrc={data[(imgtoggler.slide + data.length - 1) % data.length]}
                     onCloseRequest={() => {
                         setimgtoggler({
                             ...imgtoggler,
