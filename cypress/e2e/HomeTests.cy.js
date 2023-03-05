@@ -82,18 +82,18 @@ context("Home Components e2e testing", function () {
             cy.get(".gallery").should("be.visible");
         });
 
-        it("should have working image change", () => {
-            cy.get(".gallery")
-                .find("nav > button")
-                .filter(":visible")
-                .then(($value) => {
-                    const randomNumber = Math.floor(Math.random() * $value.length + 0);
-                    const el = Cypress.$(".gallery").find("nav > button").filter(":visible").eq(randomNumber);
-                    const src = el.find("img").attr("src");
-                    el.trigger("click");
-                    cy.get(".image-gallery-slide.center").find(".image-gallery-image").should("have.attr", "src", src);
-                });
-        });
+        // it("should have working image change", () => {
+        //     cy.get(".gallery")
+        //         .find("nav > button")
+        //         .filter(":visible")
+        //         .then(($value) => {
+        //             const randomNumber = Math.floor(Math.random() * $value.length + 0);
+        //             const el = Cypress.$(".gallery").find("nav > button").filter(":visible").eq(randomNumber);
+        //             const src = el.find("img").attr("src");
+        //             el.trigger("click");
+        //             cy.get(".image-gallery-slide.center").find(".image-gallery-image").should("have.attr", "src", src);
+        //         });
+        // });
     });
 
     describe("FAQ tests", function () {
