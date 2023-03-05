@@ -25,7 +25,7 @@ const ModalContent = ({ travels }) => {
                         >
                             <td className="text-center md:text-left mx-auto">
                                 <img
-                                    src={travel.photoURL || travel.pictures?.[0]?.src}
+                                    src={travel.thumbnail || travel.photoURL || travel.pictures?.[0]?.src}
                                     alt={`Utazás kép ${i}`}
                                     className="w-12 h-12 object-cover shadow-md rounded-lg"
                                 />
