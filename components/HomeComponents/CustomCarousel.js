@@ -38,7 +38,7 @@ const CustomCarousel = ({ travels }) => {
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             {/* <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} /> */}
-            <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
+            {/* <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} /> */}
             {/* <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} /> */}
             <div
                 className={`bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0`}

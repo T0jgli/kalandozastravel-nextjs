@@ -36,7 +36,7 @@ const Cards = ({ travels }) => {
         <>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             {/* <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} /> */}
-            <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} />
+            {/* <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} /> */}
             {/* <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} /> */}
             <ModalCourier setmodalCourier={setcourierModal} modalCourier={courierModal} />
 
