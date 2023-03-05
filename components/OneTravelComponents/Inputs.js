@@ -116,6 +116,14 @@ const Inputs = ({ travel }) => {
         }
     };
 
+    if (!travel) {
+        return (
+            <div className="text-center my-8">
+                <p className="text-xl text-gray-700">Az utazás nem található!</p>
+            </div>
+        );
+    }
+
     if (travel.freePlaces === 0) {
         return (
             <div className="text-center my-8">
