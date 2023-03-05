@@ -17,7 +17,7 @@
         "express-rate-limit": "^6.7.0",
         "express-validator": "^6.15.0",
         "firebase": "^9.17.2",
-        "framer-motion": "^10.0.1",
+        "framer-motion": "^10.0.2",
         "html-react-parser": "^3.0.10",
         "next": "^13.2.3",
         "nodemailer": "^6.9.1",
