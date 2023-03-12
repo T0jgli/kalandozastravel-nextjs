@@ -124,7 +124,7 @@ const Inputs = ({ travel }) => {
         );
     }
 
-    if (travel.freePlaces === 0) {
+    if (travel?.freePlaces === 0) {
         return (
             <div className="text-center my-8">
                 <p className="text-xl text-gray-700">Sajnos az utazásra minden hely elfogyott!</p>
@@ -132,7 +132,7 @@ const Inputs = ({ travel }) => {
         );
     }
 
-    if (new Date() >= new Date(travel.startingDate)) {
+    if (new Date() >= new Date(travel?.startingDate)) {
         return (
             <div className="text-center my-8">
                 <p className="text-xl text-gray-700">Sajnos az utazásra már nem lehet jegyet foglalni!</p>
@@ -140,7 +140,7 @@ const Inputs = ({ travel }) => {
         );
     }
 
-    if (travel.type2 === "Jelentkezés lezárult") {
+    if (travel?.type2 === "Jelentkezés lezárult") {
         return (
             <div className="text-center my-8">
                 <p className="text-xl text-gray-700">Sajnos az utazásra már nem lehet jegyet foglalni!</p>
