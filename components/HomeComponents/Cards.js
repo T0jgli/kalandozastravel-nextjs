@@ -143,6 +143,7 @@ const Cards = ({ travels }) => {
                     <div className="absolute w-full h-full top-0" onClick={() => setcourierModal({ open: true })}>
                         <img
                             src={"/img/csomagpont.png"}
+                            alt="csomagpont"
                             className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"
                         />
                         <h2

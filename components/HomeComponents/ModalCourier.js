@@ -34,7 +34,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
                 <div className="my-28 md:mx-5 flex flex-wrap justify-between gap-8">
                     <div className="mx-auto lg:mx-0 w-full break-words" style={{ wordBreak: "break-word" }}>
                         <div ref={modalRef} className="bg-white p-8 rounded-2xl flex  flex-col flex-wrap">
-                            <h2 className="text-center text-lg pb-4"></h2>
+                            {/* <h2 className="text-center text-lg pb-4"></h2> */}
                             <a href="https://gls-group.eu/HU/hu/home" target="_blank" rel="noopener noreferrer" className="my-6">
                                 <img
                                     src="/img/glscsomagpont.png"
