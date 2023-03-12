@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import { getAllTravels } from "../lib/helpers/getDatas";
 import Infos from "../components/HomeComponents/Infos";
+import { agencySchema } from "../lib/helpers/StructuredData";
 
 export default function Travels({ travels }) {
     const [travelsState, settravelsState] = useState(travels);
@@ -41,6 +42,7 @@ export default function Travels({ travels }) {
         <motion.section initial="initial" animate="animate" variants={pageVariants}>
             <Head>
                 <title>Utazásaink - Kalandozás Utazási iroda</title>
+                <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>
             </Head>
             <Topbg />
             <SearchFilter />

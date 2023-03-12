@@ -6,6 +6,7 @@ import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import BottomLinks from "../components/GlobalComponents/BottomLinks";
 import CustomCarousel from "../components/HomeComponents/CustomCarousel";
 import { getHomeData } from "../lib/helpers/getDatas";
+import { agencySchema } from "../lib/helpers/StructuredData";
 
 export default function Home({ faqs, travels }) {
     return (
@@ -13,6 +14,7 @@ export default function Home({ faqs, travels }) {
             <motion.section initial="initial" animate="animate" variants={pageVariants}>
                 <Head>
                     <title>Főoldal - Kalandozás Utazási iroda</title>
+                    <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>
                 </Head>
                 <CustomCarousel travels={travels} />
                 <BottomLinks />

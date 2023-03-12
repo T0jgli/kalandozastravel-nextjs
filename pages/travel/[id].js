@@ -4,7 +4,7 @@ import OneTravelBody from "../../components/OneTravelComponents/OneTravelBody";
 import { pageVariants, travelImage } from "../../components/GlobalComponents/Transitions";
 import { motion } from "framer-motion";
 import { getIDs, getOneTravel } from "../../lib/helpers/getDatas";
-import StructuredData from "../../lib/helpers/StructuredData";
+import { agencySchema, oneTravelSchema } from "../../lib/helpers/StructuredData";
 
 const OneTravel = ({ travel, error }) => {
     if (error) {
@@ -23,14 +23,17 @@ const OneTravel = ({ travel, error }) => {
                 <title>{title}</title>
                 <script type="application/ld+json">
                     {JSON.stringify(
-                        StructuredData(
+                        oneTravelSchema(
                             `https://kalandozas.hu/travel/${travel?.id}`,
                             travel?.price,
                             travel?.thumbnails[0] || travel?.pictures[0].src,
-                            travel?.freePlaces !== 0 && new Date() < new Date(travel.startingDate) && travel?.type2 !== "Jelentkezés lezárult"
+                            travel?.freePlaces !== 0 && new Date() < new Date(travel.startingDate) && travel?.type2 !== "Jelentkezés lezárult",
+                            travel?.startingDate,
+                            travel?.title
                         )
                     )}
                 </script>
+                <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>
             </Head>
             {travel?.pictures?.length > 0 && (
                 <>
