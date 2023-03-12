@@ -4,6 +4,7 @@ import OneTravelBody from "../../components/OneTravelComponents/OneTravelBody";
 import { pageVariants, travelImage } from "../../components/GlobalComponents/Transitions";
 import { motion } from "framer-motion";
 import { getIDs, getOneTravel } from "../../lib/helpers/getDatas";
+import StructuredData from "../../lib/helpers/StructuredData";
 
 const OneTravel = ({ travel, error }) => {
     if (error) {
@@ -20,6 +21,16 @@ const OneTravel = ({ travel, error }) => {
         <>
             <Head>
                 <title>{title}</title>
+                <script type="application/ld+json">
+                    {JSON.stringify(
+                        StructuredData(
+                            `https://kalandozas.hu/travel/${travel?.id}`,
+                            travel?.price,
+                            travel?.thumbnails[0] || travel?.pictures[0].src,
+                            travel?.freePlaces !== 0 && new Date() < new Date(travel.startingDate) && travel?.type2 !== "Jelentkezés lezárult"
+                        )
+                    )}
+                </script>
             </Head>
             {travel?.pictures?.length > 0 && (
                 <>
@@ -32,7 +43,7 @@ const OneTravel = ({ travel, error }) => {
                     >
                         <div
                             className="absolute inset-0 w-full h-full bg-cover bg-center transform scale-125 bg-no-repeat"
-                            style={{ backgroundImage: `url(${travel?.thumbnails[0] || travel.pictures[0].src})`, filter: "blur(55px)" }}
+                            style={{ backgroundImage: `url(${travel?.thumbnails[0] || travel?.pictures[0].src})`, filter: "blur(55px)" }}
                             id="blurimage"
                         />
                     </motion.div>
