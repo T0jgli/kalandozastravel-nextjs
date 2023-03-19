@@ -19,9 +19,13 @@ const AllCard = ({
     thumbnail,
 }) => {
     const router = useRouter();
+    const traveldate = new Date(startingDate);
+    const date = new Date();
     return (
         <article
-            className="flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden"
+            className={`flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden ${
+                places === 0 || date >= traveldate || type2 === "Jelentkezés lezárult" ? "unavailable" : ""
+            }`}
             style={{ minHeight: "400px" }}
         >
             <div
@@ -66,10 +70,8 @@ const AllCard = ({
                             <div className="flex-col text-sm pl-5">
                                 <p>Időpont</p>
                                 <p className="opacity-70">
-                                    {new Date(startingDate).getUTCFullYear() !== new Date().getUTCFullYear() && (
-                                        <span>{new Date(startingDate).getUTCFullYear()} </span>
-                                    )}
-                                    {new Date(startingDate).toLocaleDateString("hu-HU", {
+                                    {traveldate.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate.getUTCFullYear()} </span>}
+                                    {date.toLocaleDateString("hu-HU", {
                                         month: "short",
                                         day: "numeric",
                                         timeZone: "Europe/Budapest",

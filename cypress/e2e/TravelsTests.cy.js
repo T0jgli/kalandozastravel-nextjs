@@ -20,6 +20,7 @@ context("Travels Components e2e testing", function () {
                         cy.get("article").eq(i).find("img").should("be.visible");
                     }
                     url = Cypress.$("article")
+                        .not(".unavailable")
                         .eq(Math.floor(Math.random() * $value.length + 0))
                         .find("a")
                         .attr("href");
