@@ -10,15 +10,6 @@ const BottomLinks = () => {
                 className="flex flex-wrap gap-8 justify-center items-center h-auto mx-auto uppercase font-medium py-5 md:py-0"
                 style={{ minHeight: "4rem" }}
             >
-                <a
-                    className={`hover:text-yellow-700 filterlink duration-300 h-full cursor-pointer`}
-                    href="https://hunisphere-zrt.com/busjetbusinessclass/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    Bus Jet Business Class
-                </a>
-
                 <Link
                     className={`${
                         router.query.type === "1naposutazas" ? "active text-yellow-700" : ""
