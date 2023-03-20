@@ -71,7 +71,7 @@ const AllCard = ({
                                 <p>Időpont</p>
                                 <p className="opacity-70">
                                     {traveldate.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate.getUTCFullYear()} </span>}
-                                    {date.toLocaleDateString("hu-HU", {
+                                    {traveldate.toLocaleDateString("hu-HU", {
                                         month: "short",
                                         day: "numeric",
                                         timeZone: "Europe/Budapest",
