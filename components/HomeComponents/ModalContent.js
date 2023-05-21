@@ -13,7 +13,7 @@ const ModalContent = ({ travels }) => {
                     <tr className="bg-gray-200 flex flex-col flex-no wrap sm:table-row text-gray-600 uppercase text-sm leading-normal">
                         <th></th>
                         <th className="px-6 py-3 text-left">Dátum</th>
-                        <th className="px-6 py-3 text-left">Cím</th>
+                        <th className="px-6 py-3 text-left">Utazás</th>
                         <th className="px-3 py-3 text-right">Jegyfoglalás</th>
                     </tr>
                 </thead>
@@ -49,12 +49,16 @@ const ModalContent = ({ travels }) => {
                                 </Link>
                             </td>
                             <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">
-                                <button
-                                    className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
-                                    onClick={() => router.push(travel.customUrl || `/travel/${travel.id}#ticket`)}
-                                >
-                                    <HiOutlineShoppingCart fontSize="1.5rem" />
-                                </button>
+                                {travel?.freePlaces == 0 ? (
+                                    <div className="font-medium p-3 text-red-700">Megtelt</div>
+                                ) : (
+                                    <button
+                                        className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
+                                        onClick={() => router.push(travel.customUrl || `/travel/${travel.id}#ticket`)}
+                                    >
+                                        <HiOutlineShoppingCart fontSize="1.5rem" />
+                                    </button>
+                                )}
                             </td>
                         </tr>
                     ))}
