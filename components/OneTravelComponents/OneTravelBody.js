@@ -6,6 +6,17 @@ import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import countries from "../../lib/countries.json";
 import Link from "next/link";
 
+const TYPEPARSER = {
+    "1naposutazas": "1 napos utazás",
+    "1naposkulfoldi": "1 napos külföldi",
+    varoslatogatas: "Városlátogatás",
+    "1naposbelfoldi": "1 napos belföldi",
+    levegoben: "Levegőben",
+    nonstop: "Non-Stop utazás",
+    korutazas: "Körutazás",
+    partnerek: "Partneri utazás",
+};
+
 const Fslightboxes = dynamic(() => import("../GlobalComponents/FSLightbox"));
 const Inputs = dynamic(() => import("./Inputs"));
 
@@ -66,7 +77,7 @@ const OneTravelBody = ({ travel }) => {
                                 href={`/travels?type=${t}`}
                                 key={`${t} ${travel?.id}`}
                             >
-                                <span>{t}</span>
+                                <span>{TYPEPARSER?.[t] || t}</span>
                             </Link>
                         ))}
                     {travel?.type2 && (
