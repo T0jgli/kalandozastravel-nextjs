@@ -77,9 +77,8 @@ jobs:
                   username: ${{secrets.SSH_USERNAME}}
 
                   script: |
-                      ssh neoline
-                      cd /home/ubuntu
+                      cd /home/github
                       cd kalandozas
                       git pull
-                      sudo docker --config ~/.kalandozas compose pull kalandozastravel
-                      sudo docker --config ~/.kalandozas compose up -d
+                      docker --config ~/.kalandozas compose pull kalandozastravel
+                      docker --config ~/.kalandozas compose up -d
