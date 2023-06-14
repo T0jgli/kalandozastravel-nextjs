@@ -33,6 +33,6 @@
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "cypress": "^12.12.0"
+        "cypress": "^12.14.0"
     }
 }
