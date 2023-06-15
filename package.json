@@ -16,7 +16,7 @@
         "autoprefixer": "^10.4.14",
         "express-rate-limit": "^6.7.0",
         "express-validator": "^6.15.0",
-        "firebase": "^9.17.2",
+        "firebase": "^9.22.2",
         "framer-motion": "^10.12.16",
         "html-react-parser": "^3.0.16",
         "next": "^13.4.5",
