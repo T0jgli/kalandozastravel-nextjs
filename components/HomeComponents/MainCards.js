@@ -45,7 +45,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             Belföldi utazásaink
                         </h2>
                     </figure>
-                    <figure
+                    {/* <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
@@ -63,6 +63,26 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         />
                         <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             Levegőben
+                        </h2>
+                    </figure> */}
+                    <figure
+                        className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        onClick={() =>
+                            setModalOpen({
+                                open: true,
+                                title: "Last Minute",
+                                travels: travels.filter((travel) => travel.type?.includes("lastminute")),
+                            })
+                        }
+                    >
+                        <img
+                            src={"/img/lastminute.jpg"}
+                            className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
+                            alt="Last Minute háttér"
+                        />
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
+                            Last Minute
                         </h2>
                     </figure>
                     <figure
