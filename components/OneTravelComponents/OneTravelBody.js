@@ -56,7 +56,7 @@ const OneTravelBody = ({ travel }) => {
                                 onClick={() => {
                                     setimgtoggler({ toggler: !imgtoggler.toggler, slide: index + 1 });
                                 }}
-                                key={travel.name + " Kép" + index}
+                                key={travel?.name + " Kép" + index}
                                 alt={`${travel?.title} ${Number(index) + 1}`}
                                 className="w-full h-full rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
                                 src={pict}
