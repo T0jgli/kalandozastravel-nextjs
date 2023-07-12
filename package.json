@@ -15,7 +15,7 @@
         "@tailwindcss/typography": "^0.5.9",
         "autoprefixer": "^10.4.14",
         "express-rate-limit": "^6.7.1",
-        "express-validator": "^6.15.0",
+        "express-validator": "^7.0.1",
         "firebase": "^9.17.2",
         "framer-motion": "^10.12.18",
         "html-react-parser": "^4.0.0",
