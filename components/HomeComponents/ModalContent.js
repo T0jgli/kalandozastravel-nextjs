@@ -18,50 +18,60 @@ const ModalContent = ({ travels }) => {
                     </tr>
                 </thead>
                 <tbody className="text-gray-600 text-sm w-full font-light rounded-xl">
-                    {travels?.map((travel, i) => (
-                        <tr
-                            className="border-b-2 flex flex-col flex-no wrap sm:table-row duration-300 border-gray-200 hover:bg-gray-200 rounded-xl"
-                            key={i}
-                        >
-                            <td className="text-center md:text-left mx-auto">
-                                <img
-                                    src={travel.thumbnail || travel.photoURL || travel.pictures?.[0]?.src}
-                                    alt={`Utazás kép ${i}`}
-                                    className="w-12 h-12 object-cover shadow-md rounded-lg"
-                                />
-                            </td>
-                            <td className="py-3 px-6 items-center gap-2 text-center md:text-left whitespace-nowrap ">
-                                <HiOutlineCalendar />
-                                {new Date(travel.startingDate).toLocaleDateString("hu-HU", {
-                                    month: "short",
-                                    day: "numeric",
-                                })}
-                                {travel.startingDate !== travel.endingDate &&
-                                    " - " +
-                                        new Date(travel.endingDate).toLocaleDateString("hu-HU", {
-                                            month: "short",
-                                            day: "numeric",
-                                        })}
-                            </td>
-                            <td className="py-3 px-6 text-left font-medium max-w-xs cursor-pointer" style={{ wordWrap: "break-word" }}>
-                                <Link href={travel.customUrl || `/travel/${travel.id}`} className="hover:text-yellow-700 break-words duration-300">
-                                    <p>{travel.title}</p>
-                                </Link>
-                            </td>
-                            <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">
-                                {travel?.freePlaces == 0 ? (
-                                    <div className="font-medium p-3 text-red-700">Megtelt</div>
-                                ) : (
-                                    <button
-                                        className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
-                                        onClick={() => router.push(travel.customUrl || `/travel/${travel.id}#ticket`)}
+                    {travels?.map((travel, i) => {
+                        const traveldate = new Date(travel.startingDate);
+                        const date = new Date();
+
+                        return (
+                            <tr
+                                className="border-b-2 flex flex-col flex-no wrap sm:table-row duration-300 border-gray-200 hover:bg-gray-200 rounded-xl"
+                                key={i}
+                            >
+                                <td className="text-center md:text-left mx-auto">
+                                    <img
+                                        src={travel.thumbnail || travel.photoURL || travel.pictures?.[0]?.src}
+                                        alt={`Utazás kép ${i}`}
+                                        className="w-12 h-12 object-cover shadow-md rounded-lg"
+                                    />
+                                </td>
+                                <td className="py-3 px-6 items-center gap-2 text-center md:text-left whitespace-nowrap ">
+                                    <HiOutlineCalendar />
+                                    {traveldate.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate.getUTCFullYear()} </span>}
+
+                                    {new Date(travel.startingDate).toLocaleDateString("hu-HU", {
+                                        month: "short",
+                                        day: "numeric",
+                                    })}
+                                    {travel.startingDate !== travel.endingDate &&
+                                        " - " +
+                                            new Date(travel.endingDate).toLocaleDateString("hu-HU", {
+                                                month: "short",
+                                                day: "numeric",
+                                            })}
+                                </td>
+                                <td className="py-3 px-6 text-left font-medium max-w-xs cursor-pointer" style={{ wordWrap: "break-word" }}>
+                                    <Link
+                                        href={travel.customUrl || `/travel/${travel.id}`}
+                                        className="hover:text-yellow-700 break-words duration-300"
                                     >
-                                        <HiOutlineShoppingCart fontSize="1.5rem" />
-                                    </button>
-                                )}
-                            </td>
-                        </tr>
-                    ))}
+                                        <p>{travel.title}</p>
+                                    </Link>
+                                </td>
+                                <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">
+                                    {travel?.freePlaces == 0 ? (
+                                        <div className="font-medium p-3 text-red-700">Megtelt</div>
+                                    ) : (
+                                        <button
+                                            className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
+                                            onClick={() => router.push(travel.customUrl || `/travel/${travel.id}#ticket`)}
+                                        >
+                                            <HiOutlineShoppingCart fontSize="1.5rem" />
+                                        </button>
+                                    )}
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </div>

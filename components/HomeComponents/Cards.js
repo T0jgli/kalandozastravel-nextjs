@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
@@ -13,7 +13,7 @@ import ModalCourier from "./ModalCourier";
 const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
     const [travelsState, settravelsState] = useState(travels);
-    // const [activeYear, setActiveYear] = useState(new Date().getFullYear());
+    const [activeYear, setActiveYear] = useState(new Date().getFullYear());
 
     const [isMobile] = useScreenWidth(1280);
     const [modalOpen, setModalOpen] = useState({
@@ -28,9 +28,9 @@ const Cards = ({ travels }) => {
         open: false,
     });
 
-    // useEffect(() => {
-    //     settravelsState(travels.filter((travel) => travel.startingDate.startsWith(activeYear)));
-    // }, [activeYear]);
+    useEffect(() => {
+        settravelsState(travels.filter((travel) => travel.startingDate.startsWith(activeYear)));
+    }, [activeYear]);
 
     return (
         <>
@@ -42,28 +42,28 @@ const Cards = ({ travels }) => {
 
             {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} sethatartalanulModals={sethatartalanulModals} />}
 
-            {/* <div className="flex justify-center my-8 pt-4 mx-auto">
-                <button
-                    className={`${
-                        activeYear === 2022 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
-                    } hover:bg-gray-400 font-bold py-2 px-4 rounded-l-md duration-300`}
-                    onClick={() => {
-                        setActiveYear(2022);
-                    }}
-                >
-                    2022
-                </button>
+            <div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
                     className={`${
                         activeYear === 2023 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
-                    } hover:bg-gray-400  font-bold py-2 px-4 rounded-r-md duration-300`}
+                    } hover:bg-gray-400 font-bold py-2 px-4 rounded-l-md duration-300`}
                     onClick={() => {
                         setActiveYear(2023);
                     }}
                 >
                     2023
                 </button>
-            </div> */}
+                <button
+                    className={`${
+                        activeYear === 2024 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
+                    } hover:bg-gray-400  font-bold py-2 px-4 rounded-r-md duration-300`}
+                    onClick={() => {
+                        setActiveYear(2024);
+                    }}
+                >
+                    2024
+                </button>
+            </div>
 
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
