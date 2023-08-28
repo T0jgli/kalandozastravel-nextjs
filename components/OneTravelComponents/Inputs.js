@@ -291,33 +291,50 @@ const Inputs = ({ travel }) => {
                     </div>
                 </div>
                 <div className="mb-10 flex flex-col md:flex-row w-full justify-center items-center">
-                    <div className="w-full mb-5 md:mb-0 mr-0 md:mr-10 relative">
-                        <CustomInputField
-                            className={`${
-                                errors?.length > 0 && isWrongField(errors, "matesNames") ? "border-red-500" : ""
-                            } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
-                            onChange={onInputChange}
-                            type="text"
-                            onFocus={(e) => {
-                                if (errors?.length > 0) {
-                                    setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
-                                }
-                            }}
-                            name="matesNames"
-                            id="matesNames"
-                            value={state.matesNames}
-                            label="Utastárs/utastársak neve"
-                            errors={errors}
-                            isWrongField={isWrongField}
-                            getErrorMessage={getErrorMessage}
-                        />
-                    </div>
+                    {state.people > 1 &&
+                        Array.from(Array(Number(state.people - 1)).keys()).map((_, i) => (
+                            <div className="w-full mb-5 md:mb-0 mr-0 md:mr-10 relative" key={`utasneve ${i}`}>
+                                <CustomInputField
+                                    className={`${
+                                        errors?.length > 0 && isWrongField(errors, "matesNames") ? "border-red-500" : ""
+                                    } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                    onChange={(e) => {
+                                        const newState = state.matesNames || {};
+                                        newState[i] = e.target.value;
+                                        setState({
+                                            ...state,
+                                            matesNames: newState,
+                                        });
+                                    }}
+                                    type="text"
+                                    onFocus={(e) => {
+                                        if (errors?.length > 0) {
+                                            setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
+                                        }
+                                    }}
+                                    name="matesNames"
+                                    id="matesNames"
+                                    value={state.matesNames[i] || ""}
+                                    label={`${i + 2}. utas neve`}
+                                    errors={errors}
+                                    required
+                                    isWrongField={isWrongField}
+                                    getErrorMessage={getErrorMessage}
+                                />
+                            </div>
+                        ))}
                     <div className="w-full relative">
                         <CustomInputField
                             className={`${
                                 errors?.length > 0 && isWrongField(errors, "people") ? "border-red-500" : ""
                             } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
-                            onChange={onInputChange}
+                            onChange={(e) => {
+                                setState({
+                                    ...state,
+                                    [e.target.name]: e.target.value,
+                                    matesNames: {},
+                                });
+                            }}
                             type="number"
                             min={1}
                             onFocus={(e) => {

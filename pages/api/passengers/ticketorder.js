@@ -15,8 +15,9 @@ const validateBody = initMiddleware(
             check("postalCode", "Hibás érték").trim().isLength({ min: 1, max: 6 }).escape(),
             check("phone", "Hibás érték").trim().isLength({ min: 7, max: 255 }).escape(),
             check("email", "Hibás email cím").isEmail().trim().escape().normalizeEmail(),
-            check("matesNames", "Hibás érték").trim().isLength({ max: 255 }).escape(),
             check("people", "Hibás érték").isInt({ min: 1 }).trim().escape(),
+            check("matesNames.*", "Hibás érték").optional().trim().escape(),
+            check("insurances.*", "Hibás érték").optional().trim().escape(),
             check("seatNumber", "Hibás érték").trim().isLength({ max: 255 }).escape(),
             check("desc", "Hibás érték").trim().isLength({ max: 1000 }).escape(),
             check("feedback", "Kérjük válasszon").not().equals("0"),
@@ -122,6 +123,16 @@ export default async (req, res) => {
                 insuranceBody += "</p>";
             }
 
+            let matesBody = "";
+
+            if (matesNames) {
+                for (let m in matesNames) {
+                    matesBody += `<br/><span>${parseInt(m) + 2}. utas neve: ${matesNames[m]}`;
+                }
+
+                matesBody += "</p>";
+            }
+
             try {
                 const mail = {
                     from: `"Jegyfoglalás – ${name}" "admin@contibus.hu"`,
@@ -140,8 +151,8 @@ export default async (req, res) => {
                     <p><span style='color: gray'>Lakcím:</span> ${city}, ${postalCode} ${address}</p>
                     <p><span style='color: gray'>Email cím:</span> ${email}</p>
                     <p><span style='color: gray'>Telefonszám:</span> ${phone}</p>
-                    <p><span style='color: gray'>Utasszám:</span> ${people}</p>
-                    ${matesNames?.length > 0 ? `<p><span style='color: gray'>Utasok neve:</span> ${matesNames}</p>` : ""}
+                    <p><span style='color: gray'>Utasszám:</span> ${people}
+                    ${matesBody ? matesBody : ""}
                     ${insuranceBody ? insuranceBody : ""}
                     <p><span style='color: gray'>Helyjegy:</span> ${needseat == true ? `foglalva - ${seatNumber}` : "nem kér"}</p>
                     <p><span style='color: gray'>Fizetési mód:</span> ${payment}</p>
