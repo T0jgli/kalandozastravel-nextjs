@@ -76,8 +76,8 @@ context("One travel Components e2e testing", function () {
             cy.get("#travelinput").find("input[name='phone']").clear().type("0650607889").should("have.value", "0650607889");
             cy.get("#travelinput").find("input[name='email']").clear().type("admin@kalandozas.hu").should("have.value", "admin@kalandozas.hu");
 
-            cy.get("#travelinput").find("input[name='matesNames']").clear().type("Cypress, E2E").should("have.value", "Cypress, E2E");
-            cy.get("#travelinput").find("input[name='people']").clear().type(1).should("have.value", 1);
+            cy.get("#travelinput").find("input[name='people']").clear().type(2).should("have.value", 2);
+            cy.get("#travelinput").find("input[name='matesNames0']").clear().type("Cypress, E2E").should("have.value", "Cypress, E2E");
 
             if (Cypress.$("#travelinput").find("input[name='needinsurance']").length > 0) {
                 cy.get("#travelinput").find("input[id='needinsurance']").check();

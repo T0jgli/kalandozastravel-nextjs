@@ -312,8 +312,8 @@ const Inputs = ({ travel }) => {
                                             setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
                                         }
                                     }}
-                                    name="matesNames"
-                                    id="matesNames"
+                                    name={`matesNames${i}`}
+                                    id={`matesNames${i}`}
                                     value={state.matesNames[i] || ""}
                                     label={`${i + 2}. utas neve`}
                                     errors={errors}
