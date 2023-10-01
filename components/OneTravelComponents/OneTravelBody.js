@@ -34,9 +34,9 @@ const OneTravelBody = ({ travel }) => {
 
                 {travel?.country && (
                     <img
-                        src={`/img/svgs/countries/${countries.countries[travel?.country]}.svg`}
-                        alt={`${countries.countries[travel?.country]} ikon`}
-                        title={travel?.country}
+                        src={`/img/svgs/countries/${countries.countries[travel?.country?.trim()]}.svg`}
+                        alt={`${countries.countries[travel?.country?.trim()]} ikon`}
+                        title={travel?.country?.trim()}
                         className="h-24 mx-auto hover:opacity-90 duration-300 shadow-md"
                         id="countryimage"
                     />
