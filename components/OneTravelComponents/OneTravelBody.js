@@ -30,11 +30,11 @@ const OneTravelBody = ({ travel }) => {
         <>
             <div className="max-w-7xl mt-32 pt-40 mx-auto prose px-3 2xl:px-0">
                 {parse(travel?.desc || "")}
-                <span className={`fi fi-${countries.countries[travel?.country]} w-28 h-28`} />
+                <span className={`fi fi-${countries.countries[travel?.country?.trim()?.toLowerCase()]} w-28 h-28`} />
 
                 {travel?.country && (
                     <img
-                        src={`/img/svgs/countries/${countries.countries[travel?.country?.trim()]}.svg`}
+                        src={`/img/svgs/countries/${countries.countries[travel?.country?.trim()?.toLowerCase()]}.svg`}
                         alt={`${countries.countries[travel?.country?.trim()]} ikon`}
                         title={travel?.country?.trim()}
                         className="h-24 mx-auto hover:opacity-90 duration-300 shadow-md"
