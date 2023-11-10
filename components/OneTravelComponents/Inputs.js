@@ -99,10 +99,12 @@ const Inputs = ({ travel }) => {
             }
 
             if (responseData.errors) {
-                document.getElementById(responseData.errors[0].param).scrollIntoView({
-                    behavior: "smooth",
-                    block: "start",
-                });
+                const element = document.getElementById("travelinput");
+                const yOffset = -80;
+
+                const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+
+                window.scrollTo({ top: y, behavior: "smooth" });
                 console.log(responseData.errors);
                 setErrors(responseData.errors);
                 return;
@@ -273,7 +275,7 @@ const Inputs = ({ travel }) => {
                                 errors?.length > 0 && isWrongField(errors, "email") ? "border-red-500" : ""
                             } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                             onChange={onInputChange}
-                            type="text"
+                            type="email"
                             onFocus={(e) => {
                                 if (errors?.length > 0) {
                                     setErrors((prev) => prev.filter((er) => er.param !== e.target.name));

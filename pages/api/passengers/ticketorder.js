@@ -9,11 +9,11 @@ import applyRateLimit from "../../../lib/helpers/ratelimit";
 const validateBody = initMiddleware(
     validateMiddleware(
         [
-            check("name", "Hibás érték").trim().isLength({ min: 1, max: 255 }).escape(),
-            check("address", "Hibás érték").trim().isLength({ min: 1, max: 255 }).escape(),
-            check("city", "Hibás érték").trim().isLength({ min: 1, max: 255 }).escape(),
-            check("postalCode", "Hibás érték").trim().isLength({ min: 1, max: 6 }).escape(),
-            check("phone", "Hibás érték").trim().isLength({ min: 7, max: 255 }).escape(),
+            check("name", "Hibás név").trim().isLength({ min: 1, max: 255 }).isAlpha("hu-HU").escape(),
+            check("address", "Hibás cím").trim().isLength({ min: 5, max: 255 }).escape(),
+            check("city", "Hibás város").trim().isLength({ min: 2, max: 255 }).isAlpha("hu-HU").escape(),
+            check("postalCode", "Hibás irányítószám").trim().isLength({ min: 4, max: 6 }).isNumeric().escape(),
+            check("phone", "Hibás telefonszám").trim().isLength({ min: 7, max: 255 }).escape(),
             check("email", "Hibás email cím").isEmail().trim().escape().normalizeEmail(),
             check("people", "Hibás érték").isInt({ min: 1 }).trim().escape(),
             check("matesNames.*", "Hibás érték").optional().trim().escape(),
