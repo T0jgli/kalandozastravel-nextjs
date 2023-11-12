@@ -11,15 +11,15 @@
         "start": "next start -p 8082"
     },
     "dependencies": {
-        "@next/bundle-analyzer": "^14.0.1",
+        "@next/bundle-analyzer": "^14.0.2",
         "@tailwindcss/typography": "^0.5.10",
         "autoprefixer": "^10.4.16",
         "express-rate-limit": "^6.10.0",
-        "express-validator": "^6.15.0",
+        "express-validator": "^7.0.1",
         "firebase": "^9.17.2",
         "framer-motion": "^10.16.4",
         "html-react-parser": "^5.0.6",
-        "next": "^14.0.1",
+        "next": "^14.0.2",
         "nodemailer": "^6.9.7",
         "postcss": "^8.4.31",
         "react": "^18.2.0",
@@ -33,6 +33,6 @@
     },
     "devDependencies": {
         "cross-env": "^7.0.3",
-        "cypress": "^13.4.0"
+        "cypress": "^13.5.0"
     }
 }
