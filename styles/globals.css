@@ -2,17 +2,11 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-        sans-serif !important;
     background-color: #eef5f5;
 }
 
 * {
     box-sizing: border-box;
-}
-
-.handwriting {
-    font-family: Caveat, cursive !important;
 }
 
 svg[viewBox="0 0 38 38"] {

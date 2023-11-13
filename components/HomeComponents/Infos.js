@@ -1,4 +1,12 @@
+import { Caveat } from "next/font/google";
 import React from "react";
+
+const caveat = Caveat({
+    weight: ["400", "500"],
+    style: ["normal"],
+    subsets: ["latin"],
+    display: "swap",
+});
 
 const Infos = () => {
     return (
@@ -7,7 +15,7 @@ const Infos = () => {
                 <div className="flex flex-wrap text-center w-full justify-evenly">
                     <div className="max-w-xl mb-16 md:mb-0">
                         <div className="text-2xl">
-                            <h2 className="handwriting pb-6 text-yellow-700 font-medium">Élmények</h2>
+                            <h2 className={`${caveat.className} pb-6 text-yellow-700 font-medium`}>Élmények</h2>
                             <h3 className="font-semibold pb-10">Felejthetetlen utazások</h3>
                         </div>
                         <div className="">
@@ -21,7 +29,7 @@ const Infos = () => {
                     </div>
                     <div className="max-w-xl">
                         <div className="text-2xl">
-                            <h2 className="handwriting pb-6 text-yellow-700 font-medium">Rólunk</h2>
+                            <h2 className={`${caveat.className} pb-6 text-yellow-700 font-medium`}>Rólunk</h2>
                             <h3 className="font-semibold pb-10">Biztonság, kényelem, színvonal</h3>
                         </div>
                         <div className="">

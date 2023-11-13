@@ -36,6 +36,7 @@ const AllCard = ({
                 <img
                     src={thumbnail}
                     alt={`Utazás kép ${title}`}
+                    loading="lazy"
                     className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
                 />
                 {isSale && (
