@@ -14,7 +14,7 @@
         "@next/bundle-analyzer": "^14.0.2",
         "@tailwindcss/typography": "^0.5.10",
         "autoprefixer": "^10.4.16",
-        "express-rate-limit": "^6.10.0",
+        "express-rate-limit": "^7.1.4",
         "express-validator": "^7.0.1",
         "firebase": "^9.17.2",
         "framer-motion": "^10.16.4",
