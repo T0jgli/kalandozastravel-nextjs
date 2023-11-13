@@ -13,12 +13,11 @@ context("Travels Components e2e testing", function () {
         });
         it("should render articles details", () => {
             cy.get("article")
-                .scrollIntoView()
                 .filter(":visible")
                 .then(($value) => {
                     for (let i = 0; i < $value.length; i++) {
-                        cy.get("article").eq(i).find("a").should("have.attr", "href");
-                        cy.get("article").eq(i).find("img").should("be.visible");
+                        cy.get("article").eq(i).scrollIntoView().find("a").should("have.attr", "href");
+                        cy.get("article").eq(i).scrollIntoView().find("img").should("be.visible");
                     }
                     url = Cypress.$("article")
                         .not(".unavailable")
