@@ -1,17 +1,19 @@
 import React from "react";
+import { GoogleMapsEmbed } from "@next/third-parties/google";
 
 const Footer = () => {
     return (
         <footer className="pt-10 pb-10 md:pb-0 relative" id="footer">
             <div className="w-full my-4 h-60">
-                <iframe
+                <GoogleMapsEmbed
+                    apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPSKEY}
+                    mode="place"
+                    q="place_id:ChIJcZcmwULcQUcRbO4wF14ieDg"
                     title="Google Maps Iframe"
                     className="m-0 w-full h-full shadow-lg"
-                    src={
-                        "https://www.google.com/maps/embed/v1/place?q=place_id:ChIJcZcmwULcQUcRbO4wF14ieDg&key=" +
-                        process.env.NEXT_PUBLIC_GOOGLE_MAPSKEY
-                    }
                     frameBorder="0"
+                    width="100%"
+                    height="240px"
                 />
             </div>
             <div className="flex py-8 border-b-2 gap-5 border-gray-200 text-gray-700 flex-wrap items-center justify-center"></div>
