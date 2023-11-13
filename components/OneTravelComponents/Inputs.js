@@ -31,14 +31,14 @@ const initialInputValue = {
 const getErrorMessage = (array, field) => {
     if (array.length === 0) return;
 
-    const index = array?.findIndex((er) => er.param === field);
+    const index = array?.findIndex((er) => er.path === field);
 
     if (index === -1) return;
 
     return <span>{array[index]?.msg}</span>;
 };
 
-const isWrongField = (array, field) => array?.findIndex((er) => er.param === field) !== -1;
+const isWrongField = (array, field) => array?.findIndex((er) => er.path === field) !== -1;
 
 const Inputs = ({ travel }) => {
     const [state, setState] = useState(initialInputValue);
