@@ -13,6 +13,7 @@ context("Travels Components e2e testing", function () {
         });
         it("should render articles details", () => {
             cy.get("article")
+                .scrollIntoView()
                 .filter(":visible")
                 .then(($value) => {
                     for (let i = 0; i < $value.length; i++) {
