@@ -4,6 +4,7 @@ const Cookie = () => {
     const [show, setshow] = useState(false);
 
     useEffect(() => {
+        "use client";
         if (localStorage.getItem("EnableCookies") !== "true") {
             setTimeout(() => {
                 setshow(true);
