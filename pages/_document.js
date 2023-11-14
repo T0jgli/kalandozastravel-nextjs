@@ -5,8 +5,6 @@ class MyDocument extends Document {
         return (
             <Html lang="hu">
                 <Head />
-                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-                <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet" />
                 <link rel="icon" type="image/png" href="/img/conti_logo.png" />
                 <link rel="apple-touch-icon" href="/favicon.ico" />
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
