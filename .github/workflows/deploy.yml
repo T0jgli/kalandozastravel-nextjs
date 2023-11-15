@@ -48,6 +48,7 @@ jobs:
               uses: docker/build-push-action@v3
               with:
                   push: true
+                  platforms: linux/amd64,linux/arm64
                   tags: kalandozas/web:latest
                   build-args: |
                       NEXT_PUBLIC_GOOGLE_MAPSKEY=${{ secrets.NEXT_PUBLIC_GOOGLE_MAPSKEY }}
