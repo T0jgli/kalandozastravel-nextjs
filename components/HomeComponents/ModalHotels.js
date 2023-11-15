@@ -28,6 +28,7 @@ const ModalHotels = ({ hotelsModal, setHotelsModal }) => {
             } fixed overflow-y-auto overflow-x-hidden flex flex-wrap justify-center my-0 mx-auto top-0 left-0 w-full h-screen z-40 bg-black bg-opacity-80 duration-500 ease-in-out`}
             onClick={handleClickOutside}
             role="dialog"
+            aria-label="Modal"
         >
             <div
                 className={`relative overflow-hidden block max-w-6xl h-auto w-full mx-2 md:mx-auto my-10 z-50 rounded-2xl shadow-xl transform duration-500 ease-out ${

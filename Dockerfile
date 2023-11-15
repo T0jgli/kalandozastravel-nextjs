@@ -24,6 +24,7 @@ ARG NEXT_PUBLIC_GOOGLE_GAID
 
 ENV PATH /app/node_modules/.bin:$PATH
 ENV TZ=Europe/Budapest
+RUN apk add tzdata
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
