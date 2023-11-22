@@ -9,24 +9,27 @@ import Modal from "./Modal";
 import ModalHatartalanul from "./ModalHatartalanul";
 // import ModalHotels from "./ModalHotels";
 import ModalCourier from "./ModalCourier";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
+    const router = useRouter();
     const [travelsState, settravelsState] = useState(travels);
-    const [activeYear, setActiveYear] = useState(new Date().getFullYear());
+    const [activeYear, setActiveYear] = useState(parseInt(router.query?.year) || 2023);
 
     const [isMobile] = useScreenWidth(1280);
     const [modalOpen, setModalOpen] = useState({
         open: false,
     });
 
-    const [hatartalanulModals, sethatartalanulModals] = useState({
-        open: false,
-    });
-
     const [courierModal, setcourierModal] = useState({
         open: false,
     });
+
+    useEffect(() => {
+        setActiveYear(parseInt(router.query?.year) || 2023);
+    }, [router.query]);
 
     useEffect(() => {
         settravelsState(travels.filter((travel) => travel.startingDate.startsWith(activeYear)));
@@ -40,7 +43,7 @@ const Cards = ({ travels }) => {
             {/* <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} /> */}
             <ModalCourier setmodalCourier={setcourierModal} modalCourier={courierModal} />
 
-            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} sethatartalanulModals={sethatartalanulModals} />}
+            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} />}
 
             <div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
@@ -48,7 +51,15 @@ const Cards = ({ travels }) => {
                         activeYear === 2023 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
                     } hover:bg-gray-400 font-bold py-2 px-4 rounded-l-md duration-300`}
                     onClick={() => {
-                        setActiveYear(2023);
+                        router.replace(
+                            {
+                                query: { year: "2023" },
+                            },
+                            undefined,
+                            {
+                                shallow: true,
+                            }
+                        );
                     }}
                 >
                     2023
@@ -58,7 +69,15 @@ const Cards = ({ travels }) => {
                         activeYear === 2024 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
                     } hover:bg-gray-400  font-bold py-2 px-4 rounded-r-md duration-300`}
                     onClick={() => {
-                        setActiveYear(2024);
+                        router.replace(
+                            {
+                                query: { year: "2024" },
+                            },
+                            undefined,
+                            {
+                                shallow: true,
+                            }
+                        );
                     }}
                 >
                     2024
@@ -104,36 +123,17 @@ const Cards = ({ travels }) => {
                     className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
                     style={{ width: "170px", height: "170px", maxWidth: "calc(100vw - 50px)" }}
                 >
-                    <Link href={`/travels?offer=abroad`} className="absolute w-full h-full top-0">
-                            <img
-                                src={"https://backend.aleph.hu/travelmax/public_html/images/tdm/menup/IMG_8972.jpg"}
-                                className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"
-                            />
-                            <h2
-                                className="w-full text-center bottom-2 absolute text-white text-lg left-1/2"
-                                style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
-                            >
-                                1 napos utazások
-                            </h2>
-                    </Link>
-                </figure>
-                <figure
-                    className="relative overflow-hidden cursor-pointer rounded-2xl duration-300 hover:shadow-xl"
-                    style={{ width: "170px", height: "170px", maxWidth: "calc(100vw - 50px)" }}
-                >
                     <Link href={`/travels?offer=abroad`} className="absolute w-full h-full top-0" passHref>
-                            <img
-                                src={
-                                    "https://backend.aleph.hu/travelmax/public_html/images/korutazasokcom/menup/tobbnapos%20kirandulsa%20busszal.jpg"
-                                }
-                                className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"
-                            />
-                            <h2
-                                className="w-full text-center bottom-2 absolute text-white text-lg left-1/2"
-                                style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
-                            >
-                                Több napos utazások
-                            </h2>
+                        <img
+                            src={"https://backend.aleph.hu/travelmax/public_html/images/korutazasokcom/menup/tobbnapos%20kirandulsa%20busszal.jpg"}
+                            className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"
+                        />
+                        <h2
+                            className="w-full text-center bottom-2 absolute text-white text-lg left-1/2"
+                            style={{ transform: "translateX(-50%)", textShadow: "2px 2px #000" }}
+                        >
+                            Több napos utazások
+                        </h2>
                     </Link>
                 </figure> */}
                 <figure

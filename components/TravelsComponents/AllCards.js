@@ -69,7 +69,7 @@ const AllCard = ({
                             <HiOutlineCalendar fontSize="1.5rem" className="text-yellow-700" />
                             <div className="flex-col text-sm pl-5">
                                 <p>Időpont</p>
-                                <p className="opacity-70">
+                                <div className="opacity-70">
                                     {traveldate.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate.getUTCFullYear()} </span>}
                                     {traveldate.toLocaleDateString("hu-HU", {
                                         month: "short",
@@ -83,7 +83,7 @@ const AllCard = ({
                                                 day: "numeric",
                                                 timeZone: "Europe/Budapest",
                                             })}
-                                </p>
+                                </div>
                             </div>
                         </div>
                         <div className="flex items-center s">
