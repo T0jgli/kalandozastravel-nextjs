@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HiOutlineLocationMarker, HiOutlineX, HiOutlineFastForward } from "react-icons/hi";
 import countries from "../../lib/countries.json";
 
@@ -23,6 +23,14 @@ const SearchFilter = ({ topbg }) => {
     const inputChange = (e) => {
         setstate({ ...state, [e.target.name]: e.target.value });
     };
+
+    useEffect(() => {
+        setstate({
+            country: router.query.country || "",
+            startingDate: router.query.startingDate || "",
+            title: router.query.title || "",
+        });
+    }, [router.query]);
 
     return (
         <form
