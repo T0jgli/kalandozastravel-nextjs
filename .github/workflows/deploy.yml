@@ -88,5 +88,5 @@ jobs:
                       cd /home/github
                       cd kalandozas
                       git pull
-                      docker --config ~/.kalandozas compose pull kalandozastravel
-                      docker --config ~/.kalandozas compose up -d
+                      docker compose pull kalandozastravel
+                      docker compose up -d
