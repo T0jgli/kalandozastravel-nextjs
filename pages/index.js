@@ -8,7 +8,7 @@ import CustomCarousel from "../components/HomeComponents/CustomCarousel";
 import { getHomeData } from "../lib/helpers/getDatas";
 import { agencySchema } from "../lib/helpers/StructuredData";
 
-export default function Home({ faqs, travels }) {
+export default function Home({ faqs, travels, countries }) {
     return (
         <>
             <motion.section initial="initial" animate="animate" variants={pageVariants}>
@@ -18,7 +18,7 @@ export default function Home({ faqs, travels }) {
                 </Head>
                 <CustomCarousel travels={travels} />
                 <BottomLinks />
-                <SearchFilter />
+                <SearchFilter countries={countries} />
                 <HomeBody questionsAnswers={faqs} travels={travels} />
             </motion.section>
         </>
@@ -32,6 +32,7 @@ export async function getStaticProps() {
         props: {
             faqs: allTravels?.faqs || null,
             travels: allTravels?.travels || null,
+            countries: allTravels?.countries || null,
         },
         revalidate: 150,
     };

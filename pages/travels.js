@@ -10,7 +10,7 @@ import { getAllTravels } from "../lib/helpers/getDatas";
 import Infos from "../components/HomeComponents/Infos";
 import { agencySchema } from "../lib/helpers/StructuredData";
 
-export default function Travels({ travels }) {
+export default function Travels({ travels, countries }) {
     const [travelsState, settravelsState] = useState(travels);
     const router = useRouter();
 
@@ -45,7 +45,7 @@ export default function Travels({ travels }) {
                 <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>
             </Head>
             <Topbg />
-            <SearchFilter />
+            <SearchFilter countries={countries} />
             <div className="text-center mt-16">
                 {travelsState.length !== travels.length && (
                     <button
@@ -105,6 +105,7 @@ export async function getStaticProps() {
     return {
         props: {
             travels: parsedTravels.travels || null,
+            countries: parsedTravels?.countries || null,
         },
         revalidate: 150,
     };
