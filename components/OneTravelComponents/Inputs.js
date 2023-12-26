@@ -293,8 +293,8 @@ const Inputs = ({ travel }) => {
                     </div>
                 </div>
                 <div className="mb-10 flex flex-col md:flex-row w-full justify-center items-center">
-                    {state.people > 1 &&
-                        Array.from(Array(Number(state.people - 1)).keys()).map((_, i) => (
+                    {parseInt(state?.people) > 1 &&
+                        Array.from(Array(parseInt(state?.people - 1) || 0).keys()).map((_, i) => (
                             <div className="w-full mb-5 md:mb-0 mr-0 md:mr-10 relative" key={`utasneve ${i}`}>
                                 <CustomInputField
                                     className={`${
@@ -339,6 +339,7 @@ const Inputs = ({ travel }) => {
                             }}
                             type="number"
                             min={1}
+                            max={parseInt(travel?.freePlaces || 50)}
                             onFocus={(e) => {
                                 if (errors?.length > 0) {
                                     setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
