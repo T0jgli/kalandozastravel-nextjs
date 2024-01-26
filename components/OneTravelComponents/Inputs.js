@@ -530,8 +530,8 @@ const Inputs = ({ travel }) => {
                             <div className="text-center pt-2">
                                 <label className="text-gray-700 text-xs">
                                     (mindkét busz esetén válassza ki az ülőhelyet) Fix-ülőhely igény (csak felár ellenében kérhető, 1 napos utazás
-                                    esetén 2.000 Ft/fő, 2-3 napos utazások esetén 2.500 Ft/fő, 4 vagy annál többnapos utazás esetén 5.000 Ft/fő)
-                                    Kérjük vesszővel elválasztva sorolja fel mely ülőhelyeken szeretnének utazni
+                                    esetén 2.000 Ft/fő, non-stop vagy 2 napos utazások esetén 2.500 Ft/fő, 3 vagy annál többnapos utazás esetén 5.000
+                                    Ft/fő) Kérjük vesszővel elválasztva sorolja fel mely ülőhelyeken szeretnének utazni
                                 </label>
                             </div>
                             <div className="text-center pt-2">
