@@ -20,9 +20,15 @@ const validateBody = initMiddleware(
             check("insurances.*", "Hibás érték").optional().trim().escape(),
             check("seatNumber", "Hibás érték").trim().isLength({ max: 255 }).escape(),
             check("desc", "Hibás érték").trim().isLength({ max: 1000 }).escape(),
-            check("feedback", "Kérjük válasszon").not().equals("0"),
-            check("payment", "Kérjük válasszon").not().equals("0"),
+            check("feedback", "Kérjük válasszon").not().equals("0").trim().escape(),
+            check("payment", "Kérjük válasszon").not().equals("0").trim().escape(),
+            check("needseat", "Hibás érték").optional().isBoolean(),
+            check("needinsurance", "Hibás érték").optional().isBoolean(),
+            check("needfelpanzioOrBreakfast", "Hibás érték").optional().isBoolean(),
+            check("newsletter", "Hibás érték").optional().isBoolean(),
+            check("seatNumber", "Hibás érték").optional().trim().escape(),
         ],
+
         validationResult
     )
 );
@@ -46,7 +52,7 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
 
     if (phoneError) {
         return res.status(409).json({
-            error: "Ezzel a telefonszámmal már van jegy foglalva!",
+            error: "Ezzel a telefonszámmal már van foglalás!",
         });
     }
 
@@ -58,14 +64,31 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
 
     if (emailError) {
         return res.status(409).json({
-            error: "Ezzel az email címmel már van jegy foglalva!",
+            error: "Ezzel az email címmel már van foglalás!",
         });
     }
 
     next();
 });
 
-const sendUserMail = (name, email, title) => {
+const sendUserMail = (name, email, title, payment) => {
+    let paymentMessage = "";
+    switch (payment) {
+        case "Személyesen":
+            paymentMessage = "Kérjük keresse fel irodánkat nyitvatartási időben (H-P 9-17 óráig)";
+            break;
+        case "Átutalás":
+            paymentMessage = "";
+            break;
+        case "Utalvány":
+            paymentMessage = "Kérjük keresse fel irodánkat nyitvatartási időben (H-P 9-17 óráig)";
+            break;
+        case "Szép kártya":
+            paymentMessage = "Kérjük keresse fel irodánkat nyitvatartási időben (H-P 9-17 óráig)";
+            break;
+        default:
+            break;
+    }
     const mail = {
         from: `"kalandozas.hu" "noreply@contibus.hu"`,
         to: email,
@@ -74,6 +97,7 @@ const sendUserMail = (name, email, title) => {
         html: ` <html><body>
         <p>Kedves ${name},</p>
         <h4>Köszönjük foglalását! Hamarosan válasz e-mailban felvesszük Önnel a kapcsolatot!</h4>
+        <p>Az Ön által választott fizetési mód: ${payment}. ${paymentMessage}</p>
         <br/>
         <br/>
         <small><span style='color: gray'>Ez egy automatikusan generált email. Kérjük ne válaszoljon rá.</span></small>
@@ -107,6 +131,7 @@ export default async (req, res) => {
                 payment,
                 needinsurance,
                 insurances,
+                needfelpanzioOrBreakfast,
             } = req.body;
 
             let insuranceBody = "";
@@ -154,6 +179,11 @@ export default async (req, res) => {
                     <p><span style='color: gray'>Utasszám:</span> ${people}
                     ${matesBody ? matesBody : ""}
                     ${insuranceBody ? insuranceBody : ""}
+                    ${
+                        travel?.startingDate !== travel?.endingDate
+                            ? `<p><span style='color: gray'>Egyéb:</span> ${needfelpanzioOrBreakfast ? "Félpanziót kér" : "Csak reggelit kér"}`
+                            : ""
+                    }
                     <p><span style='color: gray'>Helyjegy:</span> ${needseat == true ? `foglalva - ${seatNumber}` : "nem kér"}</p>
                     <p><span style='color: gray'>Fizetési mód:</span> ${payment}</p>
                     <br/>
@@ -172,7 +202,7 @@ export default async (req, res) => {
                     }
                 });
                 await transporter.sendMail(mail);
-                await sendUserMail(name, email, travel.title);
+                await sendUserMail(name, email, travel.title, payment);
                 logger("email", "elküldve (jegyfoglalás)");
                 res.status(200).json({
                     status: "success",

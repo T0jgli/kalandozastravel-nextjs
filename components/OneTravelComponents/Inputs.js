@@ -18,6 +18,7 @@ const initialInputValue = {
     people: 1,
     needseat: false,
     needinsurance: false,
+    needfelpanzioOrBreakfast: false,
     seatNumber: "",
     feedback: 0,
     desc: "",
@@ -89,6 +90,7 @@ const Inputs = ({ travel }) => {
                     success: true,
                     event_name: "jegyfoglalás",
                 });
+                setErrors(false);
                 toast.success("Sikeresen elküldve. Munkatársunk hamarosan felveszi Önnel a kapcsolatot!");
                 return;
             }
@@ -106,6 +108,7 @@ const Inputs = ({ travel }) => {
 
                 window.scrollTo({ top: y, behavior: "smooth" });
                 console.log(responseData.errors);
+                toast.error("Kérjük töltse ki a szükséges mezőket!");
                 setErrors(responseData.errors);
                 return;
             }
@@ -559,6 +562,42 @@ const Inputs = ({ travel }) => {
                         </div>
                     )}
                 </div>
+                {travel?.startingDate !== travel?.endingDate && (
+                    <div className="flex flex-row flex-wrap justify-evenly border-gray-100 pt-8 border-t-2">
+                        <div className="my-10 flex flex-col justify-center items-center" id="seatbox" style={{ scrollMarginTop: "80px" }}>
+                            <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="needfelpanzioOrBreakfast">
+                                <input
+                                    className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                                    onChange={() => {
+                                        setState({ ...state, needfelpanzioOrBreakfast: true });
+                                    }}
+                                    type="radio"
+                                    name="needfelpanzioOrBreakfast"
+                                    id="needfelpanzioOrBreakfast"
+                                    checked={state.needfelpanzioOrBreakfast}
+                                />
+                                <span className="ml-2">IGEN kérek félpanziós ellátást</span>
+                            </label>
+                            <label
+                                className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2"
+                                htmlFor="notneedfelpanzioOrBreakfast"
+                            >
+                                <input
+                                    className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                                    onChange={() => {
+                                        setState({ ...state, needfelpanzioOrBreakfast: false });
+                                    }}
+                                    type="radio"
+                                    name="needfelpanzioOrBreakfast"
+                                    id="notneedfelpanzioOrBreakfast"
+                                    checked={!state.needfelpanzioOrBreakfast}
+                                />
+                                <span className="ml-2">CSAK reggelit kérek</span>
+                            </label>
+                        </div>
+                    </div>
+                )}
+
                 <div className="my-8 relative flex flex-col w-full border-gray-100 pt-8 border-t-2 justify-center">
                     <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="feedback">
                         Honnan hallott irodánkról? *
@@ -615,7 +654,7 @@ const Inputs = ({ travel }) => {
                         <option default value={0}>
                             Kérjük válasszon...
                         </option>
-                        <option value={"Készpénz"}>Irodánkban (készpénz vagy bankkártya)</option>
+                        <option value={"Személyesen"}>Irodánkban (készpénz vagy bankkártya)</option>
                         <option value={"Átutalás"}>Átutalás</option>
                         <option value={"Utalvány"}>Utalvány</option>
                         {travel?.country == "Magyarország" && <option value={"Szép kártya"}>Szép kártya</option>}
