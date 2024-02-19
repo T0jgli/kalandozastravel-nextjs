@@ -68,12 +68,13 @@ const Inputs = ({ travel }) => {
                 body: JSON.stringify({
                     ...state,
                     travel: {
-                        id: travel.id,
-                        title: travel.title,
-                        freePlaces: travel.freePlaces,
-                        startingDate: travel.startingDate,
-                        endingDate: travel.endingDate,
-                        price: travel.price,
+                        id: travel?.id,
+                        title: travel?.title,
+                        freePlaces: travel?.freePlaces,
+                        startingDate: travel?.startingDate,
+                        endingDate: travel?.endingDate,
+                        price: travel?.price,
+                        extraFelpanzio: travel?.extraFelpanzio,
                     },
                 }),
             });
@@ -562,7 +563,7 @@ const Inputs = ({ travel }) => {
                         </div>
                     )}
                 </div>
-                {travel?.startingDate !== travel?.endingDate && (
+                {travel?.extraFelpanzio && (
                     <div className="flex flex-row flex-wrap justify-evenly border-gray-100 pt-8 border-t-2">
                         <div className="my-10 flex flex-col justify-center items-center" id="seatbox" style={{ scrollMarginTop: "80px" }}>
                             <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="needfelpanzioOrBreakfast">

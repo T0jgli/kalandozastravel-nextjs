@@ -11,7 +11,7 @@ const validateBody = initMiddleware(
         [
             check("name", "Hibás név").trim().isLength({ min: 1, max: 255 }).isAlpha("hu-HU", { ignore: " " }).escape(),
             check("address", "Hibás cím").trim().isLength({ min: 5, max: 255 }).escape(),
-            check("city", "Hibás város").trim().isLength({ min: 2, max: 255 }).isAlpha("hu-HU").escape(),
+            check("city", "Hibás város").trim().isLength({ min: 2, max: 255 }).isAlpha("hu-HU", { ignore: " " }).escape(),
             check("postalCode", "Hibás irányítószám").trim().isLength({ min: 4, max: 6 }).isNumeric().escape(),
             check("phone", "Hibás telefonszám").trim().isLength({ min: 7, max: 255 }).escape(),
             check("email", "Hibás email cím").isEmail().trim().escape().normalizeEmail(),
@@ -180,7 +180,7 @@ export default async (req, res) => {
                     ${matesBody ? matesBody : ""}
                     ${insuranceBody ? insuranceBody : ""}
                     ${
-                        travel?.startingDate !== travel?.endingDate
+                        travel?.extraFelpanzio
                             ? `<p><span style='color: gray'>Egyéb:</span> ${needfelpanzioOrBreakfast ? "Félpanziót kér" : "Csak reggelit kér"}`
                             : ""
                     }
@@ -215,22 +215,28 @@ export default async (req, res) => {
                 });
             } finally {
                 if (process.env.NODE_ENV == "production") {
-                    await db.collection("travels").doc(travel.id).collection("passengers").add({
-                        name,
-                        email,
-                        address,
-                        city,
-                        postalCode,
-                        phone,
-                        matesNames,
-                        people,
-                        needseat,
-                        seatNumber,
-                        feedback,
-                        payment,
-                        desc,
-                        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    });
+                    await db
+                        .collection("travels")
+                        .doc(travel.id)
+                        .collection("passengers")
+                        .add({
+                            name,
+                            email,
+                            address,
+                            city,
+                            postalCode,
+                            phone,
+                            matesNames,
+                            people,
+                            needseat,
+                            seatNumber,
+                            feedback,
+                            payment,
+                            desc,
+                            needfelpanzioOrBreakfast: travel?.extraFelpanzio ? needfelpanzioOrBreakfast : null,
+                            insurances,
+                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                        });
 
                     db.collection("travels")
                         .doc(travel.id)
