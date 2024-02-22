@@ -760,7 +760,7 @@ const Inputs = ({ travel }) => {
                         Utazás ára <br className="md:hidden" /> (felárak nélkül):
                     </p>
                     <p className="text-3xl mb-10 text-center font-semibold text-gray-600 hover:opacity-80 duration-300">
-                        {travel.price.toLocaleString("hu-HU")} Ft
+                        {travel.price?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")} Ft
                     </p>
                     <button
                         disabled={loading}

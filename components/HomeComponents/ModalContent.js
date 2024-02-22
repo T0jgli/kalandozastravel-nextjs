@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import React from "react";
 import { HiOutlineShoppingCart, HiOutlineCalendar } from "react-icons/hi";
 import Link from "next/link";
+import customToLocaleDateString from "../../lib/helpers/Date";
 
 const ModalContent = ({ travels }) => {
     const router = useRouter();
@@ -38,18 +39,8 @@ const ModalContent = ({ travels }) => {
                                     <HiOutlineCalendar />
                                     {traveldate.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate.getUTCFullYear()} </span>}
 
-                                    {new Date(travel.startingDate).toLocaleDateString("hu-HU", {
-                                        month: "short",
-                                        day: "numeric",
-                                        timeZone: "Europe/Budapest",
-                                    })}
-                                    {travel.startingDate !== travel.endingDate &&
-                                        " - " +
-                                            new Date(travel.endingDate).toLocaleDateString("hu-HU", {
-                                                month: "short",
-                                                day: "numeric",
-                                                timeZone: "Europe/Budapest",
-                                            })}
+                                    {customToLocaleDateString(new Date(travel.startingDate))}
+                                    {travel.startingDate !== travel.endingDate && " - " + customToLocaleDateString(new Date(travel.endingDate))}
                                 </td>
                                 <td className="py-3 px-6 text-left font-medium max-w-xs cursor-pointer" style={{ wordWrap: "break-word" }}>
                                     <Link

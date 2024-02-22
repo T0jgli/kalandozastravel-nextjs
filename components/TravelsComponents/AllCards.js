@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { HiOutlineCalendar, HiOutlineUserGroup, HiOutlineTag } from "react-icons/hi";
 import Link from "next/link";
+import customToLocaleDateString from "../../lib/helpers/Date";
 
 const AllCard = ({
     backgroundImage,
@@ -20,6 +21,7 @@ const AllCard = ({
 }) => {
     const router = useRouter();
     const traveldate = new Date(startingDate);
+    const endingTraveldate = new Date(endingDate);
     const date = new Date();
     return (
         <article
@@ -71,18 +73,8 @@ const AllCard = ({
                                 <p>Időpont</p>
                                 <div className="opacity-70">
                                     {traveldate.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate.getUTCFullYear()} </span>}
-                                    {traveldate.toLocaleDateString("hu-HU", {
-                                        month: "short",
-                                        day: "numeric",
-                                        timeZone: "Europe/Budapest",
-                                    })}
-                                    {startingDate !== endingDate &&
-                                        " - " +
-                                            new Date(endingDate).toLocaleDateString("hu-HU", {
-                                                month: "short",
-                                                day: "numeric",
-                                                timeZone: "Europe/Budapest",
-                                            })}
+                                    {customToLocaleDateString(traveldate)}
+                                    {startingDate !== endingDate && " - " + customToLocaleDateString(endingTraveldate)}
                                 </div>
                             </div>
                         </div>
