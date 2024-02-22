@@ -27,6 +27,7 @@ class MyDocument extends Document {
                 <meta name="twitter:title" content="Kalandozás Utazási iroda" />
                 <meta name="twitter:description" content="kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
                 <meta property="twitter:image" content="https://kalandozas.hu/img/conti_logo.png" />
+                <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
                 <title>Kalandozás Utazási iroda</title>
                 <body>
                     <Main />

@@ -103,7 +103,7 @@ const AllCard = ({
                     </div>
                 </div>
                 <p className="text-2xl mt-4 text-center font-semibold text-gray-600 hover:opacity-80 duration-300 flex-none">
-                    {price.toLocaleString("hu-HU")} Ft
+                    {price?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")} Ft
                 </p>
                 {/* <button
                     className="rounded-2xl p-3 bg-gray-100 absolute bottom-0 right-0 cursor-pointer focus:outline-none duration-300 hover:bg-gray-50"
