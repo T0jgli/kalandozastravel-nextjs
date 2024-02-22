@@ -1,12 +1,12 @@
 # Install dependencies only when needed
-FROM node:alpine AS deps
+FROM node:20-alpine AS deps
 WORKDIR /app
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install --production --force
 
 
-FROM node:alpine as builder
+FROM node:20-alpine as builder
 WORKDIR /app
 
 ARG NEXT_PUBLIC_GOOGLE_MAPSKEY
