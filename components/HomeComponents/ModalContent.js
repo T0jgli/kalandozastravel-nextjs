@@ -41,12 +41,14 @@ const ModalContent = ({ travels }) => {
                                     {new Date(travel.startingDate).toLocaleDateString("hu-HU", {
                                         month: "short",
                                         day: "numeric",
+                                        timeZone: "Europe/Budapest",
                                     })}
                                     {travel.startingDate !== travel.endingDate &&
                                         " - " +
                                             new Date(travel.endingDate).toLocaleDateString("hu-HU", {
                                                 month: "short",
                                                 day: "numeric",
+                                                timeZone: "Europe/Budapest",
                                             })}
                                 </td>
                                 <td className="py-3 px-6 text-left font-medium max-w-xs cursor-pointer" style={{ wordWrap: "break-word" }}>
