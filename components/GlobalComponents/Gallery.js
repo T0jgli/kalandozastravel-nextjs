@@ -12,6 +12,7 @@ const Gallery = () => {
                 showFullscreenButton={true}
                 thumbnailPosition="left"
                 showPlayButton={false}
+                lazyLoad={true}
             />
         </div>
     );
