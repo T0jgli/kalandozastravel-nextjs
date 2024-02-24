@@ -8,7 +8,7 @@ import ModalHatartalanul from "./ModalHatartalanul";
 // import ModalHotels from "./ModalHotels";
 
 const CustomCarousel = ({ travels }) => {
-    const [active, setActive] = useState(74);
+    const [active, setActive] = useState(13);
     const [isMobile] = useScreenWidth(1279);
     const [modalOpen, setModalOpen] = useState({
         open: false,
@@ -49,7 +49,7 @@ const CustomCarousel = ({ travels }) => {
                 }}
                 id="carousel"
             >
-                <div className="absolute overflow-hidden gap-3 mb-32 text-white flex-col flex justify-center items-center top-0 left-0 w-full h-full z-10 bg-black bg-opacity-50">
+                <div className="absolute overflow-hidden gap-3 mb-32 text-white flex-col flex justify-center items-center top-0 left-0 w-full h-full z-10 bg-black bg-opacity-60">
                     <h1 className="text-center text-3xl md:text-4xl font-semibold mb-8">Neoline-Kalandozás Utazási Iroda</h1>
                     <h2 className="tracking-wider font-light mb-2 inline-flex items-center">
                         <HiCheck className="pr-2" fontSize="2rem" /> Kultúrát és élményt adunk <HiCheck className="pl-2" fontSize="2rem" />

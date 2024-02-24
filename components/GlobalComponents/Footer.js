@@ -14,6 +14,7 @@ const Footer = () => {
                     frameBorder="0"
                     width="100%"
                     height="240px"
+                    loading="async"
                 />
             </div>
             <div className="flex py-8 border-b-2 gap-5 border-gray-200 text-gray-700 flex-wrap items-center justify-center"></div>
