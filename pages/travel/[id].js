@@ -28,7 +28,7 @@ const OneTravel = ({ travel, error }) => {
                             travel?.price,
                             travel?.thumbnails?.[0] || travel?.pictures?.[0].src,
                             travel?.freePlaces !== 0 && new Date() < new Date(travel?.startingDate) && travel?.type2 !== "Jelentkezés lezárult",
-                            travel?.startingDate,
+                            new Date(travel?.startingDate),
                             travel?.title
                         )
                     )}
