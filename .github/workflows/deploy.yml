@@ -52,6 +52,7 @@ jobs:
               uses: aws-actions/amazon-ecr-login@v2
             - name: Build and push
               uses: docker/build-push-action@v3
+              id: docker-build
               with:
                   push: true
                   platforms: linux/arm64
@@ -71,6 +72,14 @@ jobs:
                       NEXT_PUBLIC_GOOGLE_GAID=${{ secrets.NEXT_PUBLIC_GOOGLE_GAID }}
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
+            - name: Extract static files
+              run: docker cp $(docker create ${{ steps.docker-build.outputs.container_id }}):/app/.next/static ./static
+            - name: Store next.js static in artifact
+              uses: actions/upload-artifact@v4
+              with:
+                  name: nextjs-static
+                  path: ./static
+                  retention-days: 1
 
     deploy:
         needs: build
@@ -87,10 +96,15 @@ jobs:
                   aws-region: eu-central-1
             - name: Checkout
               uses: actions/checkout@v3
-            - name: Deploy dashboard to bucket
+            - name: Download next.js static artifact
+              uses: actions/download-artifact@v2
+              with:
+                  name: nextjs-static
+                  path: ./static
+            - name: Deploy images to S3
               run: aws s3 sync ./public/img s3://${{ secrets.S3_BUCKET }}/img/
-            - name: Invalidate dashboard cloudfront
-              run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/img/*"
+            - name: Deploy next.js static to S3
+              run: aws s3 sync ./static s3://${{ secrets.S3_BUCKET }}/.next/static/
             - name: Deploy app
               uses: appleboy/ssh-action@v0.1.2
               with:
