@@ -73,7 +73,7 @@ jobs:
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
             - name: Extract static files
-              run: docker cp $(docker create ${{ steps.docker-build.outputs.container_id }}):/app/.next/static ./static
+              run: docker cp $(docker create ${{ steps.docker-build.outputs.imageid }}):/app/.next/static ./static
             - name: Store next.js static in artifact
               uses: actions/upload-artifact@v4
               with:
