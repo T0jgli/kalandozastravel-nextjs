@@ -73,7 +73,7 @@ jobs:
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
             - name: Extract static files
-              run: docker cp $(docker create ${{ steps.login-ecr.outputs.registry }}/kalandozas:latest):/app/.next/static ./static
+              run: docker cp $(docker create $(echo ${{ steps.docker-build.outputs.imageid }} | cut -d ":" -f 2)):/app/.next/static ./static
             - name: Store next.js static in artifact
               uses: actions/upload-artifact@v4
               with:
@@ -97,7 +97,7 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v3
             - name: Download next.js static artifact
-              uses: actions/download-artifact@v2
+              uses: actions/download-artifact@v4
               with:
                   name: nextjs-static
                   path: ./static
