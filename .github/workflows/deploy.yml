@@ -93,9 +93,6 @@ jobs:
               run: aws s3 sync --delete ./public/img s3://${{ secrets.S3_BUCKET }}/img/
             - name: Deploy app
               uses: appleboy/ssh-action@v0.1.2
-              env:
-                  imagename: ${{ steps.build.outputs.imagename }}
-                  bucket: ${{ secrets.S3_BUCKET }}
               with:
                   host: ${{secrets.SSH_HOST}}
                   key: ${{secrets.SSH_KEY}}
@@ -106,8 +103,8 @@ jobs:
                       cd kalandozas
                       git pull
                       docker compose pull kalandozastravel
-                      imageid=$(docker create $imagename)
+                      imageid=$(docker create ${{ needs.build.outputs.imagename }})
                       docker cp $imageid:/app/.next/static ./static
                       docker rm $imageid
-                      aws s3 sync --delete ./static s3://$bucket/_next/static/
+                      aws s3 sync --delete ./static s3://${{ secrets.S3_BUCKET }}/_next/static/
                       docker compose up -d
