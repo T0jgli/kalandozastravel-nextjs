@@ -37,6 +37,8 @@ jobs:
             id-token: write
             contents: read
             packages: write
+        outputs:
+            imagename: ${{ steps.login-ecr.outputs.registry }}/kalandozas:latest
         steps:
             - name: Configure AWS credentials
               uses: aws-actions/configure-aws-credentials@v4
@@ -72,15 +74,6 @@ jobs:
                       NEXT_PUBLIC_GOOGLE_GAID=${{ secrets.NEXT_PUBLIC_GOOGLE_GAID }}
                   cache-from: type=gha
                   cache-to: type=gha,mode=max
-            - name: Extract static files
-              run: docker cp $(docker create ${{ steps.login-ecr.outputs.registry }}/kalandozas:latest):/app/.next/static ./static
-            - name: Store next.js static in artifact
-              uses: actions/upload-artifact@v4
-              with:
-                  name: nextjs-static
-                  path: ./static
-                  retention-days: 1
-
     deploy:
         needs: build
         runs-on: ubuntu-latest
@@ -96,15 +89,8 @@ jobs:
                   aws-region: eu-central-1
             - name: Checkout
               uses: actions/checkout@v3
-            - name: Download next.js static artifact
-              uses: actions/download-artifact@v4
-              with:
-                  name: nextjs-static
-                  path: ./static
             - name: Deploy images to S3
-              run: aws s3 sync ./public/img s3://${{ secrets.S3_BUCKET }}/img/
-            - name: Deploy next.js static to S3
-              run: aws s3 sync ./static s3://${{ secrets.S3_BUCKET }}/_next/static/
+              run: aws s3 sync --delete ./public/img s3://${{ secrets.S3_BUCKET }}/img/
             - name: Deploy app
               uses: appleboy/ssh-action@v0.1.2
               with:
@@ -117,4 +103,8 @@ jobs:
                       cd kalandozas
                       git pull
                       docker compose pull kalandozastravel
+                      imageid=$(docker create ${{ steps.build.outputs.imagename }})
+                      docker cp $imageid:/app/.next/static ./static
+                      docker rm $imageid
+                      aws s3 sync --delete ./static s3://${{ secrets.S3_BUCKET }}/_next/static/
                       docker compose up -d
