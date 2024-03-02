@@ -104,7 +104,7 @@ jobs:
             - name: Deploy images to S3
               run: aws s3 sync ./public/img s3://${{ secrets.S3_BUCKET }}/img/
             - name: Deploy next.js static to S3
-              run: aws s3 sync ./static s3://${{ secrets.S3_BUCKET }}/.next/static/
+              run: aws s3 sync ./static s3://${{ secrets.S3_BUCKET }}/_next/static/
             - name: Deploy app
               uses: appleboy/ssh-action@v0.1.2
               with:
