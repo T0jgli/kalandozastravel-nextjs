@@ -10,7 +10,7 @@ module.exports = withBundleAnalyzer({
     experimental: {
         scrollRestoration: true,
     },
-    assetPrefix: process.env.NODE_ENV === "production" ? "https://cdn.kalandozas.hu" : undefined,
+    // assetPrefix: process.env.NODE_ENV === "production" ? "https://cdn.kalandozas.hu" : undefined,
     async headers() {
         return [
             {
