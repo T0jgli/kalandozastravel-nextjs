@@ -68,9 +68,21 @@ const ModalHatartalanul = ({ hatartalanulModals, sethatartalanulModals }) => {
                             </p>
                             <div className="flex justify-center">
                                 <div className="flex justify-center w-24 h-24 md:w-32 md:h-32 rounded-2xl mb-6 gap-8 text-center">
-                                    <img src="/img/hatartalanul/1.jpg" className="rounded-lg object-cover" alt="Határtalanul 1" />
-                                    <img src="/img/hatartalanul/2.jpg" className="rounded-lg object-cover" alt="Határtalanul 2" />
-                                    <img src="/img/hatartalanul/3.jpg" className="rounded-lg object-cover" alt="Határtalanul 3" />
+                                    <img
+                                        src="https://cdn.kalandozas.hu/img/hatartalanul/1.jpg"
+                                        className="rounded-lg object-cover"
+                                        alt="Határtalanul 1"
+                                    />
+                                    <img
+                                        src="https://cdn.kalandozas.hu/img/hatartalanul/2.jpg"
+                                        className="rounded-lg object-cover"
+                                        alt="Határtalanul 2"
+                                    />
+                                    <img
+                                        src="https://cdn.kalandozas.hu/img/hatartalanul/3.jpg"
+                                        className="rounded-lg object-cover"
+                                        alt="Határtalanul 3"
+                                    />
                                 </div>
                             </div>
                             <hr />
@@ -88,9 +100,21 @@ const ModalHatartalanul = ({ hatartalanulModals, sethatartalanulModals }) => {
                             <hr />
                             <div className="flex justify-center mt-8">
                                 <div className="flex justify-center w-24 h-24 md:w-32 md:h-32 rounded-2xl mb-6 gap-8 text-center">
-                                    <img src="/img/hatartalanul/4.jpg" className="rounded-lg object-cover" alt="Határtalanul 4" />
-                                    <img src="/img/hatartalanul/5.jpg" className="rounded-lg object-cover" alt="Határtalanul 5" />
-                                    <img src="/img/hatartalanul/6.jpg" className="rounded-lg object-cover" alt="Határtalanul 6" />
+                                    <img
+                                        src="https://cdn.kalandozas.hu/img/hatartalanul/4.jpg"
+                                        className="rounded-lg object-cover"
+                                        alt="Határtalanul 4"
+                                    />
+                                    <img
+                                        src="https://cdn.kalandozas.hu/img/hatartalanul/5.jpg"
+                                        className="rounded-lg object-cover"
+                                        alt="Határtalanul 5"
+                                    />
+                                    <img
+                                        src="https://cdn.kalandozas.hu/img/hatartalanul/6.jpg"
+                                        className="rounded-lg object-cover"
+                                        alt="Határtalanul 6"
+                                    />
                                 </div>
                             </div>
                             <p className="text-center mt-6">

@@ -2,6 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import { HiOutlineCalendar, HiOutlineUserGroup, HiOutlineTag } from "react-icons/hi";
 import Link from "next/link";
+import customToLocaleDateString from "../../lib/helpers/Date";
 
 const AllCard = ({
     backgroundImage,
@@ -20,6 +21,7 @@ const AllCard = ({
 }) => {
     const router = useRouter();
     const traveldate = new Date(startingDate);
+    const endingTraveldate = new Date(endingDate);
     const date = new Date();
     return (
         <article
@@ -71,18 +73,8 @@ const AllCard = ({
                                 <p>Időpont</p>
                                 <div className="opacity-70">
                                     {traveldate.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate.getUTCFullYear()} </span>}
-                                    {traveldate.toLocaleDateString("hu-HU", {
-                                        month: "short",
-                                        day: "numeric",
-                                        timeZone: "Europe/Budapest",
-                                    })}
-                                    {startingDate !== endingDate &&
-                                        " - " +
-                                            new Date(endingDate).toLocaleDateString("hu-HU", {
-                                                month: "short",
-                                                day: "numeric",
-                                                timeZone: "Europe/Budapest",
-                                            })}
+                                    {customToLocaleDateString(traveldate)}
+                                    {startingDate !== endingDate && " - " + customToLocaleDateString(endingTraveldate)}
                                 </div>
                             </div>
                         </div>
@@ -103,7 +95,7 @@ const AllCard = ({
                     </div>
                 </div>
                 <p className="text-2xl mt-4 text-center font-semibold text-gray-600 hover:opacity-80 duration-300 flex-none">
-                    {price.toLocaleString("hu-HU")} Ft
+                    {price?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")} Ft
                 </p>
                 {/* <button
                     className="rounded-2xl p-3 bg-gray-100 absolute bottom-0 right-0 cursor-pointer focus:outline-none duration-300 hover:bg-gray-50"

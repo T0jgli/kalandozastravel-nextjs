@@ -7,8 +7,8 @@ import applyRateLimit from "../../../lib/helpers/ratelimit";
 const validateBody = initMiddleware(
     validateMiddleware(
         [
-            check("name", "Hibás érték").trim().isLength({ min: 1, max: 255 }).escape(),
-            check("email", "Hibás email cím").trim().isEmail().escape().normalizeEmail(),
+            check("name", "Hibás név").trim().isLength({ min: 1, max: 255 }).escape(),
+            check("email", "Hibás email cím").isEmail().trim().escape().normalizeEmail(),
             check("message", "Hibás érték").trim().isLength({ min: 1, max: 255 }).escape(),
         ],
         validationResult
@@ -26,7 +26,7 @@ export default async (req, res) => {
             try {
                 const mail = {
                     from: `"Kapcsolat – ${name}" "admin@contibus.hu"`,
-                    to: process.env.NODE_ENV == "production" ? "ertekesites@kalandozas.hu" : "admin@kalandozas.hu",
+                    to: process.env.NODE_ENV == "production" ? "jelentkezes@kalandozas.hu" : "admin@kalandozas.hu",
                     subject: `Kapcsolat - weboldalról`,
                     replyTo: email,
                     html: ` <html><body>

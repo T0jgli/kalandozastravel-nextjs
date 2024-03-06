@@ -36,3 +36,6 @@ yarn-error.log*
 
 .vscode
 screenshots
+# Sentry Config File
+.sentryclirc
+test/

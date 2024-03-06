@@ -16,7 +16,7 @@ const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
     const router = useRouter();
     const [travelsState, settravelsState] = useState(travels);
-    const [activeYear, setActiveYear] = useState(parseInt(router.query?.year) || 2023);
+    const [activeYear, setActiveYear] = useState(parseInt(router.query?.year) || new Date().getFullYear());
 
     const [isMobile] = useScreenWidth(1280);
     const [modalOpen, setModalOpen] = useState({
@@ -28,12 +28,12 @@ const Cards = ({ travels }) => {
     });
 
     useEffect(() => {
-        setActiveYear(parseInt(router.query?.year) || 2023);
+        setActiveYear(parseInt(router.query?.year) || new Date().getFullYear());
     }, [router.query]);
 
-    useEffect(() => {
-        settravelsState(travels.filter((travel) => travel.startingDate.startsWith(activeYear)));
-    }, [activeYear]);
+    // useEffect(() => {
+    //     settravelsState(travels.filter((travel) => travel.startingDate.startsWith(activeYear)));
+    // }, [activeYear]);
 
     return (
         <>
@@ -45,7 +45,7 @@ const Cards = ({ travels }) => {
 
             {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} />}
 
-            <div className="flex justify-center my-8 pt-4 mx-auto">
+            {/*<div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
                     className={`${
                         activeYear === 2023 ? "bg-gray-500 text-white cursor-default" : "bg-gray-300 text-gray-800"
@@ -82,7 +82,7 @@ const Cards = ({ travels }) => {
                 >
                     2024
                 </button>
-            </div>
+            </div>*/}
 
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
@@ -142,7 +142,7 @@ const Cards = ({ travels }) => {
                 >
                     <div className="absolute w-full h-full top-0" onClick={() => setcourierModal({ open: true })}>
                         <img
-                            src={"/img/csomagpont.png"}
+                            src={"https://cdn.kalandozas.hu/img/csomagpont.png"}
                             alt="csomagpont"
                             className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"
                         />

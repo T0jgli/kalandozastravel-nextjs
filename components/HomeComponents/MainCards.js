@@ -17,7 +17,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
-                            src={"/img/kulfold.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/kulfold.jpg"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />
@@ -37,7 +37,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
-                            src={"/img/belfold.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/belfold.jpg"}
                             className="w-full h-full object-cover duration-300 hover:scale-110 brightness-95 filter transform object-center"
                             alt="Belföld háttér"
                         />
@@ -45,7 +45,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             Belföldi utazásaink
                         </h2>
                     </figure>
-                    <figure
+                    {/* <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
@@ -57,14 +57,14 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
-                            src={"/img/2024.png"}
+                            src={"https://cdn.kalandozas.hu/img/2024.png"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="2024 háttér"
                         />
                         <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
                             2024
                         </h2>
-                    </figure>
+                    </figure> */}
 
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
@@ -78,7 +78,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
-                            src={"/img/levego.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/levego.jpg"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-left"
                             alt="Levegőben háttér"
                         />
@@ -98,7 +98,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
-                            src={"/img/hajo.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/hajo.jpg"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Vízen háttér"
                         />
@@ -110,7 +110,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             Vízen
                         </h2>
                     </figure>
-                    <figure
+                    {/* <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                     ></figure>
@@ -118,6 +118,10 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
                         style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                     ></figure>
+                    <figure
+                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                    ></figure> */}
 
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
@@ -131,7 +135,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
-                            src={"/img/busz.png"}
+                            src={"https://cdn.kalandozas.hu/img/busz.png"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Földön háttér"
                         />
@@ -154,7 +158,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }}
                     >
                         <img
-                            src={"/img/berlin/busz.jpeg"}
+                            src={"https://cdn.kalandozas.hu/img/berlin/busz.jpeg"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />
@@ -173,7 +177,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }}
                     >
                         <img
-                            src={"/img/berlin/berlin.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/berlin/berlin.jpg"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />

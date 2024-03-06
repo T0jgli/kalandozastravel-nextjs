@@ -44,9 +44,17 @@ const ContactInfo = () => {
                         <span className="text-gray-500 font-semibold pb-2">Nyitvatartás:</span>
                         <span className="font-medium"> H-P 9-17 óráig</span>
                     </div>
+                    <div className="">
+                        <span className="text-gray-500 font-semibold pb-2">Bankszámlaszámunk:</span>
+                        <span className="font-medium"> OTP Bank 11709057-21451690</span>
+                    </div>
                 </div>
             </div>
-            <img src="/img/szep_kartya.png" alt="Szép kártya kép" className="max-w-xs duration-300 hover:opacity-90 mx-auto mt-16 mb-16 md:mb-0" />
+            <img
+                src="https://cdn.kalandozas.hu/img/szep_kartya.png"
+                alt="Szép kártya kép"
+                className="max-w-xs duration-300 hover:opacity-90 mx-auto mt-16 mb-16 md:mb-0"
+            />
         </div>
     );
 };

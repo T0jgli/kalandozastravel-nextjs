@@ -8,7 +8,7 @@ import ModalHatartalanul from "./ModalHatartalanul";
 // import ModalHotels from "./ModalHotels";
 
 const CustomCarousel = ({ travels }) => {
-    const [active, setActive] = useState(74);
+    const [active, setActive] = useState(13);
     const [isMobile] = useScreenWidth(1279);
     const [modalOpen, setModalOpen] = useState({
         open: false,
@@ -28,7 +28,7 @@ const CustomCarousel = ({ travels }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setActive((prev) => (prev === 81 ? 1 : prev + 1));
+            setActive((prev) => (prev === 20 ? 1 : prev + 1));
         }, 5000);
 
         return () => clearInterval(interval);
@@ -43,13 +43,13 @@ const CustomCarousel = ({ travels }) => {
             <div
                 className={`bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0`}
                 style={{
-                    backgroundImage: `url('/img/newpictures/${active}.jpg')`,
+                    backgroundImage: `url('https://cdn.kalandozas.hu/img/newpictures/${active}.jpg')`,
                     height: "calc(100vh - 144px)",
                     minHeight: "430px",
                 }}
                 id="carousel"
             >
-                <div className="absolute overflow-hidden gap-3 mb-32 text-white flex-col flex justify-center items-center top-0 left-0 w-full h-full z-10 bg-black bg-opacity-50">
+                <div className="absolute overflow-hidden gap-3 mb-32 text-white flex-col flex justify-center items-center top-0 left-0 w-full h-full z-10 bg-black bg-opacity-60">
                     <h1 className="text-center text-3xl md:text-4xl font-semibold mb-8">Neoline-Kalandozás Utazási Iroda</h1>
                     <h2 className="tracking-wider font-light mb-2 inline-flex items-center">
                         <HiCheck className="pr-2" fontSize="2rem" /> Kultúrát és élményt adunk <HiCheck className="pl-2" fontSize="2rem" />

@@ -96,7 +96,7 @@ context("One travel Components e2e testing", function () {
             cy.get("#travelinput").find("input[name='seatNumber']").clear().type("Back").should("have.value", "Back");
 
             cy.get("#travelinput").find("select[name='feedback']").select("Közösségi oldal").should("have.value", "Közösségi oldal");
-            cy.get("#travelinput").find("select[name='payment']").select("Készpénz").should("have.value", "Készpénz");
+            cy.get("#travelinput").find("select[name='payment']").select("Személyesen").should("have.value", "Személyesen");
             cy.get("#travelinput")
                 .find("textarea[name='desc']")
                 .clear()

@@ -1,0 +1,569 @@
+[
+    {
+        "original": "/img/newpictures/1.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/1.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/2.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/2.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/3.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/3.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/4.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/4.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/5.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/5.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/6.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/6.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/7.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/7.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/8.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/8.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/9.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/9.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/10.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/10.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/11.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/11.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/12.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/12.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/13.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/13.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/14.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/14.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/15.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/15.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/16.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/16.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/17.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/17.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/18.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/18.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/19.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/19.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/20.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/20.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/21.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/21.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/22.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/22.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/23.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/23.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/24.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/24.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/25.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/25.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/26.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/26.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/27.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/27.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/28.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/28.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/29.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/29.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/30.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/30.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/31.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/31.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/32.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/32.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/33.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/33.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/34.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/34.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/35.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/35.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/36.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/36.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/37.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/37.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/38.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/38.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/39.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/39.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/40.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/40.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/41.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/41.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/42.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/42.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/43.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/43.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/44.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/44.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/45.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/45.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/46.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/46.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/47.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/47.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/48.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/48.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/49.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/49.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/50.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/50.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/51.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/51.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/52.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/52.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/53.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/53.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/54.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/54.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/55.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/55.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/56.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/56.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/57.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/57.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/58.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/58.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/59.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/59.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/60.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/60.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/61.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/61.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/62.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/62.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/63.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/63.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/64.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/64.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/65.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/65.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/66.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/66.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/67.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/67.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/68.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/68.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/69.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/69.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/70.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/70.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/71.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/71.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/72.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/72.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/73.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/73.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/74.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/74.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/75.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/75.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/76.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/76.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/77.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/77.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/78.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/78.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/79.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/79.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/80.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/80.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    },
+    {
+        "original": "/img/newpictures/81.jpg",
+        "loading": "lazy",
+        "thumbnail": "/img/newpictures/81.jpg",
+        "originalAlt": "Galéria kép",
+        "thumbnailAlt": "Galéria kép kicsi"
+    }
+]

@@ -103,7 +103,7 @@ const ModalHotels = ({ hotelsModal, setHotelsModal }) => {
                     <div ref={modalRef} className="mx-auto lg:mx-0">
                         <div className="relative w-96 h-80 overflow-hidden rounded-t-2xl">
                             <img
-                                src={"/img/berlin/hotel_mondai_base.jpg"}
+                                src={"https://cdn.kalandozas.hu/img/berlin/hotel_mondai_base.jpg"}
                                 className="object-cover absolute top-0 duration-300 rounded-t-2xl w-96 h-80 transform hover:scale-105"
                                 alt="Hotel Mondial fő kép"
                             />
@@ -130,15 +130,23 @@ const ModalHotels = ({ hotelsModal, setHotelsModal }) => {
                             </small>
                             <small className="text-center pt-3 mb-6">a szobaárak tartalmazzák a higiéniai készletet</small>
                             <div className="flex justify-center w-28 h-28 rounded-2xl mb-6 gap-8">
-                                <img src="/img/berlin/hotel_mondai_1.jpg" className="rounded-lg object-cover" alt="Hotel Mondial galéria 1" />
-                                <img src="/img/berlin/hotel_mondai_2.jpg" className="rounded-lg object-cover" alt="Hotel Mondial galéria 2" />
+                                <img
+                                    src="https://cdn.kalandozas.hu/img/berlin/hotel_mondai_1.jpg"
+                                    className="rounded-lg object-cover"
+                                    alt="Hotel Mondial galéria 1"
+                                />
+                                <img
+                                    src="https://cdn.kalandozas.hu/img/berlin/hotel_mondai_2.jpg"
+                                    className="rounded-lg object-cover"
+                                    alt="Hotel Mondial galéria 2"
+                                />
                             </div>
                         </div>
                     </div>
                     <div ref={modalRef2} className="mx-auto lg:mx-0">
                         <div className="relative w-96 h-80 overflow-hidden rounded-t-2xl">
                             <img
-                                src={"/img/berlin/hotel_park_inn_base.jpg"}
+                                src={"https://cdn.kalandozas.hu/img/berlin/hotel_park_inn_base.jpg"}
                                 className="object-cover absolute top-0 duration-300 rounded-t-2xl w-96 h-80 transform hover:scale-105"
                                 alt="Hotel Park Inn Radisson fő kép"
                             />
@@ -148,12 +156,12 @@ const ModalHotels = ({ hotelsModal, setHotelsModal }) => {
                             <h3 className="text-center text-2xl my-6">Hotel Park Inn Radisson</h3>
                             <div className="flex justify-center w-28 h-28 rounded-2xl mb-6 gap-8">
                                 <img
-                                    src="/img/berlin/hotel_park_inn_1.jpg"
+                                    src="https://cdn.kalandozas.hu/img/berlin/hotel_park_inn_1.jpg"
                                     className="rounded-lg object-cover"
                                     alt="Hotel Park Inn Radisson galéria 1"
                                 />
                                 <img
-                                    src="/img/berlin/hotel_park_inn_2.jpg"
+                                    src="https://cdn.kalandozas.hu/img/berlin/hotel_park_inn_2.jpg"
                                     className="rounded-lg object-cover"
                                     alt="Hotel Park Inn Radisson galéria 2"
                                 />

@@ -1,9 +1,8 @@
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { HiOutlineLocationMarker, HiOutlineX, HiOutlineFastForward } from "react-icons/hi";
-import countries from "../../lib/countries.json";
 
-const SearchFilter = ({ topbg }) => {
+const SearchFilter = ({ topbg, countries }) => {
     const router = useRouter();
 
     const [state, setstate] = useState({
@@ -81,9 +80,9 @@ const SearchFilter = ({ topbg }) => {
                         value={state.country}
                     >
                         <option default value={""}></option>
-                        {Object.keys(countries?.countries)?.map((country) => (
-                            <option value={country} key={country}>
-                                {country}
+                        {countries.map((c) => (
+                            <option value={c} key={c}>
+                                {c}
                             </option>
                         ))}
                     </select>

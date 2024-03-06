@@ -18,6 +18,7 @@ const initialInputValue = {
     people: 1,
     needseat: false,
     needinsurance: false,
+    needfelpanzioOrBreakfast: false,
     seatNumber: "",
     feedback: 0,
     desc: "",
@@ -67,12 +68,13 @@ const Inputs = ({ travel }) => {
                 body: JSON.stringify({
                     ...state,
                     travel: {
-                        id: travel.id,
-                        title: travel.title,
-                        freePlaces: travel.freePlaces,
-                        startingDate: travel.startingDate,
-                        endingDate: travel.endingDate,
-                        price: travel.price,
+                        id: travel?.id,
+                        title: travel?.title,
+                        freePlaces: travel?.freePlaces,
+                        startingDate: travel?.startingDate,
+                        endingDate: travel?.endingDate,
+                        price: travel?.price,
+                        extraFelpanzio: travel?.extraFelpanzio,
                     },
                 }),
             });
@@ -89,6 +91,7 @@ const Inputs = ({ travel }) => {
                     success: true,
                     event_name: "jegyfoglalás",
                 });
+                setErrors(false);
                 toast.success("Sikeresen elküldve. Munkatársunk hamarosan felveszi Önnel a kapcsolatot!");
                 return;
             }
@@ -106,6 +109,7 @@ const Inputs = ({ travel }) => {
 
                 window.scrollTo({ top: y, behavior: "smooth" });
                 console.log(responseData.errors);
+                toast.error("Kérjük töltse ki a szükséges mezőket!");
                 setErrors(responseData.errors);
                 return;
             }
@@ -293,8 +297,8 @@ const Inputs = ({ travel }) => {
                     </div>
                 </div>
                 <div className="mb-10 flex flex-col md:flex-row w-full justify-center items-center">
-                    {state.people > 1 &&
-                        Array.from(Array(Number(state.people - 1)).keys()).map((_, i) => (
+                    {parseInt(state?.people) > 1 &&
+                        Array.from(Array(parseInt(state?.people - 1) || 0).keys()).map((_, i) => (
                             <div className="w-full mb-5 md:mb-0 mr-0 md:mr-10 relative" key={`utasneve ${i}`}>
                                 <CustomInputField
                                     className={`${
@@ -339,6 +343,7 @@ const Inputs = ({ travel }) => {
                             }}
                             type="number"
                             min={1}
+                            max={parseInt(travel?.freePlaces || 50)}
                             onFocus={(e) => {
                                 if (errors?.length > 0) {
                                     setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
@@ -529,8 +534,8 @@ const Inputs = ({ travel }) => {
                             <div className="text-center pt-2">
                                 <label className="text-gray-700 text-xs">
                                     (mindkét busz esetén válassza ki az ülőhelyet) Fix-ülőhely igény (csak felár ellenében kérhető, 1 napos utazás
-                                    esetén 2.000 Ft/fő, 2-3 napos utazások esetén 2.500 Ft/fő, 4 vagy annál többnapos utazás esetén 5.000 Ft/fő)
-                                    Kérjük vesszővel elválasztva sorolja fel mely ülőhelyeken szeretnének utazni
+                                    esetén 2.000 Ft/fő, non-stop vagy 2 napos utazások esetén 2.500 Ft/fő, 3 vagy annál többnapos utazás esetén 5.000
+                                    Ft/fő) Kérjük vesszővel elválasztva sorolja fel mely ülőhelyeken szeretnének utazni
                                 </label>
                             </div>
                             <div className="text-center pt-2">
@@ -538,18 +543,18 @@ const Inputs = ({ travel }) => {
                             </div>
 
                             <div className="flex flex-row gap-5 flex-center justify-center mt-5">
-                                <a href="/img/busz_50fos.png" className="w-28" target="_blank" rel="noopener norefereer">
+                                <a href="https://cdn.kalandozas.hu/img/busz_50fos.png" className="w-28" target="_blank" rel="noopener norefereer">
                                     <img
                                         className="w-28 rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
-                                        src="/img/busz_50fos.png"
+                                        src="https://cdn.kalandozas.hu/img/busz_50fos.png"
                                         alt="50 fős busz alaprajz"
                                         title="50 fős busz alaprajz"
                                     />
                                 </a>
-                                <a href="/img/busz_emeletes.png" className="w-28" target="_blank" rel="noopener norefereer">
+                                <a href="https://cdn.kalandozas.hu/img/busz_emeletes.png" className="w-28" target="_blank" rel="noopener norefereer">
                                     <img
                                         className="w-28 rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
-                                        src="/img/busz_emeletes.png"
+                                        src="https://cdn.kalandozas.hu/img/busz_emeletes.png"
                                         alt="Emeletes busz alaprajz"
                                         title="Emeletes busz alaprajz"
                                     />
@@ -558,6 +563,42 @@ const Inputs = ({ travel }) => {
                         </div>
                     )}
                 </div>
+                {travel?.extraFelpanzio && (
+                    <div className="flex flex-row flex-wrap justify-evenly border-gray-100 pt-8 border-t-2">
+                        <div className="my-10 flex flex-col justify-center items-center" id="seatbox" style={{ scrollMarginTop: "80px" }}>
+                            <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="needfelpanzioOrBreakfast">
+                                <input
+                                    className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                                    onChange={() => {
+                                        setState({ ...state, needfelpanzioOrBreakfast: true });
+                                    }}
+                                    type="radio"
+                                    name="needfelpanzioOrBreakfast"
+                                    id="needfelpanzioOrBreakfast"
+                                    checked={state.needfelpanzioOrBreakfast}
+                                />
+                                <span className="ml-2">IGEN kérek félpanziós ellátást</span>
+                            </label>
+                            <label
+                                className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2"
+                                htmlFor="notneedfelpanzioOrBreakfast"
+                            >
+                                <input
+                                    className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                                    onChange={() => {
+                                        setState({ ...state, needfelpanzioOrBreakfast: false });
+                                    }}
+                                    type="radio"
+                                    name="needfelpanzioOrBreakfast"
+                                    id="notneedfelpanzioOrBreakfast"
+                                    checked={!state.needfelpanzioOrBreakfast}
+                                />
+                                <span className="ml-2">CSAK reggelit kérek</span>
+                            </label>
+                        </div>
+                    </div>
+                )}
+
                 <div className="my-8 relative flex flex-col w-full border-gray-100 pt-8 border-t-2 justify-center">
                     <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="feedback">
                         Honnan hallott irodánkról? *
@@ -614,7 +655,7 @@ const Inputs = ({ travel }) => {
                         <option default value={0}>
                             Kérjük válasszon...
                         </option>
-                        <option value={"Készpénz"}>Irodánkban (készpénz vagy bankkártya)</option>
+                        <option value={"Személyesen"}>Irodánkban (készpénz vagy bankkártya)</option>
                         <option value={"Átutalás"}>Átutalás</option>
                         <option value={"Utalvány"}>Utalvány</option>
                         {travel?.country == "Magyarország" && <option value={"Szép kártya"}>Szép kártya</option>}
@@ -719,7 +760,7 @@ const Inputs = ({ travel }) => {
                         Utazás ára <br className="md:hidden" /> (felárak nélkül):
                     </p>
                     <p className="text-3xl mb-10 text-center font-semibold text-gray-600 hover:opacity-80 duration-300">
-                        {travel.price.toLocaleString("hu-HU")} Ft
+                        {travel.price?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")} Ft
                     </p>
                     <button
                         disabled={loading}
