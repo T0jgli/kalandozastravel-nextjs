@@ -82,15 +82,6 @@ jobs:
             contents: read
             packages: write
         steps:
-            - name: Configure AWS credentials
-              uses: aws-actions/configure-aws-credentials@v4
-              with:
-                  role-to-assume: arn:aws:iam::574681690878:role/kalandozascdn
-                  aws-region: eu-central-1
-            - name: Checkout
-              uses: actions/checkout@v3
-            - name: Deploy images to S3
-              run: aws s3 sync --delete ./public/img s3://${{ secrets.S3_BUCKET }}/img/
             - name: Deploy app
               uses: appleboy/ssh-action@v0.1.2
               with:
@@ -107,4 +98,6 @@ jobs:
                       docker cp $imageid:/app/.next/static ./static
                       docker rm $imageid
                       aws s3 sync --delete ./static s3://${{ secrets.S3_BUCKET }}/_next/static/
+                      aws s3 sync --delete ./public/img s3://${{ secrets.S3_BUCKET }}/_next/static/
+                      aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths /_next
                       docker compose up -d
