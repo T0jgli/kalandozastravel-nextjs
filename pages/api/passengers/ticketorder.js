@@ -19,7 +19,7 @@ const validateBody = initMiddleware(
             check("matesNames.*", "Hibás érték").optional().trim().escape(),
             check("insurances.*", "Hibás érték").optional().trim().escape(),
             check("seatNumber", "Hibás érték").trim().isLength({ max: 255 }).escape(),
-            check("desc", "Hibás érték").trim().isLength({ max: 1000 }).escape(),
+            check("desc", "Hibás érték").trim().escape(),
             check("feedback", "Kérjük válasszon").not().equals("0").trim().escape(),
             check("payment", "Kérjük válasszon").not().equals("0").trim().escape(),
             check("needseat", "Hibás érték").optional().isBoolean(),
