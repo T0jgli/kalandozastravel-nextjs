@@ -9,7 +9,7 @@ const validateBody = initMiddleware(
         [
             check("name", "Hibás név").trim().isLength({ min: 1, max: 255 }).escape(),
             check("email", "Hibás email cím").isEmail().trim().escape().normalizeEmail(),
-            check("message", "Hibás érték").trim().isLength({ min: 1, max: 255 }).escape(),
+            check("message", "Hibás érték").trim().escape(),
         ],
         validationResult
     )
