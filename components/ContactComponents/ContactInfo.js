@@ -50,11 +50,7 @@ const ContactInfo = () => {
                     </div>
                 </div>
             </div>
-            <img
-                src="https://cdn.kalandozas.hu/img/szep_kartya.png"
-                alt="Szép kártya kép"
-                className="max-w-xs duration-300 hover:opacity-90 mx-auto mt-16 mb-16 md:mb-0"
-            />
+            <img src="/img/szep_kartya.png" alt="Szép kártya kép" className="max-w-xs duration-300 hover:opacity-90 mx-auto mt-16 mb-16 md:mb-0" />
         </div>
     );
 };

@@ -43,7 +43,7 @@ const CustomCarousel = ({ travels }) => {
             <div
                 className={`bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0`}
                 style={{
-                    backgroundImage: `url('https://cdn.kalandozas.hu/img/newpictures/${active}.jpg')`,
+                    backgroundImage: `url('/img/newpictures/${active}.jpg')`,
                     height: "calc(100vh - 144px)",
                     minHeight: "430px",
                 }}

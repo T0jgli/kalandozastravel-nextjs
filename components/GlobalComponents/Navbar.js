@@ -19,7 +19,7 @@ const Navbar = () => {
         <>
             <nav className={`sticky top-0 duration-300 ease-in-out shadow-sm font-semibold uppercase z-20 h-20 bg-white`}>
                 <img
-                    src="https://cdn.kalandozas.hu/img/fejsor1.png"
+                    src="/img/fejsor1.png"
                     alt="Fejsor 1 kép"
                     className={`inline lg:hidden xl:inline h-10 md:h-20 top-5 md:top-0 m-0 absolute left-0 pr-10 duration-300`}
                 />
@@ -32,7 +32,7 @@ const Navbar = () => {
                         aria-label="Facebook oldal"
                         title="Facebook"
                     >
-                        <img src="https://cdn.kalandozas.hu/img/svgs/fb.svg" width="30px" alt="Facebook ikon" />
+                        <img src="/img/svgs/fb.svg" width="30px" alt="Facebook ikon" />
                     </a>
                     <a
                         target="_blank"
@@ -42,7 +42,7 @@ const Navbar = () => {
                         aria-label="Instagram oldal"
                         title="Instagram"
                     >
-                        <img src="https://cdn.kalandozas.hu/img/svgs/insta.svg" width="30px" alt="Instagram ikon" />
+                        <img src="/img/svgs/insta.svg" width="30px" alt="Instagram ikon" />
                     </a>
                     <a
                         target="_blank"
@@ -52,7 +52,7 @@ const Navbar = () => {
                         aria-label="Youtube csatorna"
                         title="Youtube"
                     >
-                        <img src="https://cdn.kalandozas.hu/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
+                        <img src="/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
                     </a>
                 </div>
                 {!isMobile && (
@@ -173,7 +173,7 @@ const Navbar = () => {
                                 aria-label="Facebook oldal"
                                 title="Facebook"
                             >
-                                <img src="https://cdn.kalandozas.hu/img/svgs/fb.svg" width="30px" alt="Facebook ikon" />
+                                <img src="/img/svgs/fb.svg" width="30px" alt="Facebook ikon" />
                             </a>
                             <a
                                 target="_blank"
@@ -183,7 +183,7 @@ const Navbar = () => {
                                 aria-label="Instagram oldal"
                                 title="Instagram"
                             >
-                                <img src="https://cdn.kalandozas.hu/img/svgs/insta.svg" width="30px" alt="Instagram ikon" />
+                                <img src="/img/svgs/insta.svg" width="30px" alt="Instagram ikon" />
                             </a>
                             <a
                                 target="_blank"
@@ -193,7 +193,7 @@ const Navbar = () => {
                                 aria-label="Youtube csatorna"
                                 title="Youtube"
                             >
-                                <img src="https://cdn.kalandozas.hu/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
+                                <img src="/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
                             </a>
                         </div>
                     </div>

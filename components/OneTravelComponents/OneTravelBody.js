@@ -36,7 +36,7 @@ const OneTravelBody = ({ travel }) => {
 
                 {travel?.country && (
                     <img
-                        src={`https://cdn.kalandozas.hu/img/svgs/countries/${countryFromJson[travel?.country?.trim()?.toLowerCase()]}.svg`}
+                        src={`/img/svgs/countries/${countryFromJson[travel?.country?.trim()?.toLowerCase()]}.svg`}
                         alt={`${countryFromJson[travel?.country?.trim()]} ikon`}
                         title={travel?.country?.trim()}
                         className="h-24 mx-auto hover:opacity-90 duration-300 shadow-md"
