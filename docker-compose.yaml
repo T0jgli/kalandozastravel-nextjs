@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
     kalandozastravel:
-        image: 574681690878.dkr.ecr.eu-central-1.amazonaws.com/kalandozas:latest
+        image: europe-west3-docker.pkg.dev/kalandozastravel/kalandozas/kalandozas
         container_name: kalandozastravel
         #build: .
         env_file: .env
