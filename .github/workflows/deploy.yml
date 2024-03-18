@@ -104,6 +104,25 @@ jobs:
             contents: read
             packages: write
         steps:
+            # - name: Deploy app
+            #   uses: appleboy/ssh-action@v0.1.2
+            #   with:
+            #       host: ${{secrets.SSH_HOST}}
+            #       key: ${{secrets.SSH_KEY}}
+            #       username: ${{secrets.SSH_USERNAME}}
+
+            #       script: |
+            #           cd /home/github
+            #           cd kalandozas
+            #           git pull
+            #           docker compose pull kalandozastravel
+            #           imageid=$(docker create ${{ needs.build.outputs.imagename }})
+            #           docker cp $imageid:/app/.next/static ./static
+            #           docker rm $imageid
+            #           aws s3 sync --delete ./static s3://${{ secrets.S3_BUCKET }}/_next/static/
+            #           aws s3 sync --delete ./public/img s3://${{ secrets.S3_BUCKET }}/_next/static/
+            #           aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths /_next
+            #           docker compose up -d
             - name: Deploy app
               uses: appleboy/ssh-action@v0.1.2
               with:
@@ -116,10 +135,4 @@ jobs:
                       cd kalandozas
                       git pull
                       docker compose pull kalandozastravel
-                      imageid=$(docker create ${{ needs.build.outputs.imagename }})
-                      docker cp $imageid:/app/.next/static ./static
-                      docker rm $imageid
-                      aws s3 sync --delete ./static s3://${{ secrets.S3_BUCKET }}/_next/static/
-                      aws s3 sync --delete ./public/img s3://${{ secrets.S3_BUCKET }}/_next/static/
-                      aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths /_next
                       docker compose up -d

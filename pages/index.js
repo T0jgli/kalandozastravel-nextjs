@@ -34,6 +34,6 @@ export async function getStaticProps() {
             travels: allTravels?.travels || null,
             countries: allTravels?.countries || null,
         },
-        revalidate: 150,
+        revalidate: 300,
     };
 }
