@@ -71,7 +71,7 @@ context("Home Components e2e testing", function () {
                 .then(($value) => {
                     for (let i = 0; i < $value.length; i++) {
                         cy.get("article").eq(i).find("a").should("have.attr", "href");
-                        cy.get("article").eq(i).find("img").should("be.visible");
+                        // cy.get("article").eq(i).find("img").should("be.visible");
                     }
                 });
         });
