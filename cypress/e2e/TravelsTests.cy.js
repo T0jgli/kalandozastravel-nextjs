@@ -59,7 +59,7 @@ context("One travel Components e2e testing", function () {
                 .filter(":visible")
                 .then(($value) => {
                     for (let i = 0; i < $value.length; i++) {
-                        cy.get("#travelimages").find("img").eq(i).scrollIntoView().click();
+                        cy.get("#travelimages").find("img").eq(i).click();
                         cy.get(".imgwrapper").should("be.visible");
                         cy.get("button.ril-close").click();
                         cy.get(".imgwrapper").should("not.be.visible");
