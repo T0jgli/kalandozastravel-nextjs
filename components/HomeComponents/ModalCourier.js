@@ -38,6 +38,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
                             {/* <h2 className="text-center text-lg pb-4"></h2> */}
                             <a href="https://gls-group.eu/HU/hu/home" target="_blank" rel="noopener noreferrer" className="my-6">
                                 <img
+                                    loading="lazy"
                                     src="/img/glscsomagpont.png"
                                     alt="GLS csomagpont"
                                     className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
@@ -45,6 +46,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
                             </a>
                             <a href="https://wish.com" target="_blank" rel="noopener noreferrer" className="my-6">
                                 <img
+                                    loading="lazy"
                                     src="/img/wish.png"
                                     alt="Wish csomagpont"
                                     className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
@@ -53,6 +55,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
 
                             <a href="https://www.dpd.com/hu/hu/" target="_blank" rel="noopener noreferrer" className="my-6">
                                 <img
+                                    loading="lazy"
                                     src="/img/dpd-csomagpont.png"
                                     alt="DPD csomagpont"
                                     className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"

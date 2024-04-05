@@ -11,6 +11,24 @@ import ModalHatartalanul from "./ModalHatartalanul";
 import ModalCourier from "./ModalCourier";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import Loading from "../GlobalComponents/Loading";
+
+const DynamicAllCards = dynamic(() => import("../TravelsComponents/AllCards"), {
+    loading: () => <Loading />,
+});
+
+const DynamicModal = dynamic(() => import("./Modal"), {
+    loading: () => <Loading />,
+});
+
+const DynamicModalCourier = dynamic(() => import("./ModalCourier"), {
+    loading: () => <Loading />,
+});
+
+const DynamicMainCards = dynamic(() => import("./MainCards"), {
+    loading: () => <Loading />,
+});
 
 const Cards = ({ travels }) => {
     const travelsdiv = useRef(null);
@@ -37,13 +55,13 @@ const Cards = ({ travels }) => {
 
     return (
         <>
-            <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
+            <DynamicModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             {/* <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} /> */}
             {/* <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} /> */}
             {/* <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} /> */}
-            <ModalCourier setmodalCourier={setcourierModal} modalCourier={courierModal} />
+            <DynamicModalCourier setmodalCourier={setcourierModal} modalCourier={courierModal} />
 
-            {isMobile && <MainCards travels={travels} setModalOpen={setModalOpen} />}
+            {isMobile && <DynamicMainCards travels={travels} setModalOpen={setModalOpen} />}
 
             {/*<div className="flex justify-center my-8 pt-4 mx-auto">
                 <button
@@ -97,7 +115,7 @@ const Cards = ({ travels }) => {
                                 animate="animate"
                                 variants={cardAnimation}
                             >
-                                <AllCards
+                                <DynamicAllCards
                                     id={travel.id}
                                     thumbnail={travel.thumbnail}
                                     backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
@@ -144,6 +162,7 @@ const Cards = ({ travels }) => {
                         <img
                             src={"/img/csomagpont.png"}
                             alt="csomagpont"
+                            loading="lazy"
                             className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"
                         />
                         <h2

@@ -17,6 +17,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
+                            loading="lazy"
                             src={"/img/kulfold.jpg"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
@@ -37,6 +38,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
+                            loading="lazy"
                             src={"/img/belfold.jpg"}
                             className="w-full h-full object-cover duration-300 hover:scale-110 brightness-95 filter transform object-center"
                             alt="Belföld háttér"
@@ -78,6 +80,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
+                            loading="lazy"
                             src={"/img/levego.jpg"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-left"
                             alt="Levegőben háttér"
@@ -98,6 +101,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
+                            loading="lazy"
                             src={"/img/egyeniszallas.jpg"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Egyéni szállásfoglalás háttér"
@@ -135,6 +139,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
+                            loading="lazy"
                             src={"/img/busz.png"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Földön háttér"

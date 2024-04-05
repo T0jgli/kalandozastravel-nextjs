@@ -36,6 +36,7 @@ const OneTravelBody = ({ travel }) => {
 
                 {travel?.country && (
                     <img
+                        loading="lazy"
                         src={`/img/svgs/countries/${countryFromJson[travel?.country?.trim()?.toLowerCase()]}.svg`}
                         alt={`${countryFromJson[travel?.country?.trim()]} ikon`}
                         title={travel?.country?.trim()}
@@ -55,6 +56,7 @@ const OneTravelBody = ({ travel }) => {
                     <div className={`my-16 pb-16 grid grid-flow-col gap-3`} id="travelimages">
                         {travel?.thumbnails?.slice(1).map((pict, index) => (
                             <img
+                                loading="lazy"
                                 onClick={() => {
                                     setimgtoggler({ toggler: !imgtoggler.toggler, slide: index + 1 });
                                 }}

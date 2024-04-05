@@ -9,6 +9,7 @@ const currentOffers = () => {
             >
                 <div className="relative overflow-hidden" style={{ width: "250px", height: "200px" }}>
                     <img
+                        loading="lazy"
                         src={"https://i.pinimg.com/originals/a8/dd/20/a8dd2059ee5d0ee3257b73b4962d5a3f.jpg"}
                         className="absolute top-0 brightness-90 w-full h-full filter object-cover duration-300 hover:scale-110 transform object-center"
                         alt="Földön háttér"
@@ -31,6 +32,7 @@ const currentOffers = () => {
             >
                 <div className="relative overflow-hidden" style={{ width: "250px", height: "200px" }}>
                     <img
+                        loading="lazy"
                         src={"https://i.pinimg.com/originals/a8/dd/20/a8dd2059ee5d0ee3257b73b4962d5a3f.jpg"}
                         className="absolute top-0 brightness-90 w-full h-full filter object-cover duration-300 hover:scale-110 transform object-center"
                         alt="Földön háttér"

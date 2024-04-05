@@ -545,6 +545,7 @@ const Inputs = ({ travel }) => {
                             <div className="flex flex-row gap-5 flex-center justify-center mt-5">
                                 <a href="/img/busz_50fos.png" className="w-28" target="_blank" rel="noopener norefereer">
                                     <img
+                                        loading="lazy"
                                         className="w-28 rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
                                         src="/img/busz_50fos.png"
                                         alt="50 fős busz alaprajz"
@@ -553,6 +554,7 @@ const Inputs = ({ travel }) => {
                                 </a>
                                 <a href="/img/busz_emeletes.png" className="w-28" target="_blank" rel="noopener norefereer">
                                     <img
+                                        loading="lazy"
                                         className="w-28 rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
                                         src="/img/busz_emeletes.png"
                                         alt="Emeletes busz alaprajz"

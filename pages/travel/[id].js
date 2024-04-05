@@ -59,6 +59,7 @@ const OneTravel = ({ travel, error }) => {
                         style={{ transform: "translateX(-50%)" }}
                     >
                         <img
+                            loading="lazy"
                             src={travel?.thumbnails?.[0] || travel?.pictures?.[0].src}
                             alt={`Utazás kép fő`}
                             className="mx-auto shadow-xl max-h-96 rounded-2xl"

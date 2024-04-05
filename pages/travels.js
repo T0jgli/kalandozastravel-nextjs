@@ -9,6 +9,12 @@ import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import { getAllTravels } from "../lib/helpers/getDatas";
 import Infos from "../components/HomeComponents/Infos";
 import { agencySchema } from "../lib/helpers/StructuredData";
+import dynamic from "next/dynamic";
+import Loading from "../components/GlobalComponents/Loading";
+
+const DynamicAllCards = dynamic(() => import("../components/TravelsComponents/AllCards"), {
+    loading: () => <Loading />,
+});
 
 export default function Travels({ travels, countries }) {
     const [travelsState, settravelsState] = useState(travels);
@@ -75,7 +81,7 @@ export default function Travels({ travels, countries }) {
                                 animate="animate"
                                 variants={cardAnimation}
                             >
-                                <AllCards
+                                <DynamicAllCards
                                     id={travel.id}
                                     thumbnail={travel.thumbnail}
                                     backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
