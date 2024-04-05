@@ -10,6 +10,16 @@ module.exports = withBundleAnalyzer({
     experimental: {
         scrollRestoration: true,
     },
+    plugins: [
+        [
+            "@fullhuman/postcss-purgecss",
+            {
+                content: ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
+                defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+                safelist: ["html", "body"],
+            },
+        ],
+    ],
     // assetPrefix: process.env.NODE_ENV === "production" ? "https://cdn.kalandozas.hu" : undefined,
     async headers() {
         return [
