@@ -155,6 +155,12 @@ const Inputs = ({ travel }) => {
     }
 
     return (
+        <style>
+            input::-webkit-outer-spin-button,
+            input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            }
+        </style>
         <div className="flex flex-col max-w-7xl mb-10 mx-auto" id="ticket">
             <form className="shadow-md bg-white rounded-2xl px-8 pt-6 pb-8 mb-4" onSubmit={formSubmit} id="travelinput">
                 <div className="mb-10 flex-col md:flex-row flex w-full justify-center items-center">
@@ -181,18 +187,19 @@ const Inputs = ({ travel }) => {
                         />
                     </div>
                     <div className="w-full relative">
-                        <CustomInputField
+                        <CustomInputField 
                             className={`${
                                 errors?.length > 0 && isWrongField(errors, "postalCode") ? "border-red-500" : ""
                             } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
                             onChange={onInputChange}
-                            type="text"
+                            type="number"
                             onFocus={(e) => {
                                 if (errors?.length > 0) {
                                     setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
                                 }
                             }}
                             required
+                            <!-- maxlength doesnt work with type number -->
                             maxLength="6"
                             name="postalCode"
                             id="postalCode"
