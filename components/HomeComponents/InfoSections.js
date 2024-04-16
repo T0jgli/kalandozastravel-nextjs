@@ -31,7 +31,7 @@ const InfoSections = () => {
                 <div className="flex flex-wrap max-w-7xl items-center mx-auto flex-1 justify-center">
                     <img
                         loading="lazy"
-                        src="/img/svgs/travel1.svg"
+                        src="https://cdn.kalandozas.hu/img/svgs/travel1.svg"
                         alt="Utazás SVG 1"
                         className="mx-auto w-3/6 xl:mb-0 xl:w-1/4 mt-10 md:mt-0 order-last md:order-first"
                     />
@@ -61,7 +61,7 @@ const InfoSections = () => {
                     </div>
                     <img
                         loading="lazy"
-                        src="/img/svgs/travel2.svg"
+                        src="https://cdn.kalandozas.hu/img/svgs/travel2.svg"
                         alt="Utazás SVG 2"
                         className="mx-auto w-3/6 xl:mb-0 xl:w-1/4 mb-10 md:mb-0 order-first md:order-last"
                     />

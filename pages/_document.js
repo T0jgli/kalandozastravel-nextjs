@@ -22,11 +22,11 @@ class MyDocument extends Document {
                 <meta property="og:title" content="Kalandozás Utazási iroda" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="hu_HU" />
-                <meta property="og:image" content="https://kalandozas.hu/img/conti_logo.png" />
+                <meta property="og:image" content="https://cdn.kalandozas.hu/img/conti_logo.png" />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Kalandozás Utazási iroda" />
                 <meta name="twitter:description" content="kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
-                <meta property="twitter:image" content="https://kalandozas.hu/img/conti_logo.png" />
+                <meta property="twitter:image" content="https://cdn.kalandozas.hu/img/conti_logo.png" />
                 <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
                 <title>Kalandozás Utazási iroda</title>
                 <body>

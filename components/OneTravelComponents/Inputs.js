@@ -547,7 +547,7 @@ const Inputs = ({ travel }) => {
                                     <img
                                         loading="lazy"
                                         className="w-28 rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
-                                        src="/img/busz_50fos.png"
+                                        src="https://cdn.kalandozas.hu/img/busz_50fos.png"
                                         alt="50 fős busz alaprajz"
                                         title="50 fős busz alaprajz"
                                     />
@@ -556,7 +556,7 @@ const Inputs = ({ travel }) => {
                                     <img
                                         loading="lazy"
                                         className="w-28 rounded-lg max-w-md mx-auto object-cover duration-300 cursor-pointer hover:opacity-90 shadow-md"
-                                        src="/img/busz_emeletes.png"
+                                        src="https://cdn.kalandozas.hu/img/busz_emeletes.png"
                                         alt="Emeletes busz alaprajz"
                                         title="Emeletes busz alaprajz"
                                     />
