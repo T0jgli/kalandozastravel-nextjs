@@ -18,7 +18,7 @@ const poppins = Poppins({
 function MyApp({ Component, pageProps }) {
     return (
         <>
-            {process.env.NODE_ENV === "production" && (
+            {/* {process.env.NODE_ENV === "production" && (
                 <>
                     <Script rel="preconnect" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_GAID}`} />
                     <Script
@@ -31,9 +31,9 @@ function MyApp({ Component, pageProps }) {
                             });
                             `,
                         }}
-                    />
-                </>
-            )}
+                        />
+                        </>
+                    )} */}
             <style jsx global>{`
                 html {
                     font-family: ${poppins.style.fontFamily}, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
