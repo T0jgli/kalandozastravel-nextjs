@@ -12,6 +12,12 @@ const Cookie = () => {
             const gtag = document.createElement("script");
             gtag.textContent = `window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            gtag('consent', 'update', {
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                ad_storage: 'denied',
+                analytics_storage: 'granted'
+            });            
             gtag('js', new Date());
             gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_GAID}', {
                 page_path: window.location.pathname,
