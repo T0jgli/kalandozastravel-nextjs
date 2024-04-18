@@ -11,29 +11,8 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         onClick={() =>
                             setModalOpen({
                                 open: true,
-                                title: "Külföldi utazásaink",
-                                travels: travels.filter((travel) => travel?.country !== "Magyarország"),
-                            })
-                        }
-                    >
-                        <img
-                            loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/kulfold.jpg"}
-                            className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
-                            alt="Külföld háttér"
-                        />
-                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
-                            Külföldi utazásaink
-                        </h2>
-                    </figure>
-                    <figure
-                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
-                        onClick={() =>
-                            setModalOpen({
-                                open: true,
-                                title: "Belföldi utazásaink",
-                                travels: travels.filter((travel) => travel?.country === "Magyarország"),
+                                title: "Belföldi buszos utazások",
+                                travels: travels.filter((travel) => travel?.country === "Magyarország" && !travel?.type?.includes("levegoben")),
                             })
                         }
                     >
@@ -44,7 +23,28 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             alt="Belföld háttér"
                         />
                         <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
-                            Belföldi utazásaink
+                            Belföldi buszos utazások
+                        </h2>
+                    </figure>
+                    <figure
+                        className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
+                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        onClick={() =>
+                            setModalOpen({
+                                open: true,
+                                title: "Külföldi buszos utazások",
+                                travels: travels.filter((travel) => travel?.country !== "Magyarország" && !travel?.type?.includes("levegoben")),
+                            })
+                        }
+                    >
+                        <img
+                            loading="lazy"
+                            src={"https://cdn.kalandozas.hu/img/kulfold.jpg"}
+                            className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
+                            alt="Külföld háttér"
+                        />
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
+                            Külföldi buszos utazások
                         </h2>
                     </figure>
                     {/* <figure
@@ -74,8 +74,8 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         onClick={() =>
                             setModalOpen({
                                 open: true,
-                                title: "Levegőben",
-                                travels: travels.filter((travel) => travel.type?.includes("levegoben")),
+                                title: "Repülős utazások",
+                                travels: travels.filter((travel) => travel?.type?.includes("levegoben")),
                             })
                         }
                     >
@@ -86,7 +86,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             alt="Levegőben háttér"
                         />
                         <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
-                            Levegőben
+                            Repülős utazások
                         </h2>
                     </figure>
                     <figure
@@ -96,7 +96,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             setModalOpen({
                                 open: true,
                                 title: "Egyéni szállásfoglalás",
-                                travels: travels.filter((travel) => travel.type?.includes("egyeniszallas")),
+                                travels: travels.filter((travel) => travel?.type?.includes("egyeniszallas")),
                             })
                         }
                     >
@@ -133,23 +133,19 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         onClick={() =>
                             setModalOpen({
                                 open: true,
-                                title: "Földön",
-                                travels: travels,
+                                title: "Hajós utazások",
+                                travels: travels.filter((travel) => travel?.type?.includes("vizen")),
                             })
                         }
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/busz.png"}
+                            src={"https://cdn.kalandozas.hu/img/hajo.jpg"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
-                            alt="Földön háttér"
+                            alt="Hajós utazások háttér"
                         />
-                        <h2
-                            className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2"
-                            style={{ textShadow: "2px 2px #000" }}
-                            alt="Földön háttér"
-                        >
-                            Földön
+                        <h2 className="bottom-0 absolute text-white text-2xl left-0 text-center w-full pb-2" style={{ textShadow: "2px 2px #000" }}>
+                            Hajós utazások
                         </h2>
                     </figure>
 
