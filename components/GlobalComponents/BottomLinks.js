@@ -52,7 +52,7 @@ const BottomLinks = () => {
                 </Link>
                 <Link
                     className={`${
-                        router.query.type === "partnerek" ? "active text-yellow-700" : ""
+                        router.query.type === "adventiutazas" ? "active text-yellow-700" : ""
                     } hover:text-yellow-700 filterlink duration-300 h-full`}
                     href="/travels?type=adventiutazas"
                 >
