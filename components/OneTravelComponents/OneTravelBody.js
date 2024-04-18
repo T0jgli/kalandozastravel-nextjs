@@ -53,7 +53,7 @@ const OneTravelBody = ({ travel }) => {
                 </div>
 
                 {travel?.thumbnails?.length > 0 && (
-                    <div className={`my-16 pb-16 grid grid-flow-col gap-3`} id="travelimages">
+                    <div className={`my-16 pb-16 grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-3`} id="travelimages">
                         {travel?.thumbnails?.slice(1).map((pict, index) => (
                             <img
                                 loading="lazy"
