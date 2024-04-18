@@ -33,6 +33,18 @@ const Footer = () => {
                     >
                         Adatvédelmi tájékoztató
                     </a>
+                    <button
+                        className="duration-300 hover:text-yellow-700"
+                        onClick={() => {
+                            localStorage.clear();
+                            document.cookie.split(";").forEach(function (c) {
+                                document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+                            });
+                            window.location.reload(false);
+                        }}
+                    >
+                        Sütik törlése
+                    </button>
                 </div>
             </div>
         </footer>
