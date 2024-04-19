@@ -81,7 +81,6 @@ export default function Travels({ travels, countries }) {
                     <AnimatePresence>
                         {travelsState.map((travel) => (
                             <motion.div
-                                id="card"
                                 className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
                                 key={travel.id}
                                 initial="initial"

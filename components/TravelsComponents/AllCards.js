@@ -62,6 +62,7 @@ const AllCard = ({
                     className="hover:text-yellow-700 text-center font-semibold break-words duration-300 h-full flex justify-center items-center"
                     href={`/travel/${id}`}
                     style={{ minHeight: "48px" }}
+                    prefetch={false}
                 >
                     {title}
                 </Link>
