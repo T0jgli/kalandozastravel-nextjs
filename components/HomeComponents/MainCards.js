@@ -39,7 +39,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/kulfold.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/kulfold.webp"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />
@@ -81,7 +81,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/levego.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/levego.webp"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-left"
                             alt="Levegőben háttér"
                         />
@@ -102,7 +102,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/egyeniszallas.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/egyeniszallas.webp"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Egyéni szállásfoglalás háttér"
                         />
@@ -140,7 +140,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/hajo.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/hajo.webp"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Hajós utazások háttér"
                         />
