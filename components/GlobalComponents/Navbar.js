@@ -3,6 +3,9 @@ import { HiMenu, HiOutlineX } from "react-icons/hi";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
+import { FaFacebook } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
 const Navbar = () => {
     const [open, setisOpen] = useState(false);
@@ -20,7 +23,7 @@ const Navbar = () => {
             <nav className={`sticky top-0 duration-300 ease-in-out shadow-sm font-semibold uppercase z-20 h-20 bg-white`}>
                 <img
                     loading="lazy"
-                    src="https://cdn.kalandozas.hu/img/fejsor1.png"
+                    src="https://cdn.kalandozas.hu/img/fejsor1.webp"
                     alt="Fejsor 1 kép"
                     className={`inline lg:hidden xl:inline h-10 md:h-20 top-5 md:top-0 m-0 absolute left-0 pr-10 duration-300`}
                 />
@@ -33,7 +36,8 @@ const Navbar = () => {
                         aria-label="Facebook oldal"
                         title="Facebook"
                     >
-                        <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/fb.svg" width="30px" alt="Facebook ikon" />
+                        {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/fb.svg" width="30px" alt="Facebook ikon" /> */}
+                        <FaFacebook size="2rem" />
                     </a>
                     <a
                         target="_blank"
@@ -43,7 +47,8 @@ const Navbar = () => {
                         aria-label="Instagram oldal"
                         title="Instagram"
                     >
-                        <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/insta.svg" width="30px" alt="Instagram ikon" />
+                        {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/insta.svg" width="30px" alt="Instagram ikon" /> */}
+                        <FaInstagram size="2rem" />
                     </a>
                     <a
                         target="_blank"
@@ -53,7 +58,8 @@ const Navbar = () => {
                         aria-label="Youtube csatorna"
                         title="Youtube"
                     >
-                        <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
+                        {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" /> */}
+                        <FaYoutube size="2rem" />
                     </a>
                 </div>
                 {!isMobile && (
@@ -174,7 +180,8 @@ const Navbar = () => {
                                 aria-label="Facebook oldal"
                                 title="Facebook"
                             >
-                                <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/fb.svg" width="30px" alt="Facebook ikon" />
+                                {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/fb.svg" width="30px" alt="Facebook ikon" /> */}
+                                <FaFacebook size="2rem" />
                             </a>
                             <a
                                 target="_blank"
@@ -184,7 +191,8 @@ const Navbar = () => {
                                 aria-label="Instagram oldal"
                                 title="Instagram"
                             >
-                                <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/insta.svg" width="30px" alt="Instagram ikon" />
+                                {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/insta.svg" width="30px" alt="Instagram ikon" /> */}
+                                <FaInstagram size="2rem" />
                             </a>
                             <a
                                 target="_blank"
@@ -194,7 +202,8 @@ const Navbar = () => {
                                 aria-label="Youtube csatorna"
                                 title="Youtube"
                             >
-                                <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" />
+                                {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" /> */}
+                                <FaYoutube size="2rem" />
                             </a>
                         </div>
                     </div>

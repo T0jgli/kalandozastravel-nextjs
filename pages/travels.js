@@ -28,6 +28,14 @@ export default function Travels({ travels, countries }) {
                     return false;
                 })
             );
+        } else if (router.query.month) {
+            settravelsState(
+                travels.filter((travel) => {
+                    const month = travel?.startingDate?.split("-")?.[1]?.split("-")?.[0];
+                    if (month === router.query.month) return true;
+                    return false;
+                })
+            );
         } else if (router.query) {
             settravelsState(
                 travels.filter((travel) => {
@@ -63,7 +71,7 @@ export default function Travels({ travels, countries }) {
                             });
                         }}
                     >
-                        Törlés
+                        Szűrők törlése
                     </button>
                 )}
                 <h2 className="text-2xl py-5 text-gray-800">{travelsState.length} utazás található</h2>

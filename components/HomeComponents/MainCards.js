@@ -18,7 +18,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/belfold.jpg"}
+                            src={"https://cdn.kalandozas.hu/img/belfold.webp"}
                             className="w-full h-full object-cover duration-300 hover:scale-110 brightness-95 filter transform object-center"
                             alt="Belföld háttér"
                         />

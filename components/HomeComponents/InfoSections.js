@@ -2,7 +2,7 @@ const InfoSections = () => {
     return (
         <>
             <div className=" mx-auto mt-24 flex justify-center relative">
-                <a href="/img/ingyen.jpg" target="_blank" rel="noopener noreferrer">
+                <a href="https://cdn.kalandozas.hu/img/ingyen.webp" target="_blank" rel="noopener noreferrer">
                     <button
                         className={`bg-yellow-700 cursor-pointer hover:shadow-xl hover:border-yellow-700 border-transparent 
                         border-2 hover:bg-white hover:text-yellow-700 mx-6 rounded-2xl 

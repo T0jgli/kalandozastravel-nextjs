@@ -5,7 +5,7 @@ class MyDocument extends Document {
         return (
             <Html lang="hu">
                 <Head />
-                <link rel="icon" type="image/png" href="/img/conti_logo.png" />
+                <link rel="icon" type="image/png" href="/img/conti_logo.webp" />
                 <link rel="apple-touch-icon" href="/favicon.ico" />
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta name="description" content="kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
@@ -22,11 +22,11 @@ class MyDocument extends Document {
                 <meta property="og:title" content="Kalandozás Utazási iroda" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="hu_HU" />
-                <meta property="og:image" content="https://cdn.kalandozas.hu/img/conti_logo.png" />
+                <meta property="og:image" content="https://cdn.kalandozas.hu/img/conti_logo.webp" />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Kalandozás Utazási iroda" />
                 <meta name="twitter:description" content="kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
-                <meta property="twitter:image" content="https://cdn.kalandozas.hu/img/conti_logo.png" />
+                <meta property="twitter:image" content="https://cdn.kalandozas.hu/img/conti_logo.webp" />
                 <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
                 <title>Kalandozás Utazási iroda</title>
                 <body>

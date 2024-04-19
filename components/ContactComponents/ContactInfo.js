@@ -52,7 +52,7 @@ const ContactInfo = () => {
             </div>
             <img
                 loading="lazy"
-                src="https://cdn.kalandozas.hu/img/szep_kartya.png"
+                src="https://cdn.kalandozas.hu/img/szep_kartya.webp"
                 alt="Szép kártya kép"
                 className="max-w-xs duration-300 hover:opacity-90 mx-auto mt-16 mb-16 md:mb-0"
             />
