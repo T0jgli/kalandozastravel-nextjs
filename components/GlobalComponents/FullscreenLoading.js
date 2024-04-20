@@ -7,7 +7,7 @@ import { loadingAnimation } from "./Transitions";
 const FullscreenLoading = () => {
     const router = useRouter();
 
-    const [pageLoading, setPageLoading] = useState(true);
+    const [pageLoading, setPageLoading] = useState(false);
     useEffect(() => {
         const handleStart = () => {
             setPageLoading(true);
