@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { pageVariants } from "../components/GlobalComponents/Transitions";
@@ -10,7 +10,7 @@ const Gallery = dynamic(() => import("../components/GlobalComponents/Gallery"));
 
 export default function Contact() {
     return (
-        <motion.section initial="initial" animate="animate" variants={pageVariants}>
+        <m.section initial="initial" animate="animate" variants={pageVariants}>
             <Head>
                 <title>Kapcsolat - Kalandozás Utazási iroda</title>
                 <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>
@@ -21,6 +21,6 @@ export default function Contact() {
                 <ContactForm />
             </div>
             <Gallery />
-        </motion.section>
+        </m.section>
     );
 }

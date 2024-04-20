@@ -1,6 +1,6 @@
 import DefaultLayout from "../components/DefaultLayout";
 import "../styles/globals.css";
-import "../styles/quill.css";
+// import "../styles/quill.css";
 import "../styles/tailwind.css";
 import "react-toastify/dist/ReactToastify.css";
 import "react-18-image-lightbox/style.css";

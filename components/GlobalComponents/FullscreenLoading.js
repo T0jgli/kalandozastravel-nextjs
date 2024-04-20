@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
@@ -7,7 +7,7 @@ import { loadingAnimation } from "./Transitions";
 const FullscreenLoading = () => {
     const router = useRouter();
 
-    const [pageLoading, setPageLoading] = useState(false);
+    const [pageLoading, setPageLoading] = useState(true);
     useEffect(() => {
         const handleStart = () => {
             setPageLoading(true);
@@ -23,7 +23,7 @@ const FullscreenLoading = () => {
 
     if (pageLoading)
         return (
-            <motion.div
+            <m.div
                 initial="initial"
                 exit="exit"
                 animate="animate"
@@ -31,7 +31,7 @@ const FullscreenLoading = () => {
                 className={`flex bg-black bg-opacity-60 justify-center fixed left-0 top-0 w-full h-full items-center`}
             >
                 <ThreeDots type="ThreeDots" color="whitesmoke" width={100} />
-            </motion.div>
+            </m.div>
         );
 
     return null;

@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
@@ -106,7 +106,7 @@ const Cards = ({ travels }) => {
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
                     <AnimatePresence>
                         {travelsState?.map((travel) => (
-                            <motion.div
+                            <m.div
                                 id="card"
                                 className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
                                 key={travel.id}
@@ -130,7 +130,7 @@ const Cards = ({ travels }) => {
                                     type2={travel.type2}
                                     customUrl={travel.customUrl}
                                 />
-                            </motion.div>
+                            </m.div>
                         ))}
                     </AnimatePresence>
                 </div>

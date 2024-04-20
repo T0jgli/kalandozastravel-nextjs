@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { HiChevronUp } from "react-icons/hi";
 import { cardAnimation } from "./Transitions";
@@ -20,7 +20,7 @@ const ScrollTopButton = () => {
         <>
             <AnimatePresence mode="wait">
                 {show && (
-                    <motion.div
+                    <m.div
                         initial="initial"
                         exit="exit"
                         animate="animate"
@@ -38,7 +38,7 @@ const ScrollTopButton = () => {
                         className="fixed rounded-lg text-black cursor-pointer z-20 bottom-5 right-5 duration-300 bg-transparent"
                     >
                         <HiChevronUp fontSize="2rem" />
-                    </motion.div>
+                    </m.div>
                 )}
             </AnimatePresence>
         </>

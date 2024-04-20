@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Head from "next/head";
 import { pageVariants } from "../components/GlobalComponents/Transitions";
 import HomeBody from "../components/HomeComponents/HomeBody";
@@ -7,20 +7,25 @@ import BottomLinks from "../components/GlobalComponents/BottomLinks";
 import CustomCarousel from "../components/HomeComponents/CustomCarousel";
 import { getHomeData } from "../lib/helpers/getDatas";
 import { agencySchema } from "../lib/helpers/StructuredData";
+import dynamic from "next/dynamic";
+import Loading from "../components/GlobalComponents/Loading";
+const DynamicCustomCarousel = dynamic(() => import("../components/HomeComponents/CustomCarousel"), {
+    loading: () => <Loading />,
+});
 
 export default function Home({ faqs, travels, countries }) {
     return (
         <>
-            <motion.section initial="initial" animate="animate" variants={pageVariants}>
+            <m.section initial="initial" animate="animate" variants={pageVariants}>
                 <Head>
                     <title>Főoldal - Kalandozás Utazási iroda</title>
                     <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>
                 </Head>
-                <CustomCarousel travels={travels} />
+                <DynamicCustomCarousel travels={travels} />
                 <BottomLinks />
                 <SearchFilter countries={countries} />
                 <HomeBody questionsAnswers={faqs} travels={travels} />
-            </motion.section>
+            </m.section>
         </>
     );
 }

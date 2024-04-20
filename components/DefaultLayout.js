@@ -7,6 +7,7 @@ import FullscreenLoading from "./GlobalComponents/FullscreenLoading";
 import Navbar from "./GlobalComponents/Navbar";
 import ScrollTopButton from "./GlobalComponents/ScrollTopButton";
 import { pageview } from "../lib/helpers/gtag";
+import { LazyMotion, domAnimation } from "framer-motion";
 
 const DefaultLayout = ({ children }) => {
     const router = useRouter();
@@ -21,7 +22,7 @@ const DefaultLayout = ({ children }) => {
     }, [router.events]);
 
     return (
-        <>
+        <LazyMotion features={domAnimation}>
             <Navbar />
             {children}
             <ToastContainer autoClose={5000} position="bottom-center" theme="colored" />
@@ -29,7 +30,7 @@ const DefaultLayout = ({ children }) => {
             <Cookie />
             <ScrollTopButton />
             <Footer />
-        </>
+        </LazyMotion>
     );
 };
 

@@ -10,49 +10,39 @@ module.exports = withBundleAnalyzer({
     experimental: {
         scrollRestoration: true,
     },
-    plugins: [
-        [
-            "@fullhuman/postcss-purgecss",
-            {
-                content: ["./pages/**/*.{js,jsx,ts,tsx}", "./components/**/*.{js,jsx,ts,tsx}"],
-                defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-                safelist: ["html", "body"],
-            },
-        ],
-    ],
     // assetPrefix: process.env.NODE_ENV === "production" ? "https://cdn.kalandozas.hu" : undefined,
-    async headers() {
-        return [
-            {
-                // Sets security headers for all routes
-                source: "/(.*)",
-                headers: [
-                    {
-                        key: "Referrer-Policy",
-                        value: "no-referrer, strict-origin-when-cross-origin",
-                    },
-                    {
-                        key: "Strict-Transport-Security",
-                        value: "max-age=63072000; includeSubDomains",
-                    },
-                    {
-                        key: "X-Content-Type-Options",
-                        value: "nosniff",
-                    },
-                    {
-                        key: "X-Frame-Options",
-                        value: "DENY",
-                    },
-                    {
-                        key: "X-XSS-Protection",
-                        value: "nosniff",
-                    },
-                    {
-                        key: "Permissions-Policy",
-                        value: "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
-                    },
-                ],
-            },
-        ];
-    },
+    // async headers() {
+    //     return [
+    //         {
+    //             // Sets security headers for all routes
+    //             source: "/(.*)",
+    //             headers: [
+    //                 {
+    //                     key: "Referrer-Policy",
+    //                     value: "no-referrer, strict-origin-when-cross-origin",
+    //                 },
+    //                 {
+    //                     key: "Strict-Transport-Security",
+    //                     value: "max-age=63072000; includeSubDomains",
+    //                 },
+    //                 {
+    //                     key: "X-Content-Type-Options",
+    //                     value: "nosniff",
+    //                 },
+    //                 {
+    //                     key: "X-Frame-Options",
+    //                     value: "DENY",
+    //                 },
+    //                 {
+    //                     key: "X-XSS-Protection",
+    //                     value: "nosniff",
+    //                 },
+    //                 {
+    //                     key: "Permissions-Policy",
+    //                     value: "geolocation=(),midi=(),sync-xhr=(),microphone=(),camera=(),magnetometer=(),gyroscope=(),fullscreen=(self),payment=()",
+    //                 },
+    //             ],
+    //         },
+    //     ];
+    // },
 });

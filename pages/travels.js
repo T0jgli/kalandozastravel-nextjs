@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import AllCards from "../components/TravelsComponents/AllCards";
@@ -53,7 +53,7 @@ export default function Travels({ travels, countries }) {
     }, [router.query]);
 
     return (
-        <motion.section initial="initial" animate="animate" variants={pageVariants}>
+        <m.section initial="initial" animate="animate" variants={pageVariants}>
             <Head>
                 <title>Utazásaink - Kalandozás Utazási iroda</title>
                 <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>
@@ -80,7 +80,7 @@ export default function Travels({ travels, countries }) {
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center">
                     <AnimatePresence>
                         {travelsState.map((travel) => (
-                            <motion.div
+                            <m.div
                                 className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
                                 key={travel.id}
                                 initial="initial"
@@ -103,13 +103,13 @@ export default function Travels({ travels, countries }) {
                                     type2={travel.type2}
                                     customUrl={travel.customUrl}
                                 />
-                            </motion.div>
+                            </m.div>
                         ))}
                     </AnimatePresence>
                 </div>
             </div>
             <Infos />
-        </motion.section>
+        </m.section>
     );
 }
 
