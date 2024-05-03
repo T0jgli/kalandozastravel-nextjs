@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import Loading from "../GlobalComponents/Loading";
+import { numberToDate } from "../../lib/helpers/Date";
 
 const DynamicAllCards = dynamic(() => import("../TravelsComponents/AllCards"), {
     loading: () => <Loading />,
@@ -30,7 +31,7 @@ const DynamicMainCards = dynamic(() => import("./MainCards"), {
     loading: () => <Loading />,
 });
 
-const Cards = ({ travels }) => {
+const Cards = ({ travels, months }) => {
     const travelsdiv = useRef(null);
     const router = useRouter();
     const [travelsState, settravelsState] = useState(travels);
@@ -104,35 +105,49 @@ const Cards = ({ travels }) => {
 
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
-                    <AnimatePresence>
-                        {travelsState?.map((travel) => (
-                            <m.div
-                                id="card"
-                                className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
-                                key={travel.id}
-                                initial="initial"
-                                exit="exit"
-                                animate="animate"
-                                variants={cardAnimation}
-                            >
-                                <DynamicAllCards
-                                    id={travel.id}
-                                    thumbnail={travel.thumbnail}
-                                    backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
-                                    title={travel.title}
-                                    isSale={travel.isSale}
-                                    country={travel.country}
-                                    timestamp={travel.timestamp}
-                                    startingDate={travel.startingDate}
-                                    endingDate={travel.endingDate}
-                                    places={travel.freePlaces}
-                                    price={travel.price}
-                                    type2={travel.type2}
-                                    customUrl={travel.customUrl}
-                                />
-                            </m.div>
-                        ))}
-                    </AnimatePresence>
+                    {Array.from({ length: 12 }, (_, index) => {
+                        if (months?.[index + 1])
+                            return (
+                                <>
+                                    <div className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium">
+                                        <p className="p-4 rounded-xl">{numberToDate(index)}</p>
+                                    </div>
+
+                                    <AnimatePresence>
+                                        {travelsState
+                                            .filter((t) => t?.startingDate?.split("-")?.[1]?.split("-")?.[0] == index + 1)
+                                            ?.map((travel) => (
+                                                <m.div
+                                                    id="card"
+                                                    className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
+                                                    key={travel.id}
+                                                    initial="initial"
+                                                    exit="exit"
+                                                    animate="animate"
+                                                    variants={cardAnimation}
+                                                >
+                                                    <DynamicAllCards
+                                                        id={travel.id}
+                                                        thumbnail={travel.thumbnail}
+                                                        backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
+                                                        title={travel.title}
+                                                        isSale={travel.isSale}
+                                                        country={travel.country}
+                                                        timestamp={travel.timestamp}
+                                                        startingDate={travel.startingDate}
+                                                        endingDate={travel.endingDate}
+                                                        places={travel.freePlaces}
+                                                        price={travel.price}
+                                                        type2={travel.type2}
+                                                        customUrl={travel.customUrl}
+                                                    />
+                                                </m.div>
+                                            ))}
+                                    </AnimatePresence>
+                                </>
+                            );
+                        else return "";
+                    })}
                 </div>
             </div>
 

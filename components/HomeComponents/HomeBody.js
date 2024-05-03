@@ -7,11 +7,11 @@ import Newsletter from "./Newsletter";
 import Cards from "./Cards";
 const Gallery = dynamic(() => import("../GlobalComponents/Gallery"));
 
-const HomeBody = ({ questionsAnswers, travels }) => {
+const HomeBody = ({ questionsAnswers, travels, months }) => {
     return (
         <>
             <Newsletter />
-            <Cards travels={travels} />
+            <Cards travels={travels} months={months} />
             <Gallery />
             <Streak />
             <InfoSections />
