@@ -109,7 +109,7 @@ const Cards = ({ travels, months }) => {
                         if (months?.[index + 1])
                             return (
                                 <>
-                                    <div className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium">
+                                    <div className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium uppercase">
                                         <p className="p-4 rounded-xl">{numberToDate(index)}</p>
                                     </div>
 
