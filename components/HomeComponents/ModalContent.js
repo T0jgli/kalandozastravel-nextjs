@@ -45,6 +45,7 @@ const ModalContent = ({ travels }) => {
                                 </td>
                                 <td className="py-3 px-6 text-left font-medium max-w-xs cursor-pointer" style={{ wordWrap: "break-word" }}>
                                     <Link
+                                        prefetch={false}
                                         href={travel.customUrl || `/travel/${travel.id}`}
                                         className="hover:text-yellow-700 break-words duration-300"
                                     >

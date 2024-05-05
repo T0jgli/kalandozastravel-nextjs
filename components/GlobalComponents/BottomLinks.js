@@ -12,6 +12,7 @@ const BottomLinks = () => {
                     style={{ minHeight: "4rem" }}
                 >
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.type === "1naposutazas" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -20,6 +21,7 @@ const BottomLinks = () => {
                         1 napos utazások
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.type === "korutazas" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -28,6 +30,7 @@ const BottomLinks = () => {
                         Körutazások
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.type === "nonstop" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -36,6 +39,7 @@ const BottomLinks = () => {
                         Non-Stop utazások
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.type === "varoslatogatas" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -44,6 +48,7 @@ const BottomLinks = () => {
                         Városlátogatások
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.type === "partnerek" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -52,6 +57,7 @@ const BottomLinks = () => {
                         Partneri utazások
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.type === "adventiutazas" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -60,6 +66,7 @@ const BottomLinks = () => {
                         Adventi utazások
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.type === "unnepnapokon" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -76,6 +83,7 @@ const BottomLinks = () => {
                     style={{ minHeight: "4rem" }}
                 >
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "01" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -84,6 +92,7 @@ const BottomLinks = () => {
                         Január
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "02" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -92,6 +101,7 @@ const BottomLinks = () => {
                         Február
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "03" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -100,6 +110,7 @@ const BottomLinks = () => {
                         Március
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "04" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -108,6 +119,7 @@ const BottomLinks = () => {
                         Április
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "05" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -116,6 +128,7 @@ const BottomLinks = () => {
                         Május
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "06" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -124,6 +137,7 @@ const BottomLinks = () => {
                         Június
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "07" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -132,6 +146,7 @@ const BottomLinks = () => {
                         Július
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "08" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -140,6 +155,7 @@ const BottomLinks = () => {
                         Augusztus
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "09" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -148,6 +164,7 @@ const BottomLinks = () => {
                         Szeptember
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "10" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -156,6 +173,7 @@ const BottomLinks = () => {
                         Október
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "11" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
@@ -164,6 +182,7 @@ const BottomLinks = () => {
                         November
                     </Link>
                     <Link
+                        prefetch={false}
                         className={`${
                             router.query.month === "12" ? "active text-yellow-700" : ""
                         } hover:text-yellow-700 filterlink duration-300 h-full`}
