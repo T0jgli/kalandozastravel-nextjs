@@ -1,5 +1,5 @@
 import { AnimatePresence, m } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
 import AllCards from "../TravelsComponents/AllCards";
@@ -104,51 +104,56 @@ const Cards = ({ travels, months }) => {
             </div>*/}
 
             <div className="flex flex-col max-w-7xl mx-auto">
-                <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
-                    {Array.from({ length: 12 }, (_, index) => {
-                        if (months?.[index + 1])
-                            return (
-                                <>
-                                    <div className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium uppercase">
-                                        <p className="p-4 rounded-xl">{numberToDate(index)}</p>
-                                    </div>
+                <Suspense>
+                    <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
+                        {Array.from({ length: 12 }, (_, index) => {
+                            if (months?.[index + 1])
+                                return (
+                                    <React.Fragment key={index + 1 + " hónap"}>
+                                        <div
+                                            key={months?.[index + 1] + " szöveg"}
+                                            className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium uppercase"
+                                        >
+                                            <p className="p-4 rounded-xl">{numberToDate(index)}</p>
+                                        </div>
 
-                                    <AnimatePresence>
-                                        {travelsState
-                                            .filter((t) => t?.startingDate?.split("-")?.[1]?.split("-")?.[0] == index + 1)
-                                            ?.map((travel) => (
-                                                <m.div
-                                                    id="card"
-                                                    className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
-                                                    key={travel.id}
-                                                    initial="initial"
-                                                    exit="exit"
-                                                    animate="animate"
-                                                    variants={cardAnimation}
-                                                >
-                                                    <DynamicAllCards
-                                                        id={travel.id}
-                                                        thumbnail={travel.thumbnail}
-                                                        backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
-                                                        title={travel.title}
-                                                        isSale={travel.isSale}
-                                                        country={travel.country}
-                                                        timestamp={travel.timestamp}
-                                                        startingDate={travel.startingDate}
-                                                        endingDate={travel.endingDate}
-                                                        places={travel.freePlaces}
-                                                        price={travel.price}
-                                                        type2={travel.type2}
-                                                        customUrl={travel.customUrl}
-                                                    />
-                                                </m.div>
-                                            ))}
-                                    </AnimatePresence>
-                                </>
-                            );
-                        else return "";
-                    })}
-                </div>
+                                        <AnimatePresence>
+                                            {travelsState
+                                                .filter((t) => t?.startingDate?.split("-")?.[1]?.split("-")?.[0] == index + 1)
+                                                ?.map((travel) => (
+                                                    <m.div
+                                                        id="card"
+                                                        className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
+                                                        key={travel.id}
+                                                        initial="initial"
+                                                        exit="exit"
+                                                        animate="animate"
+                                                        variants={cardAnimation}
+                                                    >
+                                                        <DynamicAllCards
+                                                            id={travel.id}
+                                                            thumbnail={travel.thumbnail}
+                                                            backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
+                                                            title={travel.title}
+                                                            isSale={travel.isSale}
+                                                            country={travel.country}
+                                                            timestamp={travel.timestamp}
+                                                            startingDate={travel.startingDate}
+                                                            endingDate={travel.endingDate}
+                                                            places={travel.freePlaces}
+                                                            price={travel.price}
+                                                            type2={travel.type2}
+                                                            customUrl={travel.customUrl}
+                                                        />
+                                                    </m.div>
+                                                ))}
+                                        </AnimatePresence>
+                                    </React.Fragment>
+                                );
+                            else return "";
+                        })}
+                    </div>
+                </Suspense>
             </div>
 
             <div className="flex justify-center gap-10 my-20 items-center">
