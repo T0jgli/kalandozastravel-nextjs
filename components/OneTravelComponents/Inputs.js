@@ -359,116 +359,114 @@ const Inputs = ({ travel }) => {
                         />
                     </div>
                 </div>
-                {travel.country !== "Magyarország" && (
-                    <div
-                        className="my-10 flex w-full flex-col border-gray-100 pt-4 justify-center items-center"
-                        id="insurancebox"
-                        style={{ scrollMarginTop: "80px" }}
-                    >
-                        <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="needinsurance">
-                            <input
-                                className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
-                                onChange={() => {
-                                    setState({ ...state, needinsurance: true });
-                                    document.querySelector(`#insurancebox`).scrollIntoView({
-                                        behavior: "smooth",
-                                    });
-                                }}
-                                type="radio"
-                                name="needinsurance"
-                                id="needinsurance"
-                                checked={state.needinsurance}
-                            />
-                            <span className="ml-2"> IGEN kérek biztosítást</span>
-                        </label>
-                        <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="notneedinsurance">
-                            <input
-                                className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
-                                onChange={() => {
-                                    setState({ ...state, needinsurance: false });
-                                }}
-                                type="radio"
-                                name="needinsurance"
-                                id="notneedinsurance"
-                                checked={!state.needinsurance}
-                            />
-                            <span className="ml-2"> NEM kérek biztosítást</span>
-                        </label>
-                        {state.needinsurance && (
-                            <>
-                                {Array.from(Array(Number(state.people)).keys()).map((_, i) => {
-                                    return (
-                                        <div className="my-10 flex flex-col md:flex-row gap-8 w-4/6 justify-center items-center">
-                                            <div className="w-full mb-5 md:mb-0 mr-0 relative">
-                                                <CustomInputField
-                                                    className={`${
-                                                        errors?.length > 0 && isWrongField(errors, `insurancename${i}`) ? "border-red-500" : ""
-                                                    } w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
-                                                    onChange={(e) => {
-                                                        setState({
-                                                            ...state,
-                                                            insurances: {
-                                                                ...state.insurances,
-                                                                [e.target.name]: e.target.value,
-                                                            },
-                                                        });
-                                                    }}
-                                                    type="text"
-                                                    onFocus={(e) => {
-                                                        if (errors?.length > 0) {
-                                                            setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
-                                                        }
-                                                    }}
-                                                    required
-                                                    name={`insurancename${i}`}
-                                                    id={`insurancename${i}`}
-                                                    value={state.insurances[`insurancename${i}`] || ""}
-                                                    label={`${i + 1}. utas neve`}
-                                                    errors={errors}
-                                                    isWrongField={isWrongField}
-                                                    getErrorMessage={getErrorMessage}
-                                                />
-                                            </div>
-                                            <div className="w-full mb-5 md:mb-0 mr-0 relative">
-                                                <CustomInputField
-                                                    className={`${
-                                                        errors?.length > 0 && isWrongField(errors, `insurancebirthdate${i}`) ? "border-red-500" : ""
-                                                    } w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
-                                                    onChange={(e) => {
-                                                        setState({
-                                                            ...state,
-                                                            insurances: {
-                                                                ...state.insurances,
-                                                                [e.target.name]: e.target.value,
-                                                            },
-                                                        });
-                                                    }}
-                                                    type="text"
-                                                    onFocus={(e) => {
-                                                        if (errors?.length > 0) {
-                                                            setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
-                                                        }
-                                                    }}
-                                                    required
-                                                    name={`insurancebirthdate${i}`}
-                                                    id={`insurancebirthdate${i}`}
-                                                    value={state.insurances[`insurancebirthdate${i}`] || ""}
-                                                    label={`${i + 1}. utas születési dátuma`}
-                                                    errors={errors}
-                                                    isWrongField={isWrongField}
-                                                    getErrorMessage={getErrorMessage}
-                                                />
-                                                <div className="absolute -bottom-7 text-center pt-2">
-                                                    <label className="text-gray-700 text-xs">(év, hónap, nap)</label>
-                                                </div>
+                <div
+                    className="my-10 flex w-full flex-col border-gray-100 pt-4 justify-center items-center"
+                    id="insurancebox"
+                    style={{ scrollMarginTop: "80px" }}
+                >
+                    <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="needinsurance">
+                        <input
+                            className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                            onChange={() => {
+                                setState({ ...state, needinsurance: true });
+                                document.querySelector(`#insurancebox`).scrollIntoView({
+                                    behavior: "smooth",
+                                });
+                            }}
+                            type="radio"
+                            name="needinsurance"
+                            id="needinsurance"
+                            checked={state.needinsurance}
+                        />
+                        <span className="ml-2"> IGEN kérek biztosítást</span>
+                    </label>
+                    <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="notneedinsurance">
+                        <input
+                            className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                            onChange={() => {
+                                setState({ ...state, needinsurance: false });
+                            }}
+                            type="radio"
+                            name="needinsurance"
+                            id="notneedinsurance"
+                            checked={!state.needinsurance}
+                        />
+                        <span className="ml-2"> NEM kérek biztosítást</span>
+                    </label>
+                    {state.needinsurance && (
+                        <>
+                            {Array.from(Array(Number(state.people)).keys()).map((_, i) => {
+                                return (
+                                    <div className="my-10 flex flex-col md:flex-row gap-8 w-4/6 justify-center items-center">
+                                        <div className="w-full mb-5 md:mb-0 mr-0 relative">
+                                            <CustomInputField
+                                                className={`${
+                                                    errors?.length > 0 && isWrongField(errors, `insurancename${i}`) ? "border-red-500" : ""
+                                                } w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                                onChange={(e) => {
+                                                    setState({
+                                                        ...state,
+                                                        insurances: {
+                                                            ...state.insurances,
+                                                            [e.target.name]: e.target.value,
+                                                        },
+                                                    });
+                                                }}
+                                                type="text"
+                                                onFocus={(e) => {
+                                                    if (errors?.length > 0) {
+                                                        setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
+                                                    }
+                                                }}
+                                                required
+                                                name={`insurancename${i}`}
+                                                id={`insurancename${i}`}
+                                                value={state.insurances[`insurancename${i}`] || ""}
+                                                label={`${i + 1}. utas neve`}
+                                                errors={errors}
+                                                isWrongField={isWrongField}
+                                                getErrorMessage={getErrorMessage}
+                                            />
+                                        </div>
+                                        <div className="w-full mb-5 md:mb-0 mr-0 relative">
+                                            <CustomInputField
+                                                className={`${
+                                                    errors?.length > 0 && isWrongField(errors, `insurancebirthdate${i}`) ? "border-red-500" : ""
+                                                } w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                                onChange={(e) => {
+                                                    setState({
+                                                        ...state,
+                                                        insurances: {
+                                                            ...state.insurances,
+                                                            [e.target.name]: e.target.value,
+                                                        },
+                                                    });
+                                                }}
+                                                type="text"
+                                                onFocus={(e) => {
+                                                    if (errors?.length > 0) {
+                                                        setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
+                                                    }
+                                                }}
+                                                required
+                                                name={`insurancebirthdate${i}`}
+                                                id={`insurancebirthdate${i}`}
+                                                value={state.insurances[`insurancebirthdate${i}`] || ""}
+                                                label={`${i + 1}. utas születési dátuma`}
+                                                errors={errors}
+                                                isWrongField={isWrongField}
+                                                getErrorMessage={getErrorMessage}
+                                            />
+                                            <div className="absolute -bottom-7 text-center pt-2">
+                                                <label className="text-gray-700 text-xs">(év, hónap, nap)</label>
                                             </div>
                                         </div>
-                                    );
-                                })}
-                            </>
-                        )}
-                    </div>
-                )}
+                                    </div>
+                                );
+                            })}
+                        </>
+                    )}
+                </div>
 
                 <div
                     className="my-10 flex w-full flex-col border-gray-100 pt-8 border-t-2 justify-center items-center"
