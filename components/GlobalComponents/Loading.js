@@ -1,8 +1,7 @@
 import React from "react";
-import { TailSpin } from "react-loader-spinner";
 
 const Loading = () => {
-    return <TailSpin type="TailSpin" color="whitesmoke" width={30} height={30} />;
+    return <div className="loader"></div>;
 };
 
 export default Loading;
