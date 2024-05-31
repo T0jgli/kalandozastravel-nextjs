@@ -11,6 +11,7 @@ import dynamic from "next/dynamic";
 import Loading from "../components/GlobalComponents/Loading";
 const DynamicCustomCarousel = dynamic(() => import("../components/HomeComponents/CustomCarousel"), {
     loading: () => <Loading />,
+    ssr: false,
 });
 
 export default function Home({ faqs, travels, countries, months }) {

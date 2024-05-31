@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 const MainCards = ({ travels, setModalOpen, carousel }) => {
     return (
-        <>
+        <Suspense>
             <div className={`${carousel ? "hidden xl:block" : "block xl:hidden"}`}>
                 <div className="grid xl:grid-cols-5 gap-6 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 max-w-7xl mx-auto my-6 px-3 2xl:px-0">
                     <figure
@@ -193,7 +193,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     ></figure> */}
                 </div>
             </div>
-        </>
+        </Suspense>
     );
 };
 

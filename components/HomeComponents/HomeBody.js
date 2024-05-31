@@ -3,9 +3,18 @@ import React from "react";
 import Faqs from "./Faqs";
 import InfoSections from "./InfoSections";
 import Streak from "./Streak";
-import Newsletter from "./Newsletter";
 import Cards from "./Cards";
-const Gallery = dynamic(() => import("../GlobalComponents/Gallery"));
+import Loading from "../GlobalComponents/Loading";
+
+const Newsletter = dynamic(() => import("./Newsletter"), {
+    loading: () => <Loading />,
+    ssr: false,
+});
+
+const Gallery = dynamic(() => import("../GlobalComponents/Gallery"), {
+    loading: () => <Loading />,
+    ssr: false,
+});
 
 const HomeBody = ({ questionsAnswers, travels, months }) => {
     return (

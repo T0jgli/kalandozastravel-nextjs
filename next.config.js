@@ -2,6 +2,32 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
     enabled: process.env.ANALYZE === "true",
 });
 
+const obfuscatorOptions = {
+    compact: true,
+    controlFlowFlattening: false,
+    controlFlowFlatteningThreshold: 0.75,
+    disableConsoleOutput: false,
+    domainLock: [".usamyon.moe", "localhost"],
+    domainLockRedirectUrl: "about:blank",
+    identifierNamesCache: null,
+    identifierNamesGenerator: "mangled",
+    optionsPreset: "low-obfuscation",
+    rotateStringArray: true,
+    seed: 0,
+    selfDefending: true,
+    shuffleStringArray: true,
+    simplify: true,
+    splitStrings: true,
+    splitStringsChunkLength: 10,
+    stringArray: true,
+    stringArrayIndexesType: ["hexadecimal-number"],
+    target: "browser",
+    sourceMap: true,
+};
+
+// const withNextJsObfuscator = require("nextjs-obfuscator")(obfuscatorOptions);
+
+// module.exports = withNextJsObfuscator(
 module.exports = withBundleAnalyzer({
     images: {
         domains: ["firebasestorage.googleapis.com"],
@@ -46,3 +72,4 @@ module.exports = withBundleAnalyzer({
     //     ];
     // },
 });
+// );

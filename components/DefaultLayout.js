@@ -2,12 +2,18 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { ToastContainer } from "react-toastify";
 import Cookie from "./GlobalComponents/Cookie";
-import Footer from "./GlobalComponents/Footer";
 import FullscreenLoading from "./GlobalComponents/FullscreenLoading";
 import Navbar from "./GlobalComponents/Navbar";
 import ScrollTopButton from "./GlobalComponents/ScrollTopButton";
 import { pageview } from "../lib/helpers/gtag";
 import { LazyMotion, domAnimation } from "framer-motion";
+import Loading from "./GlobalComponents/Loading";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("./GlobalComponents/Footer"), {
+    loading: () => <Loading />,
+    ssr: false,
+});
 
 const DefaultLayout = ({ children }) => {
     const router = useRouter();

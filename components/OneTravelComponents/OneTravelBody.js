@@ -5,6 +5,7 @@ import { useState } from "react";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import countries from "../../lib/countries.json";
 import Link from "next/link";
+import Loading from "../GlobalComponents/Loading";
 
 const TYPEPARSER = {
     "1naposutazas": "1 napos utazás",
@@ -18,7 +19,10 @@ const TYPEPARSER = {
 };
 
 const Fslightboxes = dynamic(() => import("../GlobalComponents/FSLightbox"));
-const Inputs = dynamic(() => import("./Inputs"));
+const Inputs = dynamic(() => import("./Inputs"), {
+    ssr: false,
+    loading: () => <Loading />,
+});
 
 const OneTravelBody = ({ travel }) => {
     const [imgtoggler, setimgtoggler] = useState({

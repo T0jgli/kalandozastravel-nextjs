@@ -21,14 +21,17 @@ const DynamicAllCards = dynamic(() => import("../TravelsComponents/AllCards"), {
 
 const DynamicModal = dynamic(() => import("./Modal"), {
     loading: () => <Loading />,
+    ssr: false,
 });
 
 const DynamicModalCourier = dynamic(() => import("./ModalCourier"), {
     loading: () => <Loading />,
+    ssr: false,
 });
 
 const DynamicMainCards = dynamic(() => import("./MainCards"), {
     loading: () => <Loading />,
+    ssr: false,
 });
 
 const Cards = ({ travels, months }) => {
@@ -104,8 +107,8 @@ const Cards = ({ travels, months }) => {
             </div>*/}
 
             <div className="flex flex-col max-w-7xl mx-auto">
-                <Suspense>
-                    <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
+                <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
+                    <Suspense>
                         {Array.from({ length: 12 }, (_, index) => {
                             if (months?.[index + 1])
                                 return (
@@ -152,8 +155,8 @@ const Cards = ({ travels, months }) => {
                                 );
                             else return "";
                         })}
-                    </div>
-                </Suspense>
+                    </Suspense>
+                </div>
             </div>
 
             <div className="flex justify-center gap-10 my-20 items-center">

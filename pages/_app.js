@@ -22,7 +22,9 @@ function MyApp({ Component, pageProps }) {
             <Head>
                 <link rel="icon" type="image/png" href="/img/conti_logo.webp" />
                 <link rel="apple-touch-icon" href="/favicon.ico" />
-                <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com" />.
+                <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com" />
+                <link rel="dns-prefetch" href="https://cdn.kalandozas.hu" />
+                <link rel="preconnect" href="https://maps.googleapis.com" />
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta name="description" content="kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
                 <meta name="copyright" content="2020 © Contibus Neoline KFT." />

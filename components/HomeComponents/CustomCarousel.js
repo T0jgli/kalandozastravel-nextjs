@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { HiCheck, HiChevronRight, HiChevronLeft } from "react-icons/hi";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import MainCards from "./MainCards";
@@ -35,7 +35,7 @@ const CustomCarousel = ({ travels }) => {
     }, []);
 
     return (
-        <>
+        <Suspense>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />
             {/* <ModalHotels hotelsModal={hotelsModal} setHotelsModal={setHotelsModal} /> */}
             {/* <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} /> */}
@@ -54,7 +54,6 @@ const CustomCarousel = ({ travels }) => {
                     <h2 className="tracking-wider font-light mb-2 inline-flex items-center">
                         <HiCheck className="pr-2" fontSize="2rem" /> Kultúrát és élményt adunk <HiCheck className="pl-2" fontSize="2rem" />
                     </h2>
-
                     {!isMobile && (
                         <MainCards
                             travels={travels}
@@ -85,7 +84,7 @@ const CustomCarousel = ({ travels }) => {
                     </div>
                 </div>
             </div>
-        </>
+        </Suspense>
     );
 };
 

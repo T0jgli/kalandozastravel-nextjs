@@ -3,14 +3,22 @@ import Head from "next/head";
 import { useEffect, useRef, useState } from "react";
 import AllCards from "../components/TravelsComponents/AllCards";
 import { cardAnimation, pageVariants } from "../components/GlobalComponents/Transitions";
-import Topbg from "../components/GlobalComponents/Topbg";
 import { useRouter } from "next/router";
-import SearchFilter from "../components/GlobalComponents/SearchFilter";
 import { getAllTravels } from "../lib/helpers/getDatas";
 import Infos from "../components/HomeComponents/Infos";
 import { agencySchema } from "../lib/helpers/StructuredData";
 import dynamic from "next/dynamic";
 import Loading from "../components/GlobalComponents/Loading";
+
+const SearchFilter = dynamic(() => import("../components/GlobalComponents/SearchFilter"), {
+    loading: () => <Loading />,
+    ssr: false,
+});
+
+const Topbg = dynamic(() => import("../components/GlobalComponents/Topbg"), {
+    loading: () => <Loading />,
+    ssr: false,
+});
 
 const DynamicAllCards = dynamic(() => import("../components/TravelsComponents/AllCards"), {
     loading: () => <Loading />,
