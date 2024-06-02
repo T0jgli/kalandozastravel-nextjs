@@ -2,7 +2,7 @@ version: "3.3"
 
 services:
     kalandozastravel:
-        image: europe-west3-docker.pkg.dev/kalandozastravel/kalandozas/kalandozas
+        image: registry.kvlk.hu/kalandozas
         container_name: kalandozastravel
         #build: .
         env_file: .env
@@ -10,22 +10,22 @@ services:
         ports:
             - 8082:8082
         labels:
-          - traefik.http.routers.kalandozastravel.rule=Host(`kalandozastravel.hu`) || Host(`www.kalandozastravel.hu`)
-          - traefik.http.routers.kalandozastravel.tls=true
-          - traefik.http.routers.kalandozastravel.tls.certresolver=le
-          - traefik.http.routers.kalandozastravel.middlewares=redirect-kalandozastravel@file
-          - traefik.http.routers.kalandozas.rule=Host(`kalandozas.hu`)
-          - traefik.http.routers.kalandozas.tls=true
-          - traefik.http.routers.kalandozas.entrypoints=websecure
-          - traefik.http.routers.kalandozas.middlewares=security-headers@file
-          - traefik.http.services.kalandozas.loadbalancer.server.port=8082
-          - traefik.http.routers.autobuszjegy.rule=Host(`autobuszjegy.hu`) || Host(`www.autobuszjegy.hu`)
-          - traefik.http.routers.autobuszjegy.tls=true
-          - traefik.http.routers.autobuszjegy.tls.certresolver=le
-          - traefik.http.routers.autobuszjegy.middlewares=redirect-autobuszjegy@file
-          - "com.centurylinklabs.watchtower.enable=false"
+            - traefik.http.routers.kalandozastravel.rule=Host(`kalandozastravel.hu`) || Host(`www.kalandozastravel.hu`)
+            - traefik.http.routers.kalandozastravel.tls=true
+            - traefik.http.routers.kalandozastravel.tls.certresolver=le
+            - traefik.http.routers.kalandozastravel.middlewares=redirect-kalandozastravel@file
+            - traefik.http.routers.kalandozas.rule=Host(`kalandozas.hu`)
+            - traefik.http.routers.kalandozas.tls=true
+            - traefik.http.routers.kalandozas.entrypoints=websecure
+            - traefik.http.routers.kalandozas.middlewares=security-headers@file
+            - traefik.http.services.kalandozas.loadbalancer.server.port=8082
+            - traefik.http.routers.autobuszjegy.rule=Host(`autobuszjegy.hu`) || Host(`www.autobuszjegy.hu`)
+            - traefik.http.routers.autobuszjegy.tls=true
+            - traefik.http.routers.autobuszjegy.tls.certresolver=le
+            - traefik.http.routers.autobuszjegy.middlewares=redirect-autobuszjegy@file
+            - "com.centurylinklabs.watchtower.enable=false"
         networks:
-          - web
+            - web
 networks:
-  web:
-    external: true
+    web:
+        external: true
