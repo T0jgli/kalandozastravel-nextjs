@@ -1,6 +1,6 @@
 import { AnimatePresence, m } from "framer-motion";
 import Head from "next/head";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import AllCards from "../components/TravelsComponents/AllCards";
 import { cardAnimation, pageVariants } from "../components/GlobalComponents/Transitions";
 import { useRouter } from "next/router";
@@ -86,34 +86,36 @@ export default function Travels({ travels, countries }) {
             </div>
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center">
-                    <AnimatePresence>
-                        {travelsState.map((travel) => (
-                            <m.div
-                                className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
-                                key={travel.id}
-                                initial="initial"
-                                exit="exit"
-                                animate="animate"
-                                variants={cardAnimation}
-                            >
-                                <DynamicAllCards
-                                    id={travel.id}
-                                    thumbnail={travel.thumbnail}
-                                    backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
-                                    title={travel.title}
-                                    isSale={travel.isSale}
-                                    country={travel.country}
-                                    timestamp={travel.timestamp}
-                                    startingDate={travel.startingDate}
-                                    endingDate={travel.endingDate}
-                                    places={travel.freePlaces}
-                                    price={travel.price}
-                                    type2={travel.type2}
-                                    customUrl={travel.customUrl}
-                                />
-                            </m.div>
-                        ))}
-                    </AnimatePresence>
+                    <Suspense>
+                        <AnimatePresence>
+                            {travelsState.map((travel) => (
+                                <m.div
+                                    className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
+                                    key={travel.id}
+                                    initial="initial"
+                                    exit="exit"
+                                    animate="animate"
+                                    variants={cardAnimation}
+                                >
+                                    <DynamicAllCards
+                                        id={travel.id}
+                                        thumbnail={travel.thumbnail}
+                                        backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
+                                        title={travel.title}
+                                        isSale={travel.isSale}
+                                        country={travel.country}
+                                        timestamp={travel.timestamp}
+                                        startingDate={travel.startingDate}
+                                        endingDate={travel.endingDate}
+                                        places={travel.freePlaces}
+                                        price={travel.price}
+                                        type2={travel.type2}
+                                        customUrl={travel.customUrl}
+                                    />
+                                </m.div>
+                            ))}
+                        </AnimatePresence>
+                    </Suspense>
                 </div>
             </div>
             <Infos />
