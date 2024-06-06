@@ -479,42 +479,48 @@ const Inputs = ({ travel }) => {
                             </>
                         )}
                     </div>
-                    <p className="text-center w-full my-4 text-gray-700 font-semibold tracking-wide border-t-2 border-gray-100 pt-10">Belépőjegyek</p>
-                    <div className="mb-10 flex-col md:flex-row flex w-full justify-center items-center md:gap-10">
-                        {travel?.belepojegyek?.map((b) => {
-                            return (
-                                <div className="w-full mb-5 md:mb-0 relative">
-                                    <CustomInputField
-                                        className={`${
-                                            errors?.length > 0 && isWrongField(errors, "belepojegyek") ? "border-red-500" : ""
-                                        } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
-                                        onChange={(e) => {
-                                            setState({
-                                                ...state,
-                                                belepojegyek: {
-                                                    ...state.belepojegyek,
-                                                    [e.target.name]: e.target.value,
-                                                },
-                                            });
-                                        }}
-                                        type="number"
-                                        onFocus={(e) => {
-                                            if (errors?.length > 0) {
-                                                setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
-                                            }
-                                        }}
-                                        name={`${b}`}
-                                        id={`belepojegyek.${b}`}
-                                        value={state.belepojegyek?.[b]}
-                                        label={b}
-                                        errors={errors}
-                                        isWrongField={isWrongField}
-                                        getErrorMessage={getErrorMessage}
-                                    />
-                                </div>
-                            );
-                        })}
-                    </div>
+                    {travel?.belepojegyek?.length > 0 && (
+                        <>
+                            <p className="text-center w-full my-4 text-gray-700 font-semibold tracking-wide border-t-2 border-gray-100 pt-10">
+                                Belépőjegyek
+                            </p>
+                            <div className="mb-10 flex-col md:flex-row flex w-full justify-center items-center md:gap-10">
+                                {travel?.belepojegyek?.map((b) => {
+                                    return (
+                                        <div className="w-full mb-5 md:mb-0 relative">
+                                            <CustomInputField
+                                                className={`${
+                                                    errors?.length > 0 && isWrongField(errors, "belepojegyek") ? "border-red-500" : ""
+                                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                                onChange={(e) => {
+                                                    setState({
+                                                        ...state,
+                                                        belepojegyek: {
+                                                            ...state.belepojegyek,
+                                                            [e.target.name]: e.target.value,
+                                                        },
+                                                    });
+                                                }}
+                                                type="number"
+                                                onFocus={(e) => {
+                                                    if (errors?.length > 0) {
+                                                        setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
+                                                    }
+                                                }}
+                                                name={`${b}`}
+                                                id={`belepojegyek.${b}`}
+                                                value={state.belepojegyek?.[b]}
+                                                label={b}
+                                                errors={errors}
+                                                isWrongField={isWrongField}
+                                                getErrorMessage={getErrorMessage}
+                                            />
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </>
+                    )}
 
                     <div
                         className="my-10 flex w-full flex-col border-gray-100 pt-8 border-t-2 justify-center items-center"
