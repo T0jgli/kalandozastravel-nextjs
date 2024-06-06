@@ -133,6 +133,7 @@ export default async (req, res) => {
                 insurances,
                 needfelpanzioOrBreakfast,
                 needEgyagy,
+                belepojegyek,
             } = req.body;
 
             let insuranceBody = "";
@@ -158,6 +159,13 @@ export default async (req, res) => {
 
                 matesBody += "</p>";
             }
+
+            let belepojegyekBody = "";
+            Object.keys(belepojegyek).forEach((b) => {
+                if (belepojegyek?.[b] != 0) {
+                    belepojegyekBody += `<br/><span>${b}: ${belepojegyek?.[b]}`;
+                }
+            });
 
             try {
                 const mail = {
@@ -190,6 +198,8 @@ export default async (req, res) => {
                             ? `<p><span style='color: gray'>Egyéb:</span> ${needEgyagy ? "Egyágyas szobát kér" : "Nem kér egyágyas szobát"}`
                             : ""
                     }
+                    ${travel?.belepojegyek ? `<p><span style='color: gray'>Belépőjegyek:</span> ${belepojegyekBody}` : ""}
+
                     <p><span style='color: gray'>Helyjegy:</span> ${needseat == true ? `foglalva - ${seatNumber}` : "nem kér"}</p>
                     <p><span style='color: gray'>Fizetési mód:</span> ${payment}</p>
                     <br/>

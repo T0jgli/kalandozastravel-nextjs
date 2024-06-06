@@ -28,6 +28,13 @@ const initialInputValue = {
     feedback: 0,
     payment: 0,
     insurances: {},
+    belepojegyek: {
+        Gyerek: 0,
+        Diák: 0,
+        Felnőtt: 0,
+        Nyugdíjas: 0,
+        "Gyerek 140 cm-ig": 0,
+    },
 };
 
 const getErrorMessage = (array, field) => {
@@ -77,6 +84,7 @@ const Inputs = ({ travel }) => {
                         price: travel?.price,
                         extraFelpanzio: travel?.extraFelpanzio,
                         extraEgyagy: travel?.extraEgyagy,
+                        belepojegyek: travel?.belepojegyek,
                     },
                 }),
             });
@@ -299,7 +307,7 @@ const Inputs = ({ travel }) => {
                             />
                         </div>
                     </div>
-                    <div className="mb-10 flex flex-col md:flex-row w-full justify-center items-center">
+                    <div className="mb-10 flex-col md:flex-row flex w-full justify-center pb-10 items-center border-b-2 border-gray-100">
                         {parseInt(state?.people) > 1 &&
                             Array.from(Array(parseInt(state?.people - 1) || 0).keys()).map((_, i) => (
                                 <div className="w-full mb-5 md:mb-0 mr-0 md:mr-10 relative" key={`utasneve ${i}`}>
@@ -362,8 +370,9 @@ const Inputs = ({ travel }) => {
                             />
                         </div>
                     </div>
+
                     <div
-                        className="my-10 flex w-full flex-col border-gray-100 pt-4 justify-center items-center"
+                        className="my-10 flex w-full flex-col pt-4 justify-center items-center"
                         id="insurancebox"
                         style={{ scrollMarginTop: "80px" }}
                     >
@@ -469,6 +478,42 @@ const Inputs = ({ travel }) => {
                                 })}
                             </>
                         )}
+                    </div>
+                    <p className="text-center w-full my-4 text-gray-700 font-semibold tracking-wide border-t-2 border-gray-100 pt-10">Belépőjegyek</p>
+                    <div className="mb-10 flex-col md:flex-row flex w-full justify-center items-center md:gap-10">
+                        {travel?.belepojegyek?.map((b) => {
+                            return (
+                                <div className="w-full mb-5 md:mb-0 relative">
+                                    <CustomInputField
+                                        className={`${
+                                            errors?.length > 0 && isWrongField(errors, "belepojegyek") ? "border-red-500" : ""
+                                        } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                        onChange={(e) => {
+                                            setState({
+                                                ...state,
+                                                belepojegyek: {
+                                                    ...state.belepojegyek,
+                                                    [e.target.name]: e.target.value,
+                                                },
+                                            });
+                                        }}
+                                        type="number"
+                                        onFocus={(e) => {
+                                            if (errors?.length > 0) {
+                                                setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
+                                            }
+                                        }}
+                                        name={`${b}`}
+                                        id={`belepojegyek.${b}`}
+                                        value={state.belepojegyek?.[b]}
+                                        label={b}
+                                        errors={errors}
+                                        isWrongField={isWrongField}
+                                        getErrorMessage={getErrorMessage}
+                                    />
+                                </div>
+                            );
+                        })}
                     </div>
 
                     <div
@@ -649,7 +694,7 @@ const Inputs = ({ travel }) => {
                         </div>
                     )}
 
-                    <div className="my-8 relative flex flex-col w-full border-gray-100 pt-8 border-t-2 justify-center">
+                    <div className="my-8 relative flex flex-col w-full border-gray-100 pt-10 border-t-2 justify-center">
                         <label className="block text-gray-700 text-sm font-semibold mb-2" htmlFor="feedback">
                             Honnan hallott irodánkról? *
                         </label>
