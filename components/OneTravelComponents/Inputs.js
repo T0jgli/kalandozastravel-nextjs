@@ -19,6 +19,7 @@ const initialInputValue = {
     needseat: false,
     needinsurance: false,
     needfelpanzioOrBreakfast: false,
+    needEgyagy: false,
     seatNumber: "",
     feedback: 0,
     desc: "",
@@ -75,6 +76,7 @@ const Inputs = ({ travel }) => {
                         endingDate: travel?.endingDate,
                         price: travel?.price,
                         extraFelpanzio: travel?.extraFelpanzio,
+                        extraEgyagy: travel?.extraEgyagy,
                     },
                 }),
             });
@@ -609,6 +611,39 @@ const Inputs = ({ travel }) => {
                                         checked={!state.needfelpanzioOrBreakfast}
                                     />
                                     <span className="ml-2">CSAK reggelit kérek</span>
+                                </label>
+                            </div>
+                        </div>
+                    )}
+
+                    {travel?.extraEgyagy && (
+                        <div className="flex flex-row flex-wrap justify-evenly border-gray-100 pt-8 border-t-2">
+                            <div className="my-10 flex flex-col justify-center items-center" id="seatbox" style={{ scrollMarginTop: "80px" }}>
+                                <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="needEgyagy">
+                                    <input
+                                        className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                                        onChange={() => {
+                                            setState({ ...state, needEgyagy: true });
+                                        }}
+                                        type="radio"
+                                        name="needEgyagy"
+                                        id="needEgyagy"
+                                        checked={state.needEgyagy}
+                                    />
+                                    <span className="ml-2">Egyágyas szobát kérek</span>
+                                </label>
+                                <label className="inline-flex items-center text-gray-700 text-sm font-semibold mb-2" htmlFor="notneedEgyagy">
+                                    <input
+                                        className="appearance-none checkbox cursor-pointer duration-100 inline-block align-middle flex-shrink-0 border-2 rounded-lg h-5 w-5 text-orange-600"
+                                        onChange={() => {
+                                            setState({ ...state, needEgyagy: false });
+                                        }}
+                                        type="radio"
+                                        name="needEgyagy"
+                                        id="notneedEgyagy"
+                                        checked={!state.needEgyagy}
+                                    />
+                                    <span className="ml-2">Nem kérek egyágyas szobát</span>
                                 </label>
                             </div>
                         </div>

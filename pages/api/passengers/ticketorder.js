@@ -132,6 +132,7 @@ export default async (req, res) => {
                 needinsurance,
                 insurances,
                 needfelpanzioOrBreakfast,
+                needEgyagy,
             } = req.body;
 
             let insuranceBody = "";
@@ -182,6 +183,11 @@ export default async (req, res) => {
                     ${
                         travel?.extraFelpanzio
                             ? `<p><span style='color: gray'>Egyéb:</span> ${needfelpanzioOrBreakfast ? "Félpanziót kér" : "Csak reggelit kér"}`
+                            : ""
+                    }
+                    ${
+                        travel?.extraEgyagy
+                            ? `<p><span style='color: gray'>Egyéb:</span> ${needEgyagy ? "Egyágyas szobát kér" : "Nem kér egyágyas szobát"}`
                             : ""
                     }
                     <p><span style='color: gray'>Helyjegy:</span> ${needseat == true ? `foglalva - ${seatNumber}` : "nem kér"}</p>
