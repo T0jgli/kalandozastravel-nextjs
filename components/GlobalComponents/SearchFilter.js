@@ -1,3 +1,4 @@
+import { clsx } from "clsx/lite";
 import { useRouter } from "next/router";
 import React, { Suspense, useEffect, useState } from "react";
 import { HiOutlineLocationMarker, HiOutlineX, HiOutlineFastForward } from "react-icons/hi";
@@ -34,13 +35,16 @@ const SearchFilter = ({ topbg, countries }) => {
     return (
         <Suspense>
             <form
-                className={`flex md:flex-row flex-col max-w-7xl px-3 2xl:px-0 justify-center items-center gap-4 my-16 mx-auto`}
+                className="flex md:flex-row flex-col max-w-7xl px-3 2xl:px-0 justify-center items-center gap-4 my-16 mx-auto"
                 id="searchfilter"
                 onSubmit={formSubmit}
             >
                 <div className="w-full mb-10 md:mb-0">
                     <div className="relative inline-block w-full text-gray-700">
-                        <label className={`absolute -top-7 ${!topbg ? "text-gray-700" : "text-white"} text-sm font-semibold mb-2`} htmlFor="title">
+                        <label
+                            className={clsx("absolute -top-7 text-sm font-semibold mb-2", !topbg ? "text-gray-700" : "text-white")}
+                            htmlFor="title"
+                        >
                             Utazás neve
                         </label>
                         <div className="absolute inset-y-0 left-0 flex items-center px-2 pointer-events-none">
@@ -68,7 +72,10 @@ const SearchFilter = ({ topbg, countries }) => {
 
                 <div className="w-full mb-10 md:mb-0">
                     <div className="relative inline-block w-full text-gray-700">
-                        <label className={`absolute -top-7 ${!topbg ? "text-gray-700" : "text-white"} text-sm font-semibold mb-2`} htmlFor="country">
+                        <label
+                            className={clsx("absolute -top-7 text-sm font-semibold mb-2", !topbg ? "text-gray-700" : "text-white")}
+                            htmlFor="country"
+                        >
                             Ország
                         </label>
 
@@ -104,7 +111,7 @@ const SearchFilter = ({ topbg, countries }) => {
                 <div className="w-full">
                     <div className="relative inline-block w-full text-gray-700">
                         <label
-                            className={`absolute -top-7 ${!topbg ? "text-gray-700" : "text-white"} text-sm font-semibold mb-2`}
+                            className={clsx("absolute -top-7 text-sm font-semibold mb-2", !topbg ? "text-gray-700" : "text-white")}
                             htmlFor="startingDate"
                         >
                             Indulás dátuma

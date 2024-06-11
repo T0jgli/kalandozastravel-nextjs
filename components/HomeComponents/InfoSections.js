@@ -4,9 +4,9 @@ const InfoSections = () => {
             <div className=" mx-auto mt-24 flex justify-center relative">
                 <a href="https://cdn.kalandozas.hu/img/ingyen.webp" target="_blank" rel="noopener noreferrer">
                     <button
-                        className={`bg-yellow-700 cursor-pointer hover:shadow-xl hover:border-yellow-700 border-transparent 
+                        className="bg-yellow-700 cursor-pointer hover:shadow-xl hover:border-yellow-700 border-transparent 
                         border-2 hover:bg-white hover:text-yellow-700 mx-6 rounded-2xl 
-                        focus:outline-none transform duration-300 font-semibold text-white p-3`}
+                        focus:outline-none transform duration-300 font-semibold text-white p-3"
                     >
                         Utazzon ingyen
                     </button>
@@ -18,9 +18,9 @@ const InfoSections = () => {
                     rel="noopener noreferrer"
                 >
                     <button
-                        className={`bg-yellow-700 cursor-pointer hover:shadow-xl 
+                        className="bg-yellow-700 cursor-pointer hover:shadow-xl 
                         hover:border-yellow-700 border-transparent border-2 hover:bg-white hover:text-yellow-700 mx-6 
-                        rounded-2xl focus:outline-none transform duration-300  font-semibold text-white p-3`}
+                        rounded-2xl focus:outline-none transform duration-300  font-semibold text-white p-3"
                     >
                         Videók
                     </button>

@@ -1,6 +1,7 @@
 import React, { Suspense, useState } from "react";
 import { HiChevronUp } from "react-icons/hi";
 import parse from "html-react-parser";
+import { clsx } from "clsx/lite";
 
 const Faq = ({ question, answer }) => {
     const [click, setClick] = useState(false);
@@ -12,13 +13,14 @@ const Faq = ({ question, answer }) => {
                     <p className="flex-1 question">{question}</p>
                     <HiChevronUp
                         fontSize="1.75rem"
-                        className={`text-yellow-700 duration-300 hover:opacity-80 transform float-right ${click ? "" : "rotate-180"}`}
+                        className={clsx("text-yellow-700 duration-300 hover:opacity-80 transform float-right", !click && "rotate-180")}
                     />
                 </div>
                 <div
-                    className={`faqcontent text-sm font-normal prose leading-6  overflow-hidden duration-300 ${
+                    className={clsx(
+                        "faqcontent text-sm font-normal prose leading-6  overflow-hidden duration-300",
                         click ? "h-full pt-5 opacity-1" : "h-0 opacity-0"
-                    }`}
+                    )}
                 >
                     {parse(answer || "")}
                 </div>

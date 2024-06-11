@@ -27,7 +27,7 @@ const FullscreenLoading = () => {
                 exit="exit"
                 animate="animate"
                 variants={loadingAnimation}
-                className={`flex bg-black bg-opacity-60 justify-center fixed left-0 top-0 w-full h-full items-center`}
+                className="flex bg-black bg-opacity-60 justify-center fixed left-0 top-0 w-full h-full items-center"
             >
                 <div className="fulloader" />
             </m.div>

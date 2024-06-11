@@ -41,7 +41,7 @@ const CustomCarousel = ({ travels }) => {
             {/* <ModalHatartalanul hatartalanulModals={hatartalanulModals} sethatartalanulModals={sethatartalanulModals} /> */}
             {/* <ModalBusJet setBusjetModal={setBusjetModal} busjetModal={busjetModal} /> */}
             <div
-                className={`bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0`}
+                className="bg-fixed bg-center overflow-hidden duration-300 shadow-lg bg-cover relative max-w-screen md:mb-0"
                 style={{
                     backgroundImage: `url('https://cdn.kalandozas.hu/img/newpictures/${active}.webp')`,
                     height: "calc(100vh - 144px)",

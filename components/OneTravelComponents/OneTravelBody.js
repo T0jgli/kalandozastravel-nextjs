@@ -6,6 +6,7 @@ import { FaFacebookF, FaTwitter } from "react-icons/fa";
 import countries from "../../lib/countries.json";
 import Link from "next/link";
 import Loading from "../GlobalComponents/Loading";
+import { clsx } from "clsx/lite";
 
 const TYPEPARSER = {
     "1naposutazas": "1 napos utazás",
@@ -36,7 +37,7 @@ const OneTravelBody = ({ travel }) => {
         <>
             <div className="max-w-7xl mt-32 pt-40 mx-auto prose px-3 2xl:px-0">
                 {parse(travel?.desc || "")}
-                <span className={`fi fi-${countryFromJson[travel?.country?.trim()?.toLowerCase()]} w-28 h-28`} />
+                <span className={clsx("fi w-28 h-28", `fi-${countryFromJson[travel?.country?.trim()?.toLowerCase()]}`)} />
 
                 {travel?.country && (
                     <img
@@ -57,7 +58,7 @@ const OneTravelBody = ({ travel }) => {
                 </div>
 
                 {travel?.thumbnails?.length > 0 && (
-                    <div className={`my-16 pb-16 grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-3`} id="travelimages">
+                    <div className="my-16 pb-16 grid grid-flow-col grid-rows-2 md:grid-rows-1 gap-3" id="travelimages">
                         {travel?.thumbnails?.slice(1).map((pict, index) => (
                             <img
                                 loading="lazy"

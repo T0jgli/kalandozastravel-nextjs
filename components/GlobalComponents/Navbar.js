@@ -6,11 +6,13 @@ import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
+import { clsx } from "clsx/lite";
 
 const Navbar = () => {
     const [open, setisOpen] = useState(false);
     const [isMobile] = useScreenWidth(1023);
     const router = useRouter();
+    const [navbarbg, setnavbarbg] = useState(false);
 
     useEffect(() => {
         if (window.innerWidth < 1023) {
@@ -18,16 +20,44 @@ const Navbar = () => {
         }
     }, [router.pathname]);
 
+    useEffect(() => {
+        if (typeof window !== undefined) {
+            const navbarScroll = () => {
+                if (window.scrollY >= 75) {
+                    setnavbarbg(true);
+                } else {
+                    setnavbarbg(false);
+                }
+            };
+            window.addEventListener("scroll", navbarScroll);
+
+            return () => window.removeEventListener("scroll", navbarScroll);
+        }
+    }, []);
+
     return (
         <>
-            <nav className={`sticky top-0 duration-300 ease-in-out shadow-sm font-semibold uppercase z-20 h-20 bg-white`}>
+            <nav
+                className={clsx(
+                    "sticky w-full top-0 duration-300 ease-in-out shadow-md font-semibold uppercase z-20 bg-white",
+                    navbarbg ? "h-16" : "h-20"
+                )}
+            >
                 <img
                     loading="lazy"
                     src="https://cdn.kalandozas.hu/img/fejsor1.webp"
                     alt="Fejsor 1 kép"
-                    className={`inline lg:hidden xl:inline h-10 md:h-20 top-5 md:top-0 m-0 absolute left-0 pr-10 duration-300`}
+                    className={clsx(
+                        "inline lg:hidden xl:inline h-10 top-5 md:top-0 m-0 absolute left-0 pr-10 duration-300",
+                        navbarbg ? "md:h-16" : "md:h-20"
+                    )}
                 />
-                <div className="hidden xl:flex gap-7 items-center justify-center h-10 md:h-20 top-5 md:top-0 m-0 absolute right-0 duration-300 pr-10 transform">
+                <div
+                    className={clsx(
+                        "hidden xl:flex gap-7 items-center justify-center h-10 top-5 md:top-0 m-0 absolute right-0 duration-300 pr-10 transform",
+                        navbarbg ? "md:h-16" : "md:h-20"
+                    )}
+                >
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
@@ -66,9 +96,10 @@ const Navbar = () => {
                     <ul className="max-w-7xl mx-auto items-center justify-center lg:flex h-full hidden list-none">
                         <li className="flex items-center justify-center">
                             <Link
-                                className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
+                                className={clsx(
+                                    "px-4 hover:text-yellow-700 filterlink duration-300",
                                     router.pathname === "/" || "" ? "active text-yellow-700" : ""
-                                }`}
+                                )}
                                 href="/"
                             >
                                 Főoldal
@@ -76,9 +107,10 @@ const Navbar = () => {
                         </li>
                         <li className="flex items-center justify-center">
                             <Link
-                                className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
-                                    router.pathname === "/travels" ? "active text-yellow-700" : ""
-                                }`}
+                                className={clsx(
+                                    "px-4 hover:text-yellow-700 filterlink duration-300",
+                                    router.pathname === "/travels" && "active text-yellow-700"
+                                )}
                                 href="/travels"
                             >
                                 Utazásaink
@@ -87,9 +119,10 @@ const Navbar = () => {
 
                         <li className="flex items-center justify-center">
                             <Link
-                                className={`px-4 hover:text-yellow-700 filterlink duration-300 ${
-                                    router.pathname === "/contact" ? "active text-yellow-700" : ""
-                                }`}
+                                className={clsx(
+                                    "px-4 hover:text-yellow-700 filterlink duration-300",
+                                    router.pathname === "/contact" && "active text-yellow-700"
+                                )}
                                 href="/contact"
                             >
                                 Kapcsolat
@@ -97,7 +130,7 @@ const Navbar = () => {
                         </li>
                         <li className="flex items-center justify-center">
                             <a
-                                className={`px-4 hover:text-yellow-700 filterlink duration-300`}
+                                className="px-4 hover:text-yellow-700 filterlink duration-300"
                                 href="http://contibus.hu"
                                 target="_blank"
                                 rel="noopener noreferrer"
@@ -117,9 +150,10 @@ const Navbar = () => {
             </nav>
             {isMobile && (
                 <aside
-                    className={`fixed font-semibold z-50 w-1/2 shadow-lg h-full grid bg-white items-center text-black duration-500 ease-in-out top-0 ${
+                    className={clsx(
+                        "fixed font-semibold z-50 w-1/2 shadow-lg h-full grid bg-white items-center text-black duration-500 ease-in-out top-0",
                         open ? "opacity-100 right-0" : "opacity-0 -right-full"
-                    }`}
+                    )}
                 >
                     <div
                         onClick={() => setisOpen((b) => !b)}
@@ -132,9 +166,10 @@ const Navbar = () => {
                         <ul className="list-none p-0 m-0 grid grid-cols-1 grid-rows-3 uppercase">
                             <li className="h-20">
                                 <Link
-                                    className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
+                                    className={clsx(
+                                        "flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300",
                                         router.pathname === "/" || "" ? "text-yellow-700" : "text-black"
-                                    }`}
+                                    )}
                                     href="/"
                                 >
                                     Főoldal
@@ -142,9 +177,10 @@ const Navbar = () => {
                             </li>
                             <li className="h-20">
                                 <Link
-                                    className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
+                                    className={clsx(
+                                        "flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300",
                                         router.pathname === "/travels" ? "text-yellow-700" : "text-black"
-                                    }`}
+                                    )}
                                     href="/travels"
                                 >
                                     Utazásaink
@@ -152,9 +188,10 @@ const Navbar = () => {
                             </li>
                             <li className="h-20">
                                 <Link
-                                    className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300 ${
+                                    className={clsx(
+                                        "flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300",
                                         router.pathname === "/contact" ? "text-yellow-700" : "text-black"
-                                    }`}
+                                    )}
                                     href="/contact"
                                 >
                                     Kapcsolat
@@ -162,7 +199,7 @@ const Navbar = () => {
                             </li>
                             <li className="h-20">
                                 <a
-                                    className={`flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300`}
+                                    className="flex items-center justify-center cursor-pointer hover:text-yellow-700 duration-300"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     href="http://contibus.hu"

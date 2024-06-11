@@ -38,7 +38,7 @@ const Newsletter = () => {
                         action="https://ingyenhirlevel.hu/feliratkozas"
                     >
                         <input
-                            className={`shadow-md w-full rounded-3xl bg-gray-200 appearance-none border py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                            className="shadow-md w-full rounded-3xl bg-gray-200 appearance-none border py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                             type="text"
                             required
                             name="nev"
@@ -50,7 +50,7 @@ const Newsletter = () => {
                         <input type="hidden" value="62b92ec744cd3606695526baced0b89b" name="userid" />
                         <div className="w-full relative rounded-3xl border bg-gray-200 shadow-md">
                             <input
-                                className={`w-full rounded-3xl pl-6 appearance-none bg-gray-200 py-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className="w-full rounded-3xl pl-6 appearance-none bg-gray-200 py-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                 type="email"
                                 required
                                 name="email"

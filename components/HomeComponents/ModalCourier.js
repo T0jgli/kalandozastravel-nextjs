@@ -1,3 +1,4 @@
+import { clsx } from "clsx/lite";
 import React, { Suspense, useRef } from "react";
 import { HiOutlineX } from "react-icons/hi";
 
@@ -17,17 +18,19 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
     return (
         <Suspense>
             <div
-                className={`${
+                className={clsx(
+                    "modal fixed overflow-y-auto overflow-x-hidden flex flex-wrap justify-center my-0 mx-auto top-0 left-0 w-full h-screen z-40 bg-black bg-opacity-80 duration-500 ease-in-out",
                     modalCourier?.open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
-                } modal fixed overflow-y-auto overflow-x-hidden flex flex-wrap justify-center my-0 mx-auto top-0 left-0 w-full h-screen z-40 bg-black bg-opacity-80 duration-500 ease-in-out`}
+                )}
                 onClick={handleClickOutside}
                 role="dialog"
                 aria-label="Modal"
             >
                 <div
-                    className={`relative overflow-hidden block max-w-6xl h-auto w-full mx-2 md:mx-auto my-24 z-50 rounded-2xl shadow-xl transform duration-500 ease-out ${
+                    className={clsx(
+                        "relative overflow-hidden block max-w-6xl h-auto w-full mx-2 md:mx-auto my-24 z-50 rounded-2xl shadow-xl transform duration-500 ease-out",
                         modalCourier?.open ? "opacity-100 top-0 " : "opacity-0 -top-96"
-                    }`}
+                    )}
                 >
                     <div className="absolute overflow-hidden shadow-sm flex z-50 justify-between mx-auto w-full items-center rounded-2xl bg-white top-0 left-0 p-5 h-20 ">
                         <p className="text-xl font-medium text-gray-700">Csomagpontjaink</p>

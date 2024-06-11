@@ -2,6 +2,7 @@ import React, { Suspense, useEffect, useRef, useState } from "react";
 import images from "../../lib/gallery.json";
 import ImageGallery from "react-image-gallery";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import { clsx } from "clsx/lite";
 
 // const Gallery = () => {
 //     return (
@@ -67,9 +68,10 @@ const Gallery = () => {
                             src={image?.thumbnail}
                             id={"galleryimage " + index}
                             alt={`Thumbnail ${index + 1}`}
-                            className={`w-20 mx-1 cursor-pointer transition duration-300 border-2 hover:opacity-100 h-20 object-cover ${
+                            className={clsx(
+                                "w-20 mx-1 cursor-pointer transition duration-300 border-2 hover:opacity-100 h-20 object-cover",
                                 index === currentIndex ? "opacity-100 border-yellow-700" : "opacity-60 border-transparent"
-                            }`}
+                            )}
                             onClick={() => handleThumbnailClick(index)}
                         />
                     ))}

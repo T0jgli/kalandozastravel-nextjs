@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import CustomInputField from "./CustomInputField";
 import { event } from "../../lib/helpers/gtag";
 import { HiOutlineExclamation } from "react-icons/hi";
+import { clsx } from "clsx/lite";
 
 const initialInputValue = {
     name: "",
@@ -171,9 +172,10 @@ const Inputs = ({ travel }) => {
                     <div className="mb-10 flex-col md:flex-row flex w-full justify-center items-center">
                         <div className="w-full mb-5 md:mb-0 md:mr-10 relative">
                             <CustomInputField
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "name") ? "border-red-500" : ""
-                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className={clsx(
+                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                    errors?.length > 0 && isWrongField(errors, "name") && "border-red-500"
+                                )}
                                 onChange={onInputChange}
                                 type="text"
                                 onFocus={(e) => {
@@ -193,9 +195,10 @@ const Inputs = ({ travel }) => {
                         </div>
                         <div className="w-full relative">
                             <CustomInputField
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "postalCode") ? "border-red-500" : ""
-                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className={clsx(
+                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                    errors?.length > 0 && isWrongField(errors, "postalCode") && "border-red-500"
+                                )}
                                 onChange={onInputChange}
                                 type="text"
                                 onFocus={(e) => {
@@ -218,9 +221,10 @@ const Inputs = ({ travel }) => {
                     <div className="mb-10 flex-col md:flex-row flex w-full justify-center pb-10 items-center border-b-2 border-gray-100">
                         <div className="w-full mb-5 md:mb-0 md:mr-10 relative">
                             <CustomInputField
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "city") ? "border-red-500" : ""
-                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className={clsx(
+                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                    errors?.length > 0 && isWrongField(errors, "city") && "border-red-500"
+                                )}
                                 onChange={onInputChange}
                                 type="text"
                                 onFocus={(e) => {
@@ -240,9 +244,10 @@ const Inputs = ({ travel }) => {
                         </div>
                         <div className="w-full relative">
                             <CustomInputField
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "address") ? "border-red-500" : ""
-                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className={clsx(
+                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                    errors?.length > 0 && isWrongField(errors, "address") && "border-red-500"
+                                )}
                                 onChange={onInputChange}
                                 type="text"
                                 onFocus={(e) => {
@@ -264,9 +269,10 @@ const Inputs = ({ travel }) => {
                     <div className="mb-10 flex-col md:flex-row flex w-full justify-center items-center">
                         <div className="w-full mb-5 md:mb-0 mr-0 md:mr-10 relative">
                             <CustomInputField
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "phone") ? "border-red-500" : ""
-                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className={clsx(
+                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                    errors?.length > 0 && isWrongField(errors, "phone") && "border-red-500"
+                                )}
                                 onChange={onInputChange}
                                 type="text"
                                 onFocus={(e) => {
@@ -286,9 +292,10 @@ const Inputs = ({ travel }) => {
                         </div>
                         <div className="w-full relative">
                             <CustomInputField
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "email") ? "border-red-500" : ""
-                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className={clsx(
+                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                    errors?.length > 0 && isWrongField(errors, "email") && "border-red-500"
+                                )}
                                 onChange={onInputChange}
                                 type="email"
                                 onFocus={(e) => {
@@ -312,9 +319,10 @@ const Inputs = ({ travel }) => {
                             Array.from(Array(parseInt(state?.people - 1) || 0).keys()).map((_, i) => (
                                 <div className="w-full mb-5 md:mb-0 mr-0 md:mr-10 relative" key={`utasneve ${i}`}>
                                     <CustomInputField
-                                        className={`${
-                                            errors?.length > 0 && isWrongField(errors, "matesNames") ? "border-red-500" : ""
-                                        } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                        className={clsx(
+                                            "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                            errors?.length > 0 && isWrongField(errors, "matesNames") && "border-red-500"
+                                        )}
                                         onChange={(e) => {
                                             const newState = state.matesNames || {};
                                             newState[i] = e.target.value;
@@ -342,9 +350,10 @@ const Inputs = ({ travel }) => {
                             ))}
                         <div className="w-full relative">
                             <CustomInputField
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "people") ? "border-red-500" : ""
-                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className={clsx(
+                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                    errors?.length > 0 && isWrongField(errors, "people") && "border-red-500"
+                                )}
                                 onChange={(e) => {
                                     setState({
                                         ...state,
@@ -412,9 +421,10 @@ const Inputs = ({ travel }) => {
                                         <div className="my-10 flex flex-col md:flex-row gap-8 w-4/6 justify-center items-center">
                                             <div className="w-full mb-5 md:mb-0 mr-0 relative">
                                                 <CustomInputField
-                                                    className={`${
-                                                        errors?.length > 0 && isWrongField(errors, `insurancename${i}`) ? "border-red-500" : ""
-                                                    } w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                                    className={clsx(
+                                                        "w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                                        errors?.length > 0 && isWrongField(errors, `insurancename${i}`) && "border-red-500"
+                                                    )}
                                                     onChange={(e) => {
                                                         setState({
                                                             ...state,
@@ -442,9 +452,10 @@ const Inputs = ({ travel }) => {
                                             </div>
                                             <div className="w-full mb-5 md:mb-0 mr-0 relative">
                                                 <CustomInputField
-                                                    className={`${
-                                                        errors?.length > 0 && isWrongField(errors, `insurancebirthdate${i}`) ? "border-red-500" : ""
-                                                    } w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                                    className={clsx(
+                                                        "w-full shadow bg-gray-200 appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                                        errors?.length > 0 && isWrongField(errors, `insurancebirthdate${i}`) && "border-red-500"
+                                                    )}
                                                     onChange={(e) => {
                                                         setState({
                                                             ...state,
@@ -489,9 +500,10 @@ const Inputs = ({ travel }) => {
                                     return (
                                         <div className="w-full mb-5 md:mb-0 relative">
                                             <CustomInputField
-                                                className={`${
-                                                    errors?.length > 0 && isWrongField(errors, "belepojegyek") ? "border-red-500" : ""
-                                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                                className={clsx(
+                                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                                    errors?.length > 0 && isWrongField(errors, "belepojegyek") && "border-red-500"
+                                                )}
                                                 onChange={(e) => {
                                                     setState({
                                                         ...state,
@@ -564,9 +576,10 @@ const Inputs = ({ travel }) => {
                         {state.needseat && (
                             <div className="mx-auto w-4/6 relative">
                                 <CustomInputField
-                                    className={`${
-                                        errors?.length > 0 && isWrongField(errors, "seatNumber") ? "border-red-500" : ""
-                                    } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                    className={clsx(
+                                        "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                        errors?.length > 0 && isWrongField(errors, "seatNumber") && "border-red-500"
+                                    )}
                                     onChange={onInputChange}
                                     type="text"
                                     onFocus={(e) => {
@@ -714,9 +727,10 @@ const Inputs = ({ travel }) => {
                                     setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
                                 }
                             }}
-                            className={`${
-                                errors?.length > 0 && isWrongField(errors, "feedback") ? "border-red-500" : ""
-                            } shadow bg-gray-200 border rounded-md w-full mb-8 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                            className={clsx(
+                                "shadow bg-gray-200 border rounded-md w-full mb-8 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                errors?.length > 0 && isWrongField(errors, "feedback") && "border-red-500"
+                            )}
                         >
                             <option default value={0}>
                                 Kérjük válasszon...
@@ -749,9 +763,10 @@ const Inputs = ({ travel }) => {
                                     setErrors((prev) => prev.filter((er) => er.param !== e.target.name));
                                 }
                             }}
-                            className={`${
-                                errors?.length > 0 && isWrongField(errors, "payment") ? "border-red-500" : ""
-                            } shadow bg-gray-200 border rounded-md w-full mb-8 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                            className={clsx(
+                                "shadow bg-gray-200 border rounded-md w-full mb-8 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                errors?.length > 0 && isWrongField(errors, "payment") && "border-red-500"
+                            )}
                         >
                             <option default value={0}>
                                 Kérjük válasszon...
@@ -774,9 +789,10 @@ const Inputs = ({ travel }) => {
                                 Megjegyzés
                             </label>
                             <textarea
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "desc") ? "border-red-500" : ""
-                                } shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                                className={clsx(
+                                    "shadow bg-gray-200 appearance-none border rounded-md w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                    errors?.length > 0 && isWrongField(errors, "desc") && "border-red-500"
+                                )}
                                 onChange={onInputChange}
                                 rows={8}
                                 onFocus={(e) => {
@@ -814,9 +830,10 @@ const Inputs = ({ travel }) => {
                         </div>
                         <div className="">
                             <label
-                                className={`${
-                                    errors?.length > 0 && isWrongField(errors, "accept") ? "border-red-500 border-2" : ""
-                                } inline-flex items-center text-gray-700 text-sm font-semibold p-2 rounded-xl relative`}
+                                className={clsx(
+                                    "inline-flex items-center text-gray-700 text-sm font-semibold p-2 rounded-xl relative",
+                                    errors?.length > 0 && isWrongField(errors, "accept") && "border-red-500"
+                                )}
                                 htmlFor="accept"
                             >
                                 <input

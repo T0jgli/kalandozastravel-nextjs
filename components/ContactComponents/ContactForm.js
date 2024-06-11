@@ -4,6 +4,7 @@ import { event } from "../../lib/helpers/gtag";
 import logger from "../../lib/helpers/Logger";
 import Loading from "../GlobalComponents/Loading";
 import { HiOutlineExclamation } from "react-icons/hi";
+import { clsx } from "clsx/lite";
 
 const initialInputValue = {
     name: "",
@@ -94,9 +95,10 @@ const ContactForm = () => {
 
                 <div className="mb-10 flex-col flex w-full justify-center items-center">
                     <input
-                        className={`${
-                            errors?.length > 0 && isWrongField(errors, "name") ? "border-red-500" : ""
-                        } shadow-md  rounded-3xl bg-gray-200 appearance-none border w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                        className={clsx(
+                            "shadow-md  rounded-3xl bg-gray-200 appearance-none border w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                            errors?.length > 0 && isWrongField(errors, "name") && "border-red-500"
+                        )}
                         onChange={onInputChange}
                         type="text"
                         onFocus={(e) => {
@@ -118,9 +120,10 @@ const ContactForm = () => {
                 </div>
                 <div className="mb-10 flex-col flex w-full justify-center items-center">
                     <input
-                        className={`${
-                            errors?.length > 0 && isWrongField(errors, "email") ? "border-red-500" : ""
-                        } shadow-md rounded-3xl bg-gray-200 appearance-none border w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                        className={clsx(
+                            "shadow-md rounded-3xl bg-gray-200 appearance-none border w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                            errors?.length > 0 && isWrongField(errors, "email") && "border-red-500"
+                        )}
                         onChange={onInputChange}
                         type="email"
                         onFocus={(e) => {
@@ -142,8 +145,10 @@ const ContactForm = () => {
                 </div>
                 <div className="mb-10 flex-col flex w-full justify-center items-center">
                     <textarea
-                        className={`${errors?.length > 0 && isWrongField(errors, "message") ? "border-red-500" : ""} shadow-md rounded-3xl 
-                        bg-gray-200 appearance-none border w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`}
+                        className={clsx(
+                            "shadow-md rounded-3xl bg-gray-200 appearance-none border w-full py-3 px-6 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                            errors?.length > 0 && isWrongField(errors, "message") && "border-red-500"
+                        )}
                         onChange={onInputChange}
                         type="text"
                         onFocus={(e) => {

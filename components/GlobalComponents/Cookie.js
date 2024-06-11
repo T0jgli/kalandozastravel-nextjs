@@ -1,3 +1,4 @@
+import { clsx } from "clsx/lite";
 import React, { useEffect, useState } from "react";
 
 const Cookie = () => {
@@ -39,9 +40,10 @@ const Cookie = () => {
 
     return (
         <div
-            className={`${
+            className={clsx(
+                "fixed left-0 w-full z-40 shadow-sm bg-opacity-80 bg-black text-white ease-in-out duration-500",
                 show ? "opacity-1 bottom-0" : "-bottom-full opacity-0"
-            } fixed left-0 w-full z-40 shadow-sm bg-opacity-80 bg-black text-white ease-in-out duration-500`}
+            )}
             id="cookiealert"
         >
             <div className="max-width-7xl flex flex-col md:flex-row justify-center items-center text-center p-2">

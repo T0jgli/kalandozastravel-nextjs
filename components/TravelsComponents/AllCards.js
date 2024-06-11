@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { HiOutlineCalendar, HiOutlineUserGroup, HiOutlineTag } from "react-icons/hi";
 import Link from "next/link";
 import customToLocaleDateString from "../../lib/helpers/Date";
+import { clsx } from "clsx";
 
 const AllCard = ({
     backgroundImage,
@@ -26,9 +27,11 @@ const AllCard = ({
     return (
         <Suspense>
             <article
-                className={`flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden ${
-                    places === 0 || date >= traveldate || type2 === "Jelentkezés lezárult" ? "unavailable" : ""
-                }`}
+                className={clsx("flex flex-col relative w-100 h-100 rounded-2xl duration-300 hover:shadow-2xl bg-white shadow-lg overflow-hidden", {
+                    unavailable: places === 0,
+                    unavailable: date >= traveldate,
+                    unavailable: type2 === "Jelentkezés lezárult",
+                })}
                 style={{ minHeight: "400px" }}
             >
                 <div
