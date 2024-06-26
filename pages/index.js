@@ -14,7 +14,7 @@ const DynamicCustomCarousel = dynamic(() => import("../components/HomeComponents
     ssr: false,
 });
 
-export default function Home({ faqs, travels, countries, months }) {
+export default function Home({ faqs, travels, countries }) {
     return (
         <>
             <m.section initial="initial" animate="animate" variants={pageVariants}>
@@ -25,7 +25,7 @@ export default function Home({ faqs, travels, countries, months }) {
                 <DynamicCustomCarousel travels={travels} />
                 <BottomLinks />
                 <SearchFilter countries={countries} />
-                <HomeBody questionsAnswers={faqs} travels={travels} months={months} />
+                <HomeBody questionsAnswers={faqs} travels={travels} />
             </m.section>
         </>
     );
@@ -39,7 +39,6 @@ export async function getStaticProps() {
             faqs: allTravels?.faqs || null,
             travels: allTravels?.travels || null,
             countries: allTravels?.countries || null,
-            months: allTravels?.months || null,
         },
         revalidate: 300,
     };

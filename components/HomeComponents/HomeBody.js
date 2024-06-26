@@ -16,11 +16,11 @@ const Gallery = dynamic(() => import("../GlobalComponents/Gallery"), {
     ssr: false,
 });
 
-const HomeBody = ({ questionsAnswers, travels, months }) => {
+const HomeBody = ({ questionsAnswers, travels }) => {
     return (
         <>
             <Newsletter />
-            <Cards travels={travels} months={months} />
+            <Cards travels={travels} />
             <Gallery />
             <Streak />
             <InfoSections />
