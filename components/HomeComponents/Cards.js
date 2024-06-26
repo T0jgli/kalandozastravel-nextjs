@@ -34,10 +34,10 @@ const DynamicMainCards = dynamic(() => import("./MainCards"), {
     ssr: false,
 });
 
-const Cards = ({ travels }) => {
+const Cards = ({ sortedTravels, travels }) => {
     const travelsdiv = useRef(null);
     const router = useRouter();
-    const [travelsState, settravelsState] = useState(travels);
+    const [travelsState, settravelsState] = useState(sortedTravels);
     const [activeYear, setActiveYear] = useState(parseInt(router.query?.year) || new Date().getFullYear());
 
     const [isMobile] = useScreenWidth(1280);

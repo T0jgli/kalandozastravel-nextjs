@@ -21,7 +21,7 @@ const HomeBody = ({ questionsAnswers, travels }) => {
     return (
         <>
             <Newsletter />
-            <Cards travels={sortAndGroupData(travels)} />
+            <Cards sortedTravels={sortAndGroupData(travels)} travels={travels} />
             <Gallery />
             <Streak />
             <InfoSections />
