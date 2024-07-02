@@ -23,7 +23,7 @@ const Navbar = () => {
     useEffect(() => {
         if (typeof window !== undefined) {
             const navbarScroll = () => {
-                if (window.scrollY >= 75 && !isMobile) {
+                if (window.scrollY >= 75 && !isMobile && window.innerWidth >= 1023) {
                     setnavbarbg(true);
                 } else {
                     setnavbarbg(false);
