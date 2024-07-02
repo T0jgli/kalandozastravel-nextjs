@@ -34,10 +34,10 @@ const DynamicMainCards = dynamic(() => import("./MainCards"), {
     ssr: false,
 });
 
-const Cards = ({ travels, months }) => {
+const Cards = ({ sortedTravels, travels }) => {
     const travelsdiv = useRef(null);
     const router = useRouter();
-    const [travelsState, settravelsState] = useState(travels);
+    const [travelsState, settravelsState] = useState(sortedTravels);
     const [activeYear, setActiveYear] = useState(parseInt(router.query?.year) || new Date().getFullYear());
 
     const [isMobile] = useScreenWidth(1280);
@@ -109,20 +109,25 @@ const Cards = ({ travels, months }) => {
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
                     <Suspense>
-                        {Array.from({ length: 12 }, (_, index) => {
-                            if (months?.[index + 1])
-                                return (
-                                    <React.Fragment key={index + 1 + " hónap"}>
+                        {Object.keys(travelsState).map(year => (
+                            <React.Fragment key={year}>
+                                {new Date().getFullYear() != year && (
+                                <div
+                                    className="flex font-bold items-center justify-center text-center w-full mt-12 text-2xl uppercase"
+                                >
+                                    <p className="p-4 rounded-xl">{year}</p>
+                                </div>
+
+                                )}
+                                {Object.keys(travelsState?.[year]).map(month => (
+                                    <React.Fragment key={month}>
                                         <div
-                                            key={months?.[index + 1] + " szöveg"}
                                             className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium uppercase"
                                         >
-                                            <p className="p-4 rounded-xl">{numberToDate(index)}</p>
+                                            <p className="p-4 rounded-xl">{numberToDate(month)}</p>
                                         </div>
-
                                         <AnimatePresence>
-                                            {travelsState
-                                                .filter((t) => t?.startingDate?.split("-")?.[1]?.split("-")?.[0] == index + 1)
+                                            {travelsState?.[year]?.[month]
                                                 ?.map((travel) => (
                                                     <m.div
                                                         id="card"
@@ -151,10 +156,12 @@ const Cards = ({ travels, months }) => {
                                                     </m.div>
                                                 ))}
                                         </AnimatePresence>
+
                                     </React.Fragment>
-                                );
-                            else return "";
-                        })}
+
+                                ))}
+                            </React.Fragment>
+                        ))}
                     </Suspense>
                 </div>
             </div>
