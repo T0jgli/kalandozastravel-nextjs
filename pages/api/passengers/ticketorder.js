@@ -63,7 +63,7 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
     const phoneCheck = await getDocs(phoneQuery);
 
     phoneCheck.forEach((doc) => {
-        if (doc.exists) phoneError = true;
+        if (doc.exists()) phoneError = true;
     });
 
     if (phoneError) {
@@ -75,7 +75,7 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
     const emailCheck = await getDocs(emailQuery);
 
     emailCheck.forEach((doc) => {
-        if (doc.exists) emailError = true;
+        if (doc.exists()) emailError = true;
     });
 
     if (emailError) {
@@ -246,7 +246,7 @@ export default async (req, res) => {
                     error: error,
                 });
             } finally {
-                if (process.env.NODE_ENV == "production") {
+                if (true) {
                     await addDoc(collection(db, "travels", travel.id, "passengers"), {
                         name,
                         email,
