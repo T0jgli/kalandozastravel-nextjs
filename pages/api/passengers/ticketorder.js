@@ -2,9 +2,25 @@ import { transporter } from "../../../lib/helpers/emailHelper";
 import logger from "../../../lib/helpers/Logger";
 import { initMiddleware, validateMiddleware } from "../../../lib/helpers/middlewares";
 import { check, validationResult } from "express-validator";
-import db from "../../../lib/firebase";
-import firebase from "firebase/compat/app";
 import applyRateLimit from "../../../lib/helpers/ratelimit";
+import {
+    getFirestore,
+    collection,
+    query,
+    where,
+    getDocs,
+    orderBy,
+    getDoc,
+    doc,
+    setDoc,
+    updateDoc,
+    serverTimestamp,
+    addDoc,
+    increment,
+} from "firebase/firestore";
+import firebaseapp from "../../../lib/firebase";
+
+const db = getFirestore(firebaseapp);
 
 const validateBody = initMiddleware(
     validateMiddleware(
@@ -43,10 +59,10 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
             error: `Sajnos csak ${travel.freePlaces} szabad hely van az utazáson!`,
         });
     }
+    const phoneQuery = query(collection(db, "travels", travel.id, "passengers"), where("phone", "==", phone));
+    const phoneCheck = await getDocs(phoneQuery);
 
-    const phoneCheck = await db.collection("travels").doc(travel.id).collection("passengers").where("phone", "==", phone).get();
-
-    phoneCheck.docs.map((doc) => {
+    phoneCheck.forEach((doc) => {
         if (doc.exists) phoneError = true;
     });
 
@@ -55,10 +71,10 @@ const existingEmailOrName = initMiddleware(async (req, res, next) => {
             error: "Ezzel a telefonszámmal már van foglalás!",
         });
     }
+    const emailQuery = query(collection(db, "travels", travel.id, "passengers"), where("email", "==", email));
+    const emailCheck = await getDocs(emailQuery);
 
-    const emailCheck = await db.collection("travels").doc(travel.id).collection("passengers").where("email", "==", email).get();
-
-    emailCheck.docs.map((doc) => {
+    emailCheck.forEach((doc) => {
         if (doc.exists) emailError = true;
     });
 
@@ -231,41 +247,34 @@ export default async (req, res) => {
                 });
             } finally {
                 if (process.env.NODE_ENV == "production") {
-                    await db
-                        .collection("travels")
-                        .doc(travel.id)
-                        .collection("passengers")
-                        .add({
-                            name,
-                            email,
-                            address,
-                            city,
-                            postalCode,
-                            phone,
-                            matesNames,
-                            people,
-                            needseat,
-                            seatNumber,
-                            feedback,
-                            payment,
-                            desc,
-                            needfelpanzioOrBreakfast: travel?.extraFelpanzio ? needfelpanzioOrBreakfast : null,
-                            insurances,
-                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                        });
-
-                    db.collection("travels")
-                        .doc(travel.id)
-                        .update({
-                            freePlaces: firebase.firestore.FieldValue.increment(-people),
-                        });
+                    await addDoc(collection(db, "travels", travel.id, "passengers"), {
+                        name,
+                        email,
+                        address,
+                        city,
+                        postalCode,
+                        phone,
+                        matesNames,
+                        people,
+                        needseat,
+                        seatNumber,
+                        feedback,
+                        payment,
+                        desc,
+                        needfelpanzioOrBreakfast: travel?.extraFelpanzio ? needfelpanzioOrBreakfast : null,
+                        insurances,
+                        timestamp: serverTimestamp(),
+                    });
+                    await updateDoc(doc(db, "travels", travel.id), {
+                        freePlaces: increment(-people),
+                    });
 
                     if (req.body.newsletter) {
-                        await db.collection("newsletter").add({
+                        await addDoc(collection(db, "newsletter"), {
                             name,
                             email,
                             phone,
-                            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                            timestamp: serverTimestamp(),
                         });
                     }
                 }
