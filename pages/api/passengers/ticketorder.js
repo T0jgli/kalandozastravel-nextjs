@@ -246,7 +246,7 @@ export default async (req, res) => {
                     error: error,
                 });
             } finally {
-                if (true) {
+                if (process.env.NODE_ENV == "production") {
                     await addDoc(collection(db, "travels", travel.id, "passengers"), {
                         name,
                         email,
