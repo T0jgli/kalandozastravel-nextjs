@@ -89,8 +89,8 @@ jobs:
                   tags: ${{ secrets.REGISTRY_URL }}/kalandozas:latest
                   build-args: |
                       NEXT_PUBLIC_GOOGLE_MAPSKEY=${{ secrets.NEXT_PUBLIC_GOOGLE_MAPSKEY }}
-                      NEXT_PUBLIC_EMAIL_USER=${{ secrets.NEXT_PUBLIC_EMAIL_USER }}
-                      NEXT_PUBLIC_EMAIL_PASS=${{ secrets.NEXT_PUBLIC_EMAIL_PASS }}
+                      NEXT_EMAIL_USER=${{ secrets.NEXT_PUBLIC_EMAIL_USER }}
+                      NEXT_EMAIL_PASS=${{ secrets.NEXT_PUBLIC_EMAIL_PASS }}
                       NEXT_BASEURL=${{ secrets.NEXT_BASEURL }}
                       NEXT_FIREBASE_API_KEY=${{ secrets.NEXT_FIREBASE_API_KEY }}
                       NEXT_FIREBASE_AUTH_DOMAIN=${{ secrets.NEXT_FIREBASE_AUTH_DOMAIN }}
