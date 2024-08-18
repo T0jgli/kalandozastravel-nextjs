@@ -15,6 +15,7 @@ const ModalContent = ({ travels }) => {
                         <th></th>
                         <th className="px-6 py-3 text-left">Dátum</th>
                         <th className="px-6 py-3 text-left">Utazás</th>
+                        <th className="px-6 py-3 text-left">Ár</th>
                         <th className="px-3 py-3 text-right">Jegyfoglalás</th>
                     </tr>
                 </thead>
@@ -31,34 +32,38 @@ const ModalContent = ({ travels }) => {
                                 <td className="text-center md:text-left mx-auto">
                                     <img
                                         loading="lazy"
-                                        src={travel.thumbnail || travel.photoURL || travel.pictures?.[0]?.src}
+                                        src={travel.thumbnail || travel.photoURL || travel?.pictures?.[0]?.src}
                                         alt={`Utazás kép ${i}`}
                                         className="w-12 h-12 object-cover shadow-md rounded-lg"
                                     />
                                 </td>
                                 <td className="py-3 px-6 items-center gap-2 text-center md:text-left whitespace-nowrap ">
                                     <HiOutlineCalendar />
-                                    {traveldate.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate.getUTCFullYear()} </span>}
+                                    {traveldate?.getUTCFullYear() !== date.getUTCFullYear() && <span>{traveldate?.getUTCFullYear()} </span>}
 
-                                    {customToLocaleDateString(new Date(travel.startingDate))}
-                                    {travel.startingDate !== travel.endingDate && " - " + customToLocaleDateString(new Date(travel.endingDate))}
+                                    {customToLocaleDateString(new Date(travel?.startingDate))}
+                                    {travel?.startingDate !== travel?.endingDate && " - " + customToLocaleDateString(new Date(travel?.endingDate))}
                                 </td>
                                 <td className="py-3 px-6 text-left font-medium max-w-xs cursor-pointer" style={{ wordWrap: "break-word" }}>
                                     <Link
                                         prefetch={false}
-                                        href={travel.customUrl || `/travel/${travel.id}`}
+                                        href={travel.customUrl || `/travel/${travel?.id}`}
                                         className="hover:text-yellow-700 break-words duration-300"
                                     >
-                                        <p>{travel.title}</p>
+                                        <p>{travel?.title}</p>
                                     </Link>
                                 </td>
+                                <td className="py-3 px-6 items-center gap-2 text-center md:text-left whitespace-nowrap ">
+                                    <p>{travel?.price?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")} Ft</p>
+                                </td>
+
                                 <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">
                                     {travel?.freePlaces == 0 ? (
                                         <div className="font-medium p-3 text-red-700">Megtelt</div>
                                     ) : (
                                         <button
                                             className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
-                                            onClick={() => router.push(travel.customUrl || `/travel/${travel.id}#ticket`)}
+                                            onClick={() => router.push(travel.customUrl || `/travel/${travel?.id}#ticket`)}
                                         >
                                             <HiOutlineShoppingCart fontSize="1.5rem" />
                                         </button>
