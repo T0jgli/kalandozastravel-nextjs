@@ -23,6 +23,22 @@ const ModalContent = ({ travels }) => {
                     {travels?.map((travel, i) => {
                         const traveldate = new Date(travel.startingDate);
                         const date = new Date();
+                        let travelLink = (
+                            <button
+                                className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
+                                onClick={() => router.push(travel.customUrl || `/travel/${travel?.id}#ticket`)}
+                            >
+                                <HiOutlineShoppingCart fontSize="1.5rem" />
+                            </button>
+                        );
+
+                        if (travel?.freePlaces == 0) {
+                            travelLink = <div className="font-medium p-3 text-red-700">Megtelt</div>;
+                        } else if (new Date() >= new Date(travel?.startingDate)) {
+                            travelLink = <div className="font-medium p-3 text-red-700">Lezárult</div>;
+                        } else if (travel?.type2 === "Jelentkezés lezárult") {
+                            travelLink = <div className="font-medium p-3 text-red-700">Lezárult</div>;
+                        }
 
                         return (
                             <tr
@@ -57,18 +73,7 @@ const ModalContent = ({ travels }) => {
                                     <p>{travel?.price?.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1 ")} Ft</p>
                                 </td>
 
-                                <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">
-                                    {travel?.freePlaces == 0 ? (
-                                        <div className="font-medium p-3 text-red-700">Megtelt</div>
-                                    ) : (
-                                        <button
-                                            className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
-                                            onClick={() => router.push(travel.customUrl || `/travel/${travel?.id}#ticket`)}
-                                        >
-                                            <HiOutlineShoppingCart fontSize="1.5rem" />
-                                        </button>
-                                    )}
-                                </td>
+                                <td className="py-3 px-6 whitespace-nowrap text-center md:text-right hover:text-yellow-700 z-10">{travelLink}</td>
                             </tr>
                         );
                     })}
