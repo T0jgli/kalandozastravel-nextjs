@@ -41,7 +41,7 @@ const OneTravel = ({ travel, error }) => {
                         initial="initial"
                         animate="animate"
                         variants={pageVariants}
-                        className="relative shadow-xl w-full overflow-hidden"
+                        className="relative shadow-xl w-full overflow-hidden motion"
                         style={{ height: "340px" }}
                     >
                         <div
@@ -55,7 +55,7 @@ const OneTravel = ({ travel, error }) => {
                         initial="initial"
                         animate="animate"
                         variants={travelImage}
-                        className="px-4 absolute duration-300 hover:opacity-90 top-52 left-2/4 max-w-xl w-full"
+                        className="px-4 absolute duration-300 hover:opacity-90 top-52 left-2/4 max-w-xl w-full motion"
                         style={{ transform: "translateX(-50%)" }}
                     >
                         <img
@@ -69,7 +69,7 @@ const OneTravel = ({ travel, error }) => {
                 </>
             )}
 
-            <m.section initial="initial" animate="animate" variants={pageVariants}>
+            <m.section initial="initial" animate="animate" variants={pageVariants} className="motion">
                 <OneTravelBody travel={travel} />
             </m.section>
         </>

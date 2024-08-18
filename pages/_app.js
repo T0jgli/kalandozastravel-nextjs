@@ -23,7 +23,6 @@ function MyApp({ Component, pageProps }) {
                 <link rel="icon" type="image/png" href="/img/conti_logo.webp" />
                 <link rel="apple-touch-icon" href="/favicon.ico" />
                 <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com" />
-                <link rel="dns-prefetch" href="https://cdn.kalandozas.hu" />
                 <link rel="preconnect" href="https://maps.googleapis.com" />
                 <meta httpEquiv="x-ua-compatible" content="ie=edge" />
                 <meta name="description" content="kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
@@ -40,11 +39,11 @@ function MyApp({ Component, pageProps }) {
                 <meta property="og:title" content="Kalandozás Utazási iroda" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="hu_HU" />
-                <meta property="og:image" content="https://cdn.kalandozas.hu/img/conti_logo.webp" />
+                <meta property="og:image" content="/img/conti_logo.webp" />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Kalandozás Utazási iroda" />
                 <meta name="twitter:description" content="kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
-                <meta property="twitter:image" content="https://cdn.kalandozas.hu/img/conti_logo.webp" />
+                <meta property="twitter:image" content="/img/conti_logo.webp" />
                 <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
                 <title>Kalandozás Utazási iroda</title>
             </Head>

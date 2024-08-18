@@ -19,7 +19,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/belfold.webp"}
+                            src={"/img/belfold.webp"}
                             className="w-full h-full object-cover duration-300 hover:scale-110 brightness-95 filter transform object-center"
                             alt="Belföld háttér"
                         />
@@ -40,7 +40,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/kulfold.webp"}
+                            src={"/img/kulfold.webp"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />
@@ -60,7 +60,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }
                     >
                         <img
-                            src={"https://cdn.kalandozas.hu/img/2024.png"}
+                            src={"/img/2024.png"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="2024 háttér"
                         />
@@ -82,7 +82,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/levego.webp"}
+                            src={"/img/levego.webp"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-left"
                             alt="Levegőben háttér"
                         />
@@ -103,7 +103,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/egyeniszallas.webp"}
+                            src={"/img/egyeniszallas.webp"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Egyéni szállásfoglalás háttér"
                         />
@@ -141,7 +141,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     >
                         <img
                             loading="lazy"
-                            src={"https://cdn.kalandozas.hu/img/hajo.webp"}
+                            src={"/img/hajo.webp"}
                             className="absolute top-0 w-full h-full brightness-95 filter object-cover duration-300 hover:scale-110 transform object-center"
                             alt="Hajós utazások háttér"
                         />
@@ -160,7 +160,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }}
                     >
                         <img
-                            src={"https://cdn.kalandozas.hu/img/berlin/busz.jpeg"}
+                            src={"/img/berlin/busz.jpeg"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />
@@ -179,7 +179,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                         }}
                     >
                         <img
-                            src={"https://cdn.kalandozas.hu/img/berlin/berlin.jpg"}
+                            src={"/img/berlin/berlin.jpg"}
                             className="w-full h-full object-cover duration-300 brightness-95 filter hover:scale-110 transform object-center"
                             alt="Külföld háttér"
                         />

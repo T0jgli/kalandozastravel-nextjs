@@ -109,56 +109,48 @@ const Cards = ({ sortedTravels, travels }) => {
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center" ref={travelsdiv}>
                     <Suspense>
-                        {Object.keys(travelsState).map(year => (
+                        {Object.keys(travelsState).map((year) => (
                             <React.Fragment key={year}>
                                 {new Date().getFullYear() != year && (
-                                <div
-                                    className="flex font-bold items-center justify-center text-center w-full mt-12 text-2xl uppercase"
-                                >
-                                    <p className="p-4 rounded-xl">{year}</p>
-                                </div>
-
+                                    <div className="flex font-bold items-center justify-center text-center w-full mt-12 text-2xl uppercase">
+                                        <p className="p-4 rounded-xl">{year}</p>
+                                    </div>
                                 )}
-                                {Object.keys(travelsState?.[year]).map(month => (
+                                {Object.keys(travelsState?.[year]).map((month) => (
                                     <React.Fragment key={month}>
-                                        <div
-                                            className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium uppercase"
-                                        >
+                                        <div className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium uppercase">
                                             <p className="p-4 rounded-xl">{numberToDate(month)}</p>
                                         </div>
                                         <AnimatePresence>
-                                            {travelsState?.[year]?.[month]
-                                                ?.map((travel) => (
-                                                    <m.div
-                                                        id="card"
-                                                        className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
-                                                        key={travel.id}
-                                                        initial="initial"
-                                                        exit="exit"
-                                                        animate="animate"
-                                                        variants={cardAnimation}
-                                                    >
-                                                        <DynamicAllCards
-                                                            id={travel.id}
-                                                            thumbnail={travel.thumbnail}
-                                                            backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
-                                                            title={travel.title}
-                                                            isSale={travel.isSale}
-                                                            country={travel.country}
-                                                            timestamp={travel.timestamp}
-                                                            startingDate={travel.startingDate}
-                                                            endingDate={travel.endingDate}
-                                                            places={travel.freePlaces}
-                                                            price={travel.price}
-                                                            type2={travel.type2}
-                                                            customUrl={travel.customUrl}
-                                                        />
-                                                    </m.div>
-                                                ))}
+                                            {travelsState?.[year]?.[month]?.map((travel) => (
+                                                <m.div
+                                                    id="card"
+                                                    className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full motion"
+                                                    key={travel.id}
+                                                    initial="initial"
+                                                    exit="exit"
+                                                    animate="animate"
+                                                    variants={cardAnimation}
+                                                >
+                                                    <DynamicAllCards
+                                                        id={travel.id}
+                                                        thumbnail={travel.thumbnail}
+                                                        backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
+                                                        title={travel.title}
+                                                        isSale={travel.isSale}
+                                                        country={travel.country}
+                                                        timestamp={travel.timestamp}
+                                                        startingDate={travel.startingDate}
+                                                        endingDate={travel.endingDate}
+                                                        places={travel.freePlaces}
+                                                        price={travel.price}
+                                                        type2={travel.type2}
+                                                        customUrl={travel.customUrl}
+                                                    />
+                                                </m.div>
+                                            ))}
                                         </AnimatePresence>
-
                                     </React.Fragment>
-
                                 ))}
                             </React.Fragment>
                         ))}
@@ -190,7 +182,7 @@ const Cards = ({ sortedTravels, travels }) => {
                 >
                     <div className="absolute w-full h-full top-0" onClick={() => setcourierModal({ open: true })}>
                         <img
-                            src={"https://cdn.kalandozas.hu/img/csomagpont.webp"}
+                            src={"/img/csomagpont.webp"}
                             alt="csomagpont"
                             loading="lazy"
                             className="w-full h-full object-cover duration-300 brightness-75 filter hover:scale-110 transform object-center"

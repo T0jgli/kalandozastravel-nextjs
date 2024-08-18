@@ -61,7 +61,7 @@ export default function Travels({ travels, countries }) {
     }, [router.query]);
 
     return (
-        <m.section initial="initial" animate="animate" variants={pageVariants}>
+        <m.section initial="initial" animate="animate" variants={pageVariants} className="motion">
             <Head>
                 <title>Utazásaink - Kalandozás Utazási iroda</title>
                 <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>

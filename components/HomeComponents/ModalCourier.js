@@ -43,7 +43,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
                                 <a href="https://gls-group.eu/HU/hu/home" target="_blank" rel="noopener noreferrer" className="my-6">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.kalandozas.hu/img/glscsomagpont.webp"
+                                        src="/img/glscsomagpont.webp"
                                         alt="GLS csomagpont"
                                         className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
                                     />
@@ -51,7 +51,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
                                 <a href="https://wish.com" target="_blank" rel="noopener noreferrer" className="my-6">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.kalandozas.hu/img/wish.webp"
+                                        src="/img/wish.webp"
                                         alt="Wish csomagpont"
                                         className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
                                     />
@@ -60,7 +60,7 @@ const ModalCourier = ({ modalCourier, setmodalCourier }) => {
                                 <a href="https://www.dpd.com/hu/hu/" target="_blank" rel="noopener noreferrer" className="my-6">
                                     <img
                                         loading="lazy"
-                                        src="https://cdn.kalandozas.hu/img/dpd-csomagpont.webp"
+                                        src="/img/dpd-csomagpont.webp"
                                         alt="DPD csomagpont"
                                         className="object-contain h-full w-full max-h-32 duration-300 hover:opacity-90"
                                     />

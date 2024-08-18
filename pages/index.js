@@ -17,7 +17,7 @@ const DynamicCustomCarousel = dynamic(() => import("../components/HomeComponents
 export default function Home({ faqs, travels, countries }) {
     return (
         <>
-            <m.section initial="initial" animate="animate" variants={pageVariants}>
+            <m.section initial="initial" animate="animate" variants={pageVariants} className="motion">
                 <Head>
                     <title>Főoldal - Kalandozás Utazási iroda</title>
                     <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>

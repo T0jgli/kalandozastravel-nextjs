@@ -45,7 +45,7 @@ const Navbar = () => {
             >
                 <img
                     loading="lazy"
-                    src="https://cdn.kalandozas.hu/img/fejsor1.webp"
+                    src="/img/fejsor1.webp"
                     alt="Fejsor 1 kép"
                     className={clsx(
                         "inline lg:hidden xl:inline h-10 top-5 md:top-0 m-0 absolute left-0 pr-10 duration-300",
@@ -66,7 +66,7 @@ const Navbar = () => {
                         aria-label="Facebook oldal"
                         title="Facebook"
                     >
-                        {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/fb.svg" width="30px" alt="Facebook ikon" /> */}
+                        {/* <img loading="lazy" src="/img/svgs/fb.svg" width="30px" alt="Facebook ikon" /> */}
                         <FaFacebook size="2rem" />
                     </a>
                     <a
@@ -77,7 +77,7 @@ const Navbar = () => {
                         aria-label="Instagram oldal"
                         title="Instagram"
                     >
-                        {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/insta.svg" width="30px" alt="Instagram ikon" /> */}
+                        {/* <img loading="lazy" src="/img/svgs/insta.svg" width="30px" alt="Instagram ikon" /> */}
                         <FaInstagram size="2rem" />
                     </a>
                     <a
@@ -88,7 +88,7 @@ const Navbar = () => {
                         aria-label="Youtube csatorna"
                         title="Youtube"
                     >
-                        {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" /> */}
+                        {/* <img loading="lazy" src="/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" /> */}
                         <FaYoutube size="2rem" />
                     </a>
                 </div>
@@ -217,7 +217,7 @@ const Navbar = () => {
                                 aria-label="Facebook oldal"
                                 title="Facebook"
                             >
-                                {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/fb.svg" width="30px" alt="Facebook ikon" /> */}
+                                {/* <img loading="lazy" src="/img/svgs/fb.svg" width="30px" alt="Facebook ikon" /> */}
                                 <FaFacebook size="2rem" />
                             </a>
                             <a
@@ -228,7 +228,7 @@ const Navbar = () => {
                                 aria-label="Instagram oldal"
                                 title="Instagram"
                             >
-                                {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/insta.svg" width="30px" alt="Instagram ikon" /> */}
+                                {/* <img loading="lazy" src="/img/svgs/insta.svg" width="30px" alt="Instagram ikon" /> */}
                                 <FaInstagram size="2rem" />
                             </a>
                             <a
@@ -239,7 +239,7 @@ const Navbar = () => {
                                 aria-label="Youtube csatorna"
                                 title="Youtube"
                             >
-                                {/* <img loading="lazy" src="https://cdn.kalandozas.hu/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" /> */}
+                                {/* <img loading="lazy" src="/img/svgs/youtube.svg" width="30px" alt="Youtube ikon" /> */}
                                 <FaYoutube size="2rem" />
                             </a>
                         </div>
