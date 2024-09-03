@@ -727,7 +727,7 @@ const Inputs = ({ travel }) => {
                             </option>
                             <option value={"Közösségi oldal"}>Közösségi oldal</option>
                             <option value={"Ismerős"}>Ismerős</option>
-                            <option value={"Metro hirdetés"}>Metro hirdetés</option>
+                            <option value={"sielok.hu"}>sielok.hu</option>
                             <option value={"Kuponos weboldal"}>Kuponos weboldal</option>
                             <option value={"Prospektus"}>Prospektus</option>
                             <option value={"Internetes kereső"}>Internetes kereső</option>
