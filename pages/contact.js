@@ -13,6 +13,8 @@ export default function Contact() {
         <m.section initial="initial" animate="animate" variants={pageVariants} className="motion">
             <Head>
                 <title>Kapcsolat - Kalandozás Utazási iroda</title>
+                <meta property="og:image" content="https://kalandozas.hu/img/conti_logo.webp" />
+                <meta property="og:title" content="Kapcsolat - Kalandozás Utazási iroda" />
                 <script type="application/ld+json">{JSON.stringify(agencySchema())}</script>
             </Head>
             <Topbg />

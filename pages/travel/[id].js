@@ -21,6 +21,8 @@ const OneTravel = ({ travel, error }) => {
         <>
             <Head>
                 <title>{title}</title>
+                <meta property="og:image" content={travel?.thumbnails?.[0] || travel?.pictures?.[0].src} />
+                <meta property="og:title" content={title} />
                 <script type="application/ld+json">
                     {JSON.stringify(
                         oneTravelSchema(

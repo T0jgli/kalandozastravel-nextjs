@@ -36,10 +36,8 @@ function MyApp({ Component, pageProps }) {
                 <meta name="content-language" content="hu" />
                 <meta property="og:description" content="Kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
                 <meta property="og:site_name" content="Kalandozás Utazási iroda" />
-                <meta property="og:title" content="Kalandozás Utazási iroda" />
                 <meta property="og:type" content="website" />
                 <meta property="og:locale" content="hu_HU" />
-                <meta property="og:image" content="/img/conti_logo.webp" />
                 <meta name="twitter:card" content="summary" />
                 <meta name="twitter:title" content="Kalandozás Utazási iroda" />
                 <meta name="twitter:description" content="kalandozas.hu - Utazás, nyaralas, kirándulás, Görögország, Spanyolország, Olaszország" />
