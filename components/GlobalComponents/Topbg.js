@@ -9,7 +9,7 @@ const Topbg = () => {
                     className="absolute bg-center bg-cover bg-no-repeat p-0 w-full transform duration-300 hover:scale-105"
                     style={{
                         minHeight: "356px",
-                        backgroundImage: "url(https://cdn.kalandozas.hu/img/topbg.webp)",
+                        backgroundImage: "url(/img/topbg.webp)",
                     }}
                 />
             </div>

@@ -5,7 +5,7 @@ const Streak = () => {
     return (
         <div
             className="bg-fixed duration-300 hover:opacity-95 shadow-lg bg-cover relative max-w-screen h-72 mb-20 md:mb-0"
-            style={{ backgroundImage: "url(https://cdn.kalandozas.hu/img/tengerpart.webp)" }}
+            style={{ backgroundImage: "url(/img/tengerpart.webp)" }}
         >
             <div className="absolute uppercase text-white text-5xl font-semibold handwriting flex justify-center items-center top-0 left-0 w-full h-full z-10 bg-black bg-opacity-40">
                 <a

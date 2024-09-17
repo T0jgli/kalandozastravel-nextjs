@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import { HiOutlineTicket } from "react-icons/hi";
 import parse from "html-react-parser";
 import { useState } from "react";
-import { FaFacebookF, FaTwitter } from "react-icons/fa";
+import { FaXTwitter, FaFacebookF } from "react-icons/fa6";
 import countries from "../../lib/countries.json";
 import Link from "next/link";
 import Loading from "../GlobalComponents/Loading";
@@ -127,8 +127,8 @@ const OneTravelBody = ({ travel }) => {
                             className="duration-300 hover:opacity-100 opacity-90 rounded-md font-semibold cursor-pointer shadow-md py-1 px-2 text-white flex w-full items-center"
                             style={{ background: "#1DA1F2" }}
                         >
-                            <FaTwitter />
-                            <span className="px-1 ">Tweet</span>
+                            <FaXTwitter />
+                            <span className="px-1 ">Bejegyzés</span>
                         </div>
                     </div>
                 </div>
