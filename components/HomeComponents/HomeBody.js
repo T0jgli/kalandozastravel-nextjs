@@ -21,9 +21,6 @@ const HomeBody = ({ questionsAnswers, travels }) => {
     return (
         <>
             <Newsletter />
-            <div className="mx-auto max-w-sm my-8">
-                <img src="/img/sieles.jpg" className="rounded-lg shadow-md" />
-            </div>
             <Cards sortedTravels={sortAndGroupData(travels)} travels={travels} />
             <Gallery />
             <Streak />

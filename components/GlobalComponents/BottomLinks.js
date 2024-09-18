@@ -92,6 +92,16 @@ const BottomLinks = () => {
                     >
                         Szilveszter
                     </Link>
+                    <Link
+                        prefetch={false}
+                        className={clsx(
+                            " hover:text-yellow-700 filterlink duration-300 h-full",
+                            router.query.type === "sieles" && "active text-yellow-700"
+                        )}
+                        href="/travels?type=sieles"
+                    >
+                        Síelés
+                    </Link>
                 </div>
             </div>
 
