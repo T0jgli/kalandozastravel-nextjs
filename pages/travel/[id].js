@@ -15,7 +15,7 @@ const OneTravel = ({ travel, error }) => {
         );
     }
 
-    const title = `Kalandozás - ${travel?.title}`;
+    const title = `${travel?.title} - Kalandozás Utazási iroda`;
 
     return (
         <>
