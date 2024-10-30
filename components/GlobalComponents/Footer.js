@@ -35,6 +35,14 @@ const Footer = () => {
                     <a
                         target="_blank"
                         rel="noopener noreferrer"
+                        href="/files/eubbiztositas.pdf"
+                        className="duration-300 hover:text-yellow-700"
+                    >
+                        EUB biztosítási feltételek
+                    </a>                        
+                    <a
+                        target="_blank"
+                        rel="noopener noreferrer"
                         href="/files/adatvedelmi-tajekoztato.pdf"
                         className="duration-300 hover:text-yellow-700"
                     >
