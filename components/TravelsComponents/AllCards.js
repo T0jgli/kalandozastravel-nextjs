@@ -34,32 +34,32 @@ const AllCard = ({
                 })}
                 style={{ minHeight: "400px" }}
             >
-                <div
-                    className="relative w-100 overflow-hidden cursor-pointer"
-                    onClick={() => router.push(`/travel/${id}`)}
-                    style={{ paddingTop: "calc(52.356%)" }}
-                >
-                    <img
-                        src={thumbnail}
-                        loading="lazy"
-                        alt={`Utazás kép ${title}`}
-                        className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
-                    />
-                    {isSale && (
-                        <span className="absolute bottom-0 p-2 right-0 font-semibold bg-red-600 text-white rounded-tl-xl rounded-bl-xl">Akció</span>
-                    )}
-                    {places === 0 ? (
-                        <span className="absolute text-sm top-0 p-2 left-0 font-semibold uppercase bg-red-900 text-white bg-opacity-80 rounded-tr-xl rounded-br-xl">
-                            Megtelt
-                        </span>
-                    ) : (
-                        type2 && (
-                            <span className="absolute text-sm top-0 p-2 left-0 font-semibold uppercase bg-gray-700 text-white bg-opacity-80 rounded-tr-xl rounded-br-xl">
-                                {type2}
+                <Link href={`/travel/${id}`} prefetch={false}>
+                    <div className="relative w-100 overflow-hidden cursor-pointer" style={{ paddingTop: "calc(52.356%)" }}>
+                        <img
+                            src={thumbnail}
+                            loading="lazy"
+                            alt={`Utazás kép ${title}`}
+                            className="absolute top-0 w-100 h-100 object-cover duration-300 hover:scale-110 transform object-center"
+                        />
+                        {isSale && (
+                            <span className="absolute bottom-0 p-2 right-0 font-semibold bg-red-600 text-white rounded-tl-xl rounded-bl-xl">
+                                Akció
                             </span>
-                        )
-                    )}
-                </div>
+                        )}
+                        {places === 0 ? (
+                            <span className="absolute text-sm top-0 p-2 left-0 font-semibold uppercase bg-red-900 text-white bg-opacity-80 rounded-tr-xl rounded-br-xl">
+                                Megtelt
+                            </span>
+                        ) : (
+                            type2 && (
+                                <span className="absolute text-sm top-0 p-2 left-0 font-semibold uppercase bg-gray-700 text-white bg-opacity-80 rounded-tr-xl rounded-br-xl">
+                                    {type2}
+                                </span>
+                            )
+                        )}
+                    </div>
+                </Link>
 
                 <div className="p-4 lg:p-3 w-full flex flex-col">
                     <Link

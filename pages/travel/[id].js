@@ -2,7 +2,6 @@ import React from "react";
 import Head from "next/head";
 import OneTravelBody from "../../components/OneTravelComponents/OneTravelBody";
 import { pageVariants, travelImage } from "../../components/GlobalComponents/Transitions";
-import { m } from "framer-motion";
 import { getIDs, getOneTravel } from "../../lib/helpers/getDatas";
 import { agencySchema, oneTravelSchema } from "../../lib/helpers/StructuredData";
 
@@ -39,7 +38,7 @@ const OneTravel = ({ travel, error }) => {
             </Head>
             {(travel?.pictures?.length > 0 || travel?.thumbnails?.length > 0) && (
                 <>
-                    <m.div
+                    <div
                         initial="initial"
                         animate="animate"
                         variants={pageVariants}
@@ -51,9 +50,9 @@ const OneTravel = ({ travel, error }) => {
                             style={{ backgroundImage: `url(${travel?.thumbnails?.[0] || travel?.pictures?.[0].src})`, filter: "blur(55px)" }}
                             id="blurimage"
                         />
-                    </m.div>
+                    </div>
 
-                    <m.div
+                    <div
                         initial="initial"
                         animate="animate"
                         variants={travelImage}
@@ -67,13 +66,13 @@ const OneTravel = ({ travel, error }) => {
                             className="mx-auto shadow-xl max-h-96 rounded-2xl"
                             id="topimage"
                         />
-                    </m.div>
+                    </div>
                 </>
             )}
 
-            <m.section initial="initial" animate="animate" variants={pageVariants} className="motion">
+            <section initial="initial" animate="animate" variants={pageVariants} className="motion">
                 <OneTravelBody travel={travel} />
-            </m.section>
+            </section>
         </>
     );
 };

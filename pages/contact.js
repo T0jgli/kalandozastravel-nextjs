@@ -1,4 +1,3 @@
-import { m } from "framer-motion";
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import { pageVariants } from "../components/GlobalComponents/Transitions";
@@ -10,7 +9,7 @@ const Gallery = dynamic(() => import("../components/GlobalComponents/Gallery"));
 
 export default function Contact() {
     return (
-        <m.section initial="initial" animate="animate" variants={pageVariants} className="motion">
+        <section initial="initial" animate="animate" variants={pageVariants} className="motion">
             <Head>
                 <title>Kapcsolat - Kalandozás Utazási iroda</title>
                 <meta property="og:image" content="https://kalandozas.hu/img/conti_logo.webp" />
@@ -23,6 +22,6 @@ export default function Contact() {
                 <ContactForm />
             </div>
             <Gallery />
-        </m.section>
+        </section>
     );
 }

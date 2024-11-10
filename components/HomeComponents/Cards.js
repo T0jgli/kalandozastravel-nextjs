@@ -1,4 +1,3 @@
-import { AnimatePresence, m } from "framer-motion";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import useScreenWidth from "../../lib/hooks/useScreenWidth";
 import { cardAnimation } from "../GlobalComponents/Transitions";
@@ -121,35 +120,33 @@ const Cards = ({ sortedTravels, travels }) => {
                                         <div className="flex items-center justify-center text-center w-full my-12 text-2xl font-medium uppercase">
                                             <p className="p-4 rounded-xl">{numberToDate(month)}</p>
                                         </div>
-                                        <AnimatePresence>
-                                            {travelsState?.[year]?.[month]?.map((travel) => (
-                                                <m.div
-                                                    id="card"
-                                                    className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full motion"
-                                                    key={travel.id}
-                                                    initial="initial"
-                                                    exit="exit"
-                                                    animate="animate"
-                                                    variants={cardAnimation}
-                                                >
-                                                    <DynamicAllCards
-                                                        id={travel.id}
-                                                        thumbnail={travel.thumbnail}
-                                                        backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
-                                                        title={travel.title}
-                                                        isSale={travel.isSale}
-                                                        country={travel.country}
-                                                        timestamp={travel.timestamp}
-                                                        startingDate={travel.startingDate}
-                                                        endingDate={travel.endingDate}
-                                                        places={travel.freePlaces}
-                                                        price={travel.price}
-                                                        type2={travel.type2}
-                                                        customUrl={travel.customUrl}
-                                                    />
-                                                </m.div>
-                                            ))}
-                                        </AnimatePresence>
+                                        {travelsState?.[year]?.[month]?.map((travel) => (
+                                            <div
+                                                id="card"
+                                                className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full motion"
+                                                key={travel.id}
+                                                initial="initial"
+                                                exit="exit"
+                                                animate="animate"
+                                                variants={cardAnimation}
+                                            >
+                                                <DynamicAllCards
+                                                    id={travel.id}
+                                                    thumbnail={travel.thumbnail}
+                                                    backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
+                                                    title={travel.title}
+                                                    isSale={travel.isSale}
+                                                    country={travel.country}
+                                                    timestamp={travel.timestamp}
+                                                    startingDate={travel.startingDate}
+                                                    endingDate={travel.endingDate}
+                                                    places={travel.freePlaces}
+                                                    price={travel.price}
+                                                    type2={travel.type2}
+                                                    customUrl={travel.customUrl}
+                                                />
+                                            </div>
+                                        ))}
                                     </React.Fragment>
                                 ))}
                             </React.Fragment>

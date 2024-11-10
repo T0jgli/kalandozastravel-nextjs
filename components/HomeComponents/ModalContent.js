@@ -24,12 +24,12 @@ const ModalContent = ({ travels }) => {
                         const traveldate = new Date(travel.startingDate);
                         const date = new Date();
                         let travelLink = (
-                            <button
-                                className="rounded-full p-3 cursor-pointer focus:outline-none duration-300"
-                                onClick={() => router.push(travel.customUrl || `/travel/${travel?.id}#ticket`)}
+                            <Link
+                                className="rounded-full p-3 cursor-pointer focus:outline-none duration-300 flex items-center justify-end"
+                                href={travel.customUrl || `/travel/${travel?.id}#ticket`}
                             >
                                 <HiOutlineShoppingCart fontSize="1.5rem" />
-                            </button>
+                            </Link>
                         );
 
                         if (travel?.freePlaces == 0) {

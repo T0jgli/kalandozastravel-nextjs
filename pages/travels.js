@@ -1,4 +1,3 @@
-import { AnimatePresence, m } from "framer-motion";
 import Head from "next/head";
 import { Suspense, useEffect, useRef, useState } from "react";
 import AllCards from "../components/TravelsComponents/AllCards";
@@ -9,6 +8,7 @@ import Infos from "../components/HomeComponents/Infos";
 import { agencySchema } from "../lib/helpers/StructuredData";
 import dynamic from "next/dynamic";
 import Loading from "../components/GlobalComponents/Loading";
+import Link from "next/link";
 
 const SearchFilter = dynamic(() => import("../components/GlobalComponents/SearchFilter"), {
     loading: () => <Loading />,
@@ -61,7 +61,7 @@ export default function Travels({ travels, countries }) {
     }, [router.query]);
 
     return (
-        <m.section initial="initial" animate="animate" variants={pageVariants} className="motion">
+        <section initial="initial" animate="animate" variants={pageVariants} className="motion">
             <Head>
                 <title>Utazásaink - Kalandozás Utazási iroda</title>
                 <meta property="og:image" content="https://kalandozas.hu/img/conti_logo.webp" />
@@ -72,56 +72,50 @@ export default function Travels({ travels, countries }) {
             <SearchFilter countries={countries} />
             <div className="text-center mt-16">
                 {travelsState.length !== travels.length && (
-                    <button
+                    <Link
+                        href={`/travels`}
+                        prefetch={false}
                         className="bg-yellow-700 p-3 text-white rounded-lg text-sm duration-300 hover:bg-yellow-800 hover:shadow-lg"
-                        onClick={() => {
-                            router.push({
-                                pathname: "/travels",
-                                query: null,
-                            });
-                        }}
                     >
                         Szűrők törlése
-                    </button>
+                    </Link>
                 )}
                 <h2 className="text-2xl py-5 text-gray-800">{travelsState.length} utazás található</h2>
             </div>
             <div className="flex flex-col max-w-7xl mx-auto">
                 <div className="my-5 flex flex-wrap items-stretch justify-items-center">
                     <Suspense>
-                        <AnimatePresence>
-                            {travelsState.map((travel) => (
-                                <m.div
-                                    className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
-                                    key={travel.id}
-                                    initial="initial"
-                                    exit="exit"
-                                    animate="animate"
-                                    variants={cardAnimation}
-                                >
-                                    <DynamicAllCards
-                                        id={travel.id}
-                                        thumbnail={travel.thumbnail}
-                                        backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
-                                        title={travel.title}
-                                        isSale={travel.isSale}
-                                        country={travel.country}
-                                        timestamp={travel.timestamp}
-                                        startingDate={travel.startingDate}
-                                        endingDate={travel.endingDate}
-                                        places={travel.freePlaces}
-                                        price={travel.price}
-                                        type2={travel.type2}
-                                        customUrl={travel.customUrl}
-                                    />
-                                </m.div>
-                            ))}
-                        </AnimatePresence>
+                        {travelsState.map((travel) => (
+                            <div
+                                className="xl:w-1/4 w-full sm:w-2/4 lg:w-1/3 p-5 self-stretch h-full"
+                                key={travel.id}
+                                initial="initial"
+                                exit="exit"
+                                animate="animate"
+                                variants={cardAnimation}
+                            >
+                                <DynamicAllCards
+                                    id={travel.id}
+                                    thumbnail={travel.thumbnail}
+                                    backgroundImage={travel.photoURL || travel.pictures?.[0]?.src || ""}
+                                    title={travel.title}
+                                    isSale={travel.isSale}
+                                    country={travel.country}
+                                    timestamp={travel.timestamp}
+                                    startingDate={travel.startingDate}
+                                    endingDate={travel.endingDate}
+                                    places={travel.freePlaces}
+                                    price={travel.price}
+                                    type2={travel.type2}
+                                    customUrl={travel.customUrl}
+                                />
+                            </div>
+                        ))}
                     </Suspense>
                 </div>
             </div>
             <Infos />
-        </m.section>
+        </section>
     );
 }
 

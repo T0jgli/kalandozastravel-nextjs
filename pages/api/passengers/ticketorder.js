@@ -250,9 +250,6 @@ export default async (req, res) => {
                     await addDoc(collection(db, "travels", travel.id, "passengers"), {
                         name,
                         email,
-                        address,
-                        city,
-                        postalCode,
                         phone,
                         matesNames,
                         people,

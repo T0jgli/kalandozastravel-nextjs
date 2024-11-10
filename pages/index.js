@@ -1,4 +1,3 @@
-import { m } from "framer-motion";
 import Head from "next/head";
 import { pageVariants } from "../components/GlobalComponents/Transitions";
 import HomeBody from "../components/HomeComponents/HomeBody";
@@ -17,7 +16,7 @@ const DynamicCustomCarousel = dynamic(() => import("../components/HomeComponents
 export default function Home({ faqs, travels, countries }) {
     return (
         <>
-            <m.section initial="initial" animate="animate" variants={pageVariants} className="motion">
+            <section initial="initial" animate="animate" variants={pageVariants} className="motion">
                 <Head>
                     <title>Főoldal - Kalandozás Utazási iroda</title>
                     <meta property="og:image" content="https://kalandozas.hu/img/conti_logo.webp" />
@@ -28,7 +27,7 @@ export default function Home({ faqs, travels, countries }) {
                 <BottomLinks />
                 <SearchFilter countries={countries} />
                 <HomeBody questionsAnswers={faqs} travels={travels} />
-            </m.section>
+            </section>
         </>
     );
 }
