@@ -39,8 +39,9 @@ export default function Travels({ travels, countries }) {
         } else if (router.query.month) {
             settravelsState(
                 travels.filter((travel) => {
-                    const month = travel?.startingDate?.split("-")?.[1]?.split("-")?.[0];
-                    if (month === router.query.month) return true;
+                    const startMonth = travel?.startingDate?.split("-")?.[1]?.split("-")?.[0];
+                    const endMonth = travel?.endingDate?.split("-")?.[1]?.split("-")?.[0];
+                    if (startMonth === router.query.month || endMonth === router.query.month) return true;
                     return false;
                 })
             );
