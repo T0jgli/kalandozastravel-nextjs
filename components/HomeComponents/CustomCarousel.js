@@ -28,7 +28,7 @@ const CustomCarousel = ({ travels }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setActive((prev) => (prev === 20 ? 1 : prev + 1));
+            setActive((prev) => (prev === 16 ? 1 : prev + 1));
         }, 5000);
 
         return () => clearInterval(interval);
