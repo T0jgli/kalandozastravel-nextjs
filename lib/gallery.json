@@ -110,33 +110,5 @@
         "thumbnail": "/img/newpictures/16.webp",
         "originalAlt": "Galéria kép 16.",
         "thumbnailAlt": "Galéria kép kicsi 16."
-    },
-    {
-        "original": "/img/newpictures/17.webp",
-        "loading": "lazy",
-        "thumbnail": "/img/newpictures/17.webp",
-        "originalAlt": "Galéria kép 17.",
-        "thumbnailAlt": "Galéria kép kicsi 17."
-    },
-    {
-        "original": "/img/newpictures/18.webp",
-        "loading": "lazy",
-        "thumbnail": "/img/newpictures/18.webp",
-        "originalAlt": "Galéria kép 18.",
-        "thumbnailAlt": "Galéria kép kicsi 18."
-    },
-    {
-        "original": "/img/newpictures/19.webp",
-        "loading": "lazy",
-        "thumbnail": "/img/newpictures/19.webp",
-        "originalAlt": "Galéria kép 19.",
-        "thumbnailAlt": "Galéria kép kicsi 19."
-    },
-    {
-        "original": "/img/newpictures/20.webp",
-        "loading": "lazy",
-        "thumbnail": "/img/newpictures/20.webp",
-        "originalAlt": "Galéria kép 20.",
-        "thumbnailAlt": "Galéria kép kicsi 20."
     }
 ]
