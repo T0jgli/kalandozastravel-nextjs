@@ -8,7 +8,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                 <div className="grid xl:grid-cols-5 gap-6 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 max-w-7xl mx-auto my-6 px-3 2xl:px-0">
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -29,7 +29,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     </figure>
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -50,7 +50,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     </figure>
                     {/* <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -71,7 +71,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
 
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -92,7 +92,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                     </figure>
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -112,25 +112,25 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
                             style={{ textShadow: "2px 2px #000" }}
                             alt="Egyéni szállásfoglalás háttér"
                         >
-                            Egyéni szállásfoglalás
+                            Kiadó apartmanok-lakások-szállások
                         </h2>
                     </figure>
                     {/* <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                     ></figure>
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                     ></figure>
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                     ></figure> */}
 
                     <figure
                         className="relative cursor-pointer overflow-hidden rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() =>
                             setModalOpen({
                                 open: true,
@@ -152,7 +152,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
 
                     {/* <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() => {
                             setBusjetModal({
                                 open: true,
@@ -171,7 +171,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
 
                     <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                         onClick={() => {
                             setHotelsModal({
                                 open: true,
@@ -190,7 +190,7 @@ const MainCards = ({ travels, setModalOpen, carousel }) => {
 
                     {/* <figure
                         className="relative overflow-hidden cursor-pointer rounded-2xl mx-auto duration-300 hover:shadow-xl hidden xl:block xl:invisible"
-                        style={{ width: "175px", height: "175px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
+                        style={{ width: "220px", height: "220px", maxWidth: "calc(100vw - 50px)", placeSelf: "center" }}
                     ></figure> */}
                 </div>
             </div>

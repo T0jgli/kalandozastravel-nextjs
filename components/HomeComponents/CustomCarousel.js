@@ -28,11 +28,19 @@ const CustomCarousel = ({ travels }) => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setActive((prev) => (prev === 16 ? 1 : prev + 1));
+            nextImage();
         }, 5000);
 
         return () => clearInterval(interval);
     }, []);
+
+    function nextImage() {
+        setActive((prev) => (prev === 16 ? 1 : prev + 1));
+    }
+
+    function prevImage() {
+        setActive((prev) => (prev === 1 ? 16 : prev - 1));
+    }
 
     return (
         <Suspense>
@@ -68,7 +76,7 @@ const CustomCarousel = ({ travels }) => {
                 <div className="absolute h-full z-10 right-0 top-0 bg-black bg-opacity-5 duration-300 hover:bg-opacity-10 w-12 xl:w-36 2xl:w-64">
                     <div
                         className="flex w-full h-full items-center justify-center text-3xl text-gray-100 cursor-pointer"
-                        onClick={() => setActive(active === 18 ? 1 : active + 1)}
+                        onClick={nextImage}
                         id="arrowright"
                     >
                         <HiChevronRight />
@@ -77,7 +85,7 @@ const CustomCarousel = ({ travels }) => {
                 <div className="absolute z-10 h-full left-0 top-0 bg-black bg-opacity-5 duration-300 hover:bg-opacity-10 w-12 xl:w-36 2xl:w-64">
                     <div
                         className="flex w-full h-full items-center justify-center text-3xl text-gray-100 cursor-pointer"
-                        onClick={() => setActive(active === 1 ? 18 : active - 1)}
+                        onClick={prevImage}
                         id="arrowleft"
                     >
                         <HiChevronLeft />
