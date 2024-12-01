@@ -35,11 +35,11 @@ const CustomCarousel = ({ travels }) => {
     }, []);
 
     function nextImage() {
-        setActive((prev) => (prev === 16 ? 1 : prev + 1));
+        setActive((prev) => (prev === 20 ? 1 : prev + 1));
     }
 
     function prevImage() {
-        setActive((prev) => (prev === 1 ? 16 : prev - 1));
+        setActive((prev) => (prev === 1 ? 20 : prev - 1));
     }
 
     return (
