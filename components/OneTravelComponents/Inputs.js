@@ -7,6 +7,8 @@ import CustomInputField from "./CustomInputField";
 import { event } from "../../lib/helpers/gtag";
 import { HiOutlineExclamation } from "react-icons/hi";
 import { clsx } from "clsx/lite";
+import WaitingList from "./WaitingList";
+import { getErrorMessage, isWrongField } from "../../lib/helpers/travels";
 
 const initialInputValue = {
     name: "",
@@ -37,18 +39,6 @@ const initialInputValue = {
         "Gyerek 140 cm-ig": 0,
     },
 };
-
-const getErrorMessage = (array, field) => {
-    if (array.length === 0) return;
-
-    const index = array?.findIndex((er) => er.path === field);
-
-    if (index === -1) return;
-
-    return <span>{array[index]?.msg}</span>;
-};
-
-const isWrongField = (array, field) => array?.findIndex((er) => er.path === field) !== -1;
 
 const Inputs = ({ travel }) => {
     const [state, setState] = useState(initialInputValue);
@@ -142,11 +132,7 @@ const Inputs = ({ travel }) => {
     }
 
     if (travel?.freePlaces === 0) {
-        return (
-            <div className="text-center my-8">
-                <p className="text-xl text-gray-700">Sajnos az utazásra minden hely elfogyott!</p>
-            </div>
-        );
+        return <WaitingList travel={travel} />;
     }
 
     if (new Date() >= new Date(travel?.startingDate)) {

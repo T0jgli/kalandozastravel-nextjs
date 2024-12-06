@@ -133,7 +133,8 @@ const OneTravelBody = ({ travel }) => {
                     </div>
                 </div>
                 <p className="text-2xl text-center mb-5">
-                    <HiOutlineTicket fontSize="2.5rem" className="inline text-yellow-700" /> Jegyfoglalás{" "}
+                    <HiOutlineTicket fontSize="2.5rem" className="inline text-yellow-700" />{" "}
+                    {travel?.freePlaces === 0 ? "Várólista jelentkezés " : "Jegyfoglalás "}
                     <HiOutlineTicket fontSize="2.5rem" className="inline text-yellow-700" />
                 </p>
                 {travel?.freePlaces !== 0 && new Date() < new Date(travel?.startingDate) && (

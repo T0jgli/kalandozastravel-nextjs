@@ -248,18 +248,9 @@ export default async (req, res) => {
             } finally {
                 if (process.env.NODE_ENV == "production") {
                     await addDoc(collection(db, "travels", travel.id, "passengers"), {
-                        name,
                         email,
+                        name,
                         phone,
-                        matesNames,
-                        people,
-                        needseat,
-                        seatNumber,
-                        feedback,
-                        payment,
-                        desc,
-                        needfelpanzioOrBreakfast: travel?.extraFelpanzio ? needfelpanzioOrBreakfast : null,
-                        insurances,
                         timestamp: serverTimestamp(),
                     });
                     await updateDoc(doc(db, "travels", travel.id), {
